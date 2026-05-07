@@ -1,0 +1,82 @@
+# Project Context — Immoral Group
+
+## Site
+
+- **Base URL**: `https://www.immoral.es`
+- **Type**: Static multi-page site
+- **Stack**: Vite (multi-entry build) + TailwindCSS, vanilla JS
+- **Hosting**: Vercel
+- **Hosting output**: `dist/` with one `.html` per page
+- **URL extensions**: clean URLs (no `.html`) via Vercel `cleanUrls: true` in `vercel.json`. Vercel auto-308-redirects `/page.html` → `/page`.
+- **Languages**: Spanish only (no i18n)
+
+## Page Structure
+
+URLs are listed below grouped by section, with recommended sitemap priority and changefreq. Public URLs are clean (no `.html`); the source file in the repo keeps the `.html` extension.
+
+### Homepage (priority 1.0, changefreq: weekly)
+
+- `/` ← `index.html`
+
+### Brand & Company (priority 0.8, changefreq: monthly)
+
+- `/nuestra-historia` ← `nuestra-historia.html`
+- `/equipo` ← `equipo.html`
+- `/manifesto` ← `manifesto.html`
+- `/contacto` ← `contacto.html`
+
+### Services (priority 0.8, changefreq: monthly)
+
+- `/automatizacion-de-procesos` ← `automatizacion-de-procesos.html`
+- `/diseno-de-marca` ← `diseno-de-marca.html`
+- `/email-marketing` ← `email-marketing.html`
+- `/gestion-de-redes` ← `gestion-de-redes.html`
+- `/influencer-marketing` ← `influencer-marketing.html`
+- `/publicidad-en-medios` ← `publicidad-en-medios.html`
+
+### Case Studies Hub (priority 0.9, changefreq: weekly)
+
+- `/casos-de-exito` ← `casos-de-exito.html`
+
+### Case Studies (priority 0.7, changefreq: monthly)
+
+- `/caso-amlul` ← `caso-amlul.html`
+- `/caso-angelanavarro` ← `caso-angelanavarro.html`
+- `/caso-bobo` ← `caso-bobo.html`
+- `/caso-coolbottles` ← `caso-coolbottles.html`
+- `/caso-gabrielforsach` ← `caso-gabrielforsach.html`
+- `/caso-grupomimara` ← `caso-grupomimara.html`
+- `/caso-iventions` ← `caso-iventions.html`
+- `/caso-lamanso` ← `caso-lamanso.html`
+- `/caso-marcawell` ← `caso-marcawell.html`
+- `/caso-munkombucha` ← `caso-munkombucha.html`
+- `/caso-nutfruit` ← `caso-nutfruit.html`
+- `/caso-oxpertacapital` ← `caso-oxpertacapital.html`
+- `/caso-oxpertaexpress` ← `caso-oxpertaexpress.html`
+- `/caso-teamder` ← `caso-teamder.html`
+- `/caso-thecrewel` ← `caso-thecrewel.html`
+- `/caso-travelperk` ← `caso-travelperk.html`
+- `/caso-vasquiat` ← `caso-vasquiat.html`
+- `/caso-velites` ← `caso-velites.html`
+- `/caso-wetribu` ← `caso-wetribu.html`
+
+### Legal (priority 0.3, changefreq: yearly)
+
+- `/aviso-legal` ← `aviso-legal.html`
+- `/cookies` ← `cookies.html`
+- `/privacidad` ← `privacidad.html`
+
+## Excluded from Sitemap
+
+- `img1.html` — test/placeholder file (591 bytes), not real content. Also disallowed in robots.txt.
+- `/api/*` — backend endpoints
+- `/src/*`, `/public/imgs/*`, `/public/fonts/*` — static assets
+
+## Known Issues to Flag
+
+- Internal pages have no `<link rel="canonical">` or `<meta property="og:url">` — only `index.html` does. Add canonicals (pointing to clean URLs) before submitting the sitemap to Google Search Console.
+- ~1,004 internal `<a href>` links across the HTMLs still point to `/page.html`. They work via Vercel's auto-redirect (308), but adding an extra hop. Consider a future find-and-replace to update them to clean URLs.
+
+## Lastmod Strategy
+
+Use `git log -1 --format=%cs <file>` to derive `lastmod` per page (last commit date in `YYYY-MM-DD`). This avoids the `new Date()` anti-pattern (all URLs sharing the same timestamp).

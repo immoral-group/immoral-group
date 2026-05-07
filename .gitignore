@@ -110,6 +110,9 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+# Claude Code local settings (session-specific, not for sharing)
+.claude/settings.local.json
+
 # yarn v2
 .yarn/cache
 .yarn/unplugged
