@@ -1,0 +1,46 @@
+{
+  "slug": "wetribu",
+  "cliente": "We Tribu",
+  "logo": {
+    "src": "imgs/wetribu-logo.avif",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "We",
+    "title_part2": "Tribu",
+    "description": "WeTribu es una comunidad compuesta por CEOs y fundadores, su propósito trasciende el simple intercambio\n              de experiencias. Buscan colectivamente generar un impacto sustancial, tanto en sus respectivas\n              organizaciones como en la sociedad en general. Su visión clara es ampliar este círculo de influencia,\n              sumando más miembros a su tribu."
+  },
+  "reto": [
+    "Con el horizonte enfocado en las ciudades de Barcelona y Madrid, el principal desafío de WeTribu fue claro\n            pero ambicioso: atraer, de manera efectiva y significativa, a nuevos miembros que resuenen con sus ideales y\n            objetivos."
+  ],
+  "image": {
+    "src": "imgs/wetribu.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "Para captar esas mentes brillantes, elegimos dos gigantes del mundo digital: Meta y Linkedin. Diseñamos\n                campañas específicas que no sólo comunicaran, sino que también conectaran emocionalmente con potenciales\n                miembros. Nuestro mensaje enfatiza la propuesta de valor única de WeTribu, una que invoca un sentimiento\n                de pertenencia y propósito.",
+    "La dinámica digital exige adaptabilidad. Por ello, adoptamos un enfoque iterativo, probando diferentes\n                segmentaciones y creatividades. Este proceso de mejora continua no sólo garantizó que estuviéramos\n                alineados con las demandas cambiantes de nuestra audiencia, sino que también aseguró que atrajéramos\n                leads de la más alta calidad."
+  ],
+  "kpis": [
+    {
+      "value": "+47%",
+      "label": "Leads",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "-55%",
+      "label": "Bajada del CPL",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": null,
+  "testimonios": [],
+  "testimonios_logo": null,
+  "testimonios_logo_alt": null,
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

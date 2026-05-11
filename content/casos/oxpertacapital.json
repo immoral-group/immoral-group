@@ -1,0 +1,63 @@
+{
+  "slug": "oxpertacapital",
+  "cliente": "Oxperta Capital",
+  "logo": {
+    "src": "imgs/Oxperta-logo-dark.png",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "Oxperta",
+    "title_part2": "Capital",
+    "description": "Oxperta Capital es una empresa consolidada en el ámbito financiero, que ofrece soluciones especializadas\n              tanto a individuos como a empresas. Con un enfoque centrado en Hipotecas, Reunificación de Deudas y\n              Préstamos Personales, se esfuerzan por proporcionar respuestas económicas ajustadas a las necesidades de\n              sus clientes."
+  },
+  "reto": [
+    "El principal desafío con Oxperta Capital era doble: aumentar su base de clientes potenciales en áreas clave\n            y garantizar la máxima calidad de cada uno de esos leads, buscando un equilibrio perfecto entre coste y\n            valor."
+  ],
+  "image": {
+    "src": "imgs/oexpress.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "A mediados de 2021, nuestra primera intervención fue un estudio del mercado, identificando segmentos\n                precisos para maximizar la eficacia. Con esta información, desplegamos una estrategia bifronte:\n                empleamos las plataformas de Facebook e Instagram para capturar leads y simultáneamente potenciamos las\n                búsquedas online con Google Ads. Esta dualidad garantizó la máxima exposición y conectividad con los\n                potenciales clientes en momentos cruciales de su proceso de decisión.",
+    "El segundo paso fue la implementación de Zapier, que permitió que cada lead generado se canalizara\n                instantáneamente hacia los asesores comerciales de Oxperta. Esta inmediatez resultó vital para la\n                optimización del tiempo de respuesta. Para reforzar y mantener el interés de estos leads, se introdujo\n                una estrategia de email marketing, manteniendo a los potenciales clientes informados y conectados,\n                facilitando así el proceso de conversión."
+  ],
+  "kpis": [
+    {
+      "value": "165%",
+      "label": "Leads",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "-65%",
+      "label": "Coste por Lead",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+67%",
+      "label": "Calidad del lead (MQL)",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": {
+    "linea1": "Lo que más valoran no ",
+    "linea2": "es solo lo que hacemos, ",
+    "linea3_highlight": "es cómo lo hacemos"
+  },
+  "testimonios": [
+    {
+      "titulo": "agradecidos de tener como partner",
+      "quote": "Empezamos en mayo del 2021 y nos encontramos con un equipo super profesional, con personas con una\n                  gran capacidad de adaptación y atención que generó mucha confianza para incrementar las inversiones,\n                  porque se empezaban a obtener resultados. Creo que con ADMK, hubo un antes y después en Opción Capital\n                  y os convierte en partner que, ojalá, nos acompañe muchos años más y que evolucione junto a nosotros.",
+      "autor": "Guillermo Marcos",
+      "rol": "Director de Marketing, Oxperta Capital",
+      "logo_class": "h-16 w-16 object-contain"
+    }
+  ],
+  "testimonios_logo": "/imgs/Oxperta-logo-dark.png",
+  "testimonios_logo_alt": "Logo de Bobo Choses",
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

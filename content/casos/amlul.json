@@ -1,0 +1,53 @@
+{
+  "slug": "amlul",
+  "cliente": "AMLUL",
+  "logo": {
+    "src": "imgs/amlul-logo.png",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "AMLUL",
+    "title_part2": "",
+    "description": "Amlul, fundada por la renombrada influencer Gala González en 2019, no es sólo una marca de moda; es un\n              compromiso. Amlul se ha posicionado como líder en moda responsable, producción ética y diseño atemporal.\n              Su meta es clara: transformar el mundo de la moda con conciencia y elegancia."
+  },
+  "reto": [
+    "El desafío era doble: aumentar ventas y visibilidad online mientras se proyectaban los valores sostenibles\n            de la marca, y expandir el alcance globalmente, llevando el mensaje de moda responsable a distintos rincones\n            del mundo."
+  ],
+  "image": {
+    "src": "imgs/port-amlul.webp",
+    "alt": "Imagen representativa del caso Amlul"
+  },
+  "solucion": [
+    "Lanzamos campañas de visibilidad de marca para presentar Amlul a nuevas audiencias, destacando sus\n                valores de moda responsable y producción ética. Para ello, utilizamos las redes de display de Taboola y\n                campañas de reconocimiento en Facebook e Instagram.",
+    "Paralelamente, creamos campañas de consideración en buscadores para captar tráfico de términos de\n                búsqueda relacionados con la moda sostenible y atemporal.",
+    "También implementamos campañas de remarketing omnicanal para reimpactar a las personas interesadas en\n                Amlul que no llegaron a realizar una compra después de visitar la web.",
+    "Finalmente, nos enfocamos en aumentar el valor de vida del cliente (LTV), para lo cual realizamos\n                campañas de venta cruzada de diferentes colecciones de Amlul, utilizando email marketing y publicidad en\n                redes sociales y display."
+  ],
+  "kpis": [
+    {
+      "value": "+45%",
+      "label": "Mejora del CAC",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+32%",
+      "label": "Mejora del CLTV",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "9",
+      "label": "ROAS Medio",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": null,
+  "testimonios": [],
+  "testimonios_logo": null,
+  "testimonios_logo_alt": null,
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

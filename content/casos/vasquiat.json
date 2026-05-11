@@ -1,0 +1,63 @@
+{
+  "slug": "vasquiat",
+  "cliente": "Vasquiat",
+  "logo": {
+    "src": "imgs/vasquiat-logo.png",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "Vasquiat",
+    "title_part2": "",
+    "description": "Vasquiat no es solo un marketplace; es una ventana al mundo del lujo y la moda contemporánea. Su\n              propósito es destacar y presentar las marcas emergentes más prometedoras del panorama global. La\n              sofisticación, innovación y un toque vanguardista definen a Vasquiat, convirtiéndola en una referencia en\n              la industria de la moda."
+  },
+  "reto": [
+    "A pesar de su prometedora propuesta, Vasquiat enfrentó el desafío de incrementar sus ventas a nivel\n            internacional y optimizar su retorno de inversión. Para una marca emergente, cada paso es esencial, y la\n            visibilidad y confianza son fundamentales para consolidar su posición en el mercado."
+  ],
+  "image": {
+    "src": "imgs/vasquiat.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "Empezamos a colaborar en 2020. Primero, diseñamos una estrategia holística que abarcó todo el embudo de\n                marketing. Implementamos campañas para aumentar la visibilidad en nuevas audiencias, teniendo en cuenta\n                que su propuesta innovadora debía llegar a quienes aún no conocían a Vasquiat. A esto se sumó nuestra\n                estrategia en buscadores y shopping, que potenciaba la consideración de la marca.",
+    "Segundo, fortalecimos la relación con clientes actuales mediante campañas de remarketing, con el\n                objetivo de maximizar el valor a lo largo del tiempo de cada cliente. Paralelamente, aprovechamos las\n                capacidades nativas de Facebook e Instagram para capturar datos a través de formularios, permitiendo a\n                Vasquiat mantener una comunicación directa y valiosa mediante newsletters a sus potenciales clientes."
+  ],
+  "kpis": [
+    {
+      "value": "+433%",
+      "label": "Usuarios",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+70%",
+      "label": "Pedidos",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "5",
+      "label": "ROAS Medio",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": {
+    "linea1": "Lo que más valoran no ",
+    "linea2": "es solo lo que hacemos, ",
+    "linea3_highlight": "es cómo lo hacemos"
+  },
+  "testimonios": [
+    {
+      "titulo": "Los resultados que nos han generado han sido\n                  espectaculares",
+      "quote": "Cada campaña que lanzamos sigue siendo un éxito. Se exigen al máximo. Lo que creo que hace que\n                  llevemos tanto tiempo colaborando con ellos y sigamos colaborando es sin duda es el compromiso de su\n                  equipo con nuestra empresa. Les consideramos parte del equipo y realmente siempre están ahí, y con una\n                  predisposición increíble, manteniendo el nivel tan alto como el primer día.",
+      "autor": "RAFA BLANC",
+      "rol": "Fundador y CEO, Vasquiat",
+      "logo_class": "h-16 w-16 object-contain"
+    }
+  ],
+  "testimonios_logo": "/imgs/vasquiat-logo.png",
+  "testimonios_logo_alt": "Logo de Bobo Choses",
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

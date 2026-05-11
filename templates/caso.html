@@ -1,0 +1,152 @@
+{% include "partials/_head.html" %}
+{% include "partials/_nav.html" %}
+
+  {% include "partials/_bg.html" %}
+
+
+  <!-- Hero Section - Case Study -->
+  <section class="relative w-full py-8 xl:py-16 z-[5]">
+    <div class="max-w-[95%] mx-auto px-4 xl:px-16 mt-40 mb-20">
+      <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-8 xl:gap-16">
+        <div class="reveal-group flex-1">
+          <header class="mb-6 xl:mb-8">
+            <p class="text-blue-500 text-xl xl:text-3xl font-light leading-relaxed mb-4 block-reveal">{{ hero.eyebrow }}</p>
+            <h1 class="text-black text-4xl xl:text-6xl font-black leading-tight xl:leading-[78px] block-reveal">{{ hero.title_part1 }}
+              {{ hero.title_part2 }}</h1>
+          </header>
+          <div
+            class="text-black text-lg xl:text-xl font-light leading-relaxed xl:leading-relaxed max-w-2xl reveal-lines">
+            <p>{{ hero.description }}</p>
+          </div>
+        </div>
+        <div class="flex-shrink-0 xl:pr-20">
+          <img class="w-24 h-20 xl:w-60 xl:h-24 object-contain" src="{{ logo.src }}" alt="{{ logo.alt }}" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Challenge Section -->
+  <section class="relative w-full bg-blue-500 py-12 xl:py-16 z-[5]">
+    <div class="max-w-7xl mx-auto px-4 xl:px-16">
+      <div class="flex flex-col xl:flex-row xl:items-center gap-8 xl:gap-16">
+        <div class="flex-shrink-0">
+          <h2 class="text-white text-3xl xl:text-6xl font-black leading-tight xl:leading-[78px]">Reto</h2>
+        </div>
+        <div class="flex-1">{% for para in reto %}
+          <p class="text-white text-lg xl:text-xl font-light leading-relaxed reveal-lines">{{ para }}</p>{% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Image Section -->
+  <section class="relative w-full h-64 xl:h-[454px] overflow-hidden z-[5]">
+    <img class="w-full h-full object-cover object-center" src="{{ image.src }}"
+      alt="{{ image.alt }}" />
+  </section>
+  <!-- Solution and Results Section -->
+  <section class="w-full bg-white py-12 xl:py-24 z-[5]">
+    <div class="max-w-7xl mx-auto px-4 xl:px-16">
+      <!-- Solution Subsection -->
+      <div class="mb-16 xl:mb-24">
+        <div class="flex flex-col xl:flex-row xl:items-start gap-8 xl:gap-16">
+          <div class="flex-shrink-0">
+            <h2 class="text-black text-3xl xl:text-6xl font-black leading-tight xl:leading-[78px]">La
+              solución</h2>
+          </div>
+          <div class="flex-1">
+            <div class="text-black text-lg xl:text-xl font-light leading-relaxed space-y-6">{% for para in solucion %}
+              <p>{{ para }}</p>{% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Subsection -->
+      <div class="pt-16">
+        <div class="flex flex-col xl:flex-row xl:items-start gap-8 xl:gap-16 mb-12 xl:mb-16">
+          <div class="flex-shrink-0">
+            <h2
+              class="text-black text-3xl xl:text-6xl font-black leading-tight xl:leading-[78px] text-center xl:text-left">
+              Resultados</h2>
+          </div>
+          <div class="flex-1">
+            <!-- Metrics will be added here -->
+            <div class="w-full flex justify-center">
+              <div class="w-full max-w-[800px] rounded-2xl py-8 px-10">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-16">{% for kpi in kpis %}
+                  <!-- KPI {{ loop.index }} -->
+                  <div class="text-center">
+                    <h2 class="text-[#4889eb] font-black {{ kpi.size_class or 'text-5xl sm:text-6xl' }}">{{ kpi.value }}</h2>
+                    <p class="reveal-lines font-light text-lg mt-2 text-gray-700">{{ kpi.label }}</p>
+                  </div>{% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% if testimonios and testimonios.length %}
+  <!--! Testimonials -->
+  <!-- Simple Testimonials (nuevo diseño simplificado) -->
+  <section class="w-full bg-white py-16 sm:py-20 xl:py-24">
+    <div class="max-w-[1600px] mx-auto px-8">
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="font-black text-3xl xl:text-5xl">
+            <a class="">{{ testimonios_titulo.linea1 }}</a><span class="hidden xl:inline"><br></span>
+            <a class="">{{ testimonios_titulo.linea2 }}</a><span class="hidden xl:inline"><br></span>
+            <a class=""><span class="text-[#4889eb]">{{ testimonios_titulo.linea3_highlight }}</span></a>
+          </h2>
+        </div>
+
+
+
+        <div class="relative px-8 xl:px-12">
+          <button id="simple-testimonials-prev" aria-label="Anterior"
+            class="absolute left-0 xl:-left-16 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4889eb]">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="#000" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <button id="simple-testimonials-next" aria-label="Siguiente"
+            class="absolute right-0 xl:-right-16 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4889eb]">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <div id="simple-testimonials-carousel" class="overflow-hidden cursor-grab">
+            <div class="testimonials-track flex transition-transform duration-300 ease-out">{% for t in testimonios %}
+              <!-- Card {{ loop.index }} -->
+              <div
+                class="testimonial-card flex-shrink-0 w-full xl:w-[520px] bg-white border border-gray-200 rounded-2xl shadow-sm p-6 mr-6">
+                <h3 class="text-xl font-light text-[#4889eb] mb-2">{{ t.titulo }}</h3>
+                <p class="text-gray-700 mb-6">
+                  {{ t.quote }}
+                </p>
+                <div class="flex items-center gap-3">
+                  <img src="{{ testimonios_logo }}" alt="{{ testimonios_logo_alt }}" class="{{ t.logo_class }}" />
+                  <div>
+                    <p class="text-gray-900 font-semibold">{{ t.autor }}</p>
+                    <p class="text-gray-600">{{ t.rol }}</p>
+                  </div>
+                </div>
+              </div>
+{% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+
+  {% include "partials/_footer.html" %}
+
+</html>

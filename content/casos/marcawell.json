@@ -1,0 +1,47 @@
+{
+  "slug": "marcawell",
+  "cliente": "La Marca Well",
+  "logo": {
+    "src": "imgs/well-logo.png",
+    "alt": "Logo de lamarcawell"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "La",
+    "title_part2": "Marca Well",
+    "description": "La Marca Well es la concreción de una visión compartida por las hermanas Mischka y Magally Capriles.\n              Desde su fundación en 2017, se ha consolidado como un referente en promoción de bienestar y conciencia\n              ambiental, ofreciendo una variedad de productos y servicios enfocados en nutrir cuerpo y alma. Con un\n              centro wellness en Madrid que incluye tienda, restaurante y gimnasio, es una marca comprometida con\n              mejorar la calidad de vida de sus clientes."
+  },
+  "reto": [
+    "El dualismo de LaMarca Well presentaba un desafío único: maximizar la visibilidad de la marca en el ámbito\n            digital mientras se enfoca en atraer a una audiencia más amplia, amante del bienestar. El propósito era\n            claro: promover un bienestar holístico a través de los cuatro pilares EAT, HEAL, MOVE y SEEK."
+  ],
+  "image": {
+    "src": "imgs/port-well3.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "Para introducir a LaMarca Well a una audiencia más amplia, iniciamos campañas de reconocimiento\n                enfatizando sus valores tanto en contenido editorial como en productos de bienestar.",
+    "Complementando esto, aprovechamos la popularidad de YouTube en España para dirigir campañas de\n                reconocimiento, buscando conectar con aquellos apasionados por un estilo de vida saludable.",
+    "Paralelamente, introdujimos campañas de consideración y conversión para LaMarca Shop. Para fomentar la\n                retención y mantener a LaMarca Well en la mente de los clientes, implementamos campañas de remarketing a\n                través de email marketing. Estas estrategias se diseñaron específicamente para reconectar con aquellos\n                que mostraron interés inicial pero no completaron una compra."
+  ],
+  "kpis": [
+    {
+      "value": "-357%",
+      "label": "Mejora del CAC",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+200%",
+      "label": "Aumento del ROAS",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": null,
+  "testimonios": [],
+  "testimonios_logo": null,
+  "testimonios_logo_alt": null,
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

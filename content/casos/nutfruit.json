@@ -1,0 +1,52 @@
+{
+  "slug": "nutfruit",
+  "cliente": "NUTFRUIT",
+  "logo": {
+    "src": "imgs/nutfruit-negro.png",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "NUTFRUIT",
+    "title_part2": "",
+    "description": "Nutfruit es una iniciativa del Consejo Internacional de Frutos Secos y Frutas Deshidratadas (INC)\n              orientada a promover el consumo de alimentos de origen vegetal con alto valor nutricional. Su objetivo es\n              fomentar hábitos de alimentación saludables y sostenibles a través de contenido educativo e inspiracional."
+  },
+  "reto": [
+    "Lanzar y posicionar una marca en múltiples mercados de Latinoamérica, logrando conectar con audiencias\n            diversas en países como Brasil, Argentina, Chile y México.\n\n             principal desafío era construir una comunicación consistente a nivel regional, pero al mismo tiempo lo\n            suficientemente local para generar cercanía, relevancia cultural y engagement real en cada país."
+  ],
+  "image": {
+    "src": "imgs/nut-img1.jpg",
+    "alt": "Imagen representativa del caso Amlul"
+  },
+  "solucion": [
+    "La solución se basó en una estrategia de contenido integral que combinó consistencia regional con una\n                fuerte adaptación local, posicionando a Nutfruit a través de contenido educativo y aspiracional\n                vinculado a hábitos de consumo consciente.",
+    "Para lograr cercanía y relevancia en cada mercado, ajustamos la comunicación según el lenguaje y los\n                códigos culturales de cada país, incorporando además creadores de contenido locales que permitieron\n                humanizar la marca y conectar de forma más auténtica con la audiencia.",
+    "La ejecución se desarrolló de forma multiplataforma, con presencia activa en redes sociales, contenido\n                global en YouTube y una estrategia de UGC y Pinterest, logrando así amplificar el alcance y consolidar\n                una marca relevante en toda Latinoamérica."
+  ],
+  "kpis": [
+    {
+      "value": "+310M",
+      "label": "de alcance total (2024 + 2025)",
+      "size_class": "text-4xl sm:text-6xl"
+    },
+    {
+      "value": "+2.7M",
+      "label": "de interacciones (engagement total)",
+      "size_class": "text-4xl sm:text-6xl"
+    },
+    {
+      "value": "+325K",
+      "label": "seguidores nuevos en el periodo",
+      "size_class": "text-4xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": null,
+  "testimonios": [],
+  "testimonios_logo": null,
+  "testimonios_logo_alt": null,
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

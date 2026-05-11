@@ -1,0 +1,63 @@
+{
+  "slug": "gabrielforsach",
+  "cliente": "Gabriel For Sach",
+  "logo": {
+    "src": "imgs/gabriel-logo-dark.png",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "Gabriel",
+    "title_part2": "For Sach",
+    "description": "Gabriel for Sach es una firma con sede en Barcelona, especializada en la confección de bolsos de diseño\n              de alta gama. Su legado se cimienta en la calidad inigualable y en una constante apuesta por la innovación\n              en diseño."
+  },
+  "reto": [
+    "A pesar de ser un nombre reconocido en su mercado local, Gabriel for Sach tenía la ambición de cruzar\n            fronteras y consolidarse en mercados internacionales. El desafío era claro: ganar visibilidad global,\n            enfrentarse a gigantes de la moda internacional y solidificar su presencia digital."
+  ],
+  "image": {
+    "src": "imgs/gabriel.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "Iniciamos a principios de 2021 con una estrategia full funnel, diseñada meticulosamente para posicionar\n                a Gabriel for Sach en el radar de audiencias clave en regiones como Europa, EE.UU. y Corea del Sur. Esta\n                iniciativa no solo se enfocó en generar visibilidad, sino que, mediante campañas de búsqueda específicas\n                de la marca, contrarrestamos a competidores y captamos la atención derivada de nuestra campaña de\n                sensibilización.",
+    "Con la relación ya establecida, empleamos tácticas de remarketing para cultivar y reforzar la conexión\n                con estos potenciales clientes, ampliando el Valor de Vida del Cliente (LTV). Además, después de un\n                examen profundo de la experiencia web de Gabriel for Sach, proponemos refinamientos para mejorar la tasa\n                de conversión, garantizando una experiencia de usuario impecable y un proceso de compra intuitivo."
+  ],
+  "kpis": [
+    {
+      "value": "+237%",
+      "label": "Usuarios",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+234%",
+      "label": "Pedidos",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "2021",
+      "label": "Desde 2021 trabajando juntos",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": {
+    "linea1": "Lo que más valoran no ",
+    "linea2": "es solo lo que hacemos, ",
+    "linea3_highlight": "es cómo lo hacemos"
+  },
+  "testimonios": [
+    {
+      "titulo": "Excepcionales, siempre disponibles, proactivos",
+      "quote": "Comprometidos en potenciar nuestras ventas. Siento que están profundamente involucrados en el\n                  proyecto, esforzándose diariamente para mejorar todo. Hemos escalado significativamente en marketing\n                  digital, y nuestra publicidad genera impacto. A pesar de los desafíos del sector, valoro enormemente\n                  su trabajo e implicación, y confío en que nuestra presencia digital seguirá creciendo gracias a sus\n                  acciones. ¡Es una gran suerte contar con ellos!",
+      "autor": "Mariona Mora",
+      "rol": "Gabriel For Sach",
+      "logo_class": "h-16 w-16 object-contain"
+    }
+  ],
+  "testimonios_logo": "/imgs/gabriel-logo-dark.png",
+  "testimonios_logo_alt": "Logo de Bobo Choses",
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "grupomimara",
+  "cliente": "Grupo Mimara",
+  "logo": {
+    "src": "imgs/manso-logo.png",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "Grupo",
+    "title_part2": "Mimara",
+    "description": "Mimara es una prestigiosa red de residencias y centros de día para adultos mayores en España. Su misión\n              primordial es enriquecer la calidad de vida de cada residente, adaptando meticulosamente cada servicio a\n              las necesidades individuales."
+  },
+  "reto": [
+    "La meta de Mimara era clara pero compleja: potenciar la captación de clientes potenciales para sus centros\n            ubicados en localidades específicas como Oviedo, Tarragona, Asturias y Soria."
+  ],
+  "image": {
+    "src": "imgs/mimara.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "En la fase superior del embudo, trabajamos con precisión en la segmentación del público objetivo,\n                identificando las particularidades entre los adultos mayores y sus hijos. Cada segmento recibió un\n                mensaje personalizado, diseñado para resonar profundamente con sus necesidades y emociones.",
+    "La fase media del embudo se orientó hacia campañas de Product Search en Google. Esta táctica se diseñó\n                para transformar el interés inicial en acciones más concretas, incentivando a los posibles clientes a\n                tomar decisiones informadas para el bienestar de sus seres queridos.",
+    "Finalmente, en la fase más baja del embudo, implementamos una estrategia de remarketing robusta.\n                Utilizando anuncios personalizados, recordamos a aquellos interesados las ventajas y valores de Mimara,\n                motivándolos a dar el paso final y convertirse en clientes. Esta fase fue esencial para reforzar el\n                reconocimiento de marca y fomentar la conversión directa."
+  ],
+  "kpis": [
+    {
+      "value": "+98%",
+      "label": "Aumento de contactos",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "-127%",
+      "label": "Bajada del CPL",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": null,
+  "testimonios": [],
+  "testimonios_logo": null,
+  "testimonios_logo_alt": null,
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

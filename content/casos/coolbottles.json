@@ -1,0 +1,64 @@
+{
+  "slug": "coolbottles",
+  "cliente": "Cool Bottles",
+  "logo": {
+    "src": "imgs/cool-logo-dark.avif",
+    "alt": "Logo de Cool Bottles"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "Cool",
+    "title_part2": "Bottles",
+    "description": "Cool Bottles no es simplemente una empresa de botellas reutilizables; es una marca que combina elegancia\n              y sofisticación con innovación puntera, enfocándose en ofrecer una experiencia excepcional. Su misión\n              trasciende el producto: es una llamada a un mundo más sostenible y consciente."
+  },
+  "reto": [
+    "El mercado digital está saturado de propuestas y soluciones para una vida sostenible. El reto fue resaltar\n            la singularidad de CoolBottles en un espacio tan competitivo, aumentando su presencia digital y convirtiendo\n            visitas en ventas tangibles en su tienda online."
+  ],
+  "image": {
+    "src": "imgs/cool.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "Para acercar a Cool Bottles a su público objetivo, diseñamos una estrategia Full Funnel para sus\n                productos estrella. En la etapa TOFU, establecimos un primer contacto con audiencias estratégicas en la\n                plataforma Meta, ofreciendo una presentación genuina y educativa sobre la marca.",
+    "Con una transición armoniosa al MOFU, nos centramos en los interesados que mostraron interés previo.\n                Mediante campañas en Google Search, Shopping y Performance Max, destacamos la calidad y singularidad de\n                los productos Cool Bottles.",
+    "En el BOFU, nos dirigimos a aquellos que ya conocían la marca, pero aún no se habían decidido. Con un\n                tono minimalista y emotivo, subrayamos las ventajas de Cool Bottles frente a otras opciones en el\n                mercado, resaltando la experiencia superior que ofrecen."
+  ],
+  "kpis": [
+    {
+      "value": "+45%",
+      "label": "Mejora del ROAS",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "-121%",
+      "label": "Bajada del CAC",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+418%",
+      "label": "Mejora del CR",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": {
+    "linea1": "Lo que más valoran no ",
+    "linea2": "es solo lo que hacemos, ",
+    "linea3_highlight": "es cómo lo hacemos"
+  },
+  "testimonios": [
+    {
+      "titulo": "satisfechos con el trabajo del equipo",
+      "quote": "pesar de los retos iniciales, ahora todo está comenzando a encajar perfectamente. La colaboración está\n                  resultando cada vez más creativa, exigente y profesional. Especialmente valoramos la dedicación y\n                  conocimiento del equipo; Han demostrado un control y entendimiento excepcionales de nuestra cuenta,\n                  respondiendo de manera inmediata a nuestras necesidades y aportando un valor significativo. Creemos\n                  firmemente que, con su apoyo, estamos en el camino correcto para hacer nuestro negocio online rentable\n                  y sostenible.",
+      "autor": "Dani Ortiz",
+      "rol": "CoFounder & CEO, The Cool Bottles",
+      "logo_class": "h-16 w-16 object-contain"
+    }
+  ],
+  "testimonios_logo": "/imgs/cool-logo-dark.avif",
+  "testimonios_logo_alt": "Logo de Bobo Choses",
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

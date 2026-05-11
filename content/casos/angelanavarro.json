@@ -1,0 +1,70 @@
+{
+  "slug": "angelanavarro",
+  "cliente": "Ángela Navarro",
+  "logo": {
+    "src": "imgs/angela-logo-dark.png",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "Ángela",
+    "title_part2": "Navarro",
+    "description": "Ángela Navarro ha emergido como un pilar en el sector de la belleza oncológica, ofreciendo soluciones\n              estéticas adaptadas. Con una variedad que incluye desde pelucas de alta calidad hasta la exclusiva línea\n              de cosméticos ADAPTA, se dedican con pasión a mantener la belleza y el bienestar en los momentos más\n              retadores."
+  },
+  "reto": [
+    "Pese a la calidad y el valor añadido de sus productos y servicios, el reto estaba en impulsar\n            simultáneamente el interés por las pelucas y potenciar las ventas de su línea ADAPTA. Necesitábamos\n            maximizar tanto la visibilidad como la conversión en estas dos áreas del negocio."
+  ],
+  "image": {
+    "src": "imgs/angela.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "Empezamos a colaborar a principios de 2021. Para abordar este complejo desafío, diseñamos una\n                estrategia integral, enfocándonos en cada nivel del embudo de marketing. Iniciamos con campañas de\n                visibilidad, presentando la exclusiva propuesta de valor de Ángela Navarro a nuevas audiencias.\n                Introducimos campañas en buscadores, centradas en términos específicos ligados a la belleza oncológica y\n                pelucas.",
+    "Apostamos por campañas de remarketing que no solo retomaban el interés inicial de los usuarios, sino\n                que también se esforzaban en resaltar el potencial a largo plazo de la línea cosmética ADAPTA. Con el\n                tiempo, el equipo ha ido creciendo y el proyecto sigue escalando!"
+  ],
+  "kpis": [
+    {
+      "value": "+105%",
+      "label": "Usuarios",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+60%",
+      "label": "LEADS",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+87%",
+      "label": "Facturación bruta",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": {
+    "linea1": "Lo que más valoran no ",
+    "linea2": "es solo lo que hacemos, ",
+    "linea3_highlight": "es cómo lo hacemos"
+  },
+  "testimonios": [
+    {
+      "titulo": "Es como tener al equipo dentro de casa",
+      "quote": "Son súper proactivos, están siempre detrás ofreciendo soluciones.",
+      "autor": "BEA GUERRERO",
+      "rol": "Directora , Angela Navarro",
+      "logo_class": "h-16 w-16 object-contain"
+    },
+    {
+      "titulo": "Son un complemento perfecto",
+      "quote": "Están totalmente integrados en el desarrollo de todos nuestros proyectos. Muchas gracias!",
+      "autor": "MER GIL",
+      "rol": "Directora de Comunicación, Angela Navarro",
+      "logo_class": "h-16 w-16  object-contain"
+    }
+  ],
+  "testimonios_logo": "/imgs/angela-logo-dark.png",
+  "testimonios_logo_alt": "Logo de Bobo Choses",
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}
