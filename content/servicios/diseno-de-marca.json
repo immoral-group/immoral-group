@@ -11,7 +11,54 @@
   "hero": {
     "eyebrow": "Diseño de Marca y Contenidos:",
     "title_html": "Precisión Artesanal<br>con el Poder de la<br>Tecnología",
-    "subtitle_html": "Tu marca no es solo un logo.<br>Es una historia, una identidad, una experiencia.<br>Y nosotros la diseñamos a medida."
+    "subtitle_html": "Tu marca no es solo un logo.<br>Es una historia, una identidad, una experiencia.<br>Y nosotros la diseñamos a medida.",
+    "spline_url": "https://my.spline.design/fairyparticles-676e516fd9b6eafb13417dd724ffbca7/"
+  },
+  "video_section": {
+    "video": "imgs/hero-imcontent.mp4"
+  },
+  "services_grid": {
+    "title": "¿Qué podemos hacer por ti?",
+    "intro": "Desde la esencia visual hasta la narrativa de tu marca, nuestro equipo creativo trabaja para hacer que tu empresa se vea, se sienta y se recuerde.",
+    "items": [
+      { "title_html": "Rebranding", "description": "Evolucionamos tu marca respetando su esencia, adaptándola a nuevos objetivos y contextos de crecimiento.", "media_type": "img", "media_src": "/imgs/design-hover-1.webp", "scale": "150" },
+      { "title_html": "Motion<br>Design", "description": "Animaciones y piezas dinámicas que aportan ritmo, claridad y diferenciación a tu comunicación visual.", "media_type": "video", "media_src": "/imgs/design-hover-2.webm", "scale": "150" },
+      { "title_html": "Vídeos UGC", "description": "Transformamos anuncios publicitarios en contenido natural y creíble, pensado para conectar y convertir en redes.", "media_type": "video", "media_src": "/imgs/design-hover-3.webm", "scale": "150" },
+      { "title_html": "Creatividades<br>para Paid Media", "description": "Diseñamos piezas publicitarias orientadas a resultados, alineadas con la estrategia y optimizadas para cada plataforma.", "media_type": "img", "media_src": "/imgs/design-hover-4.webp", "scale": "150" },
+      { "title_html": "Contenido<br>para redes", "description": "Creamos contenido visual y narrativo coherente con tu marca, diseñado para construir comunidad y relevancia.", "media_type": "img", "media_src": "/imgs/design-hover-5.webp", "scale": "150" },
+      { "title_html": "Copywriting y<br>storytelling de marca", "description": "Desarrollamos mensajes claros y persuasivos que dan coherencia a tu comunicación y refuerzan tu posicionamiento.", "media_type": "img", "media_src": "/imgs/design-hover-6.webp", "scale": "125" },
+      { "title_html": "Presentaciones y<br>materiales corporativos", "description": "Diseñamos presentaciones y soportes visuales que comunican con claridad, orden y criterio profesional.", "media_type": "img", "media_src": "/imgs/design-hover-7.webp", "scale": "125" },
+      { "title_html": "Diseño web<br>y UX/UI", "description": "Creamos experiencias digitales funcionales, estéticas y pensadas para guiar al usuario hacia la conversión.", "media_type": "img", "media_src": "/imgs/design-hover-8.webp", "scale": "150" },
+      { "title_html": "Creación de un pack de plantillas de anuncios efectivos", "description": "Desarrollamos sistemas de piezas reutilizables para escalar campañas sin perder coherencia ni calidad.", "media_type": "img", "media_src": "/imgs/design-hover-9.webp", "scale": "125" }
+    ]
+  },
+  "faq": {
+    "title": "¿Qué nos hace diferentes?",
+    "subtitle": "En el diseño de marca y contenido, el detalle lo es todo. No trabajamos con soluciones genéricas. Cada marca tiene una voz, un estilo y una historia propia.",
+    "items": [
+      { "question": "Estrategia + Creatividad", "answer": "No diseñamos por diseñar. Creamos con un propósito claro." },
+      { "question": "Basado en data, optimizado con IA", "answer": "Decisiones creativas respaldadas por análisis y tecnología." },
+      { "question": "Diseño a medida, sin fórmulas vacías", "answer": "Cada identidad es única, cada contenido es exclusivo." },
+      { "question": "Creatividad con impacto", "answer": "Diseñamos para generar recuerdo y conversión." }
+    ]
+  },
+  "como_lo_hacemos": {
+    "title": "Cómo lo hacemos",
+    "bg_image": "/imgs/design-1.webp",
+    "panels": [
+      { "number": 1, "h3_html": "Análisis &<br>Estrategia Visual", "description": "Investigamos, analizamos y comprendemos tu negocio, tu mercado y tu audiencia. No creamos sin estrategia.", "color_bg": "#2f80ed", "text_color": "white" },
+      { "number": 2, "h3_html": "Conceptualización<br>& Diseño", "description": "Desarrollamos una identidad única, fusionando creatividad, storytelling y tecnología para que tu marca hable por sí misma.", "color_bg": "#111111", "text_color": "white" },
+      { "number": 3, "h3_html": "Producción &<br>Edición de Contenidos", "description": "Desde piezas gráficas hasta videos en motion design o UGC, creamos contenido con alta calidad y optimizado para cada canal.", "color_bg": "white", "text_color": "black" },
+      { "number": 4, "h3_html": "Optimización<br>& Evolución", "description": "Tu marca y tus contenidos crecen contigo. No entregamos y desaparecemos. Refinamos y escalamos según los datos y las tendencias.", "color_bg": "#65fefa", "text_color": "black" }
+    ]
+  },
+  "kpis": {
+    "title": "Cuando el contenido está bien pensado, los números acompañan",
+    "items": [
+      { "icon": "/imgs/kpi-1.gif", "value": "+200%", "label": "De aumento en engagement en redes con contenido visual estratégico." },
+      { "icon": "/imgs/kpi-4.gif", "value": "+80", "label": "Marcas revalorizadas con rebrandings efectivos." },
+      { "icon": "/imgs/kpi-5.gif", "value": "+150%", "label": "De incremento en conversión de campañas de contenido." }
+    ]
   },
   "final_cta": {
     "title_html": "¿Listo para crear una <span class=\"text-[#2f80ed]\">marca que imacte</span> y contenido que conecte?",

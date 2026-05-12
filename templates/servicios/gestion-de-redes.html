@@ -411,14 +411,12 @@
             <!-- Left Column: Title & Intro -->
             <div class="space-y-8 flex flex-col justify-center">
                 <h2 class="text-5xl md:text-6xl font-black text-white leading-none">
-                    ¿Qué podemos<br>
-                    hacer por tí?
+                    {{ que_podemos_hacer.title_html | safe }}
                 </h2>
 
                 <div class="space-y-6 text-gray-300 font-light text-lg md:text-xl max-w-lg">
                     <p>
-                        Desde la esencia visual hasta la narrativa de tu marca, nuestro equipo creativo trabaja para
-                        hacer que tu empresa se vea, se sienta y se recuerde.
+                        {{ que_podemos_hacer.intro }}
                     </p>
                 </div>
             </div>
@@ -426,111 +424,23 @@
             <!-- Right Column: Grid of Cards -->
             <div class="grid sm:grid-cols-2 gap-6 w-full">
 
-                <!-- Card 1 -->
-                <div
-                    class="group relative rounded-[2rem] bg-[#050505] p-[3px] overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,199,230,0.3)]">
-                    <!-- Gradient Border Background (Visible on Hover) -->
-                    <div
-                        class="absolute top-[-250%] left-[-250%] w-[600%] h-[600%] bg-[#9ae9f6] group-hover:bg-[conic-gradient(from_0deg,#9ae9f6,#0068ea,#00c7e6,#9ae9f6)] transition-all duration-500 opacity-0 group-hover:opacity-100 group-hover:animate-[spin_4s_linear_infinite] blur-xl will-change-transform">
-                    </div>
-                    <!-- White Border (Default) -->
-                    <div
-                        class="absolute inset-0 border-[3px] border-white rounded-[2rem] group-hover:opacity-0 transition-opacity duration-300">
-                    </div>
-
-                    <!-- Card Content -->
-                    <div
-                        class="relative h-full bg-[#0a0a0a] rounded-[1.9rem] p-8 flex flex-col justify-between items-start gap-6 min-h-[320px]">
+                {% for card in que_podemos_hacer.cards %}<!-- Card {{ loop.index }} -->
+                <div class="group relative rounded-[2rem] bg-[#050505] p-[3px] overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,199,230,0.3)]">
+                    <div class="absolute top-[-250%] left-[-250%] w-[600%] h-[600%] bg-transparent group-hover:bg-[conic-gradient(from_0deg,#9ae9f6,#0068ea,#00c7e6,#9ae9f6)] transition-all duration-500 opacity-0 group-hover:opacity-100 group-hover:animate-[spin_4s_linear_infinite] blur-xl will-change-transform"></div>
+                    <div class="absolute inset-0 border-[3px] border-white rounded-[2rem] group-hover:opacity-0 transition-opacity duration-300"></div>
+                    <div class="relative h-full bg-[#0a0a0a] rounded-[1.9rem] p-8 flex flex-col justify-between items-start gap-6 min-h-[320px]">
                         <div class="w-12 h-12">
-                            <img src="/imgs/auto-ico-1.svg" alt="Icono Automatización"
-                                class="w-full h-full object-contain">
+                            <img src="{{ card.icon }}" alt="{{ card.icon_alt }}" class="w-full h-full object-contain">
                         </div>
                         <div class="space-y-3">
-                            <h3 class="text-xl font-bold text-white leading-tight">Estrategia de contenido y
-                                planificación
-                            </h3>
+                            <h3 class="text-xl font-bold text-white leading-tight">{{ card.title }}</h3>
                             <p class="text-sm text-gray-400 font-light leading-relaxed">
-                                Diseño, estrategia y community management en una solución completa.
+                                {{ card.description }}
                             </p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Card 2 -->
-                <div
-                    class="group relative rounded-[2rem] bg-[#050505] p-[3px] overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,199,230,0.3)]">
-                    <div
-                        class="absolute top-[-250%] left-[-250%] w-[600%] h-[600%] bg-transparent group-hover:bg-[conic-gradient(from_0deg,#9ae9f6,#0068ea,#00c7e6,#9ae9f6)] transition-all duration-500 opacity-0 group-hover:opacity-100 group-hover:animate-[spin_4s_linear_infinite] blur-xl will-change-transform">
-                    </div>
-                    <div
-                        class="absolute inset-0 border-[3px] border-white rounded-[2rem] group-hover:opacity-0 transition-opacity duration-300">
-                    </div>
-                    <div
-                        class="relative h-full bg-[#0a0a0a] rounded-[1.9rem] p-8 flex flex-col justify-between items-start gap-6 min-h-[320px]">
-                        <div class="w-12 h-12">
-                            <img src="/imgs/auto-ico-2.svg" alt="Icono Optimización"
-                                class="w-full h-full object-contain">
-                        </div>
-                        <div class="space-y-3">
-                            <h3 class="text-xl font-bold text-white leading-tight">Gestión integral de redes sociales
-                            </h3>
-                            <p class="text-sm text-gray-400 font-light leading-relaxed">
-                                Diseño, estrategia y community management en una solución completa.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div
-                    class="group relative rounded-[2rem] bg-[#050505] p-[3px] overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,199,230,0.3)]">
-                    <div
-                        class="absolute top-[-250%] left-[-250%] w-[600%] h-[600%] bg-transparent group-hover:bg-[conic-gradient(from_0deg,#9ae9f6,#0068ea,#00c7e6,#9ae9f6)] transition-all duration-500 opacity-0 group-hover:opacity-100 group-hover:animate-[spin_4s_linear_infinite] blur-xl will-change-transform">
-                    </div>
-                    <div
-                        class="absolute inset-0 border-[3px] border-white rounded-[2rem] group-hover:opacity-0 transition-opacity duration-300">
-                    </div>
-                    <div
-                        class="relative h-full bg-[#0a0a0a] rounded-[1.9rem] p-8 flex flex-col justify-between items-start gap-6 min-h-[320px]">
-                        <div class="w-12 h-12">
-                            <img src="/imgs/auto-ico-3.svg" alt="Icono Chatbots" class="w-full h-full object-contain">
-                        </div>
-                        <div class="space-y-3">
-                            <h3 class="text-xl font-bold text-white leading-tight">Automatización de interacción y
-                                respuestas a DMs</h3>
-                            <p class="text-sm text-gray-400 font-light leading-relaxed">
-                                Diseño, estrategia y community management en una solución completa.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div
-                    class="group relative rounded-[2rem] bg-[#050505] p-[3px] overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,199,230,0.3)]">
-                    <div
-                        class="absolute top-[-250%] left-[-250%] w-[600%] h-[600%] bg-transparent group-hover:bg-[conic-gradient(from_0deg,#9ae9f6,#0068ea,#00c7e6,#9ae9f6)] transition-all duration-500 opacity-0 group-hover:opacity-100 group-hover:animate-[spin_4s_linear_infinite] blur-xl will-change-transform">
-                    </div>
-                    <div
-                        class="absolute inset-0 border-[3px] border-white rounded-[2rem] group-hover:opacity-0 transition-opacity duration-300">
-                    </div>
-                    <div
-                        class="relative h-full bg-[#0a0a0a] rounded-[1.9rem] p-8 flex flex-col justify-between items-start gap-6 min-h-[320px]">
-                        <div class="w-12 h-12">
-                            <img src="/imgs/auto-ico-4.svg" alt="Icono Consultoría"
-                                class="w-full h-full object-contain">
-                        </div>
-                        <div class="space-y-3">
-                            <h3 class="text-xl font-bold text-white leading-tight">Servicio de community manager </h3>
-                            <p class="text-sm text-gray-400 font-light leading-relaxed">
-                                Diseño, estrategia y community management en una solución completa.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+                {% endfor %}
     </section>
 
     <!-- Section: FAQ / What makes us different -->
@@ -539,96 +449,36 @@
             <!-- Header -->
             <div class="mb-20">
                 <h2 class="text-5xl md:text-6xl font-black text-white mb-8 tracking-tight">
-                    ¿Qué nos hace diferentes?
+                    {{ faq.title }}
                 </h2>
                 <p class="text-gray-300 text-lg md:text-xl font-light max-w-3xl leading-relaxed">
-                    No llenamos feeds sin estrategia. No publicamos sin un objetivo claro. Creamos y gestionamos redes
-                    con impacto real y alineadas con tu negocio.
+                    {{ faq.subtitle }}
                 </p>
             </div>
 
             <!-- Accordion List -->
             <div class="border-t border-white">
-                <!-- Item 1 -->
+                {% for item in faq.items %}<!-- Item {{ loop.index }} -->
                 <div class="faq-item border-b border-white group">
-                    <button
-                        class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
-                        <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Estrategia
-                            personalizada</span>
+                    <button class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
+                        <span class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">{{ item.question }}</span>
                         <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
                             <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
                         </div>
                     </button>
                     <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
                         <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            Cada marca tiene una voz única y un plan adaptado a su audiencia.
+                            {{ item.answer }}
                         </p>
                     </div>
                 </div>
-
-                <!-- Item 2 -->
-                <div class="faq-item border-b border-white group">
-                    <button
-                        class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
-                        <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Creatividad
-                            con propósito</span>
-                        <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
-                            <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
-                        </div>
-                    </button>
-                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
-                        <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            Diseñamos contenido atractivo que no solo se ve bien, sino que genera resultados.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="faq-item border-b border-white group">
-                    <button
-                        class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
-                        <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Análisis
-                            y optimización constante</span>
-                        <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
-                            <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
-                        </div>
-                    </button>
-                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
-                        <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            Decisiones basadas en datos para maximizar engagement y conversión.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Item 4 -->
-                <div class="faq-item border-b border-white group">
-                    <button
-                        class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
-                        <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Automatización
-                            inteligente</span>
-                        <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
-                            <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
-                        </div>
-                    </button>
-                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
-                        <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            Soluciones tecnológicas para mejorar la eficiencia sin perder autenticidad.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+                {% endfor %}
     </section>
 
     <!-- Como lo hacemos Section -->
     <section class="bg-black py-24 px-6 lg:px-12 text-white overflow-hidden">
         <div class="max-w-[1400px] mx-auto">
-            <h2 class="text-center text-4xl md:text-5xl lg:text-6xl font-black mb-24 tracking-tight">Cómo lo hacemos
-            </h2>
+            <h2 class="text-center text-4xl md:text-5xl lg:text-6xl font-black mb-24 tracking-tight">{{ como_lo_hacemos.title }}</h2>
 
             <div class="relative grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
                 <!-- Connective Line (Desktop) -->
@@ -636,148 +486,47 @@
                     class="hidden md:block absolute top-[40px] left-[12.5%] w-[75%] h-px border-t border-dashed border-gray-600/50 z-0">
                 </div>
 
-                <!-- Step 1 -->
+                {% for step in como_lo_hacemos.steps %}<!-- Step {{ loop.index }} -->
                 <div class="relative z-10 flex flex-col items-center group">
-                    <!-- Icon -->
                     <div class="bg-black px-4 mb-10 relative">
-                        <div
-                            class="w-20 h-20 rounded-full border border-gray-700 flex items-center justify-center group-hover:border-[#2F80ED] transition-colors duration-300">
-                            <img src="/imgs/ico-gestion-como-1.svg" class="w-10 h-10 object-contain">
+                        <div class="w-20 h-20 rounded-full border border-gray-700 flex items-center justify-center group-hover:border-[#2F80ED] transition-colors duration-300">
+                            <img src="{{ step.icon }}" class="w-10 h-10 object-contain">
                         </div>
                     </div>
-                    <!-- Content -->
                     <div class="flex flex-row items-start gap-4 w-full px-4">
-                        <span class="text-6xl font-black leading-none text-white">1</span>
+                        <span class="text-6xl font-black leading-none text-white">{{ loop.index }}</span>
                         <div class="space-y-3 pt-2">
-                            <h3 class="font-bold text-lg leading-tight min-h-[48px]">Análisis &<br>Estrategia Visual
-                            </h3>
+                            <h3 class="font-bold text-lg leading-tight min-h-[48px]">{{ step.h3_html | safe }}</h3>
                             <p class="text-sm font-light text-gray-400 leading-relaxed">
-                                Definimos objetivos, analizamos tu audiencia y diseñamos un plan de acción.
+                                {{ step.description }}
                             </p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Step 2 -->
-                <div class="relative z-10 flex flex-col items-center group">
-                    <div class="bg-black px-4 mb-10 relative">
-                        <div
-                            class="w-20 h-20 rounded-full border border-gray-700 flex items-center justify-center group-hover:border-[#2F80ED] transition-colors duration-300">
-                            <img src="/imgs/ico-gestion-como-2.svg" class="w-10 h-10 object-contain">
-                        </div>
-                    </div>
-                    <div class="flex flex-row items-start gap-4 w-full px-4">
-                        <span class="text-6xl font-black leading-none text-white">2</span>
-                        <div class="space-y-3 pt-2">
-                            <h3 class="font-bold text-lg leading-tight min-h-[48px]">Conceptualización<br>& Diseño</h3>
-                            <p class="text-sm font-light text-gray-400 leading-relaxed">
-                                Diseñamos y optimizamos cada pieza para impactar en el momento adecuado.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="relative z-10 flex flex-col items-center group">
-                    <div class="bg-black px-4 mb-10 relative">
-                        <div
-                            class="w-20 h-20 rounded-full border border-gray-700 flex items-center justify-center group-hover:border-[#2F80ED] transition-colors duration-300">
-                            <img src="/imgs/ico-gestion-como-3.svg" class="w-10 h-10 object-contain">
-                        </div>
-                    </div>
-                    <div class="flex flex-row items-start gap-4 w-full px-4">
-                        <span class="text-6xl font-black leading-none text-white">3</span>
-                        <div class="space-y-3 pt-2">
-                            <h3 class="font-bold text-lg leading-tight min-h-[48px]">Producción & Edición<br>de
-                                Contenidos</h3>
-                            <p class="text-sm font-light text-gray-400 leading-relaxed">
-                                Interactuamos con tu comunidad, resolvemos dudas y mantenemos la conversación activa.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="relative z-10 flex flex-col items-center group">
-                    <div class="bg-black px-4 mb-10 relative">
-                        <div
-                            class="w-20 h-20 rounded-full border border-gray-700 flex items-center justify-center group-hover:border-[#2F80ED] transition-colors duration-300">
-                            <img src="/imgs/ico-gestion-como-4.svg" class="w-10 h-10 object-contain">
-                        </div>
-                    </div>
-                    <div class="flex flex-row items-start gap-4 w-full px-4">
-                        <span class="text-6xl font-black leading-none text-white">4</span>
-                        <div class="space-y-3 pt-2">
-                            <h3 class="font-bold text-lg leading-tight min-h-[48px]">Optimización<br>& Evolución</h3>
-                            <p class="text-sm font-light text-gray-400 leading-relaxed">
-                                Analizamos el rendimiento y ajustamos la estrategia para maximizar el impacto.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+                {% endfor %}
     </section>
 
     <!-- Section: Impacto Real (KPIs) -->
     <section class="bg-white py-24 px-6 md:px-12 relative z-10">
         <div class="w-full xl:px-24 mx-auto text-center">
             <h2 class="text-4xl md:text-3xl font-black text-black mb-20 tracking-tight">
-                Resultados de una estrategia de contenidos bien ejecutada
+                {{ kpis.title }}
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 max-w-6xl mx-auto">
-                <!-- KPI 1 -->
+                {% for kpi in kpis.items %}<!-- KPI {{ loop.index }} -->
                 <div class="flex flex-col items-center gap-6">
                     <div class="w-24 h-24 relative">
-                        <img src="/imgs/kpi-1.gif" alt="KPI 1" class="w-full h-full object-cover">
+                        <img src="{{ kpi.icon }}" alt="KPI {{ loop.index }}" class="w-full h-full object-cover">
                     </div>
                     <div class="space-y-4">
-                        <h3 class="text-6xl font-black text-[#2f80ed] leading-none tracking-tighter">
-                            +200%
-                        </h3>
+                        <h3 class="text-6xl font-black text-[{{ accent_color }}] leading-none tracking-tighter">{{ kpi.value }}</h3>
                         <p class="text-black font-light leading-relaxed max-w-xs mx-auto text-lg">
-                            Aumento del en engagement en redes con contenido visual estratégico.
+                            {{ kpi.label }}
                         </p>
                     </div>
                 </div>
-
-                <!-- KPI 2 -->
-                <div class="flex flex-col items-center gap-6">
-                    <div class="w-24 h-24 relative">
-                        <img src="/imgs/kpi-4.gif" alt="KPI 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="space-y-4">
-                        <h3 class="text-6xl font-black text-[#2f80ed] leading-none tracking-tighter">
-                            30000
-                        </h3>
-                        <p class="text-black font-light leading-relaxed max-w-xs mx-auto text-lg">
-                            Crecimiento constante de comunidad con contenido de alto impacto.
-
-                        </p>
-                    </div>
-                </div>
-
-                <!-- KPI 3 -->
-                <div class="flex flex-col items-center gap-6">
-                    <div class="w-24 h-24 relative">
-                        <img src="/imgs/kpi-5.gif" alt="KPI 3" class="w-full h-full object-cover">
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-center">
-                            <h3 class="text-6xl font-black text-[#2f80ed] leading-none tracking-tighter">
-                                +150%
-                            </h3>
-                        </div>
-                        <p class="text-black font-light leading-relaxed max-w-xs mx-auto text-lg">
-                            Incremento del tráfico web y leads desde redes sociales en un 150%.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+                {% endfor %}
     </section>
 
     <!-- Section: Final CTA -->

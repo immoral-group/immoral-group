@@ -366,184 +366,39 @@
             <!-- Left: Text -->
             <div class="space-y-8">
                 <h2 class="text-5xl md:text-6xl font-black text-white leading-tight tracking-tight">
-                    ¿Qué podemos<br>hacer por tí?
+                    {{ que_podemos_hacer.title_html | safe }}
                 </h2>
                 <p class="text-gray-300 font-light text-lg md:text-xl max-w-lg leading-relaxed">
-                    En Immoral, diseñamos estrategias de Influencer Marketing basadas en datos. No elegimos creadores al
-                    azar ni gestionamos campañas sin sentido. Nos aseguramos de que cada colaboración tenga un propósito
-                    claro y un impacto medible.
+                    {{ que_podemos_hacer.intro }}
                 </p>
             </div>
 
             <!-- Right: Interactive Boxes (Accordion style) -->
             <div class="flex flex-col md:flex-row h-[600px] gap-4 w-full">
 
-                <!-- Box 1 -->
-                <div
-                    class="group relative flex-1 hover:flex-[3.5] transition-all duration-700 ease-in-out overflow-hidden rounded-[3rem] cursor-pointer bg-zinc-900">
+                {% for box in que_podemos_hacer.boxes %}<!-- Box {{ loop.index }} -->
+                <div class="group relative flex-1 hover:flex-[3.5] transition-all duration-700 ease-in-out overflow-hidden rounded-[3rem] cursor-pointer bg-zinc-900">
                     <div class="absolute inset-0 z-0">
-                        <img src="/imgs/influ-bg-1.webp"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="">
-                        <div
-                            class="absolute inset-0 bg-black/50 group-hover:bg-black/75 transition-colors duration-500">
-                        </div>
+                        <img src="{{ box.image }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="">
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/75 transition-colors duration-500"></div>
                     </div>
-
-                    <div
-                        class="absolute inset-x-0 bottom-0 h-full z-10 flex flex-col justify-end p-6 text-white text-center">
-                        <!-- Small Title (Hides instantly on hover) -->
-                        <div
-                            class="absolute inset-x-0 bottom-12 transition-all duration-300 group-hover:opacity-0 group-hover:invisible">
-                            <h3
-                                class="text-[10px] font-bold uppercase tracking-[0.2em] px-2 whitespace-nowrap overflow-hidden">
-                                Selección
+                    <div class="absolute inset-x-0 bottom-0 h-full z-10 flex flex-col justify-end p-6 text-white text-center">
+                        <div class="absolute inset-x-0 bottom-12 transition-all duration-300 group-hover:opacity-0 group-hover:invisible">
+                            <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] px-2 whitespace-nowrap overflow-hidden">
+                                {{ box.label }}
                             </h3>
                         </div>
-
-                        <!-- Full Content (Appears only after box is open) -->
-                        <div
-                            class="opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out group-hover:delay-500 pb-8">
+                        <div class="opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out group-hover:delay-500 pb-8">
                             <h3 class="text-2xl md:text-2xl font-bold leading-tight mb-4 text-[#2F80ED]">
-                                Identificación y selección de influencers
+                                {{ box.title }}
                             </h3>
                             <p class="text-sm md:text-base font-light text-gray-200 px-6 leading-relaxed">
-                                Encontramos los perfiles que realmente conectan con tu audiencia.
+                                {{ box.description }}
                             </p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Box 2 -->
-                <div
-                    class="group relative flex-1 hover:flex-[3.5] transition-all duration-700 ease-in-out overflow-hidden rounded-[3rem] cursor-pointer bg-zinc-900">
-                    <div class="absolute inset-0 z-0">
-                        <img src="/imgs/influ-bg-2.webp"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="">
-                        <div
-                            class="absolute inset-0 bg-black/50 group-hover:bg-black/75 transition-colors duration-500">
-                        </div>
-                    </div>
-                    <div
-                        class="absolute inset-x-0 bottom-0 h-full z-10 flex flex-col justify-end p-6 text-white text-center">
-                        <div
-                            class="absolute inset-x-0 bottom-12 transition-all duration-300 group-hover:opacity-0 group-hover:invisible">
-                            <h3
-                                class="text-[10px] font-bold uppercase tracking-[0.2em] px-2 whitespace-nowrap overflow-hidden">
-                                Estrategia
-                            </h3>
-                        </div>
-                        <div
-                            class="opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out group-hover:delay-500 pb-8">
-                            <h3 class="text-2xl md:text-2xl font-bold leading-tight mb-4 text-[#2F80ED]">
-                                Estrategia integral de Influencer Marketing
-                            </h3>
-                            <p class="text-sm md:text-base font-light text-gray-200 px-6 leading-relaxed">
-                                Diseñamos planes personalizados para potenciar tu marca.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Box 3 -->
-                <div
-                    class="group relative flex-1 hover:flex-[3.5] transition-all duration-700 ease-in-out overflow-hidden rounded-[3rem] cursor-pointer bg-zinc-900">
-                    <div class="absolute inset-0 z-0">
-                        <img src="/imgs/influ-bg-3.webp"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="">
-                        <div
-                            class="absolute inset-0 bg-black/50 group-hover:bg-black/75 transition-colors duration-500">
-                        </div>
-                    </div>
-                    <div
-                        class="absolute inset-x-0 bottom-0 h-full z-10 flex flex-col justify-end p-6 text-white text-center">
-                        <div
-                            class="absolute inset-x-0 bottom-12 transition-all duration-300 group-hover:opacity-0 group-hover:invisible">
-                            <h3
-                                class="text-[10px] font-bold uppercase tracking-[0.2em] px-2 whitespace-nowrap overflow-hidden">
-                                Análisis
-                            </h3>
-                        </div>
-                        <div
-                            class="opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out group-hover:delay-500 pb-8">
-                            <h3 class="text-2xl md:text-2xl font-bold leading-tight mb-4 text-[#2F80ED]">
-                                Recopilación y análisis de datos
-                            </h3>
-                            <p class="text-sm md:text-base font-light text-gray-200 px-6 leading-relaxed">
-                                Evaluamos métricas clave para garantizar autenticidad y rendimiento.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Box 4 -->
-                <div
-                    class="group relative flex-1 hover:flex-[3.5] transition-all duration-700 ease-in-out overflow-hidden rounded-[3rem] cursor-pointer bg-zinc-900">
-                    <div class="absolute inset-0 z-0">
-                        <img src="/imgs/influ-bg-4.webp"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="">
-                        <div
-                            class="absolute inset-0 bg-black/50 group-hover:bg-black/75 transition-colors duration-500">
-                        </div>
-                    </div>
-                    <div
-                        class="absolute inset-x-0 bottom-0 h-full z-10 flex flex-col justify-end p-6 text-white text-center">
-                        <div
-                            class="absolute inset-x-0 bottom-12 transition-all duration-300 group-hover:opacity-0 group-hover:invisible">
-                            <h3
-                                class="text-[10px] font-bold uppercase tracking-[0.2em] px-2 whitespace-nowrap overflow-hidden">
-                                Gestión
-                            </h3>
-                        </div>
-                        <div
-                            class="opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out group-hover:delay-500 pb-8">
-                            <h3 class="text-2xl md:text-2xl font-bold leading-tight mb-4 text-[#2F80ED]">
-                                Gestión de influencers
-                            </h3>
-                            <p class="text-sm md:text-base font-light text-gray-200 px-6 leading-relaxed">
-                                Negociamos, coordinamos y supervisamos cada colaboración.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Box 5 -->
-                <div
-                    class="group relative flex-1 hover:flex-[3.5] transition-all duration-700 ease-in-out overflow-hidden rounded-[3rem] cursor-pointer bg-zinc-900">
-                    <div class="absolute inset-0 z-0">
-                        <img src="/imgs/influ-bg-5.webp"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="">
-                        <div
-                            class="absolute inset-0 bg-black/50 group-hover:bg-black/75 transition-colors duration-500">
-                        </div>
-                    </div>
-                    <div
-                        class="absolute inset-x-0 bottom-0 h-full z-10 flex flex-col justify-end p-6 text-white text-center">
-                        <div
-                            class="absolute inset-x-0 bottom-12 transition-all duration-300 group-hover:opacity-0 group-hover:invisible">
-                            <h3
-                                class="text-[10px] font-bold uppercase tracking-[0.2em] px-2 whitespace-nowrap overflow-hidden">
-                                Contenido
-                            </h3>
-                        </div>
-                        <div
-                            class="opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out group-hover:delay-500 pb-8">
-                            <h3 class="text-2xl md:text-2xl font-bold leading-tight mb-4 text-[#2F80ED]">
-                                Gestión de creadores de UGC
-                            </h3>
-                            <p class="text-sm md:text-base font-light text-gray-200 px-6 leading-relaxed">
-                                Seleccionamos y optimizamos contenido generado por usuarios para campañas efectivas.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+                {% endfor %}
     </section>
 
     <!-- Section: FAQ / What makes us different -->
@@ -552,169 +407,53 @@
             <!-- Header -->
             <div class="mb-20">
                 <h2 class="text-5xl md:text-6xl font-black text-white mb-8 tracking-tight">
-                    ¿Qué nos hace diferentes?
+                    {{ faq.title }}
                 </h2>
                 <p class="text-gray-300 text-lg md:text-xl font-light max-w-3xl leading-relaxed">
-                    No pagamos por visibilidad vacía. No gestionamos campañas sin datos. Diseñamos estrategias precisas,
-                    escalables y basadas en ROI.
-
+                    {{ faq.subtitle }}
                 </p>
             </div>
 
             <!-- Accordion List -->
             <div class="border-t border-white">
-                <!-- Item 1 -->
+                {% for item in faq.items %}<!-- Item {{ loop.index }} -->
                 <div class="faq-item border-b border-white group">
-                    <button
-                        class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
-                        <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Selección
-                            Estrátegica</span>
+                    <button class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
+                        <span class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">{{ item.question }}</span>
                         <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
                             <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
                         </div>
                     </button>
                     <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
                         <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            No cualquier influencer vale. Elegimos según datos, afinidad y potencial de conversión.
+                            {{ item.answer }}
                         </p>
                     </div>
                 </div>
-
-                <!-- Item 2 -->
-                <div class="faq-item border-b border-white group">
-                    <button
-                        class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
-                        <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Datos
-                            en el centro</span>
-                        <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
-                            <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
-                        </div>
-                    </button>
-                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
-                        <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            Validamos métricas reales para evitar colaboraciones sin impacto.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="faq-item border-b border-white group">
-                    <button
-                        class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
-                        <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Gestión
-                            integral </span>
-                        <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
-                            <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
-                        </div>
-                    </button>
-                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
-                        <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            Nos encargamos de todo el proceso para que no tengas que preocuparte por nada.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Item 4 -->
-                <div class="faq-item border-b border-white group">
-                    <button
-                        class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
-                        <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Escalabilidad
-                        </span>
-                        <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
-                            <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
-                        </div>
-                    </button>
-                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
-                        <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            Desde campañas puntuales hasta programas continuos de embajadores de marca.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Item 5 -->
-                <div class="faq-item border-b border-white group">
-                    <button
-                        class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
-                        <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">UGC
-                            con propósito</span>
-                        <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
-                            <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
-                        </div>
-                    </button>
-                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
-                        <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            No es solo contenido, es contenido diseñado para vender.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+                {% endfor %}
     </section>
 
     <!-- Section: Impacto Real (KPIs) -->
     <section class="bg-white py-24 px-6 md:px-12 relative z-10">
         <div class="w-full xl:px-24 mx-auto text-center">
             <h2 class="text-4xl md:text-3xl font-black text-black mb-20 tracking-tight">
-                Resultados de automatizar con criterio
+                {{ kpis.title }}
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 max-w-6xl mx-auto">
-                <!-- KPI 1 -->
+                {% for kpi in kpis.items %}<!-- KPI {{ loop.index }} -->
                 <div class="flex flex-col items-center gap-6">
                     <div class="w-24 h-24 relative">
-                        <img src="/imgs/kpi-1.gif" alt="KPI 1" class="w-full h-full object-cover">
+                        <img src="{{ kpi.icon }}" alt="KPI {{ loop.index }}" class="w-full h-full object-cover">
                     </div>
                     <div class="space-y-4">
-                        <h3 class="text-6xl font-black text-[#2f80ed] leading-none tracking-tighter">
-                            +300%
-                        </h3>
+                        <h3 class="text-6xl font-black text-[{{ accent_color }}] leading-none tracking-tighter">{{ kpi.value }}</h3>
                         <p class="text-black font-light leading-relaxed max-w-xs mx-auto text-lg">
-                            Incremento en engagement con estrategias optimizadas.
-
+                            {{ kpi.label }}
                         </p>
                     </div>
                 </div>
-
-                <!-- KPI 2 -->
-                <div class="flex flex-col items-center gap-6">
-                    <div class="w-24 h-24 relative">
-                        <img src="/imgs/kpi-5.gif" alt="KPI 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="space-y-4">
-                        <h3 class="text-6xl font-black text-[#2f80ed] leading-none tracking-tighter">
-                            +4X
-                        </h3>
-                        <p class="text-black font-light leading-relaxed max-w-xs mx-auto text-lg">
-                            Más conversión con influencers alineados con la audiencia de la marca.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- KPI 3 -->
-                <div class="flex flex-col items-center gap-6">
-                    <div class="w-24 h-24 relative">
-                        <img src="/imgs/kpi-4.gif" alt="KPI 3" class="w-full h-full object-cover">
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-center">
-                            <h3 class="text-6xl font-black text-[#2f80ed] leading-none tracking-tighter">
-                                +120
-                            </h3>
-                        </div>
-                        <p class="text-black font-light leading-relaxed max-w-xs mx-auto text-lg">
-                            Colaboraciones realizadas en 2025
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+                {% endfor %}
     </section>
 
     <!-- Section: Final CTA -->

@@ -347,7 +347,7 @@
 
         <!-- Right Side: Spline Iframe -->
         <div class="w-full md:w-1/2 h-full absolute md:relative top-0 right-0 z-0">
-            <iframe src="https://my.spline.design/fairyparticles-676e516fd9b6eafb13417dd724ffbca7/" frameborder="0"
+            <iframe src="{{ hero.spline_url }}" frameborder="0"
                 width="100%" height="100%" class="w-full h-full object-cover">
             </iframe>
         </div>
@@ -355,7 +355,7 @@
 
     <!-- Video Section (Scrolls over Hero) -->
     <section class="relative w-full h-screen z-10 mt-[100vh] bg-black">
-        <video src="imgs/hero-imcontent.mp4" autoplay muted loop playsinline width="1920" height="1080"></video>
+        <video src="{{ video_section.video }}" autoplay muted loop playsinline width="1920" height="1080"></video>
     </section>
 
     <!-- Services Grid Section -->
@@ -363,184 +363,31 @@
         <!-- Title & Description -->
         <div class="max-w-4xl mb-20">
             <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">
-                ¿Qué podemos hacer por ti?
+                {{ services_grid.title }}
             </h2>
             <p class="text-lg font-light text-gray-300 max-w-2xl leading-relaxed">
-                Desde la esencia visual hasta la narrativa de tu marca, nuestro equipo creativo trabaja para hacer que
-                tu empresa se vea, se sienta y se recuerde.
+                {{ services_grid.intro }}
             </p>
         </div>
 
         <!-- Grid -->
         <div class="grid grid-cols-1 md:grid-cols-3 border-t border-l border-gray-800">
-            <!-- Item 1: Rebranding -->
-            <div
-                class="group relative aspect-[16/13]  xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
-                <!-- Hover Image -->
-                <img src="/imgs/design-hover-1.webp" alt=""
-                    class="absolute inset-0 w-full xl:-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-500 z-0">
-
-                <!-- Content -->
+            {% for item in services_grid.items %}<!-- Item {{ loop.index }} -->
+            <div class="group relative aspect-[16/13] xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">{% if item.media_type == "video" %}
+                <video src="{{ item.media_src }}" autoplay muted loop playsinline
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-500 z-0"></video>{% else %}
+                <img src="{{ item.media_src }}" alt=""
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-{% if loop.index <= 3 %}20{% else %}15{% endif %} transition-opacity duration-500 z-0">{% endif %}
                 <div class="relative z-10 pointer-events-none">
-                    <h3
-                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-150 origin-left">
-                        Rebranding</h3>
+                    <h3 class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-{{ item.scale }} origin-left">{{ item.title_html | safe }}</h3>
                 </div>
                 <div class="relative z-10 pointer-events-none">
                     <p class="text-base text-gray-300 group-hover:text-white transition-colors">
-                        Evolucionamos tu marca respetando su esencia, adaptándola a nuevos objetivos y contextos de
-                        crecimiento.
+                        {{ item.description }}
                     </p>
                 </div>
             </div>
-
-            <!-- Item 2: Motion Design -->
-            <div
-                class="group relative aspect-[16/13]  xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
-                <video src="/imgs/design-hover-2.webm" autoplay muted loop playsinline
-                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-500 z-0">
-                </video>
-                <div class="relative z-10 pointer-events-none">
-                    <h3
-                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-150 origin-left">
-                        Motion<br>Design</h3>
-                </div>
-                <div class="relative z-10 pointer-events-none">
-                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
-                        Animaciones y piezas dinámicas que aportan ritmo, claridad y diferenciación a tu comunicación
-                        visual.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Item 3: Vídeos UGC -->
-            <div
-                class="group relative aspect-[16/13] xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
-                <video src="/imgs/design-hover-3.webm" autoplay muted loop playsinline
-                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-500 z-0">
-                </video>
-                <div class="relative z-10 pointer-events-none">
-                    <h3
-                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-150 origin-left">
-                        Vídeos UGC</h3>
-                </div>
-                <div class="relative z-10 pointer-events-none">
-                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
-                        Transformamos anuncios publicitarios en contenido natural y creíble, pensado para conectar y
-                        convertir en redes.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Item 4: Creatividades para Paid Media -->
-            <div
-                class="group relative aspect-[16/13] xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
-                <img src="/imgs/design-hover-4.webp" alt=""
-                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-15 transition-opacity duration-500 z-0">
-                <div class="relative z-10 pointer-events-none">
-                    <h3
-                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-150 origin-left">
-                        Creatividades<br>para Paid Media</h3>
-                </div>
-                <div class="relative z-10 pointer-events-none">
-                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
-                        Diseñamos piezas publicitarias orientadas a resultados, alineadas con la estrategia y
-                        optimizadas para cada plataforma.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Item 5: Contenido para redes -->
-            <div
-                class="group relative aspect-[16/13] xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
-                <img src="/imgs/design-hover-5.webp" alt=""
-                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-15 transition-opacity duration-500 z-0">
-                <div class="relative z-10 pointer-events-none">
-                    <h3
-                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-150 origin-left">
-                        Contenido<br>para redes</h3>
-                </div>
-                <div class="relative z-10 pointer-events-none">
-                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
-                        Creamos contenido visual y narrativo coherente con tu marca, diseñado para construir comunidad y
-                        relevancia.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Item 6: Copywriting y storytelling -->
-            <div
-                class="group relative aspect-[16/13] xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
-                <img src="/imgs/design-hover-6.webp" alt=""
-                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-15 transition-opacity duration-500 z-0">
-                <div class="relative z-10 pointer-events-none">
-                    <h3
-                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-125 origin-left">
-                        Copywriting y<br>storytelling de marca</h3>
-                </div>
-                <div class="relative z-10 pointer-events-none">
-                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
-                        Desarrollamos mensajes claros y persuasivos que dan coherencia a tu comunicación y refuerzan tu
-                        posicionamiento.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Item 7: Presentaciones -->
-            <div
-                class="group relative aspect-[16/13] xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
-                <img src="/imgs/design-hover-7.webp" alt=""
-                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-15 transition-opacity duration-500 z-0">
-                <div class="relative z-10 pointer-events-none">
-                    <h3
-                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-125 origin-left">
-                        Presentaciones y<br>materiales corporativos</h3>
-                </div>
-                <div class="relative z-10 pointer-events-none">
-                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
-                        Diseñamos presentaciones y soportes visuales que comunican con claridad, orden y criterio
-                        profesional.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Item 8: Diseño web y UX/UI -->
-            <div
-                class="group relative aspect-[16/13] xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
-                <img src="/imgs/design-hover-8.webp" alt=""
-                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-15 transition-opacity duration-500 z-0">
-                <div class="relative z-10 pointer-events-none">
-                    <h3
-                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-150 origin-left">
-                        Diseño web<br>y UX/UI</h3>
-                </div>
-                <div class="relative z-10 pointer-events-none">
-                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
-                        Creamos experiencias digitales funcionales, estéticas y pensadas para guiar al usuario hacia la
-                        conversión.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Item 9: Pack de plantillas -->
-            <div
-                class="group relative aspect-[16/13] xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
-                <img src="/imgs/design-hover-9.webp" alt=""
-                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-15 transition-opacity duration-500 z-0">
-                <div class="relative z-10 pointer-events-none">
-                    <h3
-                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-125 origin-left">
-                        Creación de un pack de plantillas de
-                        anuncios efectivos
-                    </h3>
-                </div>
-                <div class="relative z-10 pointer-events-none">
-                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
-                        Desarrollamos sistemas de piezas reutilizables para escalar campañas sin perder coherencia ni
-                        calidad.
-                    </p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
@@ -550,343 +397,91 @@
             <!-- Header -->
             <div class="mb-20">
                 <h2 class="text-5xl md:text-6xl font-black text-white mb-8 tracking-tight">
-                    ¿Qué nos hace diferentes?
+                    {{ faq.title }}
                 </h2>
                 <p class="text-gray-300 text-lg md:text-xl font-light max-w-3xl leading-relaxed">
-                    En el diseño de marca y contenido, el detalle lo es todo. No trabajamos con soluciones genéricas.
-                    Cada marca tiene una voz, un estilo y una historia propia.
+                    {{ faq.subtitle }}
                 </p>
             </div>
 
             <!-- Accordion List -->
             <div class="border-t border-white">
-                <!-- Item 1 -->
+                {% for item in faq.items %}<!-- Item {{ loop.index }} -->
                 <div class="faq-item border-b border-white group">
-                    <button
-                        class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
-                        <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Estrategia
-                            + Creatividad</span>
+                    <button class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
+                        <span class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">{{ item.question }}</span>
                         <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
                             <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
                         </div>
                     </button>
                     <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
                         <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            No diseñamos por diseñar. Creamos con un propósito claro.
+                            {{ item.answer }}
                         </p>
                     </div>
                 </div>
-
-                <!-- Item 2 -->
-                <div class="faq-item border-b border-white group">
-                    <button
-                        class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
-                        <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Basado
-                            en data, optimizado con IA</span>
-                        <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
-                            <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
-                        </div>
-                    </button>
-                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
-                        <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            Decisiones creativas respaldadas por análisis y tecnología.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="faq-item border-b border-white group">
-                    <button
-                        class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
-                        <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Diseño
-                            a medida, sin fórmulas vacías</span>
-                        <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
-                            <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
-                        </div>
-                    </button>
-                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
-                        <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            Cada identidad es única, cada contenido es exclusivo.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Item 4 -->
-                <div class="faq-item border-b border-white group">
-                    <button
-                        class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
-                        <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Creatividad
-                            con impacto</span>
-                        <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
-                            <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
-                        </div>
-                    </button>
-                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
-                        <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            Diseñamos para generar recuerdo y conversión.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+                {% endfor %}
     </section>
 
     <!-- How We Do It - Accordion Section -->
     <section class="min-h-screen bg-black flex flex-col md:flex-row relative z-10 overflow-hidden" id="como-lo-hacemos">
 
-        <!-- Panel 1: Análisis & Estrategia Visual -->
-        <article
-            class="accord-panel relative flex-grow-[6] md:w-[64%] w-full transition-all duration-700 ease-in-out cursor-pointer group border-b md:border-b-0 md:border-r border-white/10 overflow-hidden active"
-            onclick="toggleAccordion(this, 1)">
-            <div
-                class="absolute inset-0 z-0 opacity-100 transition-opacity duration-700 bg-[url('/imgs/design-1.webp')] bg-cover bg-center">
-            </div>
-            <div
-                class="absolute inset-0 z-10 bg-[#2f80ed]/90 transition-all duration-700 backdrop-blur-sm group-[.active]:backdrop-blur-0 mix-blend-multiply">
-            </div>
-            <div class="absolute inset-0 z-10 bg-[#2f80ed]/80 transition-all duration-700"></div>
+        {% for panel in como_lo_hacemos.panels %}<!-- Panel {{ panel.number }} -->
+        <article class="accord-panel relative {% if loop.first %}flex-grow-[6] md:w-[64%]{% else %}flex-grow md:w-[12%]{% endif %} w-full transition-all duration-700 ease-in-out cursor-pointer group border-b md:border-b-0 md:border-r border-white/10 overflow-hidden{% if loop.first %} active{% endif %}" onclick="toggleAccordion(this, {{ panel.number }})">
+            <div class="absolute inset-0 z-0 {% if loop.first %}opacity-100{% else %}opacity-0 group-[.active]:opacity-100{% endif %} transition-opacity duration-700 bg-[url('{{ como_lo_hacemos.bg_image }}')] bg-cover bg-center"></div>
+            {% if loop.first %}<div class="absolute inset-0 z-10 bg-[{{ panel.color_bg }}]/90 transition-all duration-700 backdrop-blur-sm group-[.active]:backdrop-blur-0 mix-blend-multiply"></div>
+            <div class="absolute inset-0 z-10 bg-[{{ panel.color_bg }}]/80 transition-all duration-700"></div>{% else %}<div class="absolute inset-0 z-10 bg-{% if panel.color_bg == 'white' %}white{% else %}[{{ panel.color_bg }}]{% endif %} group-[.active]:bg-{% if panel.color_bg == 'white' %}white{% else %}[{{ panel.color_bg }}]{% endif %}/90 transition-all duration-700"></div>{% endif %}
 
-            <!-- Active Content -->
-            <div
-                class="relative z-20 h-full p-8 md:p-14 flex flex-col pointer-events-none group-[.active]:pointer-events-auto">
-                <div class="expanded-content transition-opacity duration-500 delay-300 opacity-100">
-                    <h2 class="text-4xl md:text-6xl font-black text-white leading-tight xl:mt-32">
-                        Cómo lo hacemos
+            <div class="relative z-20 h-full p-8 md:p-14 flex flex-col pointer-events-none group-[.active]:pointer-events-auto">
+                <div class="expanded-content transition-opacity duration-500 delay-300 {% if loop.first %}opacity-100{% else %}opacity-0 hidden{% endif %}">
+                    <h2 class="text-4xl md:text-6xl font-black text-{{ panel.text_color }} leading-tight xl:mt-32">
+                        {{ como_lo_hacemos.title }}
                     </h2>
                 </div>
                 <div class="flex-grow"></div>
-                <div
-                    class="expanded-content transition-opacity duration-500 delay-300 max-w-xl mb-4 md:mb-0 relative z-30 opacity-100">
-                    <h3 class="text-3xl md:text-5xl font-light text-white mb-6">
-                        Análisis &<br>Estrategia Visual
-                    </h3>
-                    <div class="w-12 h-1 bg-white mb-8"></div>
-                    <p class="text-lg md:text-xl text-white font-light leading-relaxed">
-                        Investigamos, analizamos y comprendemos tu negocio, tu mercado y tu audiencia. No creamos sin
-                        estrategia.
+                <div class="expanded-content transition-opacity duration-500 delay-300 max-w-xl mb-4 md:mb-0 relative z-30 {% if loop.first %}opacity-100{% else %}opacity-0 hidden{% endif %}">
+                    <h3 class="text-3xl md:text-5xl font-light text-{{ panel.text_color }} mb-6">{{ panel.h3_html | safe }}</h3>
+                    <div class="w-12 h-1 bg-{{ panel.text_color }} mb-8"></div>
+                    <p class="text-lg md:text-xl text-{{ panel.text_color }} font-light leading-relaxed">
+                        {{ panel.description }}
                     </p>
                 </div>
             </div>
 
-            <!-- Collapsed Content (Vertical) -->
-            <div
-                class="collapsed-content absolute inset-x-0 bottom-0 md:bottom-[30%] pointer-events-none flex justify-center py-6 opacity-0 transition-opacity duration-500 z-20">
+            <div class="collapsed-content absolute inset-x-0 bottom-0 md:bottom-[30%] pointer-events-none flex justify-center py-6 {% if loop.first %}opacity-0{% else %}opacity-100{% endif %} transition-opacity duration-500 z-20">
                 <div class="transform md:-rotate-90 md:origin-center whitespace-nowrap">
-                    <h3 class="text-lg md:text-xl font-bold text-white text-center md:text-left">Análisis
-                        &<br>Estrategia Visual
-                    </h3>
+                    <h3 class="text-lg md:text-xl font-bold text-{{ panel.text_color }} text-center md:text-left">{{ panel.h3_html | safe }}</h3>
                 </div>
             </div>
 
-            <!-- Number -->
-            <div
-                class="absolute z-20 transition-all duration-700 ease-in-out 
-                        bottom-0 right-4 md:right-1/2 md:translate-x-1/2 scale-75
-                        group-[.active]:bottom-4 group-[.active]:right-4 md:group-[.active]:bottom-8 md:group-[.active]:right-8 md:group-[.active]:translate-x-0 md:group-[.active]:scale-100">
-                <span class="text-[6rem] md:text-9x font-black text-white leading-none tracking-tighter">1</span>
+            <div class="absolute z-20 transition-all duration-700 ease-in-out bottom-0 right-4 md:right-1/2 md:translate-x-1/2 scale-75 group-[.active]:bottom-4 group-[.active]:right-4 md:group-[.active]:bottom-8 md:group-[.active]:right-8 md:group-[.active]:translate-x-0 md:group-[.active]:scale-100">
+                <span class="text-[6rem] md:text-9x font-black text-{{ panel.text_color }} leading-none tracking-tighter">{{ panel.number }}</span>
             </div>
         </article>
-
-        <!-- Panel 2: Conceptualización & Diseño -->
-        <article
-            class="accord-panel relative flex-grow md:w-[12%] w-full transition-all duration-700 ease-in-out cursor-pointer group border-b md:border-b-0 md:border-r border-white/10 overflow-hidden"
-            onclick="toggleAccordion(this, 2)">
-            <div
-                class="absolute inset-0 z-0 opacity-0 group-[.active]:opacity-100 transition-opacity duration-700 bg-[url('/imgs/design-1.webp')] bg-cover bg-center">
-            </div>
-            <div class="absolute inset-0 z-10 bg-[#111111] group-[.active]:bg-[#111111]/90 transition-all duration-700">
-            </div>
-
-            <div
-                class="relative z-20 h-full p-8 md:p-14 flex flex-col pointer-events-none group-[.active]:pointer-events-auto">
-                <div class="expanded-content transition-opacity duration-500 delay-300 opacity-0 hidden">
-                    <h2 class="text-4xl md:text-6xl font-black text-white leading-tight xl:mt-32">
-                        Cómo lo hacemos
-                    </h2>
-                </div>
-                <div class="flex-grow"></div>
-                <div
-                    class="expanded-content transition-opacity duration-500 delay-300 max-w-xl mb-4 md:mb-0 relative z-30 opacity-0 hidden">
-                    <h3 class="text-3xl md:text-5xl font-light text-white mb-6">Conceptualización<br>& Diseño</h3>
-                    <div class="w-12 h-1 bg-white mb-8"></div>
-                    <p class="text-lg md:text-xl text-white font-light leading-relaxed">
-                        Desarrollamos una identidad única, fusionando creatividad, storytelling y tecnología para que tu
-                        marca hable por sí misma.
-                    </p>
-                </div>
-            </div>
-
-            <div
-                class="collapsed-content absolute inset-x-0 bottom-0 md:bottom-[30%] pointer-events-none flex justify-center py-6 opacity-100 transition-opacity duration-500 z-20">
-                <div class="transform md:-rotate-90 md:origin-center whitespace-nowrap">
-                    <h3 class="text-lg md:text-xl font-bold text-white text-center md:text-left">Conceptualización &<br>
-                        Diseño
-                    </h3>
-                </div>
-            </div>
-
-            <div
-                class="absolute z-20 transition-all duration-700 ease-in-out 
-                        bottom-0 right-4 md:right-1/2 md:translate-x-1/2 scale-75
-                        group-[.active]:bottom-4 group-[.active]:right-4 md:group-[.active]:bottom-8 md:group-[.active]:right-8 md:group-[.active]:translate-x-0 md:group-[.active]:scale-100">
-                <span class="text-[6rem] md:text-9x font-black text-white leading-none tracking-tighter">2</span>
-            </div>
-        </article>
-
-        <!-- Panel 3: Producción & Edición -->
-        <article
-            class="accord-panel relative flex-grow md:w-[12%] w-full transition-all duration-700 ease-in-out cursor-pointer group border-b md:border-b-0 md:border-r border-white/10 overflow-hidden"
-            onclick="toggleAccordion(this, 3)">
-            <div
-                class="absolute inset-0 z-0 opacity-0 group-[.active]:opacity-100 transition-opacity duration-700 bg-[url('/imgs/design-1.webp')] bg-cover bg-center">
-            </div>
-            <div class="absolute inset-0 z-10 bg-white group-[.active]:bg-white/90 transition-all duration-700"></div>
-
-            <div
-                class="relative z-20 h-full p-8 md:p-14 flex flex-col pointer-events-none group-[.active]:pointer-events-auto">
-                <div class="expanded-content transition-opacity duration-500 delay-300 opacity-0 hidden">
-                    <h2 class="text-4xl md:text-6xl font-black text-black leading-tight xl:mt-32">
-                        Cómo lo hacemos
-                    </h2>
-                </div>
-                <div class="flex-grow"></div>
-                <div
-                    class="expanded-content transition-opacity duration-500 delay-300 max-w-xl mb-4 md:mb-0 relative z-30 opacity-0 hidden">
-                    <h3 class="text-3xl md:text-5xl font-light text-black mb-6">Producción &<br>Edición de Contenidos
-                    </h3>
-                    <div class="w-12 h-1 bg-black mb-8"></div>
-                    <p class="text-lg md:text-xl text-black font-light leading-relaxed">
-                        Desde piezas gráficas hasta videos en motion design o UGC, creamos contenido con alta calidad y
-                        optimizado para cada canal.
-                    </p>
-                </div>
-            </div>
-
-            <div
-                class="collapsed-content absolute inset-x-0 bottom-0 md:bottom-[30%] pointer-events-none flex justify-center py-6 opacity-100 transition-opacity duration-500 z-20">
-                <div class="transform md:-rotate-90 md:origin-center whitespace-nowrap">
-                    <h3 class="text-lg md:text-xl font-bold text-black text-center md:text-left">Producción &
-                        Edición<br>de
-                        Contenidos
-                    </h3>
-                </div>
-            </div>
-
-            <div
-                class="absolute z-20 transition-all duration-700 ease-in-out 
-                        bottom-0 right-4 md:right-1/2 md:translate-x-1/2 scale-75
-                        group-[.active]:bottom-4 group-[.active]:right-4 md:group-[.active]:bottom-8 md:group-[.active]:right-8 md:group-[.active]:translate-x-0 md:group-[.active]:scale-100">
-                <span class="text-[6rem] md:text-9x font-black text-black leading-none tracking-tighter">3</span>
-            </div>
-        </article>
-
-        <!-- Panel 4: Optimización (Cyan) -->
-        <article
-            class="accord-panel relative flex-grow md:w-[12%] w-full transition-all duration-700 ease-in-out cursor-pointer group border-b md:border-b-0 md:border-r border-white/10 overflow-hidden"
-            onclick="toggleAccordion(this, 4)">
-            <div
-                class="absolute inset-0 z-0 opacity-0 group-[.active]:opacity-100 transition-opacity duration-700 bg-[url('/imgs/design-1.webp')] bg-cover bg-center">
-            </div>
-            <div class="absolute inset-0 z-10 bg-[#65fefa] group-[.active]:bg-[#65fefa]/90 transition-all duration-700">
-            </div>
-
-            <div
-                class="relative z-20 h-full p-8 md:p-14 flex flex-col pointer-events-none group-[.active]:pointer-events-auto">
-                <div class="expanded-content transition-opacity duration-500 delay-300 opacity-0 hidden">
-                    <h2 class="text-4xl md:text-6xl font-black text-black leading-tight xl:mt-32">
-                        Cómo lo hacemos
-                    </h2>
-                </div>
-                <div class="flex-grow"></div>
-                <div
-                    class="expanded-content transition-opacity duration-500 delay-300 max-w-xl mb-4 md:mb-0 relative z-30 opacity-0 hidden">
-                    <h3 class="text-3xl md:text-5xl font-light text-black mb-6">Optimización<br>& Evolución</h3>
-                    <div class="w-12 h-1 bg-black mb-8"></div>
-                    <p class="text-lg md:text-xl text-black font-light leading-relaxed">
-                        Tu marca y tus contenidos crecen contigo. No entregamos y desaparecemos. Refinamos y escalamos
-                        según los datos y las tendencias.
-                    </p>
-                </div>
-            </div>
-
-            <div
-                class="collapsed-content absolute inset-x-0 bottom-0 md:bottom-[30%] pointer-events-none flex justify-center py-6 opacity-100 transition-opacity duration-500 z-20">
-                <div class="transform md:-rotate-90 md:origin-center whitespace-nowrap">
-                    <h3 class="text-lg md:text-xl font-bold text-black text-center md:text-left">Optimización
-                        &<br>Evolución</h3>
-                </div>
-            </div>
-
-            <div
-                class="absolute z-20 transition-all duration-700 ease-in-out 
-                        bottom-0 right-4 md:right-1/2 md:translate-x-1/2 scale-75
-                        group-[.active]:bottom-4 group-[.active]:right-4 md:group-[.active]:bottom-8 md:group-[.active]:right-8 md:group-[.active]:translate-x-0 md:group-[.active]:scale-100">
-                <span class="text-[6rem] md:text-9x font-black text-black leading-none tracking-tighter">4</span>
-            </div>
-        </article>
+        {% endfor %}
     </section>
 
     <!-- Section: Impacto Real (KPIs) -->
     <section class="bg-white py-24 px-6 md:px-12 relative z-10">
         <div class="w-full xl:px-24 mx-auto text-center">
             <h2 class="text-4xl md:text-3xl font-black text-black mb-20 tracking-tight">
-                Cuando el contenido está bien pensado, los números acompañan
+                {{ kpis.title }}
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 max-w-6xl mx-auto">
-                <!-- KPI 1 -->
+                {% for kpi in kpis.items %}<!-- KPI {{ loop.index }} -->
                 <div class="flex flex-col items-center gap-6">
                     <div class="w-24 h-24 relative">
-                        <img src="/imgs/kpi-1.gif" alt="KPI 1" class="w-full h-full object-cover">
+                        <img src="{{ kpi.icon }}" alt="KPI {{ loop.index }}" class="w-full h-full object-cover">
                     </div>
                     <div class="space-y-4">
-                        <h3 class="text-6xl font-black text-[#2f80ed] leading-none tracking-tighter">
-                            +200%
-                        </h3>
+                        <h3 class="text-6xl font-black text-[{{ accent_color }}] leading-none tracking-tighter">{{ kpi.value }}</h3>
                         <p class="text-black font-light leading-relaxed max-w-xs mx-auto text-lg">
-                            De aumento en engagement en redes con contenido visual estratégico.
+                            {{ kpi.label }}
                         </p>
                     </div>
                 </div>
-
-                <!-- KPI 2 -->
-                <div class="flex flex-col items-center gap-6">
-                    <div class="w-24 h-24 relative">
-                        <img src="/imgs/kpi-4.gif" alt="KPI 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="space-y-4">
-                        <h3 class="text-6xl font-black text-[#2f80ed] leading-none tracking-tighter">
-                            +80
-                        </h3>
-                        <p class="text-black font-light leading-relaxed max-w-xs mx-auto text-lg">
-                            Marcas revalorizadas con rebrandings efectivos.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- KPI 3 -->
-                <div class="flex flex-col items-center gap-6">
-                    <div class="w-24 h-24 relative">
-                        <img src="/imgs/kpi-5.gif" alt="KPI 3" class="w-full h-full object-cover">
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-center">
-                            <h3 class="text-6xl font-black text-[#2f80ed] leading-none tracking-tighter">
-                                +150%
-                            </h3>
-                        </div>
-                        <p class="text-black font-light leading-relaxed max-w-xs mx-auto text-lg">
-                            De incremento en conversión de campañas de contenido.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+                {% endfor %}
     </section>
 
     <!-- Section: Final CTA -->
