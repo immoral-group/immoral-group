@@ -1,0 +1,56 @@
+    <!-- How We Do It - Accordion Section -->
+    <section class="min-h-screen bg-black flex flex-col md:flex-row relative z-10 overflow-hidden" id="como-lo-hacemos">
+{% for panel in section.panels %}
+        <!-- Panel {{ panel.number }} -->
+        <article
+            class="accord-panel relative {% if loop.first %}flex-grow-[6] md:w-[64%]{% else %}flex-grow md:w-[12%]{% endif %} w-full transition-all duration-700 ease-in-out cursor-pointer group border-b md:border-b-0 md:border-r border-white/10 overflow-hidden{% if loop.first %} active{% endif %}"
+            onclick="toggleAccordion(this, {{ panel.number }})">
+            <div
+                class="absolute inset-0 z-0 {% if loop.first %}opacity-100{% else %}opacity-0 group-[.active]:opacity-100{% endif %} transition-opacity duration-700 bg-[url('{{ section.bg_image }}')] bg-cover bg-center">
+            </div>
+            {% if loop.first %}<div
+                class="absolute inset-0 z-10 bg-[{{ panel.color_bg }}]/90 transition-all duration-700 backdrop-blur-sm group-[.active]:backdrop-blur-0 mix-blend-multiply">
+            </div>
+            <div class="absolute inset-0 z-10 bg-[{{ panel.color_bg }}]/80 transition-all duration-700"></div>{% else %}<div class="absolute inset-0 z-10 bg-{% if panel.color_bg == 'white' %}white{% else %}[{{ panel.color_bg }}]{% endif %} group-[.active]:bg-{% if panel.color_bg == 'white' %}white{% else %}[{{ panel.color_bg }}]{% endif %}/90 transition-all duration-700">
+            </div>{% endif %}
+
+            <!-- Active Content -->
+            <div
+                class="relative z-20 h-full p-8 md:p-14 flex flex-col pointer-events-none group-[.active]:pointer-events-auto">
+                <div class="expanded-content transition-opacity duration-500 delay-300 {% if loop.first %}opacity-100{% else %}opacity-0 hidden{% endif %}">
+                    <h2 class="text-4xl md:text-6xl font-black text-{{ panel.text_color }} leading-tight xl:mt-32">
+                        {{ section.title }}
+                    </h2>
+                </div>
+                <div class="flex-grow"></div>
+                <div
+                    class="expanded-content transition-opacity duration-500 delay-300 max-w-xl mb-4 md:mb-0 relative z-30 {% if loop.first %}opacity-100{% else %}opacity-0 hidden{% endif %}">
+                    <h3 class="text-3xl md:text-5xl font-light text-{{ panel.text_color }} mb-6">
+                        {{ panel.h3_html | safe }}
+                    </h3>
+                    <div class="w-12 h-1 bg-{{ panel.text_color }} mb-8"></div>
+                    <p class="text-lg md:text-xl text-{{ panel.text_color }} font-light leading-relaxed">
+                        {{ panel.description }}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Collapsed Content (Vertical) -->
+            <div
+                class="collapsed-content absolute inset-x-0 bottom-0 md:bottom-[30%] pointer-events-none flex justify-center py-6 {% if loop.first %}opacity-0{% else %}opacity-100{% endif %} transition-opacity duration-500 z-20">
+                <div class="transform md:-rotate-90 md:origin-center whitespace-nowrap">
+                    <h3 class="text-lg md:text-xl font-bold text-{{ panel.text_color }} text-center md:text-left">{{ panel.h3_html | safe }}
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Number -->
+            <div
+                class="absolute z-20 transition-all duration-700 ease-in-out
+                        bottom-0 right-4 md:right-1/2 md:translate-x-1/2 scale-75
+                        group-[.active]:bottom-4 group-[.active]:right-4 md:group-[.active]:bottom-8 md:group-[.active]:right-8 md:group-[.active]:translate-x-0 md:group-[.active]:scale-100">
+                <span class="text-[6rem] {% if loop.first %}md:text-9xl{% else %}md:text-9x{% endif %} font-black text-{{ panel.text_color }} leading-none tracking-tighter">{{ panel.number }}</span>
+            </div>
+        </article>
+{% endfor %}
+    </section>

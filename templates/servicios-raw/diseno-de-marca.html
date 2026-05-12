@@ -1,18 +1,15 @@
-<!-- generated. Edita content/*.json, no este archivo. -->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Immoral Growth Group - Tu partner estratégico de crecimiento digital</title>
-  <script type="module" src="/src/main.js"></script>
-  <link rel="icon" type="image/svg+xml" href="imgs/favicon.svg">
-  <!-- Matter.js CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immoral Growth Group - Tu partner estratégico de crecimiento digital</title>
+    <script type="module" src="/src/main.js"></script>
+    <link rel="icon" type="image/svg+xml" href="imgs/favicon.svg">
+    <!-- Matter.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
 </head>
-
-
 
 <body class="overflow-visible">
     <!-- Menu oscuro -->
@@ -327,200 +324,239 @@
         </div>
     </div>
 
-
     <!-- Hero Section -->
-    <section class="relative w-full min-h-[200vh] z-[1] bg-black text-white flex flex-col md:flex-row">
-
-        <!-- Left Side: Text (Scrolls) -->
-        <div class="w-full md:w-1/2 relative z-10">
-            <!-- First Text Block -->
-            <div class="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24">
-                <div class="space-y-6 md:space-y-8 pt-20 md:pt-0">
-                    <span class="block text-base md:text-lg font-light tracking-wide text-gray-300">
-                        Publicidad en medios:
-                    </span>
-                    <h1 class="text-4xl md:text-6xl font-black leading-[0.95] tracking-tight">
-                        Tecnología de<br><span class="text-[#2f80ed]">vanguardia</span> con un<br>toque<span class="text-[#2f80ed]"> artesanal</span>
-                    </h1>
-                    <p class="text-lg md:text-xl font-light text-gray-400 leading-relaxed max-w-lg mt-8">
-                        No hacemos publicidad en serie.<br>Diseñamos estrategias a medida para que te elijan.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Second Text Block -->
-            <div class="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 text-white">
-                <div class="space-y-12">
-                    <p class="text-base md:text-lg lg:text-xl font-light leading-relaxed max-w-xl text-gray-200">
-                        La publicidad digital no es solo algoritmos y automatización. Es precisión, es estrategia, es entender a cada cliente como único. En Immoral, combinamos la tecnología con el detalle de una sastrería digital: cada campaña es hecha a mano, diseñada exclusivamente para tu marca y optimizada en tiempo real para que cada euro invertido genere impacto.
-                    </p>
-                    <div class="space-y-4 text-3xl md:text-4xl font-black tracking-tight leading-none text-left">
-                        <div class="">
-                            De alcance a <span class="text-[#2f80ed]">leads.</span>
-                        </div>
-                        <div class="">
-                            De leads a <span class="text-[#2f80ed]">ventas.</span>
-                        </div>
-                        <div class="">
-                            De ventas a <span class="text-[#2f80ed]">crecimiento
-                                real.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right Side: Spline Iframe (Sticky) -->
-        <div class="w-full md:w-1/2 h-screen sticky top-0 right-0 z-0 hidden md:block">
-            <iframe src="https://my.spline.design/radialpattern-jefI7HGr1cHp8xYZ1mk8W7jO/" frameborder="0" width="100%"
-                height="100%" class="w-full h-full object-cover">
-            </iframe>
-        </div>
-        <!-- Mobile Spline (Non-sticky, visible only on mobile/tablet) -->
-        <div class="w-full h-[50vh] block md:hidden">
-            <iframe src="https://my.spline.design/radialpattern-jefI7HGr1cHp8xYZ1mk8W7jO/" frameborder="0" width="100%"
-                height="100%" class="w-full h-full object-cover">
-            </iframe>
-        </div>
-    </section>
-
-    <!-- Script to reveal text on scroll -->
-    <script>
-        document.addEventListener('scroll', () => {
-            const reveals = document.querySelectorAll('.reveal-text');
-            reveals.forEach(reveal => {
-                const windowHeight = window.innerHeight;
-                const elementTop = reveal.getBoundingClientRect().top;
-                const elementVisible = 100;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    reveal.classList.remove('opacity-0', 'translate-y-4');
-                }
-            });
-        });
-    </script>
-
-
-
-    <!-- Plataformas que dominamos Section -->
-    <section class="bg-white py-24 px-6 md:px-12 lg:px-24">
-        <div class="w-full mx-auto flex flex-col xl:flex-row gap-16 xl:gap-24 items-start">
-
-            <!-- Left Side: Title -->
-            <div class="w-full xl:w-[40%] xl:sticky top-24 self-start">
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-black leading-tight tracking-tight mb-8">
-                    Plataformas<br>que dominamos
-                </h2>
-                <p class="text-xl md:text-2xl font-light text-gray-600 leading-relaxed">
-                    Elegimos dónde invertir pensando en tu negocio, tus objetivos y tu momento. No seguimos tendencias: tomamos decisiones estratégicas.
+    <section
+        class="fixed top-0 left-0 w-full h-screen z-[1] bg-black text-white flex flex-col md:flex-row overflow-hidden">
+        <!-- Left Side: Text -->
+        <div
+            class="w-full md:w-1/2 flex items-center justify-center md:justify-start px-6 md:px-12 lg:px-24 relative z-10 pt-64 md:pt-0">
+            <div class="space-y-6 md:space-y-8">
+                <span class="block text-base md:text-lg font-light tracking-wide text-gray-300">
+                    Diseño de Marca y Contenidos:
+                </span>
+                <h1 class="text-4xl md:text-6xl font-black leading-[0.95] tracking-tight">
+                    Precisión Artesanal<br>
+                    con el Poder de la<br>
+                    Tecnología
+                </h1>
+                <p class="text-lg md:text-xl font-light text-gray-400 leading-relaxed max-w-lg mt-8">
+                    Tu marca no es solo un logo.<br>
+                    Es una historia, una identidad, una experiencia.<br>
+                    Y nosotros la diseñamos a medida.
                 </p>
             </div>
+        </div>
 
-            <!-- Right Side: Grid -->
-            <div class="w-full xl:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Right Side: Spline Iframe -->
+        <div class="w-full md:w-1/2 h-full absolute md:relative top-0 right-0 z-0">
+            <iframe src="https://my.spline.design/fairyparticles-676e516fd9b6eafb13417dd724ffbca7/" frameborder="0"
+                width="100%" height="100%" class="w-full h-full object-cover">
+            </iframe>
+        </div>
+    </section>
 
-                <!-- Meta -->
-                <div
-                    class="group bg-black rounded-[2rem] p-8 min-h-[100px] flex flex-col justify-between hover:bg-[#1877F2] transition-colors duration-300 cursor-default">
-                    <img src="/imgs/publi-ico-1.svg" alt="Meta" class="w-auto h-7 self-start mb-4">
-                    <div>
-                        <p
-                            class="text-gray-400 group-hover:text-white transition-colors text-lg font-light leading-relaxed">
-                            Te acompañamos desde la visibilidad hasta la conversión, con estrategias claras y recorridos personalizados para el usuario objetivo.
-                        </p>
-                    </div>
+    <!-- Video Section (Scrolls over Hero) -->
+    <section class="relative w-full h-screen z-10 mt-[100vh] bg-black">
+        <video src="imgs/hero-imcontent.mp4" autoplay muted loop playsinline width="1920" height="1080"></video>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section class="relative z-10 bg-black text-white py-24 px-6 md:px-12 lg:px-2">
+        <!-- Title & Description -->
+        <div class="max-w-4xl mb-20">
+            <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">
+                ¿Qué podemos hacer por ti?
+            </h2>
+            <p class="text-lg font-light text-gray-300 max-w-2xl leading-relaxed">
+                Desde la esencia visual hasta la narrativa de tu marca, nuestro equipo creativo trabaja para hacer que
+                tu empresa se vea, se sienta y se recuerde.
+            </p>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 border-t border-l border-gray-800">
+            <!-- Item 1: Rebranding -->
+            <div
+                class="group relative aspect-[16/13]  xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
+                <!-- Hover Image -->
+                <img src="/imgs/design-hover-1.webp" alt=""
+                    class="absolute inset-0 w-full xl:-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-500 z-0">
+
+                <!-- Content -->
+                <div class="relative z-10 pointer-events-none">
+                    <h3
+                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-150 origin-left">
+                        Rebranding</h3>
                 </div>
-
-                <!-- Google -->
-                <div
-                    class="group bg-black rounded-[2rem] p-8 min-h-[100px] flex flex-col justify-between hover:bg-[#FBBC05] transition-colors duration-300 cursor-default">
-                    <img src="/imgs/publi-ico-2.svg" alt="Google" class="w-auto h-8 self-start mb-4 transition-all duration-300 group-hover:invert">
-                    <div>
-                        <p
-                            class="text-gray-400 group-hover:text-black transition-colors text-lg font-light leading-relaxed">
-                            Estamos presentes cuando te buscan y también cuando aún no saben que te necesitan.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- LinkedIn -->
-                <div
-                    class="group bg-black rounded-[2rem] p-8 min-h-[100px] flex flex-col justify-between hover:bg-[#0073B1] transition-colors duration-300 cursor-default">
-                    <img src="/imgs/publi-ico-3.svg" alt="LinkedIn" class="w-auto h-10 self-start mb-4">
-                    <div>
-                        <p
-                            class="text-gray-400 group-hover:text-white transition-colors text-lg font-light leading-relaxed">
-                            Conectamos tu marca con los perfiles que toman decisiones, de forma directa, profesional y
-                            relevante.
-
-                        </p>
-                    </div>
-                </div>
-
-                <!-- TikTok -->
-                <div
-                    class="group bg-black rounded-[2rem] p-8 min-h-[100px] flex flex-col justify-between hover:bg-[#25F4EE] transition-colors duration-300 cursor-default">
-                    <img src="/imgs/publi-ico-4.svg" alt="TikTok" class="w-auto h-8 self-start mb-4 transition-all duration-300 group-hover:invert">
-                    <div>
-                        <p
-                            class="text-gray-400 group-hover:text-black transition-colors text-lg font-light leading-relaxed">
-                            Combinamos creatividad y datos para crear contenido que encaja de forma natural en el feed y genera impacto.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- YouTube -->
-                <div
-                    class="group bg-black rounded-[2rem] p-8 min-h-[100px] flex flex-col justify-between hover:bg-[#FF0000] transition-colors duration-300 cursor-default">
-                    <img src="/imgs/publi-ico-6.svg" alt="YouTube" class="w-auto h-7 self-start mb-4">
-                    <div>
-                        <p
-                            class="text-gray-400 group-hover:text-white transition-colors text-lg font-light leading-relaxed">
-                            Diseñamos campañas para construir recuerdo, explicar propuestas de valor y acompañar al usuario a lo largo del funnel. Creatividad, segmentación y formatos pensados para convertir visualizaciones en intención real.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Pinterest -->
-                <div
-                    class="group bg-black rounded-[2rem] p-8 min-h-[100px] flex flex-col justify-between hover:bg-[#E60023] transition-colors duration-300 cursor-default">
-                    <img src="/imgs/publi-ico-7.svg" alt="Pinterest" class="w-auto h-7 self-start mb-4">
-                    <div>
-                        <p
-                            class="text-gray-400 group-hover:text-white transition-colors text-lg font-light leading-relaxed">
-                            Aparecemos cuando tu marca todavía está siendo inspiración.
-                            Trabajamos Pinterest como un canal de descubrimiento y demanda latente, ideal para influir en la decisión antes de que exista una búsqueda activa.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Spotify -->
-                <div
-                    class="group bg-black rounded-[2rem] p-10 min-h-[100px] md:col-span-2 flex flex-col md:flex-row items-start md:items-center xl:items-center gap-8 hover:bg-[#1ED760] transition-colors duration-300 cursor-default">
-                    <img src="/imgs/publi-ico-5.svg" alt="Spotify"
-                        class="w-auto h-10 shrink-0 transition-all duration-300 group-hover:invert">
-                    <p
-                        class="text-gray-400 group-hover:text-black transition-colors text-lg font-light leading-relaxed max-w-2xl">
-                        Impactamos a tu audiencia en momentos de atención real, cuando escucha, conecta y está receptiva al mensaje.
+                <div class="relative z-10 pointer-events-none">
+                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
+                        Evolucionamos tu marca respetando su esencia, adaptándola a nuevos objetivos y contextos de
+                        crecimiento.
                     </p>
                 </div>
+            </div>
 
+            <!-- Item 2: Motion Design -->
+            <div
+                class="group relative aspect-[16/13]  xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
+                <video src="/imgs/design-hover-2.webm" autoplay muted loop playsinline
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-500 z-0">
+                </video>
+                <div class="relative z-10 pointer-events-none">
+                    <h3
+                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-150 origin-left">
+                        Motion<br>Design</h3>
+                </div>
+                <div class="relative z-10 pointer-events-none">
+                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
+                        Animaciones y piezas dinámicas que aportan ritmo, claridad y diferenciación a tu comunicación
+                        visual.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 3: Vídeos UGC -->
+            <div
+                class="group relative aspect-[16/13] xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
+                <video src="/imgs/design-hover-3.webm" autoplay muted loop playsinline
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-500 z-0">
+                </video>
+                <div class="relative z-10 pointer-events-none">
+                    <h3
+                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-150 origin-left">
+                        Vídeos UGC</h3>
+                </div>
+                <div class="relative z-10 pointer-events-none">
+                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
+                        Transformamos anuncios publicitarios en contenido natural y creíble, pensado para conectar y
+                        convertir en redes.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 4: Creatividades para Paid Media -->
+            <div
+                class="group relative aspect-[16/13] xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
+                <img src="/imgs/design-hover-4.webp" alt=""
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-15 transition-opacity duration-500 z-0">
+                <div class="relative z-10 pointer-events-none">
+                    <h3
+                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-150 origin-left">
+                        Creatividades<br>para Paid Media</h3>
+                </div>
+                <div class="relative z-10 pointer-events-none">
+                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
+                        Diseñamos piezas publicitarias orientadas a resultados, alineadas con la estrategia y
+                        optimizadas para cada plataforma.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 5: Contenido para redes -->
+            <div
+                class="group relative aspect-[16/13] xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
+                <img src="/imgs/design-hover-5.webp" alt=""
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-15 transition-opacity duration-500 z-0">
+                <div class="relative z-10 pointer-events-none">
+                    <h3
+                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-150 origin-left">
+                        Contenido<br>para redes</h3>
+                </div>
+                <div class="relative z-10 pointer-events-none">
+                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
+                        Creamos contenido visual y narrativo coherente con tu marca, diseñado para construir comunidad y
+                        relevancia.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 6: Copywriting y storytelling -->
+            <div
+                class="group relative aspect-[16/13] xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
+                <img src="/imgs/design-hover-6.webp" alt=""
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-15 transition-opacity duration-500 z-0">
+                <div class="relative z-10 pointer-events-none">
+                    <h3
+                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-125 origin-left">
+                        Copywriting y<br>storytelling de marca</h3>
+                </div>
+                <div class="relative z-10 pointer-events-none">
+                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
+                        Desarrollamos mensajes claros y persuasivos que dan coherencia a tu comunicación y refuerzan tu
+                        posicionamiento.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 7: Presentaciones -->
+            <div
+                class="group relative aspect-[16/13] xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
+                <img src="/imgs/design-hover-7.webp" alt=""
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-15 transition-opacity duration-500 z-0">
+                <div class="relative z-10 pointer-events-none">
+                    <h3
+                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-125 origin-left">
+                        Presentaciones y<br>materiales corporativos</h3>
+                </div>
+                <div class="relative z-10 pointer-events-none">
+                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
+                        Diseñamos presentaciones y soportes visuales que comunican con claridad, orden y criterio
+                        profesional.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 8: Diseño web y UX/UI -->
+            <div
+                class="group relative aspect-[16/13] xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
+                <img src="/imgs/design-hover-8.webp" alt=""
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-15 transition-opacity duration-500 z-0">
+                <div class="relative z-10 pointer-events-none">
+                    <h3
+                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-150 origin-left">
+                        Diseño web<br>y UX/UI</h3>
+                </div>
+                <div class="relative z-10 pointer-events-none">
+                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
+                        Creamos experiencias digitales funcionales, estéticas y pensadas para guiar al usuario hacia la
+                        conversión.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 9: Pack de plantillas -->
+            <div
+                class="group relative aspect-[16/13] xl:aspect-[16/9] border-r border-b border-gray-800 p-8 flex flex-col justify-between overflow-hidden transition-colors hover:border-transparent">
+                <img src="/imgs/design-hover-9.webp" alt=""
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-15 transition-opacity duration-500 z-0">
+                <div class="relative z-10 pointer-events-none">
+                    <h3
+                        class="text-3xl xl:text-4xl font-bold mb-2 transition-transform duration-300 group-hover:scale-125 origin-left">
+                        Creación de un pack de plantillas de
+                        anuncios efectivos
+                    </h3>
+                </div>
+                <div class="relative z-10 pointer-events-none">
+                    <p class="text-base text-gray-300 group-hover:text-white transition-colors">
+                        Desarrollamos sistemas de piezas reutilizables para escalar campañas sin perder coherencia ni
+                        calidad.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-
-
     <!-- Section: FAQ / What makes us different -->
-    <section class="bg-black py-24 px-6 md:px-12 relative z-10 invert">
-        <div class="w-full xl:px-8 mx-auto">
+    <section class="bg-black py-24 px-6 md:px-12 relative z-10">
+        <div class="w-full xl:px-24 mx-auto">
             <!-- Header -->
             <div class="mb-20">
                 <h2 class="text-5xl md:text-6xl font-black text-white mb-8 tracking-tight">
                     ¿Qué nos hace diferentes?
                 </h2>
                 <p class="text-gray-300 text-lg md:text-xl font-light max-w-3xl leading-relaxed">
-                    En publicidad, la diferencia está en el detalle. No seguimos recetas genéricas. Afinamos cada campaña con precisión quirúrgica, asegurándonos de que cada anuncio, cada puja y cada creatividad esté pensada para generar el máximo impacto.
+                    En el diseño de marca y contenido, el detalle lo es todo. No trabajamos con soluciones genéricas.
+                    Cada marca tiene una voz, un estilo y una historia propia.
                 </p>
             </div>
 
@@ -531,14 +567,15 @@
                     <button
                         class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
                         <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Publicidad con propósito</span>
+                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Estrategia
+                            + Creatividad</span>
                         <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
                             <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
                         </div>
                     </button>
                     <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
                         <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            No malgastamos presupuesto, lo convertimos en crecimiento.
+                            No diseñamos por diseñar. Creamos con un propósito claro.
                         </p>
                     </div>
                 </div>
@@ -548,14 +585,15 @@
                     <button
                         class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
                         <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Segmentación inteligente</span>
+                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Basado
+                            en data, optimizado con IA</span>
                         <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
                             <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
                         </div>
                     </button>
                     <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
                         <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            Impactamos a las personas adecuadas en el momento preciso, sin depender de audiencias infladas o segmentaciones obsoletas.
+                            Decisiones creativas respaldadas por análisis y tecnología.
                         </p>
                     </div>
                 </div>
@@ -565,14 +603,15 @@
                     <button
                         class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
                         <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Optimización artesanal con datos e IA</span>
+                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Diseño
+                            a medida, sin fórmulas vacías</span>
                         <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
                             <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
                         </div>
                     </button>
                     <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
                         <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            Ajustamos cada campaña a mano, con análisis en tiempo real y el apoyo de la IA para detectar oportunidades invisibles al ojo humano.
+                            Cada identidad es única, cada contenido es exclusivo.
                         </p>
                     </div>
                 </div>
@@ -582,28 +621,26 @@
                     <button
                         class="faq-header w-full py-8 flex justify-between items-center text-left focus:outline-none cursor-pointer">
                         <span
-                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Creatividad estratégica que vende</span>
+                            class="text-2xl md:text-3xl font-light text-white group-hover:text-gray-300 transition-colors">Creatividad
+                            con impacto</span>
                         <div class="w-8 h-8 md:w-10 md:h-10 transform transition-transform duration-300 faq-icon">
                             <img src="/imgs/flecha.svg" alt="Abrir" class="w-full h-full">
                         </div>
                     </button>
                     <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out opacity-0">
                         <p class="pb-8 text-gray-400 font-light text-lg max-w-4xl">
-                            No dejamos nada al azar. Probamos, refinamos y optimizamos cada pieza publicitaria para maximizar su impacto y conversión.
+                            Diseñamos para generar recuerdo y conversión.
                         </p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-
-
     <!-- How We Do It - Accordion Section -->
     <section class="min-h-screen bg-black flex flex-col md:flex-row relative z-10 overflow-hidden" id="como-lo-hacemos">
 
-        <!-- Panel 1 -->
+        <!-- Panel 1: Análisis & Estrategia Visual -->
         <article
             class="accord-panel relative flex-grow-[6] md:w-[64%] w-full transition-all duration-700 ease-in-out cursor-pointer group border-b md:border-b-0 md:border-r border-white/10 overflow-hidden active"
             onclick="toggleAccordion(this, 1)">
@@ -627,11 +664,12 @@
                 <div
                     class="expanded-content transition-opacity duration-500 delay-300 max-w-xl mb-4 md:mb-0 relative z-30 opacity-100">
                     <h3 class="text-3xl md:text-5xl font-light text-white mb-6">
-                        Auditoría &<br> Análisis Inteligente
+                        Análisis &<br>Estrategia Visual
                     </h3>
                     <div class="w-12 h-1 bg-white mb-8"></div>
                     <p class="text-lg md:text-xl text-white font-light leading-relaxed">
-                        Analizamos tu marca como un sastre mide a su cliente: con precisión, sin margen de error. Utilizamos smart data con inteligencia artificial para encontrar las oportunidades clave para tu negocio.
+                        Investigamos, analizamos y comprendemos tu negocio, tu mercado y tu audiencia. No creamos sin
+                        estrategia.
                     </p>
                 </div>
             </div>
@@ -640,21 +678,22 @@
             <div
                 class="collapsed-content absolute inset-x-0 bottom-0 md:bottom-[30%] pointer-events-none flex justify-center py-6 opacity-0 transition-opacity duration-500 z-20">
                 <div class="transform md:-rotate-90 md:origin-center whitespace-nowrap">
-                    <h3 class="text-lg md:text-xl font-bold text-white text-center md:text-left">Auditoría &<br> Análisis Inteligente
+                    <h3 class="text-lg md:text-xl font-bold text-white text-center md:text-left">Análisis
+                        &<br>Estrategia Visual
                     </h3>
                 </div>
             </div>
 
             <!-- Number -->
             <div
-                class="absolute z-20 transition-all duration-700 ease-in-out
+                class="absolute z-20 transition-all duration-700 ease-in-out 
                         bottom-0 right-4 md:right-1/2 md:translate-x-1/2 scale-75
                         group-[.active]:bottom-4 group-[.active]:right-4 md:group-[.active]:bottom-8 md:group-[.active]:right-8 md:group-[.active]:translate-x-0 md:group-[.active]:scale-100">
-                <span class="text-[6rem] md:text-9xl font-black text-white leading-none tracking-tighter">1</span>
+                <span class="text-[6rem] md:text-9x font-black text-white leading-none tracking-tighter">1</span>
             </div>
         </article>
 
-        <!-- Panel 2 -->
+        <!-- Panel 2: Conceptualización & Diseño -->
         <article
             class="accord-panel relative flex-grow md:w-[12%] w-full transition-all duration-700 ease-in-out cursor-pointer group border-b md:border-b-0 md:border-r border-white/10 overflow-hidden"
             onclick="toggleAccordion(this, 2)">
@@ -664,7 +703,6 @@
             <div class="absolute inset-0 z-10 bg-[#111111] group-[.active]:bg-[#111111]/90 transition-all duration-700">
             </div>
 
-            <!-- Active Content -->
             <div
                 class="relative z-20 h-full p-8 md:p-14 flex flex-col pointer-events-none group-[.active]:pointer-events-auto">
                 <div class="expanded-content transition-opacity duration-500 delay-300 opacity-0 hidden">
@@ -675,47 +713,41 @@
                 <div class="flex-grow"></div>
                 <div
                     class="expanded-content transition-opacity duration-500 delay-300 max-w-xl mb-4 md:mb-0 relative z-30 opacity-0 hidden">
-                    <h3 class="text-3xl md:text-5xl font-light text-white mb-6">
-                        Planificación Estratégica<br>
-                        Automatizada
-                    </h3>
+                    <h3 class="text-3xl md:text-5xl font-light text-white mb-6">Conceptualización<br>& Diseño</h3>
                     <div class="w-12 h-1 bg-white mb-8"></div>
                     <p class="text-lg md:text-xl text-white font-light leading-relaxed">
-                        Diseñamos una estrategia a medida, combinando inteligentemente el mix de medios entre Paid Social, Search, Native, Display y Video, con tecnología predictiva para que cada euro rinda al máximo.
+                        Desarrollamos una identidad única, fusionando creatividad, storytelling y tecnología para que tu
+                        marca hable por sí misma.
                     </p>
                 </div>
             </div>
 
-            <!-- Collapsed Content (Vertical) -->
             <div
                 class="collapsed-content absolute inset-x-0 bottom-0 md:bottom-[30%] pointer-events-none flex justify-center py-6 opacity-100 transition-opacity duration-500 z-20">
                 <div class="transform md:-rotate-90 md:origin-center whitespace-nowrap">
-                    <h3 class="text-lg md:text-xl font-bold text-white text-center md:text-left">Planificación Estratégica<br>
-                        Automatizada
+                    <h3 class="text-lg md:text-xl font-bold text-white text-center md:text-left">Conceptualización &<br>
+                        Diseño
                     </h3>
                 </div>
             </div>
 
-            <!-- Number -->
             <div
-                class="absolute z-20 transition-all duration-700 ease-in-out
+                class="absolute z-20 transition-all duration-700 ease-in-out 
                         bottom-0 right-4 md:right-1/2 md:translate-x-1/2 scale-75
                         group-[.active]:bottom-4 group-[.active]:right-4 md:group-[.active]:bottom-8 md:group-[.active]:right-8 md:group-[.active]:translate-x-0 md:group-[.active]:scale-100">
                 <span class="text-[6rem] md:text-9x font-black text-white leading-none tracking-tighter">2</span>
             </div>
         </article>
 
-        <!-- Panel 3 -->
+        <!-- Panel 3: Producción & Edición -->
         <article
             class="accord-panel relative flex-grow md:w-[12%] w-full transition-all duration-700 ease-in-out cursor-pointer group border-b md:border-b-0 md:border-r border-white/10 overflow-hidden"
             onclick="toggleAccordion(this, 3)">
             <div
                 class="absolute inset-0 z-0 opacity-0 group-[.active]:opacity-100 transition-opacity duration-700 bg-[url('/imgs/design-1.webp')] bg-cover bg-center">
             </div>
-            <div class="absolute inset-0 z-10 bg-white group-[.active]:bg-white/90 transition-all duration-700">
-            </div>
+            <div class="absolute inset-0 z-10 bg-white group-[.active]:bg-white/90 transition-all duration-700"></div>
 
-            <!-- Active Content -->
             <div
                 class="relative z-20 h-full p-8 md:p-14 flex flex-col pointer-events-none group-[.active]:pointer-events-auto">
                 <div class="expanded-content transition-opacity duration-500 delay-300 opacity-0 hidden">
@@ -726,39 +758,35 @@
                 <div class="flex-grow"></div>
                 <div
                     class="expanded-content transition-opacity duration-500 delay-300 max-w-xl mb-4 md:mb-0 relative z-30 opacity-0 hidden">
-                    <h3 class="text-3xl md:text-5xl font-light text-black mb-6">
-                        Ejecución & Optimización<br> en Tiempo
-                        Real
-                    
+                    <h3 class="text-3xl md:text-5xl font-light text-black mb-6">Producción &<br>Edición de Contenidos
                     </h3>
                     <div class="w-12 h-1 bg-black mb-8"></div>
                     <p class="text-lg md:text-xl text-black font-light leading-relaxed">
-                        Cada campaña es un traje a medida. Ajustamos y optimizamos a mano, combinando nuestra experiencia con el poder del análisis de datos y la IA. No dejamos que los algoritmos decidan por sí solos: analizamos, interpretamos y tomamos decisiones estratégicas en tiempo real para maximizar cada euro invertido.
+                        Desde piezas gráficas hasta videos en motion design o UGC, creamos contenido con alta calidad y
+                        optimizado para cada canal.
                     </p>
                 </div>
             </div>
 
-            <!-- Collapsed Content (Vertical) -->
             <div
                 class="collapsed-content absolute inset-x-0 bottom-0 md:bottom-[30%] pointer-events-none flex justify-center py-6 opacity-100 transition-opacity duration-500 z-20">
                 <div class="transform md:-rotate-90 md:origin-center whitespace-nowrap">
-                    <h3 class="text-lg md:text-xl font-bold text-black text-center md:text-left">Ejecución & Optimización<br> en Tiempo
-                        Real
-                    
+                    <h3 class="text-lg md:text-xl font-bold text-black text-center md:text-left">Producción &
+                        Edición<br>de
+                        Contenidos
                     </h3>
                 </div>
             </div>
 
-            <!-- Number -->
             <div
-                class="absolute z-20 transition-all duration-700 ease-in-out
+                class="absolute z-20 transition-all duration-700 ease-in-out 
                         bottom-0 right-4 md:right-1/2 md:translate-x-1/2 scale-75
                         group-[.active]:bottom-4 group-[.active]:right-4 md:group-[.active]:bottom-8 md:group-[.active]:right-8 md:group-[.active]:translate-x-0 md:group-[.active]:scale-100">
                 <span class="text-[6rem] md:text-9x font-black text-black leading-none tracking-tighter">3</span>
             </div>
         </article>
 
-        <!-- Panel 4 -->
+        <!-- Panel 4: Optimización (Cyan) -->
         <article
             class="accord-panel relative flex-grow md:w-[12%] w-full transition-all duration-700 ease-in-out cursor-pointer group border-b md:border-b-0 md:border-r border-white/10 overflow-hidden"
             onclick="toggleAccordion(this, 4)">
@@ -768,7 +796,6 @@
             <div class="absolute inset-0 z-10 bg-[#65fefa] group-[.active]:bg-[#65fefa]/90 transition-all duration-700">
             </div>
 
-            <!-- Active Content -->
             <div
                 class="relative z-20 h-full p-8 md:p-14 flex flex-col pointer-events-none group-[.active]:pointer-events-auto">
                 <div class="expanded-content transition-opacity duration-500 delay-300 opacity-0 hidden">
@@ -779,59 +806,51 @@
                 <div class="flex-grow"></div>
                 <div
                     class="expanded-content transition-opacity duration-500 delay-300 max-w-xl mb-4 md:mb-0 relative z-30 opacity-0 hidden">
-                    <h3 class="text-3xl md:text-5xl font-light text-black mb-6">
-                        Adaptación & Escalamiento<br>
-                        Inteligente
-                    </h3>
+                    <h3 class="text-3xl md:text-5xl font-light text-black mb-6">Optimización<br>& Evolución</h3>
                     <div class="w-12 h-1 bg-black mb-8"></div>
                     <p class="text-lg md:text-xl text-black font-light leading-relaxed">
-                        El mercado cambia constantemente y nosotros nos anticipamos. No dejamos que la IA tome el control, la usamos como nuestra aliada para detectar patrones, descubrir oportunidades y escalar campañas con precisión quirúrgica. Cada ajuste está debidamente meditado. No optimizamos en piloto automático.
+                        Tu marca y tus contenidos crecen contigo. No entregamos y desaparecemos. Refinamos y escalamos
+                        según los datos y las tendencias.
                     </p>
                 </div>
             </div>
 
-            <!-- Collapsed Content (Vertical) -->
             <div
                 class="collapsed-content absolute inset-x-0 bottom-0 md:bottom-[30%] pointer-events-none flex justify-center py-6 opacity-100 transition-opacity duration-500 z-20">
                 <div class="transform md:-rotate-90 md:origin-center whitespace-nowrap">
-                    <h3 class="text-lg md:text-xl font-bold text-black text-center md:text-left">Adaptación & Escalamiento<br>
-                        Inteligente
-                    </h3>
+                    <h3 class="text-lg md:text-xl font-bold text-black text-center md:text-left">Optimización
+                        &<br>Evolución</h3>
                 </div>
             </div>
 
-            <!-- Number -->
             <div
-                class="absolute z-20 transition-all duration-700 ease-in-out
+                class="absolute z-20 transition-all duration-700 ease-in-out 
                         bottom-0 right-4 md:right-1/2 md:translate-x-1/2 scale-75
                         group-[.active]:bottom-4 group-[.active]:right-4 md:group-[.active]:bottom-8 md:group-[.active]:right-8 md:group-[.active]:translate-x-0 md:group-[.active]:scale-100">
                 <span class="text-[6rem] md:text-9x font-black text-black leading-none tracking-tighter">4</span>
             </div>
         </article>
-
     </section>
 
-
-
     <!-- Section: Impacto Real (KPIs) -->
-    <section class="bg-black py-24 px-6 md:px-12 relative z-10">
+    <section class="bg-white py-24 px-6 md:px-12 relative z-10">
         <div class="w-full xl:px-24 mx-auto text-center">
-            <h2 class="text-4xl md:text-3xl font-black text-white mb-20 tracking-tight">
-                La diferencia entre invertir en anuncios y construir resultados
+            <h2 class="text-4xl md:text-3xl font-black text-black mb-20 tracking-tight">
+                Cuando el contenido está bien pensado, los números acompañan
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 max-w-6xl mx-auto">
                 <!-- KPI 1 -->
                 <div class="flex flex-col items-center gap-6">
                     <div class="w-24 h-24 relative">
-                        <img src="/imgs/kpi-6.gif" alt="KPI 1" class="w-full h-full object-cover">
+                        <img src="/imgs/kpi-1.gif" alt="KPI 1" class="w-full h-full object-cover">
                     </div>
                     <div class="space-y-4">
                         <h3 class="text-6xl font-black text-[#2f80ed] leading-none tracking-tighter">
-                            +300%
+                            +200%
                         </h3>
-                        <p class="text-white font-light leading-relaxed max-w-xs mx-auto text-lg">
-                            ROAS en 90 días
+                        <p class="text-black font-light leading-relaxed max-w-xs mx-auto text-lg">
+                            De aumento en engagement en redes con contenido visual estratégico.
                         </p>
                     </div>
                 </div>
@@ -839,14 +858,14 @@
                 <!-- KPI 2 -->
                 <div class="flex flex-col items-center gap-6">
                     <div class="w-24 h-24 relative">
-                        <img src="/imgs/kpi-7.gif" alt="KPI 2" class="w-full h-full object-cover">
+                        <img src="/imgs/kpi-4.gif" alt="KPI 2" class="w-full h-full object-cover">
                     </div>
                     <div class="space-y-4">
                         <h3 class="text-6xl font-black text-[#2f80ed] leading-none tracking-tighter">
-                            -40%
+                            +80
                         </h3>
-                        <p class="text-white font-light leading-relaxed max-w-xs mx-auto text-lg">
-                            Reducción de CPA con IA predictiva
+                        <p class="text-black font-light leading-relaxed max-w-xs mx-auto text-lg">
+                            Marcas revalorizadas con rebrandings efectivos.
                         </p>
                     </div>
                 </div>
@@ -854,14 +873,16 @@
                 <!-- KPI 3 -->
                 <div class="flex flex-col items-center gap-6">
                     <div class="w-24 h-24 relative">
-                        <img src="/imgs/kpi-8.gif" alt="KPI 3" class="w-full h-full object-cover">
+                        <img src="/imgs/kpi-5.gif" alt="KPI 3" class="w-full h-full object-cover">
                     </div>
                     <div class="space-y-4">
-                        <h3 class="text-6xl font-black text-[#2f80ed] leading-none tracking-tighter">
-                            +120%
-                        </h3>
-                        <p class="text-white font-light leading-relaxed max-w-xs mx-auto text-lg">
-                            Automatización que incrementó conversiones
+                        <div class="flex items-center justify-center">
+                            <h3 class="text-6xl font-black text-[#2f80ed] leading-none tracking-tighter">
+                                +150%
+                            </h3>
+                        </div>
+                        <p class="text-black font-light leading-relaxed max-w-xs mx-auto text-lg">
+                            De incremento en conversión de campañas de contenido.
                         </p>
                     </div>
                 </div>
@@ -870,13 +891,12 @@
         </div>
     </section>
 
-
-
     <!-- Section: Final CTA -->
-    <section class="bg-black pb-32 px-6 md:px-12 relative z-10">
+    <section class="bg-white pb-32 px-6 md:px-12 relative z-10">
         <div class="max-w-[1400px] mx-auto text-center space-y-12">
-            <h2 class="text-3xl md:text-3xl font-black text-white leading-tight max-w-5xl mx-auto tracking-tight">
-                ¿Listo para dejar de quemar presupuesto y empezar a facturar?
+            <h2 class="text-3xl md:text-3xl font-black text-black leading-tight max-w-5xl mx-auto tracking-tight">
+                ¿Listo para crear una
+                <span class="text-[#2f80ed]">marca que imacte</span> y contenido que conecte?
             </h2>
 
             <div>
@@ -888,7 +908,7 @@
                     </span>
                     <!-- Text container -->
                     <span
-                        class="relative px-8 py-4 text-sm md:text-base font-medium text-white uppercase tracking-widest z-10 group-hover:text-white transition-colors duration-300">
+                        class="relative px-8 py-4 text-sm md:text-base font-medium text-black uppercase tracking-widest z-10 group-hover:text-white transition-colors duration-300">
                         SOLICITA UNA AUDITORÍA GRATUITA
                     </span>
                     <!-- Animated blue background that expands on hover -->
@@ -900,129 +920,128 @@
         </div>
     </section>
 
-
-
-  <!-- Footer -->
-  <footer class="bg-black py-16 text-white">
-    <div class="max-w-full mx-auto px-6 lg:px-24">
-      <!-- Top Section - Mensaje + CTA -->
-      <div class="grid md:grid-cols-2 gap-8 items-center mb-8 pb-8">
-        <div>
-          <h2 class="font-light text-4xl text-white">
-            Transformamos tu<br />
-            incertidumbre en prosperidad
-          </h2>
-        </div>
-        <div class="flex justify-start md:justify-end">
-          <a href="contacto.html"
-            class="bg-white text-[#0B0F14] px-8 py-4 rounded-lg hover:bg-[#E9EDF2] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20">
-            HABLEMOS
-          </a>
-        </div>
-      </div>
-
-      <!-- Main Footer Content -->
-      <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
-        <!-- Social -->
-        <div class="space-y-6">
-          <h3 class="text-blue-500">Síguenos y crea un gran impacto</h3>
-          <div class="flex items-center gap-4 flex-wrap">
-
-            <!-- WhatsApp -->
-            <a href="https://wa.link/rb585t" target="_blank" rel="noopener noreferrer"
-              class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
-              aria-label="WhatsApp">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-              </svg>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/immoral.group/" target="_blank" rel="noopener noreferrer"
-              class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
-              aria-label="Instagram">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill-rule="evenodd"
-                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.451 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                  clip-rule="evenodd" />
-              </svg>
-            </a>
-            <!-- Behance -->
-            <a href="https://www.behance.net/immoralgroup" target="_blank" rel="noopener noreferrer"
-              class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
-              aria-label="Behance">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z" />
-              </svg>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/company/immoral-group/" target="_blank" rel="noopener noreferrer"
-              class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
-              aria-label="LinkedIn">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h5v-8.306c0-4.613 5.48-4.515 5.48 0v8.306h5v-10.502c0-8.118-8.74-7.93-8.74-2.688 0-1.11.12-2.306-.76-2.81z" />
-              </svg>
-            </a>
-            <!-- TikTok -->
-            <a href="https://www.tiktok.com/@immoral.group" target="_blank" rel="noopener noreferrer"
-              class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
-              aria-label="TikTok">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Ubicación -->
-        <div class="space-y-6 ml-0 lg:ml-44">
-          <h3 class="text-blue-500">¿Dónde estamos?</h3>
-          <div class="flex items-center gap-3">
-            <div class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA]">
-              <!-- MapPin -->
-              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
+    <!-- Footer -->
+    <footer class="bg-black py-16 text-white relative z-10">
+        <div class="max-w-full mx-auto px-6 lg:px-24">
+            <!-- Top Section - Mensaje + CTA -->
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-8 pb-8">
+                <div>
+                    <h2 class="font-light text-4xl text-white">
+                        Transformamos tu<br />
+                        incertidumbre en prosperidad
+                    </h2>
+                </div>
+                <div class="flex justify-start md:justify-end">
+                    <a href="contacto.html"
+                        class="bg-white text-[#0B0F14] px-8 py-4 rounded-lg hover:bg-[#E9EDF2] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20">
+                        HABLEMOS
+                    </a>
+                </div>
             </div>
-            <div class="text-[#B9C0CA] leading-relaxed">
-              Paseo de Gràcia 12, 1º, 08007 Barcelona
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Bottom Section -->
-      <div class="mt-16 pt-8 border-t border-[#2A2F36]">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
-          <!-- Logo -->
-          <div class="flex items-center">
-            <a href="https://immoral.marketing/" target="_blank" rel="noopener noreferrer">
-              <img src="/imgs/Menues/logo-menu-claro.png" alt="Logo Immoral" class="h-6 w-auto opacity-90" />
-            </a>
-          </div>
-          <!-- Links -->
-          <div class="flex items-center gap-8">
-            <a href="aviso-legal.html"
-              class="text-[#B9C0CA] hover:text-white transition-colors duration-200 text-sm">Aviso legal</a>
-            <a href="privacidad.html"
-              class="text-[#B9C0CA] hover:text-white transition-colors duration-200 text-sm">Privacidad</a>
-            <a href="cookies.html"
-              class="text-[#B9C0CA] hover:text-white transition-colors duration-200 text-sm">Cookies</a>
-          </div>
+            <!-- Main Footer Content -->
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
+                <!-- Social -->
+                <div class="space-y-6">
+                    <h3 class="text-blue-500">Síguenos y crea un gran impacto</h3>
+                    <div class="flex items-center gap-4 flex-wrap">
+
+                        <!-- WhatsApp -->
+                        <a href="https://wa.link/rb585t" target="_blank" rel="noopener noreferrer"
+                            class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
+                            aria-label="WhatsApp">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/immoral.group/" target="_blank" rel="noopener noreferrer"
+                            class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
+                            aria-label="Instagram">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.451 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <!-- Behance -->
+                        <a href="https://www.behance.net/immoralgroup" target="_blank" rel="noopener noreferrer"
+                            class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
+                            aria-label="Behance">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z" />
+                            </svg>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/company/immoral-group/" target="_blank"
+                            rel="noopener noreferrer"
+                            class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
+                            aria-label="LinkedIn">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h5v-8.306c0-4.613 5.48-4.515 5.48 0v8.306h5v-10.502c0-8.118-8.74-7.93-8.74-2.688 0-1.11.12-2.306-.76-2.81z" />
+                            </svg>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@immoral.group" target="_blank" rel="noopener noreferrer"
+                            class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
+                            aria-label="TikTok">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ubicación -->
+                <div class="space-y-6 ml-0 lg:ml-44">
+                    <h3 class="text-blue-500">¿Dónde estamos?</h3>
+                    <div class="flex items-center gap-3">
+                        <div class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA]">
+                            <!-- MapPin -->
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div class="text-[#B9C0CA] leading-relaxed">
+                            Paseo de Gràcia 12, 1º, 08007 Barcelona
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="mt-16 pt-8 border-t border-[#2A2F36]">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <a href="https://immoral.marketing/" target="_blank" rel="noopener noreferrer">
+                            <img src="/imgs/Menues/logo-menu-claro.png" alt="Logo Immoral"
+                                class="h-6 w-auto opacity-90" />
+                        </a>
+                    </div>
+                    <!-- Links -->
+                    <div class="flex items-center gap-8">
+                        <a href="aviso-legal.html"
+                            class="text-[#B9C0CA] hover:text-white transition-colors duration-200 text-sm">Aviso
+                            legal</a>
+                        <a href="privacidad.html"
+                            class="text-[#B9C0CA] hover:text-white transition-colors duration-200 text-sm">Privacidad</a>
+                        <a href="cookies.html"
+                            class="text-[#B9C0CA] hover:text-white transition-colors duration-200 text-sm">Cookies</a>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <p class="text-[#B9C0CA] text-sm">© 2026 Todos los derechos reservados.</p>
+                </div>
+            </div>
         </div>
-        <div class="mt-8 text-center">
-          <p class="text-[#B9C0CA] text-sm">© 2026 Immoral Group SLU. Todos los derechos reservados.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 </body>
-
-
 
 </html>

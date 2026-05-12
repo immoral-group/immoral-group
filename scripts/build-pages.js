@@ -3,6 +3,7 @@ import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 
 import { resolve, dirname, basename, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import nunjucks from 'nunjucks';
+import * as cheerio from 'cheerio';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -36,15 +37,42 @@ function buildCasos() {
   }
 }
 
+function patchServicioHtml(data) {
+  const raw = join(ROOT, 'templates', 'servicios-raw', `${data.slug}.html`);
+  if (!existsSync(raw)) throw new Error(`source HTML missing: ${raw}`);
+  const html = readFileSync(raw, 'utf8');
+  const $ = cheerio.load(html, { decodeEntities: false });
+  if (data.seo) {
+    if (data.seo.title) $('title').first().text(data.seo.title);
+    $('meta[name="description"]').remove();
+    if (data.seo.meta_description) {
+      $('head').append(`\n  <meta name="description" content="${data.seo.meta_description.replace(/"/g, '&quot;')}">`);
+    }
+    $('meta[property="og:image"]').remove();
+    if (data.seo.og_image) {
+      $('head').append(`\n  <meta property="og:image" content="${data.seo.og_image}">`);
+    }
+  }
+  return $.html();
+}
+
 function buildServicios() {
   const dir = join(CONTENT, 'servicios');
   if (!existsSync(dir)) return;
   for (const file of readdirSync(dir)) {
     if (!file.endsWith('.json')) continue;
     const data = loadJson(join(dir, file));
-    const html = env.render('servicio.html', data);
+    let html;
+    if (data.sections && data.sections.length) {
+      html = GENERATED_HEADER + env.render('servicio.html', data);
+    } else if (data.mode === 'patch') {
+      html = GENERATED_HEADER + patchServicioHtml(data);
+    } else {
+      console.warn(`  ⚠ ${data.slug}: no sections[] ni mode=patch, skip`);
+      continue;
+    }
     const out = join(ROOT, `${data.slug}.html`);
-    writeFileSync(out, GENERATED_HEADER + html);
+    writeFileSync(out, html);
     console.log(`  wrote ${data.slug}.html`);
   }
 }

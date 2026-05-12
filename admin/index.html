@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immoral · Admin</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 0; background: #f7f7f7; color: #111; }
+    header { background: #000; color: #fff; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { margin: 0; font-size: 16px; font-weight: 600; letter-spacing: 0.5px; }
+    header .actions button { background: #4889eb; color: white; border: 0; padding: 8px 14px; border-radius: 4px; cursor: pointer; font-size: 13px; }
+    header .actions button:hover { background: #3a73d4; }
+    main { display: grid; grid-template-columns: 280px 1fr; gap: 0; min-height: calc(100vh - 50px); }
+    aside { background: #fff; border-right: 1px solid #e3e3e3; padding: 16px 0; overflow-y: auto; }
+    aside nav { list-style: none; padding: 0; margin: 0; }
+    aside nav a { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; cursor: pointer; font-size: 14px; border-left: 3px solid transparent; color: #333; text-decoration: none; }
+    aside nav a:hover { background: #f0f0f0; }
+    aside nav a.active { background: #eaf2ff; border-left-color: #4889eb; color: #4889eb; font-weight: 600; }
+    aside .count { background: #eee; color: #666; font-size: 11px; padding: 2px 8px; border-radius: 10px; min-width: 22px; text-align: center; }
+    aside nav a.active .count { background: #4889eb; color: white; }
+    section.editor { padding: 24px 32px; overflow-y: auto; }
+    section.editor.edit-view { max-width: 900px; }
+    .list-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .list-toolbar h1 { margin: 0; font-size: 24px; font-weight: 700; }
+    .list-toolbar .search { padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; width: 240px; }
+    .items-table { width: 100%; background: white; border-radius: 6px; border: 1px solid #e3e3e3; border-collapse: collapse; overflow: hidden; }
+    .items-table th { text-align: left; padding: 12px 16px; background: #fafafa; border-bottom: 1px solid #e3e3e3; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #555; font-weight: 600; }
+    .items-table td { padding: 14px 16px; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
+    .items-table tr { cursor: pointer; }
+    .items-table tr:hover td { background: #f7faff; }
+    .items-table tr:last-child td { border-bottom: 0; }
+    .items-table .cliente { font-weight: 600; color: #111; }
+    .items-table .slug { color: #888; font-size: 12px; font-family: SF Mono, Monaco, monospace; }
+    .items-table .meta { color: #555; font-size: 12px; }
+    .items-table .actions { text-align: right; }
+    .items-table .actions a { color: #4889eb; text-decoration: none; font-size: 12px; margin-left: 12px; }
+    .items-table .actions a:hover { text-decoration: underline; }
+    section.editor h2 { margin: 0 0 8px; font-size: 20px; }
+    section.editor .breadcrumb { color: #888; font-size: 13px; margin-bottom: 16px; }
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-size: 12px; font-weight: 600; color: #555; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .field input, .field textarea { width: 100%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; font-family: inherit; }
+    .field textarea { min-height: 80px; resize: vertical; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    fieldset { border: 1px solid #e3e3e3; border-radius: 6px; padding: 12px 16px; margin-bottom: 16px; background: #fafafa; }
+    fieldset legend { font-size: 12px; font-weight: 600; color: #4889eb; padding: 0 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .array-item { background: white; border: 1px solid #e3e3e3; border-radius: 4px; padding: 12px; margin-bottom: 8px; position: relative; }
+    .array-item .remove { position: absolute; right: 8px; top: 8px; background: none; border: 0; color: #c00; cursor: pointer; font-size: 16px; }
+    .add-btn { background: #fff; border: 1px dashed #aaa; color: #555; padding: 8px 14px; border-radius: 4px; cursor: pointer; font-size: 13px; width: 100%; }
+    .add-btn:hover { border-color: #4889eb; color: #4889eb; }
+    .toolbar { display: flex; gap: 8px; margin-top: 24px; padding-top: 16px; border-top: 1px solid #e3e3e3; }
+    .btn-primary { background: #4889eb; color: white; border: 0; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: 600; }
+    .btn-primary:hover { background: #3a73d4; }
+    .btn-primary:disabled { background: #aaa; cursor: not-allowed; }
+    .btn-secondary { background: white; border: 1px solid #ddd; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 14px; }
+    .status { margin-left: auto; font-size: 13px; color: #888; align-self: center; }
+    .status.success { color: #0a7a3a; }
+    .status.error { color: #c00; }
+    .empty { color: #999; text-align: center; padding: 48px 16px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Immoral · Admin</h1>
+    <div class="actions">
+      <span class="status" id="build-status"></span>
+      <button id="build-btn">Build site</button>
+    </div>
+  </header>
+  <main>
+    <aside id="sidebar">
+      <nav>
+        <a href="#" data-type="casos" class="nav-link">Casos <span class="count" id="count-casos">·</span></a>
+        <a href="#" data-type="servicios" class="nav-link">Servicios <span class="count" id="count-servicios">·</span></a>
+        <a href="#" data-type="paginas" class="nav-link">Páginas <span class="count" id="count-paginas">0</span></a>
+      </nav>
+    </aside>
+    <section class="editor" id="editor">
+      <div class="empty">Cargando…</div>
+    </section>
+  </main>
+  <script type="module" src="./admin.js"></script>
+</body>
+</html>

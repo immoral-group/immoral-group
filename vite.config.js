@@ -2,10 +2,16 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
+    server: {
+        proxy: {
+            '/api': 'http://127.0.0.1:3001',
+        },
+    },
     build: {
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
+                admin: resolve(__dirname, 'admin/index.html'),
                 equipo: resolve(__dirname, 'equipo.html'),
                 manifesto: resolve(__dirname, 'manifesto.html'),
                 contacto: resolve(__dirname, 'contacto.html'),

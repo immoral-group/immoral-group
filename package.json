@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "admin": "node admin-server/index.js",
     "gen": "node scripts/build-pages.js",
     "extract": "node scripts/extract-content.js",
     "prebuild": "node scripts/build-pages.js",
@@ -20,6 +21,7 @@
     "vite": "^5.2.0"
   },
   "dependencies": {
+    "express": "^5.2.1",
     "gsap": "^3.13.0",
     "resend": "^6.7.0"
   }
