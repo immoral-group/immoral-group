@@ -1,0 +1,10 @@
+                <div class="team-member flex-shrink-0 w-32 h-48 xl:w-[197px] xl:h-[236px] mx-2 xl:mx-4 relative group cursor-pointer">
+                    <img class="w-full h-full object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105"
+                        src="{{ member.image }}" alt="{{ member.name }}" />
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 rounded-lg flex items-end justify-center opacity-0 group-hover:opacity-100">
+                        <div class="text-white text-center p-4">
+                            <h3 class="font-semibold text-sm xl:text-base">{{ member.name }}</h3>
+                            <p class="text-xs xl:text-sm opacity-90">{{ member.role }}</p>
+                        </div>
+                    </div>
+                </div>

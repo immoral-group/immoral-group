@@ -55,10 +55,13 @@ async function navigate(type, slug) {
 async function refreshCounts() {
   const c = await api.list('casos').catch(() => ({ items: [] }));
   const s = await api.list('servicios').catch(() => ({ items: [] }));
+  const p = await api.list('paginas').catch(() => ({ items: [] }));
   state.cache.casos = c.items;
   state.cache.servicios = s.items;
+  state.cache.paginas = p.items;
   document.getElementById('count-casos').textContent = c.items.length;
   document.getElementById('count-servicios').textContent = s.items.length;
+  document.getElementById('count-paginas').textContent = p.items.length;
 }
 
 function renderList() {
@@ -66,11 +69,6 @@ function renderList() {
   el.className = 'editor list-view';
   const items = (state.cache[state.type] || []).slice();
   const labels = { casos: 'Casos de éxito', servicios: 'Servicios', paginas: 'Páginas' };
-
-  if (state.type === 'paginas') {
-    el.innerHTML = `<div class="list-toolbar"><h1>${labels[state.type]}</h1></div><p style="color:#888">Aún sin migrar al CMS. Próximamente.</p>`;
-    return;
-  }
 
   el.innerHTML = '';
   const tb = document.createElement('div');
@@ -106,7 +104,7 @@ function renderList() {
   const tbody = table.querySelector('tbody');
   for (const item of filtered) {
     const tr = document.createElement('tr');
-    const publicPath = isCasos ? `/caso-${item.slug}.html` : `/${item.slug}.html`;
+    const publicPath = isCasos ? `/caso-${item.slug}.html` : (item.slug === 'index' ? '/' : `/${item.slug}.html`);
     tr.innerHTML = `
       <td class="cliente">${escapeHtml(item.cliente)}</td>
       <td class="slug">${escapeHtml(item.slug)}</td>
@@ -187,6 +185,7 @@ function renderEdit() {
   el.className = 'editor edit-view';
   if (state.type === 'casos') renderCasoEditor();
   else if (state.type === 'servicios') renderServicioEditor();
+  else if (state.type === 'paginas') renderPaginaEditor();
 }
 
 function backLink() {
@@ -300,6 +299,111 @@ function renderCasoEditor() {
   el.appendChild(seoSet);
 
   el.appendChild(toolbar());
+}
+
+function renderPaginaEditor() {
+  const el = document.getElementById('editor');
+  const d = state.data;
+  const isPatch = d.mode === 'patch';
+  el.innerHTML = '';
+  el.appendChild(backLink());
+
+  const bc = document.createElement('div');
+  bc.className = 'breadcrumb';
+  bc.textContent = `paginas / ${d.slug}`;
+  el.appendChild(bc);
+
+  const title = document.createElement('h2');
+  title.textContent = d.title || d.slug;
+  el.appendChild(title);
+
+  if (isPatch) {
+    const banner = document.createElement('div');
+    banner.style.cssText = 'background:#fff8e1;border:1px solid #f5d97a;padding:10px 14px;border-radius:4px;margin-bottom:16px;font-size:13px;color:#8a6d00';
+    banner.textContent = '⚙ Modo patch: solo SEO editable. Cuerpo en templates/paginas-raw/' + d.slug + '.html';
+    el.appendChild(banner);
+  }
+
+  el.appendChild(field('Title (interno)', d.title, v => d.title = v));
+
+  // SEO
+  const seoSet = document.createElement('fieldset');
+  const seoLeg = document.createElement('legend');
+  seoLeg.textContent = 'SEO';
+  seoSet.appendChild(seoLeg);
+  d.seo = d.seo || {};
+  seoSet.appendChild(field('Title', d.seo.title, v => d.seo.title = v));
+  seoSet.appendChild(field('Meta description', d.seo.meta_description || '', v => d.seo.meta_description = v || null, { multiline: true }));
+  seoSet.appendChild(field('OG image', d.seo.og_image || '', v => d.seo.og_image = v || null));
+  el.appendChild(seoSet);
+
+  // template mode: render generic editor for all top-level keys except meta
+  if (!isPatch) {
+    const skip = new Set(['slug', 'title', 'mode', 'seo']);
+    for (const key of Object.keys(d)) {
+      if (skip.has(key)) continue;
+      el.appendChild(renderGenericGroup(key, d, key));
+    }
+  }
+
+  el.appendChild(toolbar());
+}
+
+function renderGenericGroup(label, parent, key) {
+  const value = parent[key];
+  const wrap = document.createElement('fieldset');
+  const leg = document.createElement('legend');
+  leg.textContent = humanize(label);
+  wrap.appendChild(leg);
+  // If value is plain object, render its children directly (avoid double fieldset)
+  if (value && typeof value === 'object' && !Array.isArray(value)) {
+    for (const k of Object.keys(value)) {
+      renderGenericValue(wrap, value, k);
+    }
+  } else {
+    renderGenericValue(wrap, parent, key);
+  }
+  return wrap;
+}
+
+function renderGenericValue(container, parent, key) {
+  const v = parent[key];
+  if (v === null || v === undefined) {
+    container.appendChild(field(humanize(key), '', val => parent[key] = val || null));
+  } else if (typeof v === 'string') {
+    const multiline = v.length > 80 || v.includes('\n');
+    container.appendChild(field(humanize(key), v, val => parent[key] = val, { multiline }));
+  } else if (typeof v === 'number' || typeof v === 'boolean') {
+    container.appendChild(field(humanize(key), String(v), val => {
+      if (typeof v === 'number') parent[key] = parseFloat(val) || 0;
+      else parent[key] = val === 'true';
+    }));
+  } else if (Array.isArray(v)) {
+    container.appendChild(arrayEditor(humanize(key), v, (card, item, i) => {
+      if (typeof item === 'string') {
+        const multiline = item.length > 60 || item.includes('\n');
+        card.appendChild(field(`${i + 1}`, item, val => v[i] = val, { multiline }));
+      } else if (typeof item === 'object' && item !== null) {
+        for (const k of Object.keys(item)) {
+          renderGenericValue(card, item, k);
+        }
+      }
+    }, () => typeof v[0] === 'object' ? {} : ''));
+  } else if (typeof v === 'object') {
+    const sub = document.createElement('fieldset');
+    sub.style.background = '#fff';
+    const subLeg = document.createElement('legend');
+    subLeg.textContent = humanize(key);
+    sub.appendChild(subLeg);
+    for (const k of Object.keys(v)) {
+      renderGenericValue(sub, v, k);
+    }
+    container.appendChild(sub);
+  }
+}
+
+function humanize(s) {
+  return s.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 }
 
 function renderServicioEditor() {

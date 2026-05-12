@@ -1,32 +1,55 @@
-<!-- generated. Edita content/*.json, no este archivo. -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Immoral Growth Group - Tu partner estratégico de crecimiento digital</title>
+    <script type="module" src="/src/main.js"></script>
     <link rel="icon" type="image/svg+xml" href="imgs/favicon.svg">
     <!-- Matter.js CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+
 </head>
 
-<body class="overflow-x-hidden w-dvw font-sans">
-    <!-- Menú Light -->
+<body class="bg-white overflow-visible">
+    <!-- Fondo Animado -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-black">
+        <!-- Orbe 1: Cyan (#a7fffc) - Arriba Derecha -->
+        <div
+            class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full mix-blend-screen filter blur-[100px] opacity-40 animate-blob-intense bg-[#a7fffc]">
+        </div>
+
+        <!-- Orbe 2: Azul (#4989e6) - Un poco más abajo y centrado -->
+        <div
+            class="absolute top-[10%] right-[-10%] w-[600px] h-[600px] rounded-full mix-blend-screen filter blur-[100px] opacity-40 animate-blob-intense animation-delay-2000 bg-[#4989e6]">
+        </div>
+
+        <!-- Orbe 3: Cyan (#a7fffc) - Refuerzo para más brillo -->
+        <div
+            class="absolute top-[20%] right-[10%] w-[500px] h-[500px] rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-blob-intense animation-delay-4000 bg-[#a7fffc]">
+        </div>
+
+        <!-- Orbe 4: Azul (#4989e6) - Izquierda del grupo -->
+        <div
+            class="absolute top-[15%] right-[30%] w-[600px] h-[600px] rounded-full mix-blend-screen filter blur-[100px] opacity-40 animate-blob-intense bg-[#4989e6]">
+        </div>
+    </div>
+    <!-- Menu oscuro -->
     <nav class="hidden xl:flex justify-between fixed inset-x-0 box-border px-10 pt-5 pb-5 font-black text-xs z-[100]">
         <a href="index.html">
-            <div><img src="/imgs/Menues/logo-menu-oscuro.png" alt=""></div>
+            <div><img src="/imgs/Menues/logo-menu-claro.png" alt=""></div>
         </a>
         <div>
-            <div class="list-none flex flex-row items-center gap-12 text-black">
+            <div class="list-none flex flex-row items-center gap-12 text-white">
 
-                <div class="w-35 items-center flex flex-col relative" id="dropdownButton">
+                <div class="w-auto items-center flex flex-col relative" id="dropdownButton">
                     <div class="uppercase flex flex-row gap-3 justify-center" id="button">Quiénes Somos
-                        <img src="/imgs/Menues/arrowDown.svg" alt="arrowDown" class="w-3 invert">
+                        <img src="/imgs/Menues/arrowDown.svg" alt="arrowDown" class="w-3">
                     </div>
-                    <div class="mt-3 absolute left-0 top-full z-[100] w-50 hidden font-medium text-sm capitalize transition-all ease-out duration-300"
+                    <div class="mt-3 absolute left-0 top-full z-40 w-40 hidden font-medium text-sm transition-all ease-out duration-300"
                         id="dropdown">
-                        <ul class="flex flex-col bg-[#f7f7f7] text-black">
+                        <ul class="flex flex-col bg-[#f7f7f7] text-white">
                             <div class="w-full h-1 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-700"></div>
                             <a href="nuestra-historia.html">
                                 <li
@@ -52,9 +75,9 @@
 
                 <div class="w-30 items-center flex flex-col relative" id="dropdownButton2">
                     <div class="uppercase flex flex-row gap-3 justify-center" id="button2">Servicios
-                        <img src="/imgs/Menues/arrowDown.svg" alt="arrowDown" class="w-3 invert">
+                        <img src="/imgs/Menues/arrowDown.svg" alt="arrowDown" class="w-3">
                     </div>
-                    <div class="mt-3 absolute left-1/2 -translate-x-1/2 top-full z-[100] hidden w-52 font-medium text-sm capitalize transition-all ease-out duration-300"
+                    <div class="mt-3 absolute left-1/2 -translate-x-1/2 top-full z-40 hidden w-52 font-medium text-sm transition-all ease-out duration-300"
                         id="dropdown2">
                         <ul class="flex flex-col bg-[#f7f7f7] text-black">
                             <div class="w-full h-1 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-700"></div>
@@ -99,9 +122,9 @@
                 </div>
                 <div class="w-30 items-center flex flex-col relative" id="dropdownButton3">
                     <div class="uppercase flex flex-row gap-3 justify-center" id="button3">Verticales
-                        <img src="/imgs/Menues/arrowDown.svg" alt="arrowDown" class="w-3 invert">
+                        <img src="/imgs/Menues/arrowDown.svg" alt="arrowDown" class="w-3">
                     </div>
-                    <div class="mt-3 absolute left-0 top-full z-[100] hidden w-max font-medium capitalize transition-all ease-out duration-300"
+                    <div class="mt-3 absolute left-0 top-full z-40 hidden w-max font-medium capitalize transition-all ease-out duration-300"
                         id="dropdown3">
                         <ul class="flex flex-col bg-[#f7f7f7] text-black">
                             <div class="w-full h-1 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-700"></div>
@@ -152,19 +175,18 @@
             </div>
         </div>
     </nav>
-
     <!-- Mobile/Tablet Header (visible solo en móvil y tablet) -->
-    <div class="bg-white xl:hidden fixed top-0 inset-x-0 z-50 box-border w-full flex items-center justify-between px-4 py-4"
+    <div class="bg-black xl:hidden fixed top-0 inset-x-0 z-50 box-border w-full flex items-center justify-between px-4 py-4"
         style="padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right);">
-        <a href="index.html"><img src="/imgs/Menues/logo-menu-oscuro.svg" alt="immoral" class="ml-4 h-6 w-auto"></a>
+        <a href="index.html"><img src="/imgs/Menues/logo-menu-oscuro.svg" alt="immoral"
+                class="ml-4 h-6 w-auto invert"></a>
         <button id="mobileMenuOpenBtn" aria-label="Abrir menú"
-            class="p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            class="invert p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 6h16M4 12h16M4 18h16" stroke="#000" stroke-width="2" stroke-linecap="round" />
             </svg>
         </button>
     </div>
-
     <!-- Overlay del Menú Móvil/Tablet -->
     <div id="mobileMenuOverlay"
         class="xl:hidden fixed inset-0 bg-white z-[60] hidden overflow-y-auto overflow-x-hidden">
@@ -232,9 +254,8 @@
                         <ul class="flex flex-col bg-[#f7f7f7] text-black rounded-md overflow-hidden text-center">
                             <div class="w-full h-1 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-700"></div>
                             <a href="publicidad-en-medios.html">
-                                <li
-                                    class="py-4 px-5 border-b border-gray-300 hover:bg-blue-50 hover:text-blue-600 transition">
-                                    Publicidad en medios</li>
+                                <li class="py-4 px-5 hover:bg-blue-50 hover:text-blue-600 transition">Publicidad en
+                                    medios</li>
                             </a>
                             <a href="diseno-de-marca.html">
                                 <li
@@ -325,151 +346,319 @@
         </div>
     </div>
 
-    <!-- Header -->
-    <header class="w-full pt-24 pb-16 px-6 sm:px-12 xl:pt-32 xl:px-24 bg-white">
-        <div class="reveal-group max-w-[1400px] mx-auto flex flex-col gap-0">
-            <a class="block-reveal">
-                <h1 class="font-black text-5xl sm:text-6xl xl:text-7xl mb-6">Nuestro Manifesto</h1>
-            </a>
-            <a class="block-reveal">
-                <p class="text-xl sm:text-2xl font-light text-gray-800">Una visión clara. Una misión sin concesiones.</p>
-            </a>
-            <a class="block-reveal">
-                <p class="text-xl sm:text-2xl font-light text-[#4889eb]">Unos valores que no se negocian.</p>
-            </a>
-        </div>
-    </header>
+    <!-- Hero Content -->
+    <main class="relative z-10 w-full aspect-video pt-32 pl-0 pb-16 xl:pb-0 xl:pt-64 xl:pl-16">
+        <div
+            class="reveal-group max-w-7xl my-auto px-2 w-full text-center xl:text-left text-4xl md:text-8xl font-black text-white leading-tight">
+            <h1 class="block-reveal tracking-tight">De hacer marketing...</h1>
+            <h1 class="block-reveal tracking-tight">a repensarlo por</h1>
+            <h1 class="block-reveal tracking-tight">completo</h1>
 
-    <!-- Seccion 1: Visión (Fondo Negro) -->
-    <section class="w-full aspect-video bg-black text-white py-20 xl:py-32 px-6 sm:px-12 xl:px-24">
-        <div class="max-w-[1400px] mx-auto flex flex-col xl:flex-row gap-16 items-center">
-            <!-- Texto -->
-            <div class="reveal-group w-full xl:w-1/2">
-                <h2 class="font-black text-4xl sm:text-5xl mb-8">Visión</h2>
-                <h3 class="font-light text-xl sm:text-2xl mb-2 text-gray-400">No queremos ser una agencia.</h3>
-                <h3 class="font-light text-xl sm:text-2xl mb-12 text-[#4889eb]">Queremos ser el equipo que transforma realidades.</h3>
-
-                <div class="space-y-6 font-light text-lg text-gray-300 leading-relaxed">
-                    <p class="reveal-lines">Nos proyectamos hacia un futuro donde el marketing deje de ser solo ruido y falsas promesas para convertirse en una fuerza de cambio.</p>
-                    <p class="reveal-lines">Un mundo donde las marcas no nos ven como proveedores, sino como el socio estratégico que empuja, cuestiona y hace que las cosas pasen.</p>
-                    <p class="reveal-lines">Creemos que el marketing puede —y debe— transformar positivamente la vida de las personas.</p>
-                    <p class="reveal-lines">Y lo hace cuando se ejecuta con ética, con propósito, con excelencia. Queremos dejar huella. Pero no cualquier huella. Una que sume. Una que inspire. Una que transforme.</p>
-                </div>
-            </div>
-            <!-- Imagen -->
-            <div class="w-full xl:w-1/2 flex justify-end items-center">
-                <img src="/imgs/img-manifesto-vision.png" alt="Vision Architecture" class="w-10/12">
+            <div class="text-xl md:text-3xl text-white font-light max-w-5xl leading-relaxed mt-12 px-12 xl:px-0">
+                <p class="reveal-lines">Immoral no nació con un business plan de 80 páginas.</p>
+                <p class="reveal-lines text-white xl:text-blue-500">Nació de una incomodidad.</p>
             </div>
         </div>
-    </section>
+    </main>
+    <!-- Sección Historia Fundador -->
+    <section class="relative w-full py-44 flex items-center overflow-hidden bg-gray-900">
 
-    <!-- Seccion 2: Misión (Fondo Azul) -->
-    <section class="w-full bg-black text-white py-20 xl:py-32 px-6 sm:px-12 xl:px-24">
-        <div class="max-w-[1400px] mx-auto flex flex-col-reverse xl:flex-row gap-16 items-center">
-            <!-- Imagen -->
-            <div class="w-full xl:w-1/2">
-                <img src="/imgs/img-manifesto-mision.png" alt="Mission Mountain" class="w-10/12">
-            </div>
-            <!-- Texto -->
-            <div class="reveal-group w-full xl:w-1/2">
-                <h2 class="font-black text-4xl sm:text-5xl mb-8">Misión</h2>
-                <h3 class="font-light text-xl sm:text-2xl mb-2">Somos el puente entre las marcas y el cambio.</h3>
-                <h3 class="font-light text-xl sm:text-2xl mb-12 opacity-90">Entre lo que son hoy y todo lo que pueden llegar a ser.</h3>
-
-                <div class="space-y-6 font-light text-lg leading-relaxed opacity-95">
-                    <p class="reveal-lines">Nuestro compromiso es claro: crear estrategias éticas, efectivas y a la altura de un mundo digital que evoluciona cada segundo.</p>
-                    <p class="reveal-lines">Nos integramos como parte del equipo. Pensamos como negocio. Actuamos con inteligencia. Con todas.</p>
-                    <p class="reveal-lines">Cada campaña que lanzamos, cada automatización que diseñamos, cada contenido que publicamos, está pensado para una sola cosa: hacer que el negocio funcione mejor y que la marca se haga más fuerte.</p>
-                    <p class="reveal-lines">Trabajamos con exigencia, con transparencia y con una obsesión sana por el resultado.</p>
-                    <p class="reveal-lines">Y sobre todo, trabajamos con marcas que, como nosotros, quieren dejar de hacer más de lo mismo.</p>
-                </div>
-            </div>
+        <!-- Imagen de Fondo -->
+        <!-- 'object-cover' cubre todo el espacio y 'object-right' asegura que la persona (a la derecha) siempre se vea -->
+        <div class="absolute inset-0 z-0">
+            <img src="imgs/nt-bg-2.webp" alt="Marco Fundador" class="w-full h-full object-cover object-[80%_center]">
         </div>
-    </section>
 
+        <!-- Contenedor Principal -->
+        <div
+            class="relative z-10 max-w-full mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 items-center h-full py-0 xl:py-20 pl-2 xl:pl-20">
 
-    <!-- Seccion 3: En qué creemos (Cards) -->
-    <section class="w-full bg-white py-20 xl:py-32 px-6 sm:px-12 xl:px-24">
-        <div class="max-w-[1400px] mx-auto flex flex-col xl:flex-row gap-16">
-            <!-- Título a la izquierda -->
-            <div class="reveal-group w-full xl:w-1/3">
-                <h2 class="font-black text-5xl xl:text-6xl text-[#4889eb]">Nuestros</h2>
-                <h2 class="font-black text-5xl xl:text-6xl mb-4 text-[#4889eb]">Valores</h2>
-                <p class="reveal-lines font-light text-xl text-gray-800">No los repetimos porque suena bien.</p>
-                <p class="reveal-lines font-light text-xl text-[#4889eb]">Lo vivimos cada día</p>
-            </div>
+            <!-- Columna Izquierda: Caja de Texto -->
+            <div class="w-full max-w-xl relative">
 
-            <!-- Grid de Cards 2x2 a la derecha -->
-            <div class="w-full xl:w-2/3">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <!-- Card 1 -->
-                    <div
-                        class="group bg-gray-50 hover:bg-black p-8 rounded-3xl flex flex-col min-h-[280px] border border-gray-200 hover:border-black transition-all duration-300 hover:rotate-2 cursor-pointer">
-                        <img src="/imgs/ico-mani-box-1.png" alt="icon" class="w-12 h-12 mb-6">
-                        <h4 class="block-reveal font-bold text-lg mb-3 text-[#4889eb] transition-all duration-300">01. Servicio</h4>
+                <!-- Tarjeta Bicolor -->
+                <div class="rounded-lg overflow-hidden shadow-2xl relative z-10 mt-64">
+
+                    <!-- Parte Azul -->
+                    <div class="bg-[#3B82F6] py-10 pl-0 xl:pl-8 text-white">
                         <p
-                            class="reveal-lines font-light text-gray-700 group-hover:text-white text-sm leading-relaxed transition-all duration-300">
-                            No estamos aquí para cumplir tareas. Estamos para ayudarte a crecer. Nos involucramos, pensamos contigo, y vamos más allá de lo que esperas.
+                            class="hidden xl:block reveal-lines text-lg md:text-xl font-light leading-relaxed opacity-90">
+                            Marco, nuestro fundador, venía de trabajar con
                         </p>
+                        <p
+                            class="hidden xl:block reveal-lines text-lg md:text-xl font-light leading-relaxed mb-6 opacity-90">
+                            agencias. Muchas. Y en todas encontró lo mismo:
+                        </p>
+                        <p
+                            class="mb-4 px-6 xl:hidden reveal-lines text-lg md:text-xl font-light leading-relaxed opacity-90">
+                            Marco, nuestro fundador, venía de trabajar con agencias. Muchas. Y en todas encontró lo
+                            mismo:
+                        </p>
+                        <ul
+                            class="px-6 xl:px-0 reveal-group flex flex-col gap-1 text-lg md:text-2xl font-bold leading-tight">
+                            <li class="">Promesas vacías.</li>
+                            <li class="">Tácticas sin estrategia.</li>
+                            <li class="">Transparencia solo cuando convenía.</li>
+                        </ul>
                     </div>
 
-                    <!-- Card 2 -->
-                    <div
-                        class="group bg-gray-50 hover:bg-black p-8 rounded-3xl flex flex-col min-h-[280px] border border-gray-200 hover:border-black transition-all duration-300 hover:rotate-2 cursor-pointer">
-                        <img src="/imgs/ico-mani-box-2.png" alt="icon" class="w-12 h-12 mb-6">
-                        <h4 class="block-reveal font-bold text-lg mb-3 text-[#4889eb] transition-all duration-300">02. Transparencia</h4>
-                        <p
-                            class="reveal-lines font-light text-gray-700 group-hover:text-white text-sm leading-relaxed transition-all duration-300">
-                            Nada de letra pequeña. Nada de promesas vacías. Hablamos claro. Compartimos todo. Construimos confianza con hechos.
+                    <!-- Parte Negra -->
+                    <div class="bg-black py-4 pl-8 text-white">
+                        <p class="reveal-lines text-lg md:text-xl font-light opacity-90">
+                            Y un pensamiento que se repetía:
                         </p>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div
-                        class="group bg-gray-50 hover:bg-black p-8 rounded-3xl flex flex-col min-h-[280px] border border-gray-200 hover:border-black transition-all duration-300 hover:rotate-2 cursor-pointer">
-                        <img src="/imgs/ico-mani-box-3.png" alt="icon" class="w-12 h-12 mb-6">
-                        <h4 class="block-reveal font-bold text-lg mb-3 text-[#4889eb] transition-all duration-300">03. Innovación</h4>
-                        <p
-                            class="reveal-lines font-light text-gray-700 group-hover:text-white text-sm leading-relaxed transition-all duration-300">
-                            No seguimos tendencias. Las analizamos, las entendemos y aplicamos solo lo que funciona. La innovación no es una excusa para el desorden, es nuestra herramienta para encontrar lo que aún no está resuelto.
-                        </p>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div
-                        class="group bg-gray-50 hover:bg-black p-8 rounded-3xl flex flex-col min-h-[280px] border border-gray-200 hover:border-black transition-all duration-300 hover:rotate-2 cursor-pointer">
-                        <img src="/imgs/ico-mani-box-4.png" alt="icon" class="w-12 h-12 mb-6">
-                        <h4 class="block-reveal font-bold text-lg mb-3 text-[#4889eb] transition-all duration-300">04. Resultados</h4>
-                        <p
-                            class="reveal-lines font-light text-gray-700 group-hover:text-white text-sm leading-relaxed transition-all duration-300">
-                            No trabajamos por premios ni por likes. Trabajamos para que tu negocio crezca, tu equipo respire y tu marca avance. Si no suma, no sirve.
+                        <p class="reveal-lines text-lg md:text-base font-bold italic leading-snug">
+                            “Si esto es lo normal, yo no quiero hacer marketing.”
                         </p>
                     </div>
 
                 </div>
             </div>
+
+            <!-- Columna Derecha: Espacio vacío para que se vea la persona -->
+            <div class="hidden md:block"></div>
+
+        </div>
+
+        <!-- Decoración: Líneas curvas sutiles abajo a la izquierda (Opcional, como en el diseño) -->
+        <div class="absolute bottom-0 left-0 w-full h-full pointer-events-none overflow-hidden opacity-20">
+            <div
+                class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] border border-dashed border-blue-500 rounded-full">
+            </div>
+            <div
+                class="absolute bottom-[-15%] left-[-15%] w-[700px] h-[700px] border border-dashed border-blue-500 rounded-full">
+            </div>
+        </div>
+
+    </section>
+    <!-- Sección Origen y Equipo -->
+    <!-- 'z-20' asegura que esta sección y su imagen superpuesta queden por encima de la anterior -->
+    <section class="relative w-full bg-black pb-32 pt-12 md:pt-0 z-20">
+        <div class="w-full relative z-10">
+            <!-- Grid superior: Imagen y Texto introductorio -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-20">
+
+                <!-- Columna Izquierda: Imagen Circular (Superpuesta) -->
+                <!-- md:-mt-48 sube la imagen para que pise la sección negra anterior -->
+                <div class="relative -mt-32 md:-ml-12 z-30 flex justify-center md:justify-start">
+                    <img src="imgs/circulo-equipo.png" alt="Equipo Immoral"
+                        class="w-full max-w-[750px] drop-shadow-2xl hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <!-- Columna Derecha: Texto -->
+                <div class="reveal-group pt-10 md:pt-20 pl-12 pr-6">
+                    <h2 class="text-3xl md:text-5xl font-black text-white mb-8 tracking-tight">
+                        Así nació la idea:
+                    </h2>
+
+                    <div class="text-lg md:text-xl text-white font-light leading-relaxed">
+                        <p class="font-medium">Construir el equipo en el que a él le habría gustado trabajar.</p>
+                        <p class="reveal-lines mt-6">
+                            Un equipo que pensara antes de hacer.
+                        </p>
+                        <p class="reveal-lines">
+                            Que dijera la verdad, incluso cuando no fuera lo más cómodo.
+                        </p>
+                        <p class="reveal-lines">
+                            Que tuviera talento real, pero también criterio, compromiso y humanidad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recuadro Azul (Centrado abajo) -->
+            <div class="md:-mt-32 max-w-3xl mx-auto px-6 relative z-20">
+                <div
+                    class="bg-[#3B82F6] text-white p-8 md:p-12 rounded-2xl shadow-xl text-center relative overflow-hidden">
+                    <p class="hidden xl:block reveal-lines text-lg md:text-xl font-light leading-relaxed">
+                        Al principio nos llamamos ADMK Team. Lo dimos todo.
+                    </p>
+                    <p class="hidden xl:block reveal-lines text-lg md:text-xl font-light leading-relaxed mb-8">
+                        Las marcas llegaron. Se quedaron. Y nos recomendaron.
+                    </p>
+
+                    <p class="xl:hidden reveal-lines text-lg md:text-xl font-light leading-relaxed">
+                        Al principio nos llamamos ADMK Team. Lo dimos todo. Las marcas llegaron. Se quedaron. Y nos
+                        recomendaron.
+                    </p>
+
+                    <div class="reveal-group space-y-2 pt-6">
+                        <p class="reveal-lines text-xl md:text-xl font-light">
+                            Pero había algo que no cuadraba:
+                        </p>
+                        <p class="reveal-lines text-lg md:text-xl opacity-90">
+                            el nombre, la marca, el discurso…
+                        </p>
+                        <p class="text-3xl md:text-4xl font-black pt-2 tracking-tight">
+                            No éramos nosotros.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- Seccion CTA -->
-    <section
-        class="w-full relative min-h-[70vh] flex items-center justify-start overflow-hidden py-20 px-6 sm:px-12 xl:px-24">
-        <!-- Background Image -->
-        <img src="/imgs/bg-manifesto-2.png" alt="Sky Background"
-            class="absolute inset-0 w-full h-full object-cover z-0">
-        <!-- Overlay opcional si necesitas oscurecer -->
-        <div class="absolute inset-0 z-10"></div>
+    <!-- Sección Immoral Statement (Dark) -->
+    <section class="relative w-full bg-black py-24 overflow-hidden">
 
-        <div class="reveal-group relative z-20 text-left w-full max-w-4xl">
-            <h2 class="block-reveal font-black text-5xl sm:text-6xl xl:text-8xl text-black leading-tight">
-                Porque imaginar<br>no es suficiente.
-            </h2>
-            <p class="reveal-lines font-light text-xl sm:text-2xl text-black mt-8 leading-relaxed max-w-2xl">
-                Nosotros creamos soluciones reales que impulsan marcas, automatizan procesos y escalan negocios con inteligencia.
-            </p>
+        <div class="max-w-full mx-auto px-6 xl:px-16 w-full relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <!-- Columna 1: Texto (Izquierda) -->
+                <div class="reveal-group text-white xl:w-[700px]">
+                    <h2 class="text-3xl md:text-4xl font-black leading-tight tracking-tight">
+                        Immoral: un nombre que incomoda.
+                    </h2>
+                    <h2 class="text-3xl md:text-4xl font-black leading-tight tracking-tight">
+                        Y por eso funciona.
+                    </h2>
+
+                    <div class="reveal-group text-lg font-light leading-relaxed space-y-6 opacity-90">
+                        <p class="reveal-lines mt-8">
+                            Sabíamos que si queríamos cambiar el juego, también teníamos que cambiar el uniforme.
+                        </p>
+                        <p class="reveal-lines">
+                            Immoral nació como un statement:<br>
+                            El marketing no tiene por qué ser tramposo, vacío u oportunista. Puede ser honesto.
+                            Estratégico. Transparente. Transformador.
+                        </p>
+                        <p class="reveal-lines">
+                            Sí, el nombre incomoda. Y nos encanta.<br>
+                            Porque si hay algo que hacemos bien es cuestionar lo establecido.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Columna 3: Video (Derecha) -->
+                <div class="flex justify-center lg:justify-end">
+                    <!-- Ajusta el max-w según el tamaño real que quieras para el video -->
+                    <div class="w-full max-w-lg">
+                        <video autoplay loop muted playsinline class="w-full h-auto object-contain">
+                            <source src="imgs/logo-loader.mp4" type="video/mp4">
+                            Tu navegador no soporta videos.
+                        </video>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
+    <!-- Sección Más que una agencia -->
+    <section class="relative w-full bg-black py-24 xl:py-32">
 
+        <!-- Contenedor con px-16 como pediste -->
+        <div class="w-full px-6 xl:px-16">
 
+            <!-- Parte Superior: Grid 2 Columnas -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-24 items-start">
+
+                <!-- Izquierda: Título y Texto -->
+                <div class="reveal-group max-w-[700px]">
+                    <h2 class="hidden xl:block text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
+                        Hoy, Immoral es más que
+                    </h2>
+                    <h2
+                        class="hidden xl:block text-4xl md:text-5xl font-black text-white mb-8 leading-tight tracking-tight">
+                        una agencia
+                    </h2>
+
+                    <h2 class="mb-8 xl:hidden text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
+                        Hoy, Immoral es más que una agencia
+                    </h2>
+
+                    <div class="text-xl text-white font-light leading-relaxed space-y-6">
+                        <p>
+                            Somos un equipo que piensa como negocio. Que actúa como parte del tuyo.
+                        </p>
+                        <p>
+                            Hacemos crecer marcas, sí. Pero también las hacemos más eficientes, más inteligentes y más
+                            preparadas para lo que viene.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Derecha: Grid de Cajas -->
+                <div class="reveal-group max-w-[700px] ml-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <!-- Caja 1 -->
+                    <div
+                        class="bg-gray-50 rounded-2xl p-8 flex flex-col gap-4 hover:shadow-lg transition-shadow duration-300">
+                        <img src="/imgs/ico-historia-1.png" class="w-12 h-12" alt="Procesos">
+                        <p class="font-light text-blue-500 text-lg leading-tight">Nos metemos en tus procesos</p>
+                    </div>
+
+                    <!-- Caja 2 -->
+                    <div
+                        class="bg-gray-50 rounded-2xl p-8 flex flex-col gap-4 hover:shadow-lg transition-shadow duration-300">
+                        <img src="/imgs/ico-historia-2.png" class="w-12 h-12" alt="Cuellos de botella">
+                        <p class="font-light text-blue-500 text-lg leading-tight">Encontramos cuellos de botella</p>
+                    </div>
+
+                    <!-- Caja 3 -->
+                    <div
+                        class="bg-gray-50 rounded-2xl p-8 flex flex-col gap-4 hover:shadow-lg transition-shadow duration-300">
+                        <img src="/imgs/ico-historia-3.png" class="w-12 h-12" alt="Automatización">
+                        <p class="font-light text-blue-500 text-lg leading-tight">Automatizamos lo que frena</p>
+                    </div>
+
+                    <!-- Caja 4 (Ocupa todo el ancho) -->
+                    <div
+                        class="md:col-span-3 bg-gray-50 rounded-2xl p-8 flex flex-col md:flex-row gap-6 items-start md:items-center hover:shadow-lg transition-shadow duration-300">
+                        <img src="/imgs/ico-historia-4.png" class="w-12 h-12 shrink-0" alt="Oportunidades">
+                        <div class="font-light text-gray-900 text-lg leading-snug">
+                            <span class="text-blue-500 font-light text-2xl block mb-1">Y donde la mayoría solo ve
+                                leads:</span>
+                            nosotros vemos oportunidades de construir algo más grande: una marca con propósito y con
+                            resultados reales.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sección Principal de Contacto -->
+    <section class="w-full relative pt-8 pb-20 px-4 sm:px-8 xl:px-12 mx-auto bg-white">
+        <!-- Grid ajustado: en XL el calendario ocupa más espacio (col-span-2 vs col-span-3) -->
+        <div class="grid grid-cols-1 xl:grid-cols-5 gap-12 items-start">
+
+            <!-- Columna Izquierda: Textos (Ocupa 2 de 5 columnas en XL) -->
+            <div class="justify-center xl:h-full xl:col-span-2 flex flex-col pt-4 xl:sticky xl:top-32 px-2">
+                <h1 class="text-3xl sm:text-2xl lg:text-4xl font-black text-black">
+                    Gracias por considerar
+                </h1>
+                <h1 class="text-3xl sm:text-2xl lg:text-4xl font-black mb-8 text-blue-500">
+                    A Immoral
+                </h1>
+
+                <div class="flex flex-col gap-6 text-lg sm:text-xl text-gray-800 font-light leading-relaxed w-10/12">
+                    <p class="reveal-lines">
+                        No sabemos si somos lo que esperabas encontrar.
+                    </p>
+                    <p class="reveal-lines">
+                        Pero si buscabas una forma distinta de hacer las cosas —más clara, más honesta, más efectiva—,
+                        estás en buen lugar.
+                    </p>
+                </div>
+
+                <div class="mt-4 flex flex-col gap-2">
+                    <h2 class="reveal-lines text-1xl sm:text-2xl font-black text-blue-500">
+                        Hablemos. Esto acaba de empezar.
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Calendly -->
+            <div class="xl:col-span-3 w-full flex justify-center xl:justify-end">
+                <div class="w-full rounded-2xl shadow-sm relative xl:min-w-[1060px]">
+                    <iframe src="https://discover.immoral.es/discovery-page"
+                        class="h-[1100px] md:h-[900px]"
+                        style="min-width: 320px; width: 100%; border: none;"
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
     <!-- Footer -->
     <footer class="bg-black py-16 text-white">
         <div class="max-w-full mx-auto px-6 lg:px-24">
@@ -592,7 +781,3 @@
             </div>
         </div>
     </footer>
-    <script type="module" src="/src/main.js"></script>
-</body>
-
-</html>

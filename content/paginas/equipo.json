@@ -1,0 +1,56 @@
+{
+  "slug": "equipo",
+  "title": "Equipo",
+  "mode": "template",
+  "seo": {
+    "title": "Immoral Growth Group - Tu partner estratégico de crecimiento digital",
+    "meta_description": null,
+    "og_image": null
+  },
+  "hero": {
+    "h1_l1": "El equipo que hace que",
+    "h1_l2": "Todo esto funcione",
+    "subtitle_html": "Somos personas. Profesionales con criterio. <br class=\"hidden xl:block\">Y si, también un poco obsesivos con el detalle."
+  },
+  "team": {
+    "row1": [
+      { "name": "Marco Sapiña", "role": "Fundador & CEO", "image": "/imgs/equipo/marco.webp" },
+      { "name": "Yurema Valverde", "role": "Chief Client & Growth Officer - CCO", "image": "/imgs/equipo/yure.webp" },
+      { "name": "Florencia Gomez", "role": "Head of Imcontent", "image": "/imgs/equipo/florencia.webp" },
+      { "name": "Mery González", "role": "Head of Imfilms", "image": "/imgs/equipo/mery.webp" },
+      { "name": "Alba Ortega", "role": "Head of Operations", "image": "/imgs/equipo/alba.webp" },
+      { "name": "Daniel Parra", "role": "Head of SEO", "image": "/imgs/equipo/daniel.webp" },
+      { "name": "Manel Lara", "role": "Automation & AI Specialist", "image": "/imgs/equipo/manel.webp" }
+    ],
+    "row2": [
+      { "name": "Angie Corpas", "role": "Motion Designer", "image": "/imgs/equipo/angie.webp" },
+      { "name": "Bruno Azzi", "role": "Senior Graphic Designer", "image": "/imgs/equipo/bruno.webp" },
+      { "name": "Gregory Jaques", "role": "Senior Graphic Designer", "image": "/imgs/equipo/grego.webp" },
+      { "name": "Andres Barrios", "role": "Paid Media Specialist", "image": "/imgs/equipo/andres.webp" },
+      { "name": "Leidy Puentes", "role": "Paid Media Specialist", "image": "/imgs/equipo/leidy.webp" },
+      { "name": "Silvia Vera", "role": "Content Creator & Community Manager", "image": "/imgs/equipo/silvia.webp" },
+      { "name": "David Navarrete", "role": "Automation & AI Specialist", "image": "/imgs/equipo/david.webp" }
+    ]
+  },
+  "ofertas": {
+    "title": "Ofertas activas",
+    "sub1": "Estamos creciendo, y siempre atentos",
+    "sub2": "a suma talentos con actitud",
+    "cards": [
+      { "icon": "/imgs/ico-mani-box-1.png", "title_html": "Paid Media Specialist" },
+      { "icon": "/imgs/ico-mani-box-2.png", "title_html": "Email & Marketing<br>Automation Specialist" }
+    ]
+  },
+  "no_ves_rol": {
+    "h2_desktop_l1": "¿No ves tu rol, pero sabes",
+    "h2_desktop_l2": "que podrías aportar?",
+    "h2_mobile": "¿No ves tu rol, pero sabes que podrías aportar?",
+    "paragraphs": [
+      "No hace falta que tu puesto esté publicado.",
+      "Si tienes talento, criterio y ganas de formar parte de algo con propósito, escríbenos."
+    ],
+    "highlight": "Queremos conocerte.",
+    "cta_text": "Quiero formar parte",
+    "cta_href": "mailto:rrhh@immoral.marketing"
+  }
+}

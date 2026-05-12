@@ -1,32 +1,40 @@
-<!-- generated. Edita content/*.json, no este archivo. -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Immoral Growth Group - Tu partner estratégico de crecimiento digital</title>
+    <title>{{ seo.title }}</title>{% if seo.meta_description %}
+    <meta name="description" content="{{ seo.meta_description }}">{% endif %}{% if seo.og_image %}
+    <meta property="og:image" content="{{ seo.og_image }}">{% endif %}
+    <meta property="og:description" content="Tu partner estratégico de crecimiento digital">
     <link rel="icon" type="image/svg+xml" href="imgs/favicon.svg">
+    <!-- Open Graph / Facebook / WhatsApp / Slack -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.immoral.es/">
+    <meta property="og:title" content="Immoral Growth Group">
+    <meta property="og:description" content="Tu partner estratégico de crecimiento digital">
+    <meta property="og:image" content="https://immoral.es/imgs/favicon.svg">
     <!-- Matter.js CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
 </head>
 
 <body class="overflow-x-hidden w-dvw font-sans">
-    <!-- Menú Light -->
+    <!-- Menu oscuro -->
     <nav class="hidden xl:flex justify-between fixed inset-x-0 box-border px-10 pt-5 pb-5 font-black text-xs z-[100]">
         <a href="index.html">
-            <div><img src="/imgs/Menues/logo-menu-oscuro.png" alt=""></div>
+            <div><img src="/imgs/Menues/logo-menu-claro.png" alt=""></div>
         </a>
         <div>
-            <div class="list-none flex flex-row items-center gap-12 text-black">
+            <div class="list-none flex flex-row items-center gap-12 text-white">
 
-                <div class="w-35 items-center flex flex-col relative" id="dropdownButton">
+                <div class="w-auto items-center flex flex-col relative" id="dropdownButton">
                     <div class="uppercase flex flex-row gap-3 justify-center" id="button">Quiénes Somos
-                        <img src="/imgs/Menues/arrowDown.svg" alt="arrowDown" class="w-3 invert">
+                        <img src="/imgs/Menues/arrowDown.svg" alt="arrowDown" class="w-3">
                     </div>
-                    <div class="mt-3 absolute left-0 top-full z-[100] w-50 hidden font-medium text-sm capitalize transition-all ease-out duration-300"
+                    <div class="mt-3 absolute left-0 top-full z-40 w-40 hidden font-medium text-sm transition-all ease-out duration-300"
                         id="dropdown">
-                        <ul class="flex flex-col bg-[#f7f7f7] text-black">
+                        <ul class="flex flex-col bg-[#f7f7f7] text-white">
                             <div class="w-full h-1 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-700"></div>
                             <a href="nuestra-historia.html">
                                 <li
@@ -52,9 +60,9 @@
 
                 <div class="w-30 items-center flex flex-col relative" id="dropdownButton2">
                     <div class="uppercase flex flex-row gap-3 justify-center" id="button2">Servicios
-                        <img src="/imgs/Menues/arrowDown.svg" alt="arrowDown" class="w-3 invert">
+                        <img src="/imgs/Menues/arrowDown.svg" alt="arrowDown" class="w-3">
                     </div>
-                    <div class="mt-3 absolute left-1/2 -translate-x-1/2 top-full z-[100] hidden w-52 font-medium text-sm capitalize transition-all ease-out duration-300"
+                    <div class="mt-3 absolute left-1/2 -translate-x-1/2 top-full z-40 hidden w-52 font-medium text-sm transition-all ease-out duration-300"
                         id="dropdown2">
                         <ul class="flex flex-col bg-[#f7f7f7] text-black">
                             <div class="w-full h-1 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-700"></div>
@@ -99,9 +107,9 @@
                 </div>
                 <div class="w-30 items-center flex flex-col relative" id="dropdownButton3">
                     <div class="uppercase flex flex-row gap-3 justify-center" id="button3">Verticales
-                        <img src="/imgs/Menues/arrowDown.svg" alt="arrowDown" class="w-3 invert">
+                        <img src="/imgs/Menues/arrowDown.svg" alt="arrowDown" class="w-3">
                     </div>
-                    <div class="mt-3 absolute left-0 top-full z-[100] hidden w-max font-medium capitalize transition-all ease-out duration-300"
+                    <div class="mt-3 absolute left-0 top-full z-40 hidden w-max font-medium capitalize transition-all ease-out duration-300"
                         id="dropdown3">
                         <ul class="flex flex-col bg-[#f7f7f7] text-black">
                             <div class="w-full h-1 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-700"></div>
@@ -152,19 +160,18 @@
             </div>
         </div>
     </nav>
-
     <!-- Mobile/Tablet Header (visible solo en móvil y tablet) -->
-    <div class="bg-white xl:hidden fixed top-0 inset-x-0 z-50 box-border w-full flex items-center justify-between px-4 py-4"
+    <div class="bg-black xl:hidden fixed top-0 inset-x-0 z-50 box-border w-full flex items-center justify-between px-4 py-4"
         style="padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right);">
-        <a href="index.html"><img src="/imgs/Menues/logo-menu-oscuro.svg" alt="immoral" class="ml-4 h-6 w-auto"></a>
+        <a href="index.html"><img src="/imgs/Menues/logo-menu-oscuro.svg" alt="immoral"
+                class="ml-4 h-6 w-auto invert"></a>
         <button id="mobileMenuOpenBtn" aria-label="Abrir menú"
-            class="p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            class="invert p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 6h16M4 12h16M4 18h16" stroke="#000" stroke-width="2" stroke-linecap="round" />
             </svg>
         </button>
     </div>
-
     <!-- Overlay del Menú Móvil/Tablet -->
     <div id="mobileMenuOverlay"
         class="xl:hidden fixed inset-0 bg-white z-[60] hidden overflow-y-auto overflow-x-hidden">
@@ -232,9 +239,8 @@
                         <ul class="flex flex-col bg-[#f7f7f7] text-black rounded-md overflow-hidden text-center">
                             <div class="w-full h-1 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-700"></div>
                             <a href="publicidad-en-medios.html">
-                                <li
-                                    class="py-4 px-5 border-b border-gray-300 hover:bg-blue-50 hover:text-blue-600 transition">
-                                    Publicidad en medios</li>
+                                <li class="py-4 px-5 hover:bg-blue-50 hover:text-blue-600 transition">Publicidad en
+                                    medios</li>
                             </a>
                             <a href="diseno-de-marca.html">
                                 <li
@@ -325,151 +331,365 @@
         </div>
     </div>
 
-    <!-- Header -->
-    <header class="w-full pt-24 pb-16 px-6 sm:px-12 xl:pt-32 xl:px-24 bg-white">
-        <div class="reveal-group max-w-[1400px] mx-auto flex flex-col gap-0">
-            <a class="block-reveal">
-                <h1 class="font-black text-5xl sm:text-6xl xl:text-7xl mb-6">Nuestro Manifesto</h1>
-            </a>
-            <a class="block-reveal">
-                <p class="text-xl sm:text-2xl font-light text-gray-800">Una visión clara. Una misión sin concesiones.</p>
-            </a>
-            <a class="block-reveal">
-                <p class="text-xl sm:text-2xl font-light text-[#4889eb]">Unos valores que no se negocian.</p>
-            </a>
-        </div>
-    </header>
+    <!--! HERO -->
+    <div class="hidden w-dvw overflow-hidden aspect-video bg-black xl:flex items-center justify-center">
+        <video src="{{ hero.video_desktop }}" autoplay muted loop class="w-full h-full object-contain"></video>
+    </div>
 
-    <!-- Seccion 1: Visión (Fondo Negro) -->
-    <section class="w-full aspect-video bg-black text-white py-20 xl:py-32 px-6 sm:px-12 xl:px-24">
-        <div class="max-w-[1400px] mx-auto flex flex-col xl:flex-row gap-16 items-center">
-            <!-- Texto -->
-            <div class="reveal-group w-full xl:w-1/2">
-                <h2 class="font-black text-4xl sm:text-5xl mb-8">Visión</h2>
-                <h3 class="font-light text-xl sm:text-2xl mb-2 text-gray-400">No queremos ser una agencia.</h3>
-                <h3 class="font-light text-xl sm:text-2xl mb-12 text-[#4889eb]">Queremos ser el equipo que transforma realidades.</h3>
+    <div class="xl:hidden w-dvw overflow-hidden h-[50dvh] xl:h-auto bg-black flex items-center justify-center">
+        <video src="{{ hero.video_mobile }}" autoplay muted loop
+            class="w-auto h-auto max-w-full max-h-full object-contain"></video>
+    </div>
+    <!-- Section Services -->
+    <!--! SECCIÓN INTEGRA: ECOSISTEMA IMMORAL (Full Screen) -->
+    <section id="immoral-ecosystem"
+        class="relative w-dvw min-h-[100dvh] bg-black text-white overflow-hidden flex flex-col justify-center py-12 lg:py-0">
 
-                <div class="space-y-6 font-light text-lg text-gray-300 leading-relaxed">
-                    <p class="reveal-lines">Nos proyectamos hacia un futuro donde el marketing deje de ser solo ruido y falsas promesas para convertirse en una fuerza de cambio.</p>
-                    <p class="reveal-lines">Un mundo donde las marcas no nos ven como proveedores, sino como el socio estratégico que empuja, cuestiona y hace que las cosas pasen.</p>
-                    <p class="reveal-lines">Creemos que el marketing puede —y debe— transformar positivamente la vida de las personas.</p>
-                    <p class="reveal-lines">Y lo hace cuando se ejecuta con ética, con propósito, con excelencia. Queremos dejar huella. Pero no cualquier huella. Una que sume. Una que inspire. Una que transforme.</p>
-                </div>
+        <!-- FONDOS DINÁMICOS (Cambian al hacer hover) -->
+        <div class="absolute inset-0 z-0">
+            <!-- Fondo Default (Negro puro) -->
+            <div class="absolute inset-0 bg-black z-0 transition-opacity duration-700 opacity-100" data-bg="default">
             </div>
-            <!-- Imagen -->
-            <div class="w-full xl:w-1/2 flex justify-end items-center">
-                <img src="/imgs/img-manifesto-vision.png" alt="Vision Architecture" class="w-10/12">
+
+            <!-- Fondos de cada marca (Ajusta las rutas de las imágenes) -->
+            <!-- Nota: Añade tus imágenes de fondo aquí. Si no existen, se verá negro pero el código funcionará -->
+            <img src="/imgs/bg-fashion.jpg"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10 pointer-events-none"
+                data-bg="fashion" alt="">
+            <img src="/imgs/bg-films.jpg"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10 pointer-events-none"
+                data-bg="films" alt="">
+            <img src="/imgs/bg-content.jpg"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10 pointer-events-none"
+                data-bg="content" alt="">
+            <img src="/imgs/bg-immoralia.jpg"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10 pointer-events-none"
+                data-bg="immoralia" alt="">
+
+            <!-- VIGNETTE / OSCURECIMIENTO (Para asegurar lectura del texto) -->
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-20 pointer-events-none">
+            </div>
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div
+            class="container mx-auto px-6 sm:px-12 relative z-30 flex flex-col lg:flex-row items-center h-full justify-between">
+
+            <!-- COLUMNA IZQUIERDA: Manifiesto -->
+            <div class="reveal-group w-full lg:w-7/12 mb-16 lg:mb-0 pointer-events-none">
+                <h1 class="font-black text-5xl leading-tight mb-8">{% for line in ecosistema.h1_lines %}
+                    <span class="block-reveal"> {{ line }}</span>{% if not loop.last %}<br>{% endif %}{% endfor %}
+                </h1>
+                <p class="reveal-lines font-light text-lg sm:text-xl text-gray-300 leading-relaxed max-w-xl">
+                    {{ ecosistema.intro_html | safe }}
+                </p>
+            </div>
+
+            <!-- COLUMNA DERECHA: Lista de Marcas Interactiva -->
+            <div class="w-full lg:w-5/12 flex flex-col items-start gap-8 lg:pl-64">
+
+                {% for brand in ecosistema.brands %}
+                <!-- {{ brand.alt | upper }} -->
+                <div class="brand-item w-full group cursor-pointer transition-all duration-300" data-target="{{ brand.target }}">
+                    <div class="flex items-center justify-between transition-opacity duration-300 brand-header">
+                        <img src="{{ brand.logo }}" alt="{{ brand.alt }}"
+                            class="h-8 sm:h-10 w-auto animate-pulse group-hover:opacity-100 transition-opacity duration-300"
+                            style="animation-delay: {{ brand.animation_delay }};">
+                    </div>
+                    <div class="brand-body grid grid-rows-[0fr] transition-all duration-500 ease-in-out">
+                        <div class="overflow-hidden">
+                            <div class="pt-4 pl-1">
+                                <p class="text-gray-300 font-light text-sm sm:text-base mb-4 leading-relaxed border-l-2 border-[{{ brand.color }}] pl-4">
+                                    {{ brand.description }}
+                                </p>
+                                <a href="{{ brand.url }}" target="_blank"
+                                    class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-white hover:text-[{{ brand.hover_color or brand.color }}] transition-colors pl-5">
+                                    ▶ Ver más
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <!-- LOGOS CAROUSEL (Partners/Clientes) - Infinite Scroll -->
+        <div
+            class="relative mt-16 xl:absolute xl:bottom-10 xl:left-0 xl:mt-0 w-full z-30 flex justify-center px-6 sm:px-12">
+            <div
+                class="w-full max-w-[1400px] overflow-hidden relative [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                <div class="brands-carousel flex items-center gap-16 animate-scroll-brands py-4">
+                    <!-- Primera copia de logos -->
+                    <img src="/imgs/brands/Figma_Logo_0.svg" alt="Figma"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/Freepik_id07UrLimP_1.svg" alt="Freepik"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/LinkedIn_Logo_0.svg" alt="LinkedIn"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/N8n.io_Logo_0.svg" alt="n8n"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/TikTok_Logo_0.svg" alt="TikTok"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/Meta_id0D-m9C5l_0.svg" alt="Meta"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/google.svg" alt="Google"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/spotify.svg" alt="Spotify"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/active.svg" alt="ActiveCampaign"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/clickup.svg" alt="ClickUp"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/analytics.png" alt="Analytics"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/heygen.png" alt="HeyGen"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/wordpress.svg" alt="WordPress"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <!-- Segunda copia de logos (para el loop infinito) -->
+                    <img src="/imgs/brands/Figma_Logo_0.svg" alt="Figma"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/Freepik_id07UrLimP_1.svg" alt="Freepik"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/LinkedIn_Logo_0.svg" alt="LinkedIn"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/N8n.io_Logo_0.svg" alt="n8n"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/TikTok_Logo_0.svg" alt="TikTok"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/Meta_id0D-m9C5l_0.svg" alt="Meta"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/google.svg" alt="Google"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/spotify.svg" alt="Spotify"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/active.svg" alt="ActiveCampaign"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/clickup.svg" alt="ClickUp"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/analytics.png" alt="Analytics"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/heygen.png" alt="HeyGen"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/wordpress.svg" alt="WordPress"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                </div>
             </div>
         </div>
     </section>
+    <!--! Services -->
+    <section class="w-dvw relative py-24 xl:py-32 flex items-center justify-center overflow-hidden">
 
-    <!-- Seccion 2: Misión (Fondo Azul) -->
-    <section class="w-full bg-black text-white py-20 xl:py-32 px-6 sm:px-12 xl:px-24">
-        <div class="max-w-[1400px] mx-auto flex flex-col-reverse xl:flex-row gap-16 items-center">
-            <!-- Imagen -->
-            <div class="w-full xl:w-1/2">
-                <img src="/imgs/img-manifesto-mision.png" alt="Mission Mountain" class="w-10/12">
-            </div>
-            <!-- Texto -->
-            <div class="reveal-group w-full xl:w-1/2">
-                <h2 class="font-black text-4xl sm:text-5xl mb-8">Misión</h2>
-                <h3 class="font-light text-xl sm:text-2xl mb-2">Somos el puente entre las marcas y el cambio.</h3>
-                <h3 class="font-light text-xl sm:text-2xl mb-12 opacity-90">Entre lo que son hoy y todo lo que pueden llegar a ser.</h3>
-
-                <div class="space-y-6 font-light text-lg leading-relaxed opacity-95">
-                    <p class="reveal-lines">Nuestro compromiso es claro: crear estrategias éticas, efectivas y a la altura de un mundo digital que evoluciona cada segundo.</p>
-                    <p class="reveal-lines">Nos integramos como parte del equipo. Pensamos como negocio. Actuamos con inteligencia. Con todas.</p>
-                    <p class="reveal-lines">Cada campaña que lanzamos, cada automatización que diseñamos, cada contenido que publicamos, está pensado para una sola cosa: hacer que el negocio funcione mejor y que la marca se haga más fuerte.</p>
-                    <p class="reveal-lines">Trabajamos con exigencia, con transparencia y con una obsesión sana por el resultado.</p>
-                    <p class="reveal-lines">Y sobre todo, trabajamos con marcas que, como nosotros, quieren dejar de hacer más de lo mismo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Seccion 3: En qué creemos (Cards) -->
-    <section class="w-full bg-white py-20 xl:py-32 px-6 sm:px-12 xl:px-24">
-        <div class="max-w-[1400px] mx-auto flex flex-col xl:flex-row gap-16">
-            <!-- Título a la izquierda -->
-            <div class="reveal-group w-full xl:w-1/3">
-                <h2 class="font-black text-5xl xl:text-6xl text-[#4889eb]">Nuestros</h2>
-                <h2 class="font-black text-5xl xl:text-6xl mb-4 text-[#4889eb]">Valores</h2>
-                <p class="reveal-lines font-light text-xl text-gray-800">No los repetimos porque suena bien.</p>
-                <p class="reveal-lines font-light text-xl text-[#4889eb]">Lo vivimos cada día</p>
-            </div>
-
-            <!-- Grid de Cards 2x2 a la derecha -->
-            <div class="w-full xl:w-2/3">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <!-- Card 1 -->
-                    <div
-                        class="group bg-gray-50 hover:bg-black p-8 rounded-3xl flex flex-col min-h-[280px] border border-gray-200 hover:border-black transition-all duration-300 hover:rotate-2 cursor-pointer">
-                        <img src="/imgs/ico-mani-box-1.png" alt="icon" class="w-12 h-12 mb-6">
-                        <h4 class="block-reveal font-bold text-lg mb-3 text-[#4889eb] transition-all duration-300">01. Servicio</h4>
-                        <p
-                            class="reveal-lines font-light text-gray-700 group-hover:text-white text-sm leading-relaxed transition-all duration-300">
-                            No estamos aquí para cumplir tareas. Estamos para ayudarte a crecer. Nos involucramos, pensamos contigo, y vamos más allá de lo que esperas.
-                        </p>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div
-                        class="group bg-gray-50 hover:bg-black p-8 rounded-3xl flex flex-col min-h-[280px] border border-gray-200 hover:border-black transition-all duration-300 hover:rotate-2 cursor-pointer">
-                        <img src="/imgs/ico-mani-box-2.png" alt="icon" class="w-12 h-12 mb-6">
-                        <h4 class="block-reveal font-bold text-lg mb-3 text-[#4889eb] transition-all duration-300">02. Transparencia</h4>
-                        <p
-                            class="reveal-lines font-light text-gray-700 group-hover:text-white text-sm leading-relaxed transition-all duration-300">
-                            Nada de letra pequeña. Nada de promesas vacías. Hablamos claro. Compartimos todo. Construimos confianza con hechos.
-                        </p>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div
-                        class="group bg-gray-50 hover:bg-black p-8 rounded-3xl flex flex-col min-h-[280px] border border-gray-200 hover:border-black transition-all duration-300 hover:rotate-2 cursor-pointer">
-                        <img src="/imgs/ico-mani-box-3.png" alt="icon" class="w-12 h-12 mb-6">
-                        <h4 class="block-reveal font-bold text-lg mb-3 text-[#4889eb] transition-all duration-300">03. Innovación</h4>
-                        <p
-                            class="reveal-lines font-light text-gray-700 group-hover:text-white text-sm leading-relaxed transition-all duration-300">
-                            No seguimos tendencias. Las analizamos, las entendemos y aplicamos solo lo que funciona. La innovación no es una excusa para el desorden, es nuestra herramienta para encontrar lo que aún no está resuelto.
-                        </p>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div
-                        class="group bg-gray-50 hover:bg-black p-8 rounded-3xl flex flex-col min-h-[280px] border border-gray-200 hover:border-black transition-all duration-300 hover:rotate-2 cursor-pointer">
-                        <img src="/imgs/ico-mani-box-4.png" alt="icon" class="w-12 h-12 mb-6">
-                        <h4 class="block-reveal font-bold text-lg mb-3 text-[#4889eb] transition-all duration-300">04. Resultados</h4>
-                        <p
-                            class="reveal-lines font-light text-gray-700 group-hover:text-white text-sm leading-relaxed transition-all duration-300">
-                            No trabajamos por premios ni por likes. Trabajamos para que tu negocio crezca, tu equipo respire y tu marca avance. Si no suma, no sirve.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Seccion CTA -->
-    <section
-        class="w-full relative min-h-[70vh] flex items-center justify-start overflow-hidden py-20 px-6 sm:px-12 xl:px-24">
         <!-- Background Image -->
-        <img src="/imgs/bg-manifesto-2.png" alt="Sky Background"
-            class="absolute inset-0 w-full h-full object-cover z-0">
-        <!-- Overlay opcional si necesitas oscurecer -->
-        <div class="absolute inset-0 z-10"></div>
+        <div class="absolute inset-0 z-0">
+            <img src="/imgs/fondo-services.webp" alt="Background Services" class="w-full h-full object-cover">
+            <!-- Overlay para mejorar legibilidad -->
+            <div class="absolute inset-0 bg-black/10 z-10"></div>
+        </div>
 
-        <div class="reveal-group relative z-20 text-left w-full max-w-4xl">
-            <h2 class="block-reveal font-black text-5xl sm:text-6xl xl:text-8xl text-black leading-tight">
-                Porque imaginar<br>no es suficiente.
-            </h2>
-            <p class="reveal-lines font-light text-xl sm:text-2xl text-black mt-8 leading-relaxed max-w-2xl">
-                Nosotros creamos soluciones reales que impulsan marcas, automatizan procesos y escalan negocios con inteligencia.
-            </p>
+        <div
+            class="container mx-auto px-6 sm:px-8 relative z-20 flex flex-col xl:flex-row items-center justify-between gap-12 xl:gap-0">
+
+            <!-- Texto (Izquierda) -->
+            <div class="reveal-group w-full xl:w-1/2 flex flex-col items-start text-left">
+                <h1 class="block-reveal font-black text-5xl text-white leading-tight">
+                    {{ services.h1_l1 }}<br>
+                </h1>
+                <h1 class="block-reveal font-black text-5xl text-[#4889eb] mb-6 xl:mb-8 leading-tight">
+                    {{ services.h1_l2_accent }}
+                </h1>
+
+                <div class="max-w-xl">
+                    <p class="reveal-lines text-gray-200 font-light text-lg sm:text-xl leading-relaxed">
+                        {{ services.description }}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Botones (Derecha) -->
+            <div class="w-full xl:w-5/12 flex flex-col items-start gap-4">
+
+                {% for btn in services.buttons %}
+                <!-- Botón {{ loop.index }} -->
+                <a href="{{ btn.href }}" class="group w-full sm:w-auto text-left">
+                    <div class="inline-block px-8 py-3 rounded-lg border border-[#4889eb] bg-black/40 backdrop-blur-sm text-white font-light text-sm sm:text-base transition-all duration-300 hover:bg-[#4889eb] hover:shadow-[0_0_20px_rgba(72,137,235,0.4)]">
+                        {{ btn.text }}
+                    </div>
+                </a>
+                {% endfor %}
+
+            </div>
         </div>
     </section>
 
+    <!--! Why Us (Nuevo Diseño Dark) -->
+    <section class="w-dvw relative bg-black py-20 xl:py-32 px-6 sm:px-8">
 
+        <!-- Título Centrado -->
+        <div class="reveal-group max-w-4xl mx-auto text-center mb-12 xl:mb-16">
+            <h1 class="font-black text-5xl text-white leading-tight">
+                {{ why_us.h1_l1 }}
+            </h1>
+            <h1 class="font-black text-5xl text-white leading-tight">
+                {{ why_us.h1_l2 }}
+            </h1>
+        </div>
+
+        <!-- Cards Grid -->
+        <div
+            class="w-full max-w-[1600px] px-6 sm:px-12 xl:px-24 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+
+            {% for card in why_us.cards %}<!-- Card {{ loop.index }} -->
+            <div class="bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] rounded-xl p-6 flex flex-col items-start gap-4 shadow-[0_4px_20px_rgba(72,137,235,0.12)] transition-all duration-300 hover:shadow-[0_4px_30px_rgba(72,137,235,0.2)]">
+                <img src="{{ card.icon }}" alt="icono" class="h-10 w-auto">
+                <div>
+                    <p class="text-white font-normal text-lg leading-snug whitespace-nowrap">{{ card.title }}</p>
+                    <p class="text-[#4889eb] font-light text-sm">{{ card.sub }}</p>
+                </div>
+            </div>
+            {% endfor %}
+    </section>
+    <!-- How We Do -->
+    <section class="w-dvw xl:h-dvh relative bg-black flex flex-col xl:flex-row">
+        <div
+            class="w-full xl:w-1/3 h-auto xl:h-full relative flex flex-col items-center justify-center px-12 sm:px-12 py-12 xl:py-0">
+            <h1 class="w-full font-black text-3xl sm:text-4xl xl:text-5xl text-left text-white">{{ how_we_do.title_html | safe }}</h1>
+        </div>
+        <div class="w-full xl:w-1/3 h-[40vh] sm:h-[50vh] xl:h-full relative overflow-hidden">
+            <img src="{{ how_we_do.image }}" alt="imagen de como hacemos"
+                class="object-cover absolute w-full h-full">
+        </div>
+        <div
+            class="w-full xl:w-1/3 h-auto xl:h-full relative flex flex-col justify-center items-start gap-4 px-6 sm:px-8 py-12 xl:py-0">
+
+            {% for step in how_we_do.steps %}<div class="w-12/12 flex ml-4 sm:ml-16{% if not loop.first %} mt-6{% endif %}{% if loop.last %} items-start{% endif %} proceso-item" data-proceso="{{ loop.index }}">
+                <h1 class="font-sans font-thin text-6xl text-white">{{ loop.index }}</h1>
+                <p class="font-sans font-light text-lg text-white ml-4 sm:ml-7 mt-5 leading-tight">
+                    <b class="font-sans font-bold proceso-titulo">{{ step.title }}</b><br>
+                    <b class="hidden font-light proceso-subtitulo">{{ step.subtitle_html | safe }}</b>
+                </p>
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>
+    <!-- Results (Nuevo Diseño Dark) -->
+    <section class="w-full bg-black py-20 xl:py-28 px-6 sm:px-12">
+        <div class="w-full max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+
+            <!-- Columna Izquierda: Título y CTA -->
+            <div class="w-full lg:w-1/3 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <h1 class="block-reveal font-black text-6xl text-white mb-8">{{ results.title }}</h1>
+                <a href="{{ results.cta_href }}"
+                    class="inline-block px-8 py-3 rounded-lg text-sm font-medium uppercase tracking-wider border-2 border-[#4889eb] bg-[#4889eb] text-white transition-all duration-300 hover:bg-transparent hover:text-[#4889eb] shadow-[0_0_15px_rgba(72,137,235,0.3)]">
+                    {{ results.cta_text }}
+                </a>
+            </div>
+
+            <!-- Columna Derecha: KPIs -->
+            <div class="w-full lg:w-2/3 flex justify-center lg:justify-end">
+                <div
+                    class="w-full max-w-[750px] bg-gradient-to-br from-[#141416] to-[#000000] rounded-2xl py-7 px-8 sm:px-12 border border-[#1e3a5f] shadow-[0_0_30px_rgba(72,137,235,0.1)]">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+
+                        {% for kpi in results.kpis %}<!-- KPI {{ loop.index }} -->
+                        <div>
+                            <h2 class="text-white font-black text-6xl mb-2">{{ kpi.prefix }}<span class="counter-value" data-target="{{ kpi.value }}">0</span>{{ kpi.suffix }}</h2>
+                            <p class="text-gray-400 font-light text-sm leading-relaxed">
+                                {{ kpi.label_html | safe }}
+                            </p>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--! Testimonials (Nuevo Diseño Dark) -->
+    <section class="w-full bg-black py-16 xl:py-24 px-6 sm:px-12">
+        <div class="max-w-[1600px] mx-auto">
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
+
+                <!-- Columna Izquierda: Título -->
+                <div class="xl:pr-12">
+                    <h2 class="reveal-group font-black text-3xl xl:text-5xl text-white leading-tight">{% for line in testimonials.title_lines %}
+                        <span class="">{{ line }}</span>{% if not loop.last %}<br class="hidden xl:inline">{% endif %}{% endfor %}
+                    </h2>
+                </div>
+
+                <!-- Columna Derecha: Carrusel -->
+                <div class="relative px-0 xl:px-8">
+                    <!-- Botones de navegación -->
+                    <button id="simple-testimonials-prev" aria-label="Anterior"
+                        class="absolute left-0 xl:-left-6 top-1/2 -translate-y-1/2 z-10 bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full p-3 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4889eb]">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+
+                    <button id="simple-testimonials-next" aria-label="Siguiente"
+                        class="absolute right-0 xl:-right-6 top-1/2 -translate-y-1/2 z-10 bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full p-3 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4889eb]">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+
+                    <div id="simple-testimonials-carousel" class="overflow-hidden cursor-grab mx-8 xl:mx-0">
+                        <div class="testimonials-track flex transition-transform duration-300 ease-out">
+
+                            {% for t in testimonials.cards %}<!-- Card {{ loop.index }} -->
+                            <div class="testimonial-card flex-shrink-0 w-full xl:w-[480px] bg-gradient-to-br from-[#141416] to-[#000000] border border-[#2a2a2a] rounded-2xl p-6{% if not loop.last %} mr-6{% endif %}">
+                                <h3 class="text-lg xl:text-2xl font-semibold text-white mb-3 leading-snug">
+                                    {{ t.h3 }}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                    {{ t.quote }}
+                                </p>
+                                <div class="flex items-center justify-between border-t border-[#2a2a2a] pt-4">
+                                    <div class="flex items-center gap-2">
+                                        <img src="{{ t.brand_logo }}" alt="brand" class="{{ t.brand_logo_class }} object-contain p-1 brightness-0 invert" />
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <img src="{{ t.person_image }}" alt="{{ t.person_alt }}" class="h-10 w-10 rounded-full object-contain bg-white/10 p-1" />
+                                        <div class="text-right">
+                                            <p class="text-white font-semibold text-sm">{{ t.author }}</p>
+                                            <p class="text-gray-500 text-xs">{{ t.role }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- CTA Home -->
+    <section
+        class="w-full max-w-full relative flex flex-col items-center min-h-[60vh] sm:min-h-[70vh] xl:min-h-[50vh] pt-16 sm:pt-24 xl:pt-32 pb-16 sm:pb-24 xl:pb-32 overflow-hidden">
+        <iframe src="{{ cta_home.spline_url }}" frameborder="0"
+            width="100%" height="100%" class="absolute inset-0 z-10 pointer-events-auto"></iframe>
+        <div class="reveal-group relative z-20 flex flex-col items-center pointer-events-none">
+            <h1 class="font-black text-white text-2xl sm:text-4xl xl:text-5xl text-center pointer-events-none">{{ cta_home.h1_l1 }}<br></h1>
+            <h1 class="font-black text-4xl sm:text-4xl xl:text-5xl text-white mb-0 xl:mb-10 text-center pointer-events-none">
+                {{ cta_home.h1_l2 }}</h1>
+
+            <h3 class="reveal-lines w-full px-5 py-10 max-w-3xl font-light text-[18px] sm:text-lg xl:text-xl text-white text-center pointer-events-none">
+                {{ cta_home.subtitle }}</h3>
+            <a href="{{ cta_home.cta_href }}"
+                class="px-6 py-3 rounded-lg text-base sm:text-lg font-light ml-0 xl:ml-3 mt-4 sm:mt-5 bg-white text-blue-500 transition-colors duration-200 cursor-pointer hover:bg-black hover:text-white pointer-events-auto z-30">{{ cta_home.cta_text }}</a>
+        </div>
+    </section>
     <!-- Footer -->
     <footer class="bg-black py-16 text-white">
         <div class="max-w-full mx-auto px-6 lg:px-24">
@@ -543,6 +763,15 @@
                                     d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
                             </svg>
                         </a>
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/@immoralmarketing" target="_blank" rel="noopener noreferrer"
+                            class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
+                            aria-label="YouTube">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
 
@@ -587,11 +816,13 @@
                     </div>
                 </div>
                 <div class="mt-8 text-center">
-                    <p class="text-[#B9C0CA] text-sm">© 2026 Immoral Group SLU. Todos los derechos reservados.</p>
+                    <p class="text-[#B9C0CA] text-sm">© 2026 Todos los derechos reservados.</p>
                 </div>
             </div>
         </div>
     </footer>
+
+
     <script type="module" src="/src/main.js"></script>
 </body>
 

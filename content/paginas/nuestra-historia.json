@@ -1,0 +1,85 @@
+{
+  "slug": "nuestra-historia",
+  "title": "Nuestra Historia",
+  "mode": "template",
+  "seo": {
+    "title": "Immoral Growth Group - Tu partner estratégico de crecimiento digital",
+    "meta_description": null,
+    "og_image": null
+  },
+  "hero": {
+    "h1_lines": ["De hacer marketing...", "a repensarlo por", "completo"],
+    "intro1": "Immoral no nació con un business plan de 80 páginas.",
+    "intro2_accent": "Nació de una incomodidad."
+  },
+  "fundador": {
+    "bg_image": "imgs/nt-bg-2.webp",
+    "intro_desktop_l1": "Marco, nuestro fundador, venía de trabajar con",
+    "intro_desktop_l2": "agencias. Muchas. Y en todas encontró lo mismo:",
+    "intro_mobile": "Marco, nuestro fundador, venía de trabajar con agencias. Muchas. Y en todas encontró lo mismo:",
+    "bullets": [
+      "Promesas vacías.",
+      "Tácticas sin estrategia.",
+      "Transparencia solo cuando convenía."
+    ],
+    "footer_line": "Y un pensamiento que se repetía:",
+    "footer_quote": "\"Si esto es lo normal, yo no quiero hacer marketing.\""
+  },
+  "origen": {
+    "image": "imgs/circulo-equipo.png",
+    "image_alt": "Equipo Immoral",
+    "h2": "Así nació la idea:",
+    "intro_bold": "Construir el equipo en el que a él le habría gustado trabajar.",
+    "paragraphs": [
+      "Un equipo que pensara antes de hacer.",
+      "Que dijera la verdad, incluso cuando no fuera lo más cómodo.",
+      "Que tuviera talento real, pero también criterio, compromiso y humanidad."
+    ],
+    "azul_desktop_p1": "Al principio nos llamamos ADMK Team. Lo dimos todo.",
+    "azul_desktop_p2": "Las marcas llegaron. Se quedaron. Y nos recomendaron.",
+    "azul_mobile": "Al principio nos llamamos ADMK Team. Lo dimos todo. Las marcas llegaron. Se quedaron. Y nos recomendaron.",
+    "azul_pero1": "Pero había algo que no cuadraba:",
+    "azul_pero2": "el nombre, la marca, el discurso…",
+    "azul_highlight": "No éramos nosotros."
+  },
+  "statement": {
+    "h2_l1": "Immoral: un nombre que incomoda.",
+    "h2_l2": "Y por eso funciona.",
+    "paragraphs": [
+      "Sabíamos que si queríamos cambiar el juego, también teníamos que cambiar el uniforme.",
+      "Immoral nació como un statement:<br>El marketing no tiene por qué ser tramposo, vacío u oportunista. Puede ser honesto. Estratégico. Transparente. Transformador.",
+      "Sí, el nombre incomoda. Y nos encanta.<br>Porque si hay algo que hacemos bien es cuestionar lo establecido."
+    ],
+    "video": "imgs/logo-loader.mp4"
+  },
+  "mas_que_agencia": {
+    "h2_desktop_l1": "Hoy, Immoral es más que",
+    "h2_desktop_l2": "una agencia",
+    "h2_mobile": "Hoy, Immoral es más que una agencia",
+    "paragraphs": [
+      "Somos un equipo que piensa como negocio. Que actúa como parte del tuyo.",
+      "Hacemos crecer marcas, sí. Pero también las hacemos más eficientes, más inteligentes y más preparadas para lo que viene."
+    ],
+    "cajas": [
+      { "icon": "/imgs/ico-historia-1.png", "alt": "Procesos", "text": "Nos metemos en tus procesos" },
+      { "icon": "/imgs/ico-historia-2.png", "alt": "Cuellos de botella", "text": "Encontramos cuellos de botella" },
+      { "icon": "/imgs/ico-historia-3.png", "alt": "Automatización", "text": "Automatizamos lo que frena" }
+    ],
+    "caja_full": {
+      "icon": "/imgs/ico-historia-4.png",
+      "alt": "Oportunidades",
+      "lead": "Y donde la mayoría solo ve leads:",
+      "text": "nosotros vemos oportunidades de construir algo más grande: una marca con propósito y con resultados reales."
+    }
+  },
+  "contacto": {
+    "h1_l1": "Gracias por considerar",
+    "h1_l2_accent": "A Immoral",
+    "paragraphs": [
+      "No sabemos si somos lo que esperabas encontrar.",
+      "Pero si buscabas una forma distinta de hacer las cosas —más clara, más honesta, más efectiva—, estás en buen lugar."
+    ],
+    "cta_h2": "Hablemos. Esto acaba de empezar.",
+    "calendly_url": "https://discover.immoral.es/discovery-page"
+  }
+}

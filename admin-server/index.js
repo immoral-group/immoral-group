@@ -12,7 +12,7 @@ const CONTENT = join(ROOT, 'content');
 const app = express();
 app.use(express.json({ limit: '2mb' }));
 
-const TYPES = ['casos', 'servicios', 'seo'];
+const TYPES = ['casos', 'servicios', 'paginas', 'seo'];
 
 function typeDir(type) {
   if (!TYPES.includes(type)) return null;

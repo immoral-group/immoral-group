@@ -37,8 +37,8 @@ function buildCasos() {
   }
 }
 
-function patchServicioHtml(data) {
-  const raw = join(ROOT, 'templates', 'servicios-raw', `${data.slug}.html`);
+function patchHtml(data, rawDir) {
+  const raw = join(ROOT, 'templates', rawDir, `${data.slug}.html`);
   if (!existsSync(raw)) throw new Error(`source HTML missing: ${raw}`);
   const html = readFileSync(raw, 'utf8');
   const $ = cheerio.load(html, { decodeEntities: false });
@@ -66,9 +66,30 @@ function buildServicios() {
     if (data.sections && data.sections.length) {
       html = GENERATED_HEADER + env.render('servicio.html', data);
     } else if (data.mode === 'patch') {
-      html = GENERATED_HEADER + patchServicioHtml(data);
+      html = GENERATED_HEADER + patchHtml(data, 'servicios-raw');
     } else {
       console.warn(`  ⚠ ${data.slug}: no sections[] ni mode=patch, skip`);
+      continue;
+    }
+    const out = join(ROOT, `${data.slug}.html`);
+    writeFileSync(out, html);
+    console.log(`  wrote ${data.slug}.html`);
+  }
+}
+
+function buildPaginas() {
+  const dir = join(CONTENT, 'paginas');
+  if (!existsSync(dir)) return;
+  for (const file of readdirSync(dir)) {
+    if (!file.endsWith('.json')) continue;
+    const data = loadJson(join(dir, file));
+    let html;
+    if (data.mode === 'template') {
+      html = GENERATED_HEADER + env.render(`paginas/${data.slug}.html`, data);
+    } else if (data.mode === 'patch') {
+      html = GENERATED_HEADER + patchHtml(data, 'paginas-raw');
+    } else {
+      console.warn(`  ⚠ pagina ${data.slug}: mode=${data.mode || 'none'} no soportado`);
       continue;
     }
     const out = join(ROOT, `${data.slug}.html`);
@@ -80,4 +101,5 @@ function buildServicios() {
 console.log('build-pages: start');
 buildCasos();
 buildServicios();
+buildPaginas();
 console.log('build-pages: done');
