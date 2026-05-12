@@ -1,10 +1,23 @@
 {
   "slug": "influencer-marketing",
   "title": "Influencer Marketing",
-  "mode": "patch",
+  "mode": "template",
+  "accent_color": "#2f80ed",
   "seo": {
     "title": "Immoral Growth Group - Tu partner estratégico de crecimiento digital",
     "meta_description": null,
     "og_image": null
+  },
+  "hero": {
+    "eyebrow": "Influencer Marketing:",
+    "h1_html": "Estrategia Precisa,<br>Impacto Real",
+    "subtitle_html": "Colaborar con influencers no es solo visibilidad.<br>Es conectar con la audiencia correcta a través de creadores que representan de verdad a tu marca y generan impacto medible.",
+    "cta_text": "HABLEMOS",
+    "cta_href": "contacto.html"
+  },
+  "final_cta": {
+    "title_html": "¿Listo para <span class=\"text-[#2f80ed]\">transformar</span> el Influencer Marketing en un motor <span class=\"text-[#2f80ed]\">de crecimiento real?</span>",
+    "cta_text": "SOLICITA UNA AUDITORÍA GRATUITA",
+    "cta_href": "contacto.html"
   }
 }

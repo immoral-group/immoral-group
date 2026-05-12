@@ -1,11 +1,12 @@
-<!-- generated. Edita content/*.json, no este archivo. -->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Immoral Growth Group - Tu partner estratégico de crecimiento digital</title>
+    <title>{{ seo.title }}</title>{% if seo.meta_description %}
+    <meta name="description" content="{{ seo.meta_description }}">{% endif %}{% if seo.og_image %}
+    <meta property="og:image" content="{{ seo.og_image }}">{% endif %}
     <script type="module" src="/src/main.js"></script>
     <link rel="icon" type="image/svg+xml" href="imgs/favicon.svg">
     <!-- Matter.js CDN -->
@@ -333,13 +334,13 @@
             class="w-full md:w-1/2 flex items-center justify-center md:justify-start px-6 md:px-12 lg:px-24 relative z-10 pt-64 md:pt-0">
             <div class="space-y-6 md:space-y-8">
                 <span class="block text-base md:text-lg font-light tracking-wide text-gray-300">
-                    Diseño de Marca y Contenidos:
+                    {{ hero.eyebrow }}
                 </span>
                 <h1 class="text-4xl md:text-6xl font-black leading-[0.95] tracking-tight">
-                    Precisión Artesanal<br>con el Poder de la<br>Tecnología
+                    {{ hero.title_html | safe }}
                 </h1>
                 <p class="text-lg md:text-xl font-light text-gray-400 leading-relaxed max-w-lg mt-8">
-                    Tu marca no es solo un logo.<br>Es una historia, una identidad, una experiencia.<br>Y nosotros la diseñamos a medida.
+                    {{ hero.subtitle_html | safe }}
                 </p>
             </div>
         </div>
@@ -892,17 +893,17 @@
     <section class="bg-white pb-32 px-6 md:px-12 relative z-10">
         <div class="max-w-[1400px] mx-auto text-center space-y-12">
             <h2 class="text-3xl md:text-3xl font-black text-black leading-tight max-w-5xl mx-auto tracking-tight">
-                ¿Listo para crear una <span class="text-[#2f80ed]">marca que imacte</span> y contenido que conecte?
+                {{ final_cta.title_html | safe }}
             </h2>
 
             <div>
-                <a href="contacto.html"
-                    class="group inline-flex items-center border-2 border-[#2f80ed] overflow-hidden relative transition-all duration-300">
-                    <span class="flex items-center justify-center w-14 h-14 bg-[#2f80ed] relative z-10 shrink-0">
+                <a href="{{ final_cta.cta_href }}"
+                    class="group inline-flex items-center border-2 border-[{{ accent_color }}] overflow-hidden relative transition-all duration-300">
+                    <span class="flex items-center justify-center w-14 h-14 bg-[{{ accent_color }}] relative z-10 shrink-0">
                         <img src="/imgs/btn-ico.svg" alt="" class="w-5 h-5">
                     </span>
                     <span class="relative px-8 py-4 text-sm md:text-base font-medium text-black uppercase tracking-widest z-10 group-hover:text-white transition-colors duration-300">
-                        SOLICITA UNA AUDITORÍA GRATUITA
+                        {{ final_cta.cta_text }}
                     </span>
                     <!-- Animated blue background that expands on hover -->
                     <span

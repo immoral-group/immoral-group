@@ -63,12 +63,14 @@ function buildServicios() {
     if (!file.endsWith('.json')) continue;
     const data = loadJson(join(dir, file));
     let html;
-    if (data.sections && data.sections.length) {
+    if (data.mode === 'template') {
+      html = GENERATED_HEADER + env.render(`servicios/${data.slug}.html`, data);
+    } else if (data.sections && data.sections.length) {
       html = GENERATED_HEADER + env.render('servicio.html', data);
     } else if (data.mode === 'patch') {
       html = GENERATED_HEADER + patchHtml(data, 'servicios-raw');
     } else {
-      console.warn(`  ⚠ ${data.slug}: no sections[] ni mode=patch, skip`);
+      console.warn(`  ⚠ ${data.slug}: modo desconocido, skip`);
       continue;
     }
     const out = join(ROOT, `${data.slug}.html`);

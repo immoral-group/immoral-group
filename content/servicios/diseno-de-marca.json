@@ -1,10 +1,21 @@
 {
   "slug": "diseno-de-marca",
   "title": "Diseño de Marca & Contenidos",
-  "mode": "patch",
+  "mode": "template",
+  "accent_color": "#2f80ed",
   "seo": {
     "title": "Immoral Growth Group - Tu partner estratégico de crecimiento digital",
     "meta_description": null,
     "og_image": null
+  },
+  "hero": {
+    "eyebrow": "Diseño de Marca y Contenidos:",
+    "title_html": "Precisión Artesanal<br>con el Poder de la<br>Tecnología",
+    "subtitle_html": "Tu marca no es solo un logo.<br>Es una historia, una identidad, una experiencia.<br>Y nosotros la diseñamos a medida."
+  },
+  "final_cta": {
+    "title_html": "¿Listo para crear una <span class=\"text-[#2f80ed]\">marca que imacte</span> y contenido que conecte?",
+    "cta_text": "SOLICITA UNA AUDITORÍA GRATUITA",
+    "cta_href": "contacto.html"
   }
 }

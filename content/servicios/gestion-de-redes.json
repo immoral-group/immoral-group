@@ -1,10 +1,21 @@
 {
   "slug": "gestion-de-redes",
   "title": "Gestión de Redes Sociales",
-  "mode": "patch",
+  "mode": "template",
+  "accent_color": "#2f80ed",
   "seo": {
     "title": "Immoral Growth Group - Tu partner estratégico de crecimiento digital",
     "meta_description": null,
     "og_image": null
+  },
+  "hero": {
+    "eyebrow": "Gestión de Redes Sociales:",
+    "h1_html": "<span class=\"text-[#2F80ED]\">Estrategia</span>, Creatividad<br><span class=\"text-[#2F80ED]\">y Tecnología</span> para<br>Crecer",
+    "subtitle_html": "<span class=\"text-gray-500\">Las redes sociales no son sólo un escaparate.</span><br><span class=\"text-gray-500\">Son una conversación, una experiencia y una oportunidad</span><br>para convertir seguidores en clientes."
+  },
+  "final_cta": {
+    "title_html": "Listo para <span class=\"text-[#2f80ed]\">transformar</span> tus redes sociales en una herramienta de crecimiento?",
+    "cta_text": "SOLICITA UNA AUDITORÍA GRATUITA",
+    "cta_href": "contacto.html"
   }
 }
