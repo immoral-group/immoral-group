@@ -60,6 +60,43 @@ app.post('/api/content/build', (req, res) => {
   });
 });
 
+function runCmd(cmd, args, opts = {}) {
+  return new Promise((resolve) => {
+    const proc = spawn(cmd, args, { cwd: ROOT, ...opts });
+    let out = '', err = '';
+    proc.stdout.on('data', d => out += d.toString());
+    proc.stderr.on('data', d => err += d.toString());
+    proc.on('close', code => resolve({ ok: code === 0, code, stdout: out, stderr: err, cmd: `${cmd} ${args.join(' ')}` }));
+  });
+}
+
+app.post('/api/git/commit', async (req, res) => {
+  const message = (req.body && req.body.message) || 'chore(cms): admin edits';
+  const remote = (req.body && req.body.remote) || 'fork';
+  const status = await runCmd('git', ['status', '--porcelain']);
+  if (!status.stdout.trim()) return res.json({ ok: true, empty: true, message: 'no changes' });
+  const add = await runCmd('git', ['add', '.']);
+  if (!add.ok) return res.status(500).json({ ok: false, step: 'add', ...add });
+  const commit = await runCmd('git', ['commit', '-m', message]);
+  if (!commit.ok) return res.status(500).json({ ok: false, step: 'commit', ...commit });
+  const branchResult = await runCmd('git', ['rev-parse', '--abbrev-ref', 'HEAD']);
+  const branch = branchResult.stdout.trim();
+  const push = await runCmd('git', ['push', remote, branch]);
+  res.json({ ok: push.ok, branch, remote, commit: commit.stdout, push_out: push.stdout, push_err: push.stderr });
+});
+
+app.post('/api/deploy/preview', async (req, res) => {
+  const hook = process.env.VERCEL_DEPLOY_HOOK;
+  if (!hook) return res.status(400).json({ ok: false, error: 'VERCEL_DEPLOY_HOOK env var no configurado' });
+  try {
+    const r = await fetch(hook, { method: 'POST' });
+    const text = await r.text();
+    res.json({ ok: r.ok, status: r.status, body: text });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message });
+  }
+});
+
 const PORT = process.env.ADMIN_PORT || 3001;
 app.listen(PORT, '127.0.0.1', () => {
   console.log(`admin-server: http://127.0.0.1:${PORT}`);

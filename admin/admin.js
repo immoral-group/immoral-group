@@ -7,6 +7,12 @@ const api = {
     body: JSON.stringify(data),
   }).then(r => r.json()),
   build: () => fetch('/api/content/build', { method: 'POST' }).then(r => r.json()),
+  commit: (message) => fetch('/api/git/commit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message }),
+  }).then(r => r.json()),
+  deploy: () => fetch('/api/deploy/preview', { method: 'POST' }).then(r => r.json()),
 };
 
 const state = {
@@ -45,11 +51,13 @@ async function navigate(type, slug) {
     renderEdit();
   } else {
     state.view = 'list';
+    state.data = null;
     if (!state.cache[type]) {
       try { state.cache[type] = (await api.list(type)).items; } catch { state.cache[type] = []; }
     }
     renderList();
   }
+  if (typeof updateSeoBtn === 'function') updateSeoBtn();
 }
 
 async function refreshCounts() {
@@ -288,16 +296,6 @@ function renderCasoEditor() {
     card.appendChild(row);
   }, () => ({ titulo: '', quote: '', autor: '', rol: '', logo_class: 'h-16 w-16 object-contain' })));
 
-  const seoSet = document.createElement('fieldset');
-  const seoLeg = document.createElement('legend');
-  seoLeg.textContent = 'SEO';
-  seoSet.appendChild(seoLeg);
-  d.seo = d.seo || {};
-  seoSet.appendChild(field('Title', d.seo.title, v => d.seo.title = v));
-  seoSet.appendChild(field('Meta description', d.seo.meta_description || '', v => d.seo.meta_description = v || null, { multiline: true }));
-  seoSet.appendChild(field('OG image', d.seo.og_image || '', v => d.seo.og_image = v || null));
-  el.appendChild(seoSet);
-
   el.appendChild(toolbar());
 }
 
@@ -326,20 +324,9 @@ function renderPaginaEditor() {
 
   el.appendChild(field('Title (interno)', d.title, v => d.title = v));
 
-  // SEO
-  const seoSet = document.createElement('fieldset');
-  const seoLeg = document.createElement('legend');
-  seoLeg.textContent = 'SEO';
-  seoSet.appendChild(seoLeg);
-  d.seo = d.seo || {};
-  seoSet.appendChild(field('Title', d.seo.title, v => d.seo.title = v));
-  seoSet.appendChild(field('Meta description', d.seo.meta_description || '', v => d.seo.meta_description = v || null, { multiline: true }));
-  seoSet.appendChild(field('OG image', d.seo.og_image || '', v => d.seo.og_image = v || null));
-  el.appendChild(seoSet);
-
   // template mode: render generic editor for all top-level keys except meta
   if (!isPatch) {
-    const skip = new Set(['slug', 'title', 'mode', 'seo']);
+    const skip = new Set(['slug', 'title', 'mode', 'seo', 'accent_color']);
     for (const key of Object.keys(d)) {
       if (skip.has(key)) continue;
       el.appendChild(renderGenericGroup(key, d, key));
@@ -433,16 +420,6 @@ function renderServicioEditor() {
   if (!isPatchMode) {
     el.appendChild(field('Accent color', d.accent_color, v => d.accent_color = v, { placeholder: '#2f80ed' }));
   }
-
-  const seoSet = document.createElement('fieldset');
-  const seoLeg = document.createElement('legend');
-  seoLeg.textContent = 'SEO';
-  seoSet.appendChild(seoLeg);
-  d.seo = d.seo || {};
-  seoSet.appendChild(field('Title', d.seo.title, v => d.seo.title = v));
-  seoSet.appendChild(field('Meta description', d.seo.meta_description || '', v => d.seo.meta_description = v || null, { multiline: true }));
-  seoSet.appendChild(field('OG image', d.seo.og_image || '', v => d.seo.og_image = v || null));
-  el.appendChild(seoSet);
 
   if (!isPatchMode) {
     d.sections = d.sections || [];
@@ -590,9 +567,159 @@ async function runBuild() {
 }
 
 document.getElementById('build-btn').onclick = runBuild;
+
+async function runCommit() {
+  const message = prompt('Mensaje del commit:', 'chore(cms): admin edits');
+  if (!message) return;
+  const s = document.getElementById('build-status');
+  s.textContent = 'Committing…';
+  s.className = 'status';
+  try {
+    const r = await api.commit(message);
+    if (r.empty) { s.textContent = 'Sin cambios'; s.className = 'status'; return; }
+    if (r.ok) { s.textContent = `Commit + push ✓ (${r.branch})`; s.className = 'status success'; }
+    else { s.textContent = `Error ${r.step || ''}`; s.className = 'status error'; console.error(r); }
+  } catch (e) {
+    s.textContent = 'Error commit'; s.className = 'status error'; console.error(e);
+  }
+}
+
+async function runDeploy() {
+  if (!confirm('¿Trigger deploy Vercel? (necesita VERCEL_DEPLOY_HOOK env var)')) return;
+  const s = document.getElementById('build-status');
+  s.textContent = 'Deploying…';
+  s.className = 'status';
+  try {
+    const r = await api.deploy();
+    if (r.ok) { s.textContent = 'Deploy triggered ✓'; s.className = 'status success'; }
+    else { s.textContent = r.error || `Error ${r.status}`; s.className = 'status error'; console.error(r); }
+  } catch (e) {
+    s.textContent = 'Error deploy'; s.className = 'status error'; console.error(e);
+  }
+}
+
+document.getElementById('commit-btn').onclick = runCommit;
+document.getElementById('deploy-btn').onclick = runDeploy;
 document.querySelectorAll('.nav-link').forEach(a => {
   a.onclick = (e) => { e.preventDefault(); navigate(a.dataset.type, null); };
 });
+
+// SEO Drawer
+function drawerSection(title, expanded, build) {
+  const wrap = document.createElement('div');
+  wrap.className = 'drawer-section' + (expanded ? '' : ' collapsed');
+  const head = document.createElement('div');
+  head.className = 'drawer-section-header';
+  head.innerHTML = `<h3>${title}</h3><span class="chevron">▼</span>`;
+  head.onclick = () => wrap.classList.toggle('collapsed');
+  wrap.appendChild(head);
+  const body = document.createElement('div');
+  body.className = 'drawer-section-body';
+  build(body);
+  wrap.appendChild(body);
+  return wrap;
+}
+
+function renderDrawer() {
+  const body = document.getElementById('drawer-body');
+  const target = document.getElementById('drawer-target');
+  const d = state.data;
+  if (!d) { body.innerHTML = '<p class="empty">Selecciona un item primero.</p>'; target.textContent = ''; return; }
+
+  d.seo = d.seo || {};
+  d.seo.og = d.seo.og || {};
+  d.seo.twitter = d.seo.twitter || {};
+  const s = d.seo;
+
+  target.textContent = `${state.type} / ${d.slug}`;
+  body.innerHTML = '';
+
+  // 1. SEO básico
+  body.appendChild(drawerSection('SEO básico', true, (b) => {
+    b.appendChild(field('Title', s.title, v => s.title = v));
+    b.appendChild(field('Meta description', s.meta_description || '', v => s.meta_description = v || null, { multiline: true }));
+    b.appendChild(field('OG image (legacy)', s.og_image || '', v => s.og_image = v || null));
+  }));
+
+  // 2. Open Graph + Twitter
+  body.appendChild(drawerSection('Open Graph & Twitter', false, (b) => {
+    b.appendChild(field('og:title', s.og.title || '', v => s.og.title = v || null));
+    b.appendChild(field('og:description', s.og.description || '', v => s.og.description = v || null, { multiline: true }));
+    b.appendChild(field('og:image', s.og.image || '', v => s.og.image = v || null));
+    b.appendChild(field('og:type', s.og.type || '', v => s.og.type = v || null, { placeholder: 'website / article' }));
+    b.appendChild(field('twitter:card', s.twitter.card || '', v => s.twitter.card = v || null, { placeholder: 'summary_large_image' }));
+    b.appendChild(field('twitter:title', s.twitter.title || '', v => s.twitter.title = v || null));
+    b.appendChild(field('twitter:image', s.twitter.image || '', v => s.twitter.image = v || null));
+  }));
+
+  // 3. Schema JSON-LD
+  body.appendChild(drawerSection('Schema (JSON-LD)', false, (b) => {
+    const f = document.createElement('div');
+    f.className = 'field';
+    f.innerHTML = '<label>JSON-LD</label>';
+    const ta = document.createElement('textarea');
+    ta.className = 'json';
+    ta.value = s.schema_jsonld ? (typeof s.schema_jsonld === 'string' ? s.schema_jsonld : JSON.stringify(s.schema_jsonld, null, 2)) : '';
+    ta.placeholder = '{\n  "@context": "https://schema.org",\n  "@type": "WebPage",\n  ...\n}';
+    ta.oninput = (e) => { s.schema_jsonld = e.target.value || null; state.dirty = true; updateDrawerStatus('dirty'); };
+    f.appendChild(ta);
+    b.appendChild(f);
+  }));
+
+  // 4. Estado + canonical
+  body.appendChild(drawerSection('Publicación', false, (b) => {
+    const row = document.createElement('div');
+    row.className = 'toggle-row';
+    row.innerHTML = '<label>Estado:</label>';
+    const pill = document.createElement('span');
+    const status = s.status || 'published';
+    pill.className = 'pill ' + status;
+    pill.textContent = status === 'draft' ? 'Borrador' : 'Publicado';
+    pill.style.cursor = 'pointer';
+    pill.onclick = () => {
+      s.status = (s.status === 'draft') ? 'published' : 'draft';
+      state.dirty = true; updateDrawerStatus('dirty');
+      renderDrawer();
+    };
+    row.appendChild(pill);
+    b.appendChild(row);
+    b.appendChild(field('Canonical URL', s.canonical || '', v => s.canonical = v || null, { placeholder: 'https://immoral.es/...' }));
+    b.appendChild(field('Robots', s.robots || '', v => s.robots = v || null, { placeholder: 'index,follow' }));
+  }));
+}
+
+function openDrawer() {
+  document.getElementById('seo-drawer').classList.add('open');
+  document.getElementById('drawer-backdrop').classList.add('open');
+  renderDrawer();
+}
+
+function closeDrawer() {
+  document.getElementById('seo-drawer').classList.remove('open');
+  document.getElementById('drawer-backdrop').classList.remove('open');
+}
+
+function updateDrawerStatus(s) {
+  const el = document.getElementById('drawer-status');
+  if (!el) return;
+  if (s === 'dirty') { el.textContent = 'Cambios sin guardar'; el.className = 'status'; }
+  else if (s === 'saved') { el.textContent = 'Guardado ✓'; el.className = 'status success'; }
+  else if (s === 'error') { el.textContent = 'Error'; el.className = 'status error'; }
+}
+
+async function saveDrawer() {
+  await saveCurrent();
+  updateDrawerStatus('saved');
+}
+
+document.getElementById('seo-btn').onclick = openDrawer;
+document.getElementById('drawer-close').onclick = closeDrawer;
+document.getElementById('drawer-backdrop').onclick = closeDrawer;
+document.getElementById('drawer-save').onclick = saveDrawer;
+
+function updateSeoBtn() {
+  /* SEO btn always enabled; drawer shows empty state if no item */
+}
 
 window.addEventListener('hashchange', () => {
   const { type, slug } = parseHash();

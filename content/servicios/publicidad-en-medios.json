@@ -3,9 +3,11 @@
   "title": "Publicidad en Medios",
   "accent_color": "#2f80ed",
   "seo": {
-    "title": "Immoral Growth Group - Tu partner estratégico de crecimiento digital",
-    "meta_description": null,
-    "og_image": null
+    "title": "Publicidad en Medios - Immoral Growth Group",
+    "meta_description": "La publicidad digital no es solo algoritmos y automatización. Es precisión, es estrategia, es entender a cada cliente como único.",
+    "og_image": null,
+    "og": {},
+    "twitter": {}
   },
   "sections": [
     {
