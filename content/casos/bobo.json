@@ -1,0 +1,72 @@
+{
+  "slug": "bobo",
+  "cliente": "Bobo Choses",
+  "logo": {
+    "src": "imgs/bobo-logo.svg",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "Bobo",
+    "title_part2": "Choses",
+    "description": "Bobo Choses es una marca internacional de moda conocida por su estilo vanguardista e innovador. En su\n              esencia, busca vestir a niños y adultos con piezas que combinan comodidad y estética contemporánea,\n              mientras cuentan una historia."
+  },
+  "reto": [
+    "Bobo Choses es una marca de ropa que vende en todo el mundo a través de tiendas multimarca físicas y online.\n            La tienda online era una parte muy pequeña de la facturación de la empresa y el reto era hacerla crecer en\n            el canal digital.\n            Además, habían hecho campañas con otras agencias sin resultados por lo que venían un poco desilusionados y\n            sin confianza en las campañas de paid media."
+  ],
+  "image": {
+    "src": "imgs/bobo-img.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "Empezamos a trabajar juntos en 2018 y desde el principio no sólo tomamos un\n                enfoque cross-channel, sino que abordamos cada nivel del proceso de compra del cliente.",
+    "Inicialmente, potenciamos y optimizamos campañas de visibilidad dirigidas a nuevas\n                audiencias, garantizando que Bobo Choses fuera descubierto por potenciales clientes que aún no conocían\n                la marca.\n                Además, implementamos campañas de shopping, aprovechando el poder visual de sus productos y colocándolos\n                directamente frente a clientes dispuestos a comprar. Paralelamente, lanzamos campañas en YouTube,\n                maximizando el alcance y conectando emocionalmente con la audiencia a través de contenidos visuales\n                atractivos.",
+    "Cada campaña se monitoreaba y optimizaba constantemente para asegurar el máximo\n                rendimiento. Esto se tradujo en un retorno de inversión sin precedentes, potenciando la marca en el\n                competitivo mercado\n                digital.",
+    "Más tarde implementamos un CRM (Customer Relationship Manager) y definimos una\n                estrategia de automatización con múltiples flujos y puntos de contacto, así como una CDP (Customer Data\n                Platform) para\n                poder empezar a explotar toda su first-party data al máximo nivel."
+  ],
+  "kpis": [
+    {
+      "value": "+65%",
+      "label": "Usuarios",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+102%",
+      "label": "Pedidos",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "8",
+      "label": "ROAS Medio",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": {
+    "linea1": "Lo que más valoran no ",
+    "linea2": "es solo lo que hacemos, ",
+    "linea3_highlight": "es cómo lo hacemos"
+  },
+  "testimonios": [
+    {
+      "titulo": "Compromiso, proactividad y\n                  resolución",
+      "quote": "Su continua aportación, sus conocimientos, su experiencia y sus ganas por hacer\n                  que la marca crezca les han convertido en partners fundamentales para el\n                  crecimiento de negocio online, la estrategia de marketing digital y nuestra\n                  inversión en medios publicitarios.",
+      "autor": "AINARA SIMÓN",
+      "rol": "Chief Digital Manager, Bobo Choses",
+      "logo_class": "h-16 w-16 object-contain"
+    },
+    {
+      "titulo": "Agilidad, inteligencia y feedback",
+      "quote": "Tres aspectos muy destacables de su trabajo, fundamentales para confiar nuestra estrategia de paid\n                  media a este equipo.",
+      "autor": "TONI TIÓ",
+      "rol": "Chief Communications Manager, Bobo Choses",
+      "logo_class": "h-16 w-16  object-contain"
+    }
+  ],
+  "testimonios_logo": "/imgs/bobo-logo.svg",
+  "testimonios_logo_alt": "Logo de Bobo Choses",
+  "seo": {
+    "title": "Immoral - Casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

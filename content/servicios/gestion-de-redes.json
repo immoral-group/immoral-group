@@ -1,0 +1,58 @@
+{
+  "slug": "gestion-de-redes",
+  "title": "Gestión de Redes Sociales",
+  "mode": "template",
+  "accent_color": "#2f80ed",
+  "seo": {
+    "title": "Immoral Growth Group - Tu partner estratégico de crecimiento digital",
+    "meta_description": null,
+    "og_image": null
+  },
+  "hero": {
+    "eyebrow": "Gestión de Redes Sociales:",
+    "h1_html": "<span class=\"text-[#2F80ED]\">Estrategia</span>, Creatividad<br><span class=\"text-[#2F80ED]\">y Tecnología</span> para<br>Crecer",
+    "subtitle_html": "<span class=\"text-gray-500\">Las redes sociales no son sólo un escaparate.</span><br><span class=\"text-gray-500\">Son una conversación, una experiencia y una oportunidad</span><br>para convertir seguidores en clientes."
+  },
+  "que_podemos_hacer": {
+    "title_html": "¿Qué podemos<br>hacer por tí?",
+    "intro": "Desde la esencia visual hasta la narrativa de tu marca, nuestro equipo creativo trabaja para hacer que tu empresa se vea, se sienta y se recuerde.",
+    "cards": [
+      { "icon": "/imgs/auto-ico-1.svg", "icon_alt": "Icono Automatización", "title": "Estrategia de contenido y planificación", "description": "Diseño, estrategia y community management en una solución completa." },
+      { "icon": "/imgs/auto-ico-2.svg", "icon_alt": "Icono Optimización", "title": "Gestión integral de redes sociales", "description": "Diseño, estrategia y community management en una solución completa." },
+      { "icon": "/imgs/auto-ico-3.svg", "icon_alt": "Icono Chatbots", "title": "Automatización de interacción y respuestas a DMs", "description": "Diseño, estrategia y community management en una solución completa." },
+      { "icon": "/imgs/auto-ico-4.svg", "icon_alt": "Icono Consultoría", "title": "Servicio de community manager", "description": "Diseño, estrategia y community management en una solución completa." }
+    ]
+  },
+  "faq": {
+    "title": "¿Qué nos hace diferentes?",
+    "subtitle": "No llenamos feeds sin estrategia. No publicamos sin un objetivo claro. Creamos y gestionamos redes con impacto real y alineadas con tu negocio.",
+    "items": [
+      { "question": "Estrategia personalizada", "answer": "Cada marca tiene una voz única y un plan adaptado a su audiencia." },
+      { "question": "Creatividad con propósito", "answer": "Diseñamos contenido atractivo que no solo se ve bien, sino que genera resultados." },
+      { "question": "Análisis y optimización constante", "answer": "Decisiones basadas en datos para maximizar engagement y conversión." },
+      { "question": "Automatización inteligente", "answer": "Soluciones tecnológicas para mejorar la eficiencia sin perder autenticidad." }
+    ]
+  },
+  "como_lo_hacemos": {
+    "title": "Cómo lo hacemos",
+    "steps": [
+      { "icon": "/imgs/ico-gestion-como-1.svg", "h3_html": "Análisis &<br>Estrategia Visual", "description": "Definimos objetivos, analizamos tu audiencia y diseñamos un plan de acción." },
+      { "icon": "/imgs/ico-gestion-como-2.svg", "h3_html": "Conceptualización<br>& Diseño", "description": "Diseñamos y optimizamos cada pieza para impactar en el momento adecuado." },
+      { "icon": "/imgs/ico-gestion-como-3.svg", "h3_html": "Producción & Edición<br>de Contenidos", "description": "Interactuamos con tu comunidad, resolvemos dudas y mantenemos la conversación activa." },
+      { "icon": "/imgs/ico-gestion-como-4.svg", "h3_html": "Optimización<br>& Evolución", "description": "Analizamos el rendimiento y ajustamos la estrategia para maximizar el impacto." }
+    ]
+  },
+  "kpis": {
+    "title": "Resultados de una estrategia de contenidos bien ejecutada",
+    "items": [
+      { "icon": "/imgs/kpi-1.gif", "value": "+200%", "label": "Aumento del en engagement en redes con contenido visual estratégico." },
+      { "icon": "/imgs/kpi-4.gif", "value": "30000", "label": "Crecimiento constante de comunidad con contenido de alto impacto." },
+      { "icon": "/imgs/kpi-5.gif", "value": "+150%", "label": "Incremento del tráfico web y leads desde redes sociales en un 150%." }
+    ]
+  },
+  "final_cta": {
+    "title_html": "Listo para <span class=\"text-[#2f80ed]\">transformar</span> tus redes sociales en una herramienta de <span class=\"text-[#2f80ed]\">crecimiento real?</span>",
+    "cta_text": "SOLICITA UNA AUDITORÍA GRATUITA",
+    "cta_href": "contacto.html"
+  }
+}

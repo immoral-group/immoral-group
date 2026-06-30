@@ -1,0 +1,46 @@
+{
+  "slug": "thecrewel",
+  "cliente": "La Manso",
+  "logo": {
+    "src": "imgs/crewel-logo-white.png",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "La",
+    "title_part2": "Manso",
+    "description": "Crewel Work, líder en el Reino Unido, combina arte y tradición con sus exclusivos kits de bordados\n              isabelinos. Pero no solo venden kits, también ofrecen retiros de bordados, conectando pasión y tradición\n              en experiencias únicas."
+  },
+  "reto": [
+    "En un mundo que se inclina rápidamente hacia lo digital, Crewel Work buscaba ampliar su alcance global y\n            aumentar las ventas de sus kits. ¿El desafío? Priorizar los productos físicos, sin dejar de lado la esencia\n            y valor de sus retiros."
+  ],
+  "image": {
+    "src": "imgs/crewel.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "Empezamos a trabajar juntos a principios de 2020. Primero, nos adentramos en el corazón de Crewel Work\n                para entender su esencia. Creamos campañas dirigidas que aumentaran su visibilidad y las presentaran a\n                audiencias frescas y relevantes. Sin perder el enfoque, intensificamos la consideración del cliente\n                utilizando tácticas de buscadores y estrategias de shopping, garantizando que Crewel Work estuviera en\n                la mente de los consumidores al tomar decisiones. Además, reconociendo la importancia de la lealtad del\n                cliente, implementamos estrategias de remarketing para maximizar el valor a largo plazo de cada\n                comprador.",
+    "Pero no nos detuvimos ahí. Sabíamos que una experiencia online fluida era esencial. Así que buceamos en\n                la usabilidad de su sitio web. Después de un análisis meticuloso, propusimos mejoras centradas en el\n                usuario e implementamos un CRM para garantizar que, una vez que los visitantes llegaran, se quedaran y\n                se convirtieran en leales clientes."
+  ],
+  "kpis": [
+    {
+      "value": "+234%",
+      "label": "Incremento de pedidos",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+167%",
+      "label": "Incremento de ingresos",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": null,
+  "testimonios": [],
+  "testimonios_logo": null,
+  "testimonios_logo_alt": null,
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

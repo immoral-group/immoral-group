@@ -1,0 +1,162 @@
+{
+  "slug": "index",
+  "title": "Home",
+  "mode": "template",
+  "seo": {
+    "title": "Immoral Growth Group",
+    "meta_description": null,
+    "og_image": null
+  },
+  "hero": {
+    "video_desktop": "/imgs/home-video2.mp4",
+    "video_mobile": "/imgs/home-video2-mobile.mp4"
+  },
+  "ecosistema": {
+    "h1_lines": [
+      "No somos una agencia.",
+      "Somos un ecosistema digital",
+      "que hace crecer negocios."
+    ],
+    "intro_html": "Bienvenido a Immoral Group.<br>Un núcleo creativo, estratégico y técnico que se expande en verticales especializadas diseñadas para hacer una sola cosa: que tu marca crezca como nunca antes.",
+    "brands": [
+      {
+        "target": "fashion",
+        "logo": "/imgs/Menues/logo-fashion-bb.svg",
+        "alt": "imfashion",
+        "color": "#8b1322",
+        "description": "Especialistas en escalar marcas de moda. Branding, campañas, paid media y performance para crecer y vender.",
+        "url": "https://imfashion.es",
+        "animation_delay": "0s"
+      },
+      {
+        "target": "films",
+        "logo": "/imgs/Menues/logo-films-bb.svg",
+        "alt": "imfilms",
+        "color": "#f6d305",
+        "description": "Publicidad para la industria del cine. Estrategia creativa que conecta, emociona y llena salas.",
+        "url": "https://imfilms.es",
+        "animation_delay": "0.2s"
+      },
+      {
+        "target": "content",
+        "logo": "/imgs/Menues/logo-content-bb.svg",
+        "alt": "imcontent",
+        "color": "#9520ea",
+        "description": "Contenido creativo para anuncios, potenciado con IA.",
+        "url": "https://imcontent.es/",
+        "animation_delay": "0.4s"
+      },
+      {
+        "target": "immoralia",
+        "logo": "/imgs/Menues/logo-ia-bb.svg",
+        "alt": "immoralia",
+        "color": "#00ffff",
+        "hover_color": "#0582eb",
+        "description": "Automatización e inteligencia artificial para empresas. Procesos más eficientes, decisiones más inteligentes.",
+        "url": "https://immoralia.es/",
+        "animation_delay": "0.6s"
+      }
+    ]
+  },
+  "services": {
+    "h1_l1": "Crecimiento sin fricción.",
+    "h1_l2_accent": "Hecho para ti.",
+    "description": "Cada negocio necesita algo distinto. Por eso, diseñamos soluciones claras para marcas que quieren crecer, vender más o ser más eficientes.",
+    "buttons": [
+      { "text": "Necesito atraer a más clientes", "href": "publicidad-en-medios.html" },
+      { "text": "Me gustaría mejorar mi contenido", "href": "diseno-de-marca.html" },
+      { "text": "Quiero un embudo de ventas que convierta", "href": "email-marketing.html" },
+      { "text": "Busco optimizar procesos y automatizar tareas con IA", "href": "automatizacion-de-procesos.html" }
+    ]
+  },
+  "why_us": {
+    "h1_l1": "No lo hacemos como los demás.",
+    "h1_l2": "Y por eso funciona.",
+    "cards": [
+      { "icon": "/imgs/ico-home-box-1.png", "title": "No seguimos modas", "sub": "Aplicamos criterio" },
+      { "icon": "/imgs/ico-home-box-2.png", "title": "No a las métricas vacías", "sub": "Hablamos de negocio" },
+      { "icon": "/imgs/ico-home-box-3.png", "title": "No hacemos lo fácil", "sub": "Hacemos lo que funciona" },
+      { "icon": "/imgs/ico-home-box-4.png", "title": "No hacemos por hacer", "sub": "Diseñamos con intención" },
+      { "icon": "/imgs/ico-home-box-5.png", "title": "No solo vendemos más", "sub": "Hacemos que trabajes mejor" }
+    ]
+  },
+  "how_we_do": {
+    "title_html": "Nos integramos.<br>Diseñamos.<br>Ejecutamos. <br>Escalamos.",
+    "image": "/imgs/img-como-hacemos-1.webp",
+    "steps": [
+      {
+        "title": "Diagnóstico sin atajos",
+        "subtitle_html": "Nos metemos en tu operación. Analizamos,<br>entendemos, preguntamos"
+      },
+      {
+        "title": "Estrategia personalizada",
+        "subtitle_html": "Sin plantillas. Sin PowerPoints eternos. Una<br>hoja de ruta clara, accionable y medible."
+      },
+      {
+        "title": "Implementación sin fricciones",
+        "subtitle_html": "Nos integramos como parte de tu equipo.<br>Ejecutamos con cuidado, IA, automaticación<br>y foco."
+      },
+      {
+        "title": "Optimización continua",
+        "subtitle_html": "Leemos los datos. Detectamos patrones.<br>Afinamos cada detalle. Siempre."
+      }
+    ]
+  },
+  "results": {
+    "title": "Resultados",
+    "cta_text": "Ver casos de éxito",
+    "cta_href": "casos-de-exito.html",
+    "kpis": [
+      { "prefix": "+", "value": "15", "suffix": "", "label_html": "años diseñando<br>estrategias reales" },
+      { "prefix": "+", "value": "28", "suffix": "", "label_html": "marcas que hoy crecen y<br>trabajan mejor con<br>nosotros" },
+      { "prefix": "+", "value": "60", "suffix": "M", "label_html": "invertidos con<br>retorno" }
+    ]
+  },
+  "testimonials": {
+    "title_lines": [
+      "Lo que más valoran no es",
+      "solo lo que hacemos,",
+      "es cómo lo hacemos."
+    ],
+    "cards": [
+      {
+        "h3": "Compromiso, proactividad y resolución",
+        "quote": "Su continua aportación, sus conocimientos, su experiencia y sus ganas por hacer que la marca crezca les han convertido en partners fundamentales para el crecimiento de negocio online, la estrategia de marketing digital y nuestra inversión en medios publicitarios.",
+        "brand_logo": "/imgs/bobo-logo.svg",
+        "brand_logo_class": "h-10 w-20",
+        "person_image": "/imgs/bobo-testi.avif",
+        "person_alt": "Logo de Bobo Choses",
+        "author": "AINARA SIMÓN",
+        "role": "Chief Digital Manager"
+      },
+      {
+        "h3": "Descubrimos gracias a una recomendación.",
+        "quote": "Lo que realmente nos impresionó fue su enfoque en nuestro potencial de crecimiento más que en sus honorarios. Cuentan con un equipo especializado y bien coordinado, ofreciendo un servicio excepcional y orientado a resultados, totalmente alineado con nuestros objetivos.",
+        "brand_logo": "/imgs/mun-logo.png",
+        "brand_logo_class": "h-10 w-30",
+        "person_image": "/imgs/mun-testi.png",
+        "person_alt": "Logo de Mun Kombucha",
+        "author": "JORDI DALMAU",
+        "role": "CEO"
+      },
+      {
+        "h3": "Es como tener al equipo dentro de casa.",
+        "quote": "Son súper proactivos, están siempre detrás ofreciendo soluciones. Son un complemento perfecto y están totalmente integrados en el desarrollo de todos nuestros proyectos. Muchas gracias!",
+        "brand_logo": "/imgs/angela-logo-dark.png",
+        "brand_logo_class": "h-10 w-30",
+        "person_image": "/imgs/angela-testi.png",
+        "person_alt": "Logo de Angela Navarro",
+        "author": "BEA GUERRERO",
+        "role": "Directora"
+      }
+    ]
+  },
+  "cta_home": {
+    "spline_url": "https://my.spline.design/glassmorphlandingpage-ZyQlmkgnMPSbE8yGqSQ0xNEY/",
+    "h1_l1": "El crecimiento real empieza",
+    "h1_l2": "con una buena conversación.",
+    "subtitle": "No necesitas más ruidos. Necesitas una estretegia que funcione, procesos que fluyan y un equipo que piense como tú",
+    "cta_text": "SOLICITA UNA CONSULTORÍA",
+    "cta_href": "contacto.html"
+  }
+}

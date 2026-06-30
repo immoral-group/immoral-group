@@ -1,0 +1,62 @@
+{
+  "slug": "travelperk",
+  "cliente": "TravelPerk",
+  "logo": {
+    "src": "imgs/travel-logo-white.png",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "TravelPerk",
+    "title_part2": "",
+    "description": "Soluciones de viaje empresarial eficientes y flexibles, tanto online como offline. Plataforma líder en la\n              gestión de viajes de negocios, ofreciendo una amplia gama de servicios para facilitar los viajes\n              corporativos."
+  },
+  "reto": [
+    "Su objetivo inicial era aumentar el número de empresas que utilizan su plataforma para gestionar sus viajes\n            de negocios y mejorar la eficiencia de sus operaciones de viaje. Inicialmente gestionásemos las campañas de\n            Google Ads para España aunque, tiempo más tarde, pasamos a gestionarlas a nivel global.\n            Nuestro reto era reducir los costes por conversión a MQL de las campañas en Google Ads, mejorando así la\n            rentabilidad del negocio y de la inversión publicitaria.\n            Además de aumentar el número de maximizar el volumen de conversiones sin perder la calidad del lead, con\n            foco a MQL y SQL."
+  ],
+  "image": {
+    "src": "imgs/travelperk.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "Para conseguir los resultados reestructuramos las campañas y controlamos las concordancias de las\n                palabras clave así como de las KW negativas. El truco, optimizar, optimizar y optimizar las cuentas\n                adaptándonos al momento de cada mercado además de mejorar la tasa de conversión de las landings."
+  ],
+  "kpis": [
+    {
+      "value": "+15%",
+      "label": "MQL",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+16%",
+      "label": "SQL",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "-38 €",
+      "label": "CPA",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": {
+    "linea1": "Lo que más valoran no ",
+    "linea2": "es solo lo que hacemos, ",
+    "linea3_highlight": "es cómo lo hacemos"
+  },
+  "testimonios": [
+    {
+      "titulo": "esfuerzo y la atención al detalle",
+      "quote": "Gracias por el esfuerzo y la atención al detalle con la que lleváis nuestras cuentas. Estamos\n                  impresionados con cómo gestionáis nuestra inversión en medios digitales y nos encanta ver que nuestro\n                  ROI mejora drásticamente mes a mes. ¡Es un placer trabajar con un equipo tan profesional que continúa\n                  superando nuestros objetivos y expectativas!",
+      "autor": "KATIE ANDERTON",
+      "rol": "Chief Adquisition Manager, Travelperk",
+      "logo_class": "h-16 w-16 object-contain invert"
+    }
+  ],
+  "testimonios_logo": "/imgs/travel-logo-white.png",
+  "testimonios_logo_alt": "Logo de Bobo Choses",
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

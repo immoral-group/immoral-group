@@ -1,0 +1,189 @@
+{
+  "slug": "publicidad-en-medios",
+  "title": "Publicidad en Medios",
+  "accent_color": "#2f80ed",
+  "seo": {
+    "title": "Publicidad en Medios - Immoral Growth Group",
+    "meta_description": "La publicidad digital no es solo algoritmos y automatización. Es precisión, es estrategia, es entender a cada cliente como único.",
+    "og_image": null,
+    "og": {},
+    "twitter": {}
+  },
+  "sections": [
+    {
+      "type": "hero_scroll",
+      "eyebrow": "Publicidad en medios:",
+      "title_html": "Tecnología de<br><span class=\"text-[#2f80ed]\">vanguardia</span> con un<br>toque<span class=\"text-[#2f80ed]\"> artesanal</span>",
+      "subtitle_html": "No hacemos publicidad en serie.<br>Diseñamos estrategias a medida para que te elijan.",
+      "body_text": "La publicidad digital no es solo algoritmos y automatización. Es precisión, es estrategia, es entender a cada cliente como único. En Immoral, combinamos la tecnología con el detalle de una sastrería digital: cada campaña es hecha a mano, diseñada exclusivamente para tu marca y optimizada en tiempo real para que cada euro invertido genere impacto.",
+      "tagline_lines_html": [
+        "De alcance a <span class=\"text-[#2f80ed]\">leads.</span>",
+        "De leads a <span class=\"text-[#2f80ed]\">ventas.</span>",
+        "De ventas a <span class=\"text-[#2f80ed]\">crecimiento\n                                real.</span>"
+      ],
+      "spline_url": "https://my.spline.design/radialpattern-jefI7HGr1cHp8xYZ1mk8W7jO/"
+    },
+    {
+      "type": "plataformas",
+      "title_html": "Plataformas<br>que dominamos",
+      "subtitle": "Elegimos dónde invertir pensando en tu negocio, tus objetivos y tu momento. No seguimos tendencias: tomamos decisiones estratégicas.",
+      "items": [
+        {
+          "name": "Meta",
+          "icon": "/imgs/publi-ico-1.svg",
+          "icon_class": "w-auto h-7 self-start mb-4",
+          "description": "Te acompañamos desde la visibilidad hasta la conversión, con estrategias claras y recorridos personalizados para el usuario objetivo.",
+          "hover_color": "#1877F2",
+          "text_on_hover": "white",
+          "icon_invert_on_hover": false,
+          "span_full_width": false
+        },
+        {
+          "name": "Google",
+          "icon": "/imgs/publi-ico-2.svg",
+          "icon_class": "w-auto h-8 self-start mb-4 transition-all duration-300 group-hover:invert",
+          "description": "Estamos presentes cuando te buscan y también cuando aún no saben que te necesitan.",
+          "hover_color": "#FBBC05",
+          "text_on_hover": "black",
+          "icon_invert_on_hover": true,
+          "span_full_width": false
+        },
+        {
+          "name": "LinkedIn",
+          "icon": "/imgs/publi-ico-3.svg",
+          "icon_class": "w-auto h-10 self-start mb-4",
+          "description": "Conectamos tu marca con los perfiles que toman decisiones, de forma directa, profesional y\n                            relevante.\n",
+          "hover_color": "#0073B1",
+          "text_on_hover": "white",
+          "icon_invert_on_hover": false,
+          "span_full_width": false
+        },
+        {
+          "name": "TikTok",
+          "icon": "/imgs/publi-ico-4.svg",
+          "icon_class": "w-auto h-8 self-start mb-4 transition-all duration-300 group-hover:invert",
+          "description": "Combinamos creatividad y datos para crear contenido que encaja de forma natural en el feed y genera impacto.",
+          "hover_color": "#25F4EE",
+          "text_on_hover": "black",
+          "icon_invert_on_hover": true,
+          "span_full_width": false
+        },
+        {
+          "name": "YouTube",
+          "icon": "/imgs/publi-ico-6.svg",
+          "icon_class": "w-auto h-7 self-start mb-4",
+          "description": "Diseñamos campañas para construir recuerdo, explicar propuestas de valor y acompañar al usuario a lo largo del funnel. Creatividad, segmentación y formatos pensados para convertir visualizaciones en intención real.",
+          "hover_color": "#FF0000",
+          "text_on_hover": "white",
+          "icon_invert_on_hover": false,
+          "span_full_width": false
+        },
+        {
+          "name": "Pinterest",
+          "icon": "/imgs/publi-ico-7.svg",
+          "icon_class": "w-auto h-7 self-start mb-4",
+          "description": "Aparecemos cuando tu marca todavía está siendo inspiración.\n                            Trabajamos Pinterest como un canal de descubrimiento y demanda latente, ideal para influir en la decisión antes de que exista una búsqueda activa.",
+          "hover_color": "#E60023",
+          "text_on_hover": "white",
+          "icon_invert_on_hover": false,
+          "span_full_width": false
+        },
+        {
+          "name": "Spotify",
+          "icon": "/imgs/publi-ico-5.svg",
+          "icon_class": "w-auto h-10 shrink-0 transition-all duration-300 group-hover:invert",
+          "description": "Impactamos a tu audiencia en momentos de atención real, cuando escucha, conecta y está receptiva al mensaje.",
+          "hover_color": "#1ED760",
+          "text_on_hover": "black",
+          "icon_invert_on_hover": true,
+          "span_full_width": true
+        }
+      ]
+    },
+    {
+      "type": "faq_accordion",
+      "title": "¿Qué nos hace diferentes?",
+      "subtitle": "En publicidad, la diferencia está en el detalle. No seguimos recetas genéricas. Afinamos cada campaña con precisión quirúrgica, asegurándonos de que cada anuncio, cada puja y cada creatividad esté pensada para generar el máximo impacto.",
+      "items": [
+        {
+          "question": "Publicidad con propósito",
+          "answer": "No malgastamos presupuesto, lo convertimos en crecimiento."
+        },
+        {
+          "question": "Segmentación inteligente",
+          "answer": "Impactamos a las personas adecuadas en el momento preciso, sin depender de audiencias infladas o segmentaciones obsoletas."
+        },
+        {
+          "question": "Optimización artesanal con datos e IA",
+          "answer": "Ajustamos cada campaña a mano, con análisis en tiempo real y el apoyo de la IA para detectar oportunidades invisibles al ojo humano."
+        },
+        {
+          "question": "Creatividad estratégica que vende",
+          "answer": "No dejamos nada al azar. Probamos, refinamos y optimizamos cada pieza publicitaria para maximizar su impacto y conversión."
+        }
+      ]
+    },
+    {
+      "type": "how_we_do_it",
+      "title": "Cómo lo hacemos",
+      "bg_image": "/imgs/design-1.webp",
+      "panels": [
+        {
+          "number": 1,
+          "h3_html": "Auditoría &<br> Análisis Inteligente",
+          "description": "Analizamos tu marca como un sastre mide a su cliente: con precisión, sin margen de error. Utilizamos smart data con inteligencia artificial para encontrar las oportunidades clave para tu negocio.",
+          "color_bg": "#2f80ed",
+          "text_color": "white"
+        },
+        {
+          "number": 2,
+          "h3_html": "Planificación Estratégica<br>\n                        Automatizada",
+          "description": "Diseñamos una estrategia a medida, combinando inteligentemente el mix de medios entre Paid Social, Search, Native, Display y Video, con tecnología predictiva para que cada euro rinda al máximo.",
+          "color_bg": "#111111",
+          "text_color": "white"
+        },
+        {
+          "number": 3,
+          "h3_html": "Ejecución & Optimización<br> en Tiempo\n                        Real\n                    ",
+          "description": "Cada campaña es un traje a medida. Ajustamos y optimizamos a mano, combinando nuestra experiencia con el poder del análisis de datos y la IA. No dejamos que los algoritmos decidan por sí solos: analizamos, interpretamos y tomamos decisiones estratégicas en tiempo real para maximizar cada euro invertido.",
+          "color_bg": "white",
+          "text_color": "black"
+        },
+        {
+          "number": 4,
+          "h3_html": "Adaptación & Escalamiento<br>\n                        Inteligente",
+          "description": "El mercado cambia constantemente y nosotros nos anticipamos. No dejamos que la IA tome el control, la usamos como nuestra aliada para detectar patrones, descubrir oportunidades y escalar campañas con precisión quirúrgica. Cada ajuste está debidamente meditado. No optimizamos en piloto automático.",
+          "color_bg": "#65fefa",
+          "text_color": "black"
+        }
+      ]
+    },
+    {
+      "type": "kpis_simple",
+      "title": "La diferencia entre invertir en anuncios y construir resultados",
+      "items": [
+        {
+          "icon_gif": "/imgs/kpi-6.gif",
+          "value": "+300%",
+          "label": "ROAS en 90 días"
+        },
+        {
+          "icon_gif": "/imgs/kpi-7.gif",
+          "value": "-40%",
+          "label": "Reducción de CPA con IA predictiva"
+        },
+        {
+          "icon_gif": "/imgs/kpi-8.gif",
+          "value": "+120%",
+          "label": "Automatización que incrementó conversiones"
+        }
+      ]
+    },
+    {
+      "type": "final_cta",
+      "title": "¿Listo para dejar de quemar presupuesto y empezar a facturar?",
+      "cta_text": "SOLICITA UNA AUDITORÍA GRATUITA",
+      "cta_href": "contacto.html"
+    }
+  ]
+}

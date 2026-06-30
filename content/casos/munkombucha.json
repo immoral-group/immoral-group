@@ -1,0 +1,64 @@
+{
+  "slug": "munkombucha",
+  "cliente": "Mun Kombucha",
+  "logo": {
+    "src": "imgs/mun-logo.png",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "Mun",
+    "title_part2": "Kombucha",
+    "description": "Mun Kombucha fusiona salud, sabor y sostenibilidad en sus bebidas. Comprometida con la calidad e\n              innovación, refleja un estilo de vida consciente y saludable. Sus productos, creados con ingredientes\n              naturales y métodos artesanales, deleitan y aportan beneficios probióticos y nutricionales."
+  },
+  "reto": [
+    "En un mundo donde la salud y el bienestar cobran cada vez más importancia, Mun Kombucha buscaba expandir su\n            impacto en el mercado español de bebidas saludables. Su ambición era clara: incrementar significativamente\n            su presencia y ventas en el ecommerce, adaptándose a las dinámicas de un mercado digital en constante\n            evolución."
+  ],
+  "image": {
+    "src": "imgs/mun.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "Nuestra estrategia se centró en una serie de iniciativas integradas que abarcaron desde campañas\n                publicitarias hasta mejoras en el sitio web.",
+    "Empezamos por diseñar y lanzar campañas publicitarias en plataformas clave como Meta, Google Shopping,\n                Search, Display y YouTube. Cada una de estas campañas fue cuidadosamente elaborada para resonar con la\n                audiencia de Mun Kombucha, destacando los valores y la calidad de sus productos.",
+    "Paralelamente, nos enfocamos en optimizar la experiencia del usuario en su web. Mejoras en la interfaz\n                y la navegabilidad no solo facilitaron la exploración y el proceso de compra para los usuarios, sino que\n                también reflejaron la esencia moderna y saludable de la marca Mun Kombucha."
+  ],
+  "kpis": [
+    {
+      "value": "+51%",
+      "label": "Facturación",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+129%",
+      "label": "Nuevos clientes",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+19%",
+      "label": "Recurrencia",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": {
+    "linea1": "Lo que más valoran no ",
+    "linea2": "es solo lo que hacemos, ",
+    "linea3_highlight": "es cómo lo hacemos"
+  },
+  "testimonios": [
+    {
+      "titulo": "Descubrimos Immoral gracias a una recomendación",
+      "quote": "Lo que realmente nos impresionó fue su enfoque en nuestro potencial de crecimiento más que en sus\n                  honorarios.Cuentan con un equipo especializado y bien coordinado, ofreciendo un servicio excepcional y\n                  orientado a resultados, totalmente alineado con nuestros objetivos. Es una experiencia que sin duda\n                  recomendaría.",
+      "autor": "Jordi Dalmau",
+      "rol": "CEO, Mun Kombucha",
+      "logo_class": "h-16 w-16 object-contain"
+    }
+  ],
+  "testimonios_logo": "/imgs/mun-logo.png",
+  "testimonios_logo_alt": "Logo de Bobo Choses",
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

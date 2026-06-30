@@ -1,0 +1,14 @@
+{% include "partials/_head.html" %}
+{% include "partials/_nav_dark.html" %}
+{% for section in sections %}
+{% if section.type == "hero_scroll" %}{% include "partials/servicios/_hero_scroll.html" %}
+{% elif section.type == "plataformas" %}{% include "partials/servicios/_plataformas.html" %}
+{% elif section.type == "faq_accordion" %}{% include "partials/servicios/_faq_accordion.html" %}
+{% elif section.type == "how_we_do_it" %}{% include "partials/servicios/_how_we_do_it.html" %}
+{% elif section.type == "kpis_simple" %}{% include "partials/servicios/_kpis_simple.html" %}
+{% elif section.type == "final_cta" %}{% include "partials/servicios/_final_cta.html" %}
+{% endif %}
+{% endfor %}
+{% include "partials/_footer.html" %}
+
+</html>

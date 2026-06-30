@@ -1,0 +1,73 @@
+{
+  "slug": "manifesto",
+  "title": "Manifesto",
+  "mode": "template",
+  "seo": {
+    "title": "Immoral Growth Group - Tu partner estratégico de crecimiento digital",
+    "meta_description": null,
+    "og_image": null
+  },
+  "header": {
+    "h1": "Nuestro Manifesto",
+    "sub1": "Una visión clara. Una misión sin concesiones.",
+    "sub2_accent": "Unos valores que no se negocian."
+  },
+  "vision": {
+    "h2": "Visión",
+    "h3a": "No queremos ser una agencia.",
+    "h3b_accent": "Queremos ser el equipo que transforma realidades.",
+    "paragraphs": [
+      "Nos proyectamos hacia un futuro donde el marketing deje de ser solo ruido y falsas promesas para convertirse en una fuerza de cambio.",
+      "Un mundo donde las marcas no nos ven como proveedores, sino como el socio estratégico que empuja, cuestiona y hace que las cosas pasen.",
+      "Creemos que el marketing puede —y debe— transformar positivamente la vida de las personas.",
+      "Y lo hace cuando se ejecuta con ética, con propósito, con excelencia. Queremos dejar huella. Pero no cualquier huella. Una que sume. Una que inspire. Una que transforme."
+    ],
+    "image": "/imgs/img-manifesto-vision.png"
+  },
+  "mision": {
+    "h2": "Misión",
+    "h3a": "Somos el puente entre las marcas y el cambio.",
+    "h3b": "Entre lo que son hoy y todo lo que pueden llegar a ser.",
+    "paragraphs": [
+      "Nuestro compromiso es claro: crear estrategias éticas, efectivas y a la altura de un mundo digital que evoluciona cada segundo.",
+      "Nos integramos como parte del equipo. Pensamos como negocio. Actuamos con inteligencia. Con todas.",
+      "Cada campaña que lanzamos, cada automatización que diseñamos, cada contenido que publicamos, está pensado para una sola cosa: hacer que el negocio funcione mejor y que la marca se haga más fuerte.",
+      "Trabajamos con exigencia, con transparencia y con una obsesión sana por el resultado.",
+      "Y sobre todo, trabajamos con marcas que, como nosotros, quieren dejar de hacer más de lo mismo."
+    ],
+    "image": "/imgs/img-manifesto-mision.png"
+  },
+  "valores": {
+    "title_l1": "Nuestros",
+    "title_l2": "Valores",
+    "sub1": "No los repetimos porque suena bien.",
+    "sub2_accent": "Lo vivimos cada día",
+    "cards": [
+      {
+        "icon": "/imgs/ico-mani-box-1.png",
+        "title": "01. Servicio",
+        "text": "No estamos aquí para cumplir tareas. Estamos para ayudarte a crecer. Nos involucramos, pensamos contigo, y vamos más allá de lo que esperas."
+      },
+      {
+        "icon": "/imgs/ico-mani-box-2.png",
+        "title": "02. Transparencia",
+        "text": "Nada de letra pequeña. Nada de promesas vacías. Hablamos claro. Compartimos todo. Construimos confianza con hechos."
+      },
+      {
+        "icon": "/imgs/ico-mani-box-3.png",
+        "title": "03. Innovación",
+        "text": "No seguimos tendencias. Las analizamos, las entendemos y aplicamos solo lo que funciona. La innovación no es una excusa para el desorden, es nuestra herramienta para encontrar lo que aún no está resuelto."
+      },
+      {
+        "icon": "/imgs/ico-mani-box-4.png",
+        "title": "04. Resultados",
+        "text": "No trabajamos por premios ni por likes. Trabajamos para que tu negocio crezca, tu equipo respire y tu marca avance. Si no suma, no sirve."
+      }
+    ]
+  },
+  "cta": {
+    "h2_html": "Porque imaginar<br>no es suficiente.",
+    "subtitle": "Nosotros creamos soluciones reales que impulsan marcas, automatizan procesos y escalan negocios con inteligencia.",
+    "bg_image": "/imgs/bg-manifesto-2.png"
+  }
+}

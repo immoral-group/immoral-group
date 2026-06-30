@@ -1,0 +1,37 @@
+{
+  "slug": "contacto",
+  "title": "Contacto",
+  "mode": "template",
+  "seo": {
+    "title": "Immoral Growth Group - Tu partner estratégico de crecimiento digital",
+    "meta_description": null,
+    "og_image": null
+  },
+  "hero": {
+    "h1_html": "<span class=\"block-reveal\">Una conversación honesta <br class=\"hidden xl:block\"> puede cambiarlo todo.</span>",
+    "intro_paras": [
+      "No te vamos a vender nada que no necesites.\n                        Solo queremos entender tu negocio, tus retos y tus objetivos.",
+      "Y si vemos que podemos ayudarte, te diremos cómo.\n                        Sin adornos. Sin atajos."
+    ],
+    "cta_h2": "Programa tu primera llamada.",
+    "cta_sub": "Veamos si esto tiene sentido para ti y si somos el equipo que estás buscando.",
+    "calendly_url": "https://discover.immoral.es/calendario-439741"
+  },
+  "form": {
+    "title": "¿Prefieres escribirnos?",
+    "intro": "También puedes dejarnos un mensaje a través del formulario.\n                    Respondemos con cabeza, no con respuestas automáticas.",
+    "nombre_label": "Nombre",
+    "email_label": "Correo Electrónico",
+    "mensaje_placeholder": "Mensaje",
+    "privacy_label_html": "Acepto <a href=\"privacidad.html\" class=\"underline\">política de privacidad</a>",
+    "submit_label": "Enviar"
+  },
+  "office": {
+    "title": "¿Tomamos un café?",
+    "paras": [
+      "Si estás en Barcelona o cerca, nos encantará recibirte.\n                        Charlamos sobre tu negocio, tus objetivos y cómo podríamos ayudarte a escalar.",
+      "Todo con calma. Y con buen café."
+    ],
+    "map_iframe_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.1196307896!2d2.1656879!3d41.3932636!2m3!1f0!2f0!3f0!3m2!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f5a6b8e8b7%3A0x9f8e7d6c5b4a3210!2sPasseig%20de%20Gr%C3%A0cia%2C%2012%2C%2008007%20Barcelona!5e0!3m2!1ses!2ses!4v1704200000000!5m2!1ses!2ses"
+  }
+}

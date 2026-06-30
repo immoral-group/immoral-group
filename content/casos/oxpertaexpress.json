@@ -1,0 +1,59 @@
+{
+  "slug": "oxpertaexpress",
+  "cliente": "Oxperta Express",
+  "logo": {
+    "src": "imgs/oxperta-logo.svg",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "Oxperta",
+    "title_part2": "Express",
+    "description": "Oxperta Express es una firma líder en el sector de mensajería y logística. Su enfoque se centra en\n              proveer soluciones de alta calidad tanto a empresas como a individuos, con un énfasis especial en las\n              necesidades del sector ecommerce."
+  },
+  "reto": [
+    "La empresa deseaba ampliar su base de clientes potenciales en la unidad de ecommerce y expandir su presencia\n            a regiones adicionales. El desafío residía en posicionar eficazmente a Oxperta Express en un mercado\n            altamente competitivo."
+  ],
+  "image": {
+    "src": "imgs/oexpress2.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "Nuestra Primera Etapa fue centrarnos en el branding. Diseñamos una estrategia que no solo destacara a\n                Oxperta Express, sino que la posicionara en la mente de nuestro público objetivo: empresas que buscan\n                soluciones logísticas fiables para su negocio ecommerce.",
+    "En la Segunda Etapa, implementamos una estrategia de performance, dirigida específicamente a un target\n                B2B. Mediante el uso de plataformas como LinkedIn, Meta y Google Search, pusimos a Oxperta Express al\n                frente y en el centro de las decisiones de aquellos que realmente importan.",
+    "Gracias a nuestra metodología de trabajo y a una comunicación constante, logramos aumentar\n                significativamente el número de clientes potenciales, dando a Oxperta Express la visibilidad y el\n                posicionamiento que se merece."
+  ],
+  "kpis": [
+    {
+      "value": "-147%",
+      "label": "Mejora del CPL",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+58%",
+      "label": "Calidad del lead (MQL)",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": {
+    "linea1": "Lo que más valoran no ",
+    "linea2": "es solo lo que hacemos, ",
+    "linea3_highlight": "es cómo lo hacemos"
+  },
+  "testimonios": [
+    {
+      "titulo": "valor y dedicación",
+      "quote": "Enhorabuena por esta nueva identidad. Seguro que os ayuda a transformar los grandes servicios de ADMK\n                  en experiencias memorables. Os desearía mucha suerte en esta nueva etapa, pero no creo que la\n                  necesitéis. Seguid aportando el mismo valor y dedicación a vuestros clientes como hasta ahora, que el\n                  éxito está asegurado. Con muchas ganas de seguir con los próximos retos y continuar creciendo junto a\n                  vosotros.",
+      "autor": "Manu Hens",
+      "rol": "Marketing y Comunicación, Oxperta Express",
+      "logo_class": "h-16 w-16 object-contain"
+    }
+  ],
+  "testimonios_logo": "/imgs/oxperta-logo.svg",
+  "testimonios_logo_alt": "Logo de Bobo Choses",
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

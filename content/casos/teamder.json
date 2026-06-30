@@ -1,0 +1,57 @@
+{
+  "slug": "teamder",
+  "cliente": "Teamder",
+  "logo": {
+    "src": "imgs/Imagotipo-Vertical-Blanco_1.png",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "Teamder",
+    "title_part2": "",
+    "description": "Teamder tiene la misión de revolucionar la forma en que las personas se relacionan en el trabajo. Con\n              tecnología punta, quiere ayudarte a saber si tu nuevo compañero es el partner que siempre soñaste."
+  },
+  "reto": [
+    "Teamder nació como un proyecto interno desarrollado en Immoral Lab, nuestro espacio dedicado a la\n            experimentación y creación de soluciones innovadoras. El reto estaba claro:",
+    "Automatizar el servicio:\n            Queriamos que cada usuario que completara un formulario recibiera de forma automática su análisis de\n            compatibilidad laboral. Todo debía ser rápido, personalizado y sin margen de error.",
+    "Crear una identidad potente:\n            La propuesta era innovadora, pero necesitaban un diseño que reflejara esos valores, atrapara miradas y\n            conectara emocionalmente con su audiencia.",
+    "Hacer ruido y crecer: Más\n            seguidores, más usuarios, más conversiones. Todo tenía que ir en aumento, pero sin perder la esencia\n            cercana, divertida y humana que caracteriza a la marca."
+  ],
+  "image": {
+    "src": "imgs/teamder.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "Este proyecto no iba solo de tecnología, iba de personas. Cada reto lo abordamos con una estrategia\n                precisa, mezclando creatividad y resultados, porque sabíamos que Teamder merecía brillar.",
+    "1. Automatización impecable\n                Con herramientas como Zapier y ActiveCampaign, construimos un sistema que hace que todo fluya:\n\n                Formularios conectados a APIs inteligentes: Calculan cartas natales y compatibilidades basadas en IA en\n                tiempo real.\n                Respuestas instantáneas: Cada usuario recibe su análisis en segundos, asegurando una experiencia ágil y\n                profesional.\n                Flujo 24/7: Mientras el equipo descansa, las automatizaciones trabajan sin parar.",
+    "2. Una marca que no pasa desapercibida\n                Creamos una identidad visual que refleja la esencia de Teamder: moderna, memorable y disruptiva.\n                Inspirados en tendencias como el neobrutalismo y el glassmorfismo, diseñamos cada detalle con propósito:\n\n                Isotipo y logotipo: Mezcla de solidez, colaboración e igualdad, con un toque de astrología que conecta\n                emocionalmente.\n                Estilo visual rompedor: Colores, formas y fuentes que no solo destacan, sino que cuentan una historia.",
+    "3. Comunicación que engancha y convierte\n                Redefinimos el tono comunicativo de Teamder, asegurándonos de hablar de tú a tú con su audiencia. Nada\n                de formalismos; todo directo, cercano y efectivo.\n\n                Mensajes como: \"¿Es tu nuevo colega el partner in work que necesitas? Descúbrelo con Teamder.\" lograron\n                captar la atención y guiar a los usuarios a la acción.\n                Diseñamos y ejecutamos una secuencia de emails optimizada, aumentando la conversión en cada etapa del\n                funnel.",
+    "4. Más ojos sobre la marca\n                Landing Pages que convierten: Creamos páginas que no solo eran bonitas, sino funcionales, probando cada\n                elemento con A/B testing.\n                UGC que impacta: Producimos videos auténticos de usuarios contando cómo Teamder transformó sus\n                relaciones laborales.\n                Redes Sociales a tope: Diseñamos estrategias para Instagram, TikTok y LinkedIn, asegurándonos de que\n                cada publicación conectara con el público correcto."
+  ],
+  "kpis": [
+    {
+      "value": "17",
+      "label": "Automatizaciones",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "4",
+      "label": "Landing Pages en Test A/B",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "6",
+      "label": "Semanas de proyecto",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": null,
+  "testimonios": [],
+  "testimonios_logo": null,
+  "testimonios_logo_alt": null,
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

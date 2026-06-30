@@ -1,0 +1,26 @@
+    <!-- Section: Impacto Real (KPIs) -->
+    <section class="bg-black py-24 px-6 md:px-12 relative z-10">
+        <div class="w-full xl:px-24 mx-auto text-center">
+            <h2 class="text-4xl md:text-3xl font-black text-white mb-20 tracking-tight">
+                {{ section.title }}
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 max-w-6xl mx-auto">{% for item in section.items %}
+                <!-- KPI {{ loop.index }} -->
+                <div class="flex flex-col items-center gap-6">
+                    <div class="w-24 h-24 relative">
+                        <img src="{{ item.icon_gif }}" alt="KPI {{ loop.index }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-6xl font-black text-[{{ accent_color }}] leading-none tracking-tighter">
+                            {{ item.value }}
+                        </h3>
+                        <p class="text-white font-light leading-relaxed max-w-xs mx-auto text-lg">
+                            {{ item.label }}
+                        </p>
+                    </div>
+                </div>
+{% endfor %}
+            </div>
+        </div>
+    </section>

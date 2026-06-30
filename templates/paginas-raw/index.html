@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immoral Growth Group</title>
+    <meta property="og:description" content="Tu partner estratégico de crecimiento digital">
+    <link rel="icon" type="image/svg+xml" href="imgs/favicon.svg">
+    <!-- Open Graph / Facebook / WhatsApp / Slack -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.immoral.es/">
+    <meta property="og:title" content="Immoral Growth Group">
+    <meta property="og:description" content="Tu partner estratégico de crecimiento digital">
+    <meta property="og:image" content="https://immoral.es/imgs/favicon.svg">
+    <!-- Matter.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+</head>
+
+<body class="overflow-x-hidden w-dvw font-sans">
+    <!-- Menu oscuro -->
+    <nav class="hidden xl:flex justify-between fixed inset-x-0 box-border px-10 pt-5 pb-5 font-black text-xs z-[100]">
+        <a href="index.html">
+            <div><img src="/imgs/Menues/logo-menu-claro.png" alt=""></div>
+        </a>
+        <div>
+            <div class="list-none flex flex-row items-center gap-12 text-white">
+
+                <div class="w-auto items-center flex flex-col relative" id="dropdownButton">
+                    <div class="uppercase flex flex-row gap-3 justify-center" id="button">Quiénes Somos
+                        <img src="/imgs/Menues/arrowDown.svg" alt="arrowDown" class="w-3">
+                    </div>
+                    <div class="mt-3 absolute left-0 top-full z-40 w-40 hidden font-medium text-sm transition-all ease-out duration-300"
+                        id="dropdown">
+                        <ul class="flex flex-col bg-[#f7f7f7] text-white">
+                            <div class="w-full h-1 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-700"></div>
+                            <a href="nuestra-historia.html">
+                                <li
+                                    class="py-3 px-5 border-b border-gray-300 w-full text-center hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 cursor-pointer submenu-item">
+                                    <span class="submenu-content">Nuestra historia</span>
+                                </li>
+                            </a>
+                            <a href="manifesto.html">
+                                <li
+                                    class="py-3 px-5 border-b border-gray-300 w-full text-center hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 cursor-pointer submenu-item">
+                                    <span class="submenu-content">Manifesto</span>
+                                </li>
+                            </a>
+                            <a href="equipo.html">
+                                <li
+                                    class="py-3 px-5 border-b border-gray-300 w-full text-center hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 cursor-pointer submenu-item">
+                                    <span class="submenu-content">Equipo</span>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="w-30 items-center flex flex-col relative" id="dropdownButton2">
+                    <div class="uppercase flex flex-row gap-3 justify-center" id="button2">Servicios
+                        <img src="/imgs/Menues/arrowDown.svg" alt="arrowDown" class="w-3">
+                    </div>
+                    <div class="mt-3 absolute left-1/2 -translate-x-1/2 top-full z-40 hidden w-52 font-medium text-sm transition-all ease-out duration-300"
+                        id="dropdown2">
+                        <ul class="flex flex-col bg-[#f7f7f7] text-black">
+                            <div class="w-full h-1 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-700"></div>
+                            <a href="publicidad-en-medios.html">
+                                <li
+                                    class="py-3 px-5 border-b border-gray-300 w-full text-center hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 cursor-pointer submenu-item">
+                                    <span class="submenu-content">Publicidad en Medios</span>
+                                </li>
+                            </a>
+                            <a href="diseno-de-marca.html">
+                                <li
+                                    class="py-3 px-5 border-b border-gray-300 w-full text-center hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 cursor-pointer submenu-item">
+                                    <span class="submenu-content">Diseño de Marca & Contenidos</span>
+                                </li>
+                            </a>
+                            <a href="gestion-de-redes.html">
+                                <li
+                                    class="py-3 px-5 border-b border-gray-300 w-full text-center hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 cursor-pointer submenu-item">
+                                    <span class="submenu-content">Gestión de Redes Sociales</span>
+                                </li>
+                            </a>
+                            <a href="automatizacion-de-procesos.html">
+                                <li
+                                    class="py-3 px-5 border-b border-gray-300 w-full text-center hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 cursor-pointer submenu-item">
+                                    <span class="submenu-content">Automatización de Procesos & IA</span>
+                                </li>
+                            </a>
+                            <a href="email-marketing.html">
+                                <li
+                                    class="py-3 px-5 border-b border-gray-300 w-full text-center hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 cursor-pointer submenu-item">
+                                    <span class="submenu-content">Email Marketing Automation & Embudos de Venta</span>
+                                </li>
+                            </a>
+                            <a href="influencer-marketing.html">
+                                <li
+                                    class="py-3 px-5 w-full text-center hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 cursor-pointer submenu-item">
+                                    <span class="submenu-content">Influencer Marketing</span>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-30 items-center flex flex-col relative" id="dropdownButton3">
+                    <div class="uppercase flex flex-row gap-3 justify-center" id="button3">Verticales
+                        <img src="/imgs/Menues/arrowDown.svg" alt="arrowDown" class="w-3">
+                    </div>
+                    <div class="mt-3 absolute left-0 top-full z-40 hidden w-max font-medium capitalize transition-all ease-out duration-300"
+                        id="dropdown3">
+                        <ul class="flex flex-col bg-[#f7f7f7] text-black">
+                            <div class="w-full h-1 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-700"></div>
+                            <a href="https://imfashion.es/" target="_blank">
+                                <li
+                                    class="flex flex-col items-start gap-2 py-4 px-5 border-b border-gray-300 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 cursor-pointer submenu-item">
+                                    <img src="/imgs/Menues/logo-fashion.svg" alt="imfashion" class="h-7 w-auto">
+                                    <span class="text-sm font-light whitespace-nowrap submenu-content">Brandformance
+                                        para
+                                        moda</span>
+                                </li>
+                            </a>
+                            <a href="https://imfilms.es/" target="_blank">
+                                <li
+                                    class="flex flex-col items-start gap-2 py-4 px-5 border-b border-gray-300 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 cursor-pointer submenu-item">
+                                    <img src="/imgs/Menues/logo-films.svg" alt="imfilms" class="h-7 w-auto">
+                                    <span class="text-sm font-light whitespace-nowrap submenu-content">Publicidad para
+                                        cine</span>
+                                </li>
+                            </a>
+                            <a href="https://imcontent.es/" target="_blank">
+                                <li
+                                    class="flex flex-col items-start gap-2 py-4 px-5 border-b border-gray-300 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 cursor-pointer submenu-item">
+                                    <img src="/imgs/Menues/logo-content.svg" alt="imcontent" class="h-7 w-auto">
+                                    <span class="text-sm font-light whitespace-nowrap submenu-content">Contenido para
+                                        Social
+                                        Media</span>
+                                </li>
+                            </a>
+                            <a href="https://immoralia.es/" target="_blank">
+                                <li
+                                    class="flex flex-col items-start gap-2 py-4 px-5 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 cursor-pointer submenu-item">
+                                    <img src="/imgs/Menues/logo-ia.svg" alt="immoralia" class="h-7 w-auto">
+                                    <span class="text-sm font-light whitespace-nowrap submenu-content">IA &
+                                        Automatizaciones</span>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <a href="casos-de-exito.html" class="uppercase">
+                    <li>Casos de Éxito</li>
+                </a>
+                <a href="contacto.html"
+                    class="uppercase flex items-center self-center h-10 px-8 bg-blue-500 text-white rounded hover:bg-blue-600">
+                    <li>Contacto</li>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile/Tablet Header (visible solo en móvil y tablet) -->
+    <div class="bg-black xl:hidden fixed top-0 inset-x-0 z-50 box-border w-full flex items-center justify-between px-4 py-4"
+        style="padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right);">
+        <a href="index.html"><img src="/imgs/Menues/logo-menu-oscuro.svg" alt="immoral"
+                class="ml-4 h-6 w-auto invert"></a>
+        <button id="mobileMenuOpenBtn" aria-label="Abrir menú"
+            class="invert p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6h16M4 12h16M4 18h16" stroke="#000" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </button>
+    </div>
+    <!-- Overlay del Menú Móvil/Tablet -->
+    <div id="mobileMenuOverlay"
+        class="xl:hidden fixed inset-0 bg-white z-[60] hidden overflow-y-auto overflow-x-hidden">
+        <div class="flex flex-col h-[100dvh]">
+            <div class="flex items-center justify-between px-4 pt-4 pb-2 shrink-0 box-border w-full"
+                style="padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right);">
+                <a href="index.html"><img src="/imgs/Menues/logo-menu-oscuro.svg" alt="immoral"
+                        class="ml-4 h-6 w-auto"></a>
+                <button id="mobileMenuCloseBtn" aria-label="Cerrar menú"
+                    class="p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 6l12 12M18 6l-12 12" stroke="#000" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="flex-1 px-5 sm:px-8 pt-2 pb-8 w-full max-w-[520px] mx-auto flex flex-col justify-evenly">
+                <!-- QUIÉNES SOMOS -->
+                <div class="border-b border-gray-200 pb-2">
+                    <button
+                        class="w-full flex items-center justify-center gap-2 text-black font-black text-2xl sm:text-3xl uppercase tracking-wide text-center py-4 sm:py-6"
+                        data-target="mobile-submenu-quienes" aria-expanded="false">
+                        QUIÉNES SOMOS
+                        <svg class="w-4 h-4 arrow-icon transition-transform" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div id="mobile-submenu-quienes" class="hidden mt-4 overflow-hidden">
+                        <ul class="flex flex-col bg-[#f7f7f7] text-black rounded-md overflow-hidden text-center">
+                            <div class="w-full h-1 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-700"></div>
+                            <a href="nuestra-historia.html">
+                                <li
+                                    class="py-4 px-5 border-b border-gray-300 w-full hover:bg-blue-50 hover:text-blue-600 transition">
+                                    Nuestra historia</li>
+                            </a>
+                            <a href="manifesto.html">
+                                <li
+                                    class="py-4 px-5 border-b border-gray-300 w-full hover:bg-blue-50 hover:text-blue-600 transition">
+                                    Manifesto</li>
+                            </a>
+                            <a href="equipo.html">
+                                <li
+                                    class="py-4 px-5 border-b border-gray-300 w-full hover:bg-blue-50 hover:text-blue-600 transition">
+                                    Equipo</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- SERVICIOS -->
+                <div class="border-b border-gray-200 pb-2">
+                    <button
+                        class="w-full flex items-center justify-center gap-2 text-black font-black text-2xl sm:text-3xl uppercase tracking-wide text-center py-4 sm:py-6"
+                        data-target="mobile-submenu-servicios" aria-expanded="false">
+                        SERVICIOS
+                        <svg class="w-4 h-4 arrow-icon transition-transform" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div id="mobile-submenu-servicios" class="hidden mt-4 overflow-hidden">
+                        <ul class="flex flex-col bg-[#f7f7f7] text-black rounded-md overflow-hidden text-center">
+                            <div class="w-full h-1 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-700"></div>
+                            <a href="publicidad-en-medios.html">
+                                <li class="py-4 px-5 hover:bg-blue-50 hover:text-blue-600 transition">Publicidad en
+                                    medios</li>
+                            </a>
+                            <a href="diseno-de-marca.html">
+                                <li
+                                    class="py-4 px-5 border-b border-gray-300 hover:bg-blue-50 hover:text-blue-600 transition">
+                                    Diseño de Marca & Contenidos</li>
+                            </a>
+                            <a href="gestion-de-redes.html">
+                                <li
+                                    class="py-4 px-5 border-b border-gray-300 hover:bg-blue-50 hover:text-blue-600 transition">
+                                    Gestión de redes sociales</li>
+                            </a>
+                            <a href="automatizacion-de-procesos.html">
+                                <li
+                                    class="py-4 px-5 border-b border-gray-300 hover:bg-blue-50 hover:text-blue-600 transition">
+                                    Automatización de procesos + IA</li>
+                            </a>
+                            <a href="email-marketing.html">
+                                <li
+                                    class="py-4 px-5 border-b border-gray-300 hover:bg-blue-50 hover:text-blue-600 transition">
+                                    Email Marketing Automation & Embudos de Venta</li>
+                            </a>
+                            <a href="influencer-marketing.html">
+                                <li
+                                    class="py-4 px-5 border-b border-gray-300 hover:bg-blue-50 hover:text-blue-600 transition">
+                                    Influencer Marketing</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- VERTICALES -->
+                <div class="border-b border-gray-200 pb-2">
+                    <button
+                        class="w-full flex items-center justify-center gap-2 text-black font-black text-2xl sm:text-3xl uppercase tracking-wide text-center py-4 sm:py-6"
+                        data-target="mobile-submenu-verticales" aria-expanded="false">
+                        VERTICALES
+                        <svg class="w-4 h-4 arrow-icon transition-transform" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div id="mobile-submenu-verticales" class="hidden mt-4 overflow-hidden">
+                        <ul class="flex flex-col bg-[#f7f7f7] text-black rounded-md overflow-hidden text-center">
+                            <div class="w-full h-1 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-700"></div>
+                            <a href="https://imfashion.es/" target="_blank">
+                                <li
+                                    class="flex flex-col items-center py-4 px-5 border-b border-gray-300 hover:bg-blue-50 transition">
+                                    <img src="/imgs/Menues/logo-fashion.svg" alt="imfashion" class="h-9 w-auto mx-auto">
+                                    <span class="mt-2 text-base font-light">Brandformance para moda</span>
+                                </li>
+                            </a>
+                            <a href="https://imfilms.es/" target="_blank">
+                                <li
+                                    class="flex flex-col items-center py-4 px-5 border-b border-gray-300 hover:bg-blue-50 transition">
+                                    <img src="/imgs/Menues/logo-films.svg" alt="imfilms" class="h-9 w-auto mx-auto">
+                                    <span class="mt-2 text-base font-light">Publicidad para cine</span>
+                                </li>
+                            </a>
+                            <a href="https://imcontent.es/" target="_blank">
+                                <li
+                                    class="flex flex-col items-center py-4 px-5 border-b border-gray-300 hover:bg-blue-50 transition">
+                                    <img src="/imgs/Menues/logo-content.svg" alt="imcontent" class="h-9 w-auto mx-auto">
+                                    <span class="mt-2 text-base font-light">Contenido para Social Media</span>
+                                </li>
+                            </a>
+                            <a href="https://immoralia.es/" target="_blank">
+                                <li class="flex flex-col items-center py-4 px-5 hover:bg-blue-50 transition">
+                                    <img src="/imgs/Menues/logo-ia.svg" alt="immoralia" class="h-9 w-auto mx-auto">
+                                    <span class="mt-2 text-base font-light">IA & Automatizaciones</span>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CASOS DE ÉXITO -->
+                <a href="casos-de-exito.html"
+                    class="block text-black font-black text-2xl sm:text-3xl uppercase tracking-wide text-center py-4 sm:py-6">CASOS
+                    DE ÉXITO</a>
+
+                <!-- CTA CONTACTO -->
+                <div class="pt-2">
+                    <a href="contacto.html"
+                        class="block w-full max-w-[280px] mx-auto h-14 px-8 bg-blue-500 text-white rounded hover:bg-blue-600 text-lg sm:text-xl font-light text-center leading-[3.5rem]">CONTACTO</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--! HERO -->
+    <div class="hidden w-dvw overflow-hidden aspect-video bg-black xl:flex items-center justify-center">
+        <video src="/imgs/home-video2.mp4" autoplay muted loop class="w-full h-full object-contain"></video>
+    </div>
+
+    <div class="xl:hidden w-dvw overflow-hidden h-[50dvh] xl:h-auto bg-black flex items-center justify-center">
+        <video src="/imgs/home-video2-mobile.mp4" autoplay muted loop
+            class="w-auto h-auto max-w-full max-h-full object-contain"></video>
+    </div>
+    <!-- Section Services -->
+    <!--! SECCIÓN INTEGRA: ECOSISTEMA IMMORAL (Full Screen) -->
+    <section id="immoral-ecosystem"
+        class="relative w-dvw min-h-[100dvh] bg-black text-white overflow-hidden flex flex-col justify-center py-12 lg:py-0">
+
+        <!-- FONDOS DINÁMICOS (Cambian al hacer hover) -->
+        <div class="absolute inset-0 z-0">
+            <!-- Fondo Default (Negro puro) -->
+            <div class="absolute inset-0 bg-black z-0 transition-opacity duration-700 opacity-100" data-bg="default">
+            </div>
+
+            <!-- Fondos de cada marca (Ajusta las rutas de las imágenes) -->
+            <!-- Nota: Añade tus imágenes de fondo aquí. Si no existen, se verá negro pero el código funcionará -->
+            <img src="/imgs/bg-fashion.jpg"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10 pointer-events-none"
+                data-bg="fashion" alt="">
+            <img src="/imgs/bg-films.jpg"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10 pointer-events-none"
+                data-bg="films" alt="">
+            <img src="/imgs/bg-content.jpg"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10 pointer-events-none"
+                data-bg="content" alt="">
+            <img src="/imgs/bg-immoralia.jpg"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10 pointer-events-none"
+                data-bg="immoralia" alt="">
+
+            <!-- VIGNETTE / OSCURECIMIENTO (Para asegurar lectura del texto) -->
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-20 pointer-events-none">
+            </div>
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div
+            class="container mx-auto px-6 sm:px-12 relative z-30 flex flex-col lg:flex-row items-center h-full justify-between">
+
+            <!-- COLUMNA IZQUIERDA: Manifiesto -->
+            <div class="reveal-group w-full lg:w-7/12 mb-16 lg:mb-0 pointer-events-none">
+                <h1 class="font-black text-5xl leading-tight mb-8">
+                    <span class="block-reveal"> No somos una agencia.</span><br>
+                    <span class="block-reveal"> Somos un ecosistema digital </span><br>
+                    <span class="block-reveal"> que hace crecer negocios.</span>
+                </h1>
+                <p class="reveal-lines font-light text-lg sm:text-xl text-gray-300 leading-relaxed max-w-xl">
+                    Bienvenido a Immoral Group.<br>
+                    Un núcleo creativo, estratégico y técnico que se expande en verticales especializadas diseñadas para
+                    hacer una sola cosa: que tu marca crezca como nunca antes.
+                </p>
+            </div>
+
+            <!-- COLUMNA DERECHA: Lista de Marcas Interactiva -->
+            <div class="w-full lg:w-5/12 flex flex-col items-start gap-8 lg:pl-64">
+
+                <!-- IMFASHION -->
+                <div class="brand-item w-full group cursor-pointer transition-all duration-300" data-target="fashion">
+                    <!-- Header: Logo -->
+                    <div class="flex items-center justify-between transition-opacity duration-300 brand-header">
+                        <img src="/imgs/Menues/logo-fashion-bb.svg" alt="imfashion"
+                            class="h-8 sm:h-10 w-auto animate-pulse group-hover:opacity-100 transition-opacity duration-300"
+                            style="animation-delay: 0s;">
+                    </div>
+                    <!-- Body: Descripción (Acordeón) -->
+                    <div class="brand-body grid grid-rows-[0fr] transition-all duration-500 ease-in-out">
+                        <div class="overflow-hidden">
+                            <div class="pt-4 pl-1">
+                                <p
+                                    class="text-gray-300 font-light text-sm sm:text-base mb-4 leading-relaxed border-l-2 border-[#8b1322] pl-4">
+                                    Especialistas en escalar marcas de moda. Branding, campañas, paid media y
+                                    performance para crecer y vender.
+                                </p>
+                                <a href="https://imfashion.es" target="_blank"
+                                    class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-white hover:text-[#8b1322] transition-colors pl-5">
+                                    ▶ Ver más
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMFILMS -->
+                <div class="brand-item w-full group cursor-pointer transition-all duration-300" data-target="films">
+                    <div class="flex items-center justify-between transition-opacity duration-300 brand-header">
+                        <img src="/imgs/Menues/logo-films-bb.svg" alt="imfilms"
+                            class="h-8 sm:h-10 w-auto animate-pulse group-hover:opacity-100 transition-opacity duration-300"
+                            style="animation-delay: 0.2s;">
+                    </div>
+                    <div class="brand-body grid grid-rows-[0fr] transition-all duration-500 ease-in-out">
+                        <div class="overflow-hidden">
+                            <div class="pt-4 pl-1">
+                                <p
+                                    class="text-gray-300 font-light text-sm sm:text-base mb-4 leading-relaxed border-l-2 border-[#f6d305] pl-4">
+                                    Publicidad para la industria del cine. Estrategia creativa que conecta, emociona y
+                                    llena salas.
+                                </p>
+                                <a href="https://imfilms.es" target="_blank"
+                                    class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-white hover:text-[#f6d305] transition-colors pl-5">
+                                    ▶ Ver más
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMCONTENT -->
+                <div class="brand-item w-full group cursor-pointer transition-all duration-300" data-target="content">
+                    <div class="flex items-center justify-between transition-opacity duration-300 brand-header">
+                        <img src="/imgs/Menues/logo-content-bb.svg" alt="imcontent"
+                            class="h-8 sm:h-10 w-auto animate-pulse group-hover:opacity-100 transition-opacity duration-300"
+                            style="animation-delay: 0.4s;">
+                    </div>
+                    <div class="brand-body grid grid-rows-[0fr] transition-all duration-500 ease-in-out">
+                        <div class="overflow-hidden">
+                            <div class="pt-4 pl-1">
+                                <p
+                                    class="text-gray-300 font-light text-sm sm:text-base mb-4 leading-relaxed border-l-2 border-[#9520ea] pl-4">
+                                    Contenido creativo para anuncios, potenciado con IA.
+                                </p>
+                                <a href="https://imcontent.es/"
+                                    class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-white hover:text-[#9520ea] transition-colors pl-5">
+                                    ▶ Ver más
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMMORALIA -->
+                <div class="brand-item w-full group cursor-pointer transition-all duration-300" data-target="immoralia">
+                    <div class="flex items-center justify-between transition-opacity duration-300 brand-header">
+                        <img src="/imgs/Menues/logo-ia-bb.svg" alt="immoralia"
+                            class="h-8 sm:h-10 w-auto animate-pulse group-hover:opacity-100 transition-opacity duration-300"
+                            style="animation-delay: 0.6s;">
+                    </div>
+                    <div class="brand-body grid grid-rows-[0fr] transition-all duration-500 ease-in-out">
+                        <div class="overflow-hidden">
+                            <div class="pt-4 pl-1">
+                                <p
+                                    class="text-gray-300 font-light text-sm sm:text-base mb-4 leading-relaxed border-l-2 border-[#00ffff] pl-4">
+                                    Automatización e inteligencia artificial para empresas. Procesos más eficientes,
+                                    decisiones más inteligentes.
+                                </p>
+                                <a href="https://immoralia.es/"
+                                    class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-white hover:text-[#0582eb] transition-colors pl-5">
+                                    ▶ Ver más
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- LOGOS CAROUSEL (Partners/Clientes) - Infinite Scroll -->
+        <div
+            class="relative mt-16 xl:absolute xl:bottom-10 xl:left-0 xl:mt-0 w-full z-30 flex justify-center px-6 sm:px-12">
+            <div
+                class="w-full max-w-[1400px] overflow-hidden relative [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                <div class="brands-carousel flex items-center gap-16 animate-scroll-brands py-4">
+                    <!-- Primera copia de logos -->
+                    <img src="/imgs/brands/Figma_Logo_0.svg" alt="Figma"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/Freepik_id07UrLimP_1.svg" alt="Freepik"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/LinkedIn_Logo_0.svg" alt="LinkedIn"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/N8n.io_Logo_0.svg" alt="n8n"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/TikTok_Logo_0.svg" alt="TikTok"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/Meta_id0D-m9C5l_0.svg" alt="Meta"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/google.svg" alt="Google"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/spotify.svg" alt="Spotify"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/active.svg" alt="ActiveCampaign"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/clickup.svg" alt="ClickUp"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/analytics.png" alt="Analytics"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/heygen.png" alt="HeyGen"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/wordpress.svg" alt="WordPress"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <!-- Segunda copia de logos (para el loop infinito) -->
+                    <img src="/imgs/brands/Figma_Logo_0.svg" alt="Figma"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/Freepik_id07UrLimP_1.svg" alt="Freepik"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/LinkedIn_Logo_0.svg" alt="LinkedIn"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/N8n.io_Logo_0.svg" alt="n8n"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/TikTok_Logo_0.svg" alt="TikTok"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/Meta_id0D-m9C5l_0.svg" alt="Meta"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/google.svg" alt="Google"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/spotify.svg" alt="Spotify"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/active.svg" alt="ActiveCampaign"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/clickup.svg" alt="ClickUp"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/analytics.png" alt="Analytics"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/heygen.png" alt="HeyGen"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                    <img src="/imgs/brands/wordpress.svg" alt="WordPress"
+                        class="h-6 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--! Services -->
+    <section class="w-dvw relative py-24 xl:py-32 flex items-center justify-center overflow-hidden">
+
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="/imgs/fondo-services.webp" alt="Background Services" class="w-full h-full object-cover">
+            <!-- Overlay para mejorar legibilidad -->
+            <div class="absolute inset-0 bg-black/10 z-10"></div>
+        </div>
+
+        <div
+            class="container mx-auto px-6 sm:px-8 relative z-20 flex flex-col xl:flex-row items-center justify-between gap-12 xl:gap-0">
+
+            <!-- Texto (Izquierda) -->
+            <div class="reveal-group w-full xl:w-1/2 flex flex-col items-start text-left">
+                <h1 class="block-reveal font-black text-5xl text-white leading-tight">
+                    Crecimiento sin fricción.<br>
+                </h1>
+                <h1 class="block-reveal font-black text-5xl text-[#4889eb] mb-6 xl:mb-8 leading-tight">
+                    Hecho para ti.
+                </h1>
+
+                <div class="max-w-xl">
+                    <p class="reveal-lines text-gray-200 font-light text-lg sm:text-xl leading-relaxed">
+                        Cada negocio necesita algo distinto. Por eso, diseñamos soluciones claras para marcas que
+                        quieren crecer, vender más o ser más eficientes.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Botones (Derecha) -->
+            <div class="w-full xl:w-5/12 flex flex-col items-start gap-4">
+
+                <!-- Botón 1 -->
+                <a href="publicidad-en-medios.html" class="group w-full sm:w-auto text-left">
+                    <div
+                        class="inline-block px-8 py-3 rounded-lg border border-[#4889eb] bg-black/40 backdrop-blur-sm text-white font-light text-sm sm:text-base transition-all duration-300 hover:bg-[#4889eb] hover:shadow-[0_0_20px_rgba(72,137,235,0.4)]">
+                        Necesito atraer a más clientes
+                    </div>
+                </a>
+
+                <!-- Botón 2 -->
+                <a href="diseno-de-marca.html" class="group w-full sm:w-auto text-left">
+                    <div
+                        class="inline-block px-8 py-3 rounded-lg border border-[#4889eb] bg-black/40 backdrop-blur-sm text-white font-light text-sm sm:text-base transition-all duration-300 hover:bg-[#4889eb] hover:shadow-[0_0_20px_rgba(72,137,235,0.4)]">
+                        Me gustaría mejorar mi contenido
+                    </div>
+                </a>
+
+                <!-- Botón 3 -->
+                <a href="email-marketing.html" class="group w-full sm:w-auto text-left">
+                    <div
+                        class="inline-block px-8 py-3 rounded-lg border border-[#4889eb] bg-black/40 backdrop-blur-sm text-white font-light text-sm sm:text-base transition-all duration-300 hover:bg-[#4889eb] hover:shadow-[0_0_20px_rgba(72,137,235,0.4)]">
+                        Quiero un embudo de ventas que convierta
+                    </div>
+                </a>
+
+                <!-- Botón 4 (Destacado inicial según imagen, pero ahora todos reaccionan igual) -->
+                <a href="automatizacion-de-procesos.html" class="group w-full sm:w-auto text-left">
+                    <div
+                        class="inline-block px-8 py-3 rounded-lg border border-[#4889eb] bg-black/40 backdrop-blur-sm text-white font-light text-sm sm:text-base transition-all duration-300 hover:bg-[#4889eb] hover:shadow-[0_0_20px_rgba(72,137,235,0.4)]">
+                        Busco optimizar procesos y automatizar tareas con IA
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!--! Why Us (Nuevo Diseño Dark) -->
+    <section class="w-dvw relative bg-black py-20 xl:py-32 px-6 sm:px-8">
+
+        <!-- Título Centrado -->
+        <div class="reveal-group max-w-4xl mx-auto text-center mb-12 xl:mb-16">
+            <h1 class="font-black text-5xl text-white leading-tight">
+                No lo hacemos como los demás.
+            </h1>
+            <h1 class="font-black text-5xl text-white leading-tight">
+                Y por eso funciona.
+            </h1>
+        </div>
+
+        <!-- Cards Grid -->
+        <div
+            class="w-full max-w-[1600px] px-6 sm:px-12 xl:px-24 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+
+            <!-- Card 1 -->
+            <div
+                class="bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] rounded-xl p-6 flex flex-col items-start gap-4 shadow-[0_4px_20px_rgba(72,137,235,0.12)] transition-all duration-300 hover:shadow-[0_4px_30px_rgba(72,137,235,0.2)]">
+                <img src="/imgs/ico-home-box-1.png" alt="icono" class="h-10 w-auto">
+                <div>
+                    <p class="text-white font-normal text-lg leading-snug whitespace-nowrap">No seguimos modas</p>
+                    <p class="text-[#4889eb] font-light text-sm">Aplicamos criterio</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+                class="bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] rounded-xl p-6 flex flex-col items-start gap-4 shadow-[0_4px_20px_rgba(72,137,235,0.12)] transition-all duration-300 hover:shadow-[0_4px_30px_rgba(72,137,235,0.2)]">
+                <img src="/imgs/ico-home-box-2.png" alt="icono" class="h-10 w-auto">
+                <div>
+                    <p class="text-white font-normal text-lg leading-snug whitespace-nowrap">No a las métricas vacías
+                    </p>
+                    <p class="text-[#4889eb] font-light text-sm">Hablamos de negocio</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+                class="bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] rounded-xl p-6 flex flex-col items-start gap-4 shadow-[0_4px_20px_rgba(72,137,235,0.12)] transition-all duration-300 hover:shadow-[0_4px_30px_rgba(72,137,235,0.2)]">
+                <img src="/imgs/ico-home-box-3.png" alt="icono" class="h-10 w-auto">
+                <div>
+                    <p class="text-white font-normal text-lg leading-snug whitespace-nowrap">No hacemos lo fácil</p>
+                    <p class="text-[#4889eb] font-light text-sm">Hacemos lo que funciona</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div
+                class="bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] rounded-xl p-6 flex flex-col items-start gap-4 shadow-[0_4px_20px_rgba(72,137,235,0.12)] transition-all duration-300 hover:shadow-[0_4px_30px_rgba(72,137,235,0.2)]">
+                <img src="/imgs/ico-home-box-4.png" alt="icono" class="h-10 w-auto">
+                <div>
+                    <p class="text-white font-normal text-lg leading-snug whitespace-nowrap">No hacemos por hacer</p>
+                    <p class="text-[#4889eb] font-light text-sm">Diseñamos con intención</p>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div
+                class="bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] rounded-xl p-6 flex flex-col items-start gap-4 shadow-[0_4px_20px_rgba(72,137,235,0.12)] transition-all duration-300 hover:shadow-[0_4px_30px_rgba(72,137,235,0.2)]">
+                <img src="/imgs/ico-home-box-5.png" alt="icono" class="h-10 w-auto">
+                <div>
+                    <p class="text-white font-normal text-lg leading-snug whitespace-nowrap">No solo vendemos más</p>
+                    <p class="text-[#4889eb] font-light text-sm">Hacemos que trabajes mejor</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- How We Do -->
+    <section class="w-dvw xl:h-dvh relative bg-black flex flex-col xl:flex-row">
+        <div
+            class="w-full xl:w-1/3 h-auto xl:h-full relative flex flex-col items-center justify-center px-12 sm:px-12 py-12 xl:py-0">
+            <h1 class="w-full font-black text-3xl sm:text-4xl xl:text-5xl text-left text-white">Nos integramos.
+                <br>Diseñamos.
+                <br>Ejecutamos. <br>Escalamos.
+            </h1>
+        </div>
+        <div class="w-full xl:w-1/3 h-[40vh] sm:h-[50vh] xl:h-full relative overflow-hidden">
+            <img src="/imgs/img-como-hacemos-1.webp" alt="imagen de como hacemos 1"
+                class="object-cover absolute w-full h-full">
+        </div>
+        <div
+            class="w-full xl:w-1/3 h-auto xl:h-full relative flex flex-col justify-center items-start gap-4 px-6 sm:px-8 py-12 xl:py-0">
+
+            <div class="w-12/12 flex ml-4 sm:ml-16 items-start proceso-item" data-proceso="1">
+                <h1 class="font-sans font-thin text-6xl text-white">1</h1>
+                <p class="font-sans font-light text-lg text-white ml-4 sm:ml-7 mt-5 leading-tight">
+                    <b class="font-sans font-bold proceso-titulo">Diagnóstico sin atajos</b><br>
+                    <b class="hidden font-light proceso-subtitulo">Nos metemos en tu operación. Analizamos,<br>
+                        entendemos, preguntamos</b>
+                </p>
+            </div>
+
+            <div class="w-12/12 flex ml-4 sm:ml-16 mt-6 proceso-item" data-proceso="2">
+                <h1 class="font-sans font-thin text-6xl text-white">2</h1>
+                <p class="font-sans font-light text-lg text-white ml-4 sm:ml-4 mt-5 leading-tight">
+                    <b class="font-sans font-bold proceso-titulo">Estrategia personalizada</b><br>
+                    <b class="hidden font-light proceso-subtitulo">Sin plantillas. Sin PowerPoints eternos. Una<br>
+                        hoja de ruta clara, accionable y medible.</b>
+                </p>
+            </div>
+
+            <div class="w-12/12 flex ml-4 sm:ml-16 mt-6 proceso-item" data-proceso="3">
+                <h1 class="font-sans font-thin text-6xl text-white">3</h1>
+                <p class="font-sans font-light text-lg text-white ml-4 sm:ml-4 leading-tight">
+                    <b class="font-sans font-bold proceso-titulo">Implementación sin fricciones</b><br>
+                    <b class="font-light proceso-subtitulo">Nos integramos como parte de tu equipo.<br>
+                        Ejecutamos con cuidado, IA, automaticación<br>
+                        y foco.</b>
+                </p>
+            </div>
+
+            <div class="w-12/12 flex items-start ml-4 sm:ml-16 mt-6 proceso-item" data-proceso="4">
+                <h1 class="font-sans font-thin text-6xl text-white">4</h1>
+                <p class="font-sans font-light text-lg text-white ml-4 sm:ml-4 mt-5 leading-tight">
+                    <b class="font-sans font-bold proceso-titulo">Optimización continua</b><br>
+                    <b class="hidden font-light proceso-subtitulo">Leemos los datos. Detectamos patrones.<br>
+                        Afinamos cada detalle. Siempre.</b>
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <!-- Results (Nuevo Diseño Dark) -->
+    <section class="w-full bg-black py-20 xl:py-28 px-6 sm:px-12">
+        <div class="w-full max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+
+            <!-- Columna Izquierda: Título y CTA -->
+            <div class="w-full lg:w-1/3 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <h1 class="block-reveal font-black text-6xl text-white mb-8">Resultados</h1>
+                <a href="casos-de-exito.html"
+                    class="inline-block px-8 py-3 rounded-lg text-sm font-medium uppercase tracking-wider border-2 border-[#4889eb] bg-[#4889eb] text-white transition-all duration-300 hover:bg-transparent hover:text-[#4889eb] shadow-[0_0_15px_rgba(72,137,235,0.3)]">
+                    Ver casos de éxito
+                </a>
+            </div>
+
+            <!-- Columna Derecha: KPIs -->
+            <div class="w-full lg:w-2/3 flex justify-center lg:justify-end">
+                <div
+                    class="w-full max-w-[750px] bg-gradient-to-br from-[#141416] to-[#000000] rounded-2xl py-7 px-8 sm:px-12 border border-[#1e3a5f] shadow-[0_0_30px_rgba(72,137,235,0.1)]">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+
+                        <!-- KPI 1 -->
+                        <div>
+                            <h2 class="text-white font-black text-6xl mb-2">+<span class="counter-value"
+                                    data-target="15">0</span></h2>
+                            <p class="text-gray-400 font-light text-sm leading-relaxed">
+                                años diseñando<br>estrategias reales
+                            </p>
+                        </div>
+
+                        <!-- KPI 2 -->
+                        <div>
+                            <h2 class="text-white font-black text-6xl mb-2">+<span class="counter-value"
+                                    data-target="28">0</span></h2>
+                            <p class="text-gray-400 font-light text-sm leading-relaxed">
+                                marcas que hoy crecen y<br>trabajan mejor con<br>nosotros
+                            </p>
+                        </div>
+
+                        <!-- KPI 3 -->
+                        <div>
+                            <h2 class="text-white font-black text-6xl mb-2">+<span class="counter-value"
+                                    data-target="60">0</span>M</h2>
+                            <p class="text-gray-400 font-light text-sm leading-relaxed">
+                                invertidos con<br>retorno
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--! Testimonials (Nuevo Diseño Dark) -->
+    <section class="w-full bg-black py-16 xl:py-24 px-6 sm:px-12">
+        <div class="max-w-[1600px] mx-auto">
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
+
+                <!-- Columna Izquierda: Título -->
+                <div class="xl:pr-12">
+                    <h2 class="reveal-group font-black text-3xl xl:text-5xl text-white leading-tight">
+                        <span class="">Lo que más valoran no es</span><br class="hidden xl:inline">
+                        <span class="">solo lo que hacemos,</span><br class="hidden xl:inline">
+                        <span class="">es cómo lo hacemos.</span>
+                    </h2>
+                </div>
+
+                <!-- Columna Derecha: Carrusel -->
+                <div class="relative px-0 xl:px-8">
+                    <!-- Botones de navegación -->
+                    <button id="simple-testimonials-prev" aria-label="Anterior"
+                        class="absolute left-0 xl:-left-6 top-1/2 -translate-y-1/2 z-10 bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full p-3 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4889eb]">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+
+                    <button id="simple-testimonials-next" aria-label="Siguiente"
+                        class="absolute right-0 xl:-right-6 top-1/2 -translate-y-1/2 z-10 bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full p-3 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4889eb]">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+
+                    <div id="simple-testimonials-carousel" class="overflow-hidden cursor-grab mx-8 xl:mx-0">
+                        <div class="testimonials-track flex transition-transform duration-300 ease-out">
+
+                            <!-- Card 1 -->
+                            <div
+                                class="testimonial-card flex-shrink-0 w-full xl:w-[480px] bg-gradient-to-br from-[#141416] to-[#000000] border border-[#2a2a2a] rounded-2xl p-6 mr-6">
+                                <h3 class="text-lg xl:text-2xl font-semibold text-white mb-3 leading-snug">
+                                    Compromiso, proactividad y resolución
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                    Su continua aportación, sus conocimientos, su experiencia y sus ganas por hacer que
+                                    la marca crezca les han convertido en partners fundamentales para el crecimiento de
+                                    negocio online, la estrategia de marketing digital y nuestra inversión en medios
+                                    publicitarios.
+                                </p>
+                                <div class="flex items-center justify-between border-t border-[#2a2a2a] pt-4">
+                                    <div class="flex items-center gap-2">
+                                        <img src="/imgs/bobo-logo.svg" alt="Logo de Bobo Choses"
+                                            class="h-10 w-20 object-contain p-1 brightness-0 invert" />
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <img src="/imgs/bobo-testi.avif" alt="Logo de Bobo Choses"
+                                            class="h-10 w-10 rounded-full object-contain bg-white/10 p-1" />
+                                        <div class="text-right">
+                                            <p class="text-white font-semibold text-sm">AINARA SIMÓN</p>
+                                            <p class="text-gray-500 text-xs">Chief Digital Manager</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div
+                                class="testimonial-card flex-shrink-0 w-full xl:w-[480px] bg-gradient-to-br from-[#141416] to-[#000000] border border-[#2a2a2a] rounded-2xl p-6 mr-6">
+                                <h3 class="text-lg xl:text-2xl font-semibold text-white mb-3 leading-snug">
+                                    Descubrimos gracias a una recomendación.
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                    Lo que realmente nos impresionó fue su enfoque en nuestro potencial de crecimiento
+                                    más que en sus honorarios. Cuentan con un equipo especializado y bien coordinado,
+                                    ofreciendo un servicio excepcional y orientado a resultados, totalmente alineado con
+                                    nuestros objetivos.
+                                </p>
+                                <div class="flex items-center justify-between border-t border-[#2a2a2a] pt-4">
+                                    <div class="flex items-center gap-2">
+                                        <img src="/imgs/mun-logo.png" alt="Logo de Mun Kombucha"
+                                            class="h-10 w-30 object-contain p-1 brightness-0 invert" />
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <img src="/imgs/mun-testi.png" alt="Logo de Mun Kombucha"
+                                            class="h-10 w-10 rounded-full object-contain bg-white/10 p-1" />
+                                        <div class="text-right">
+                                            <p class="text-white font-semibold text-sm">JORDI DALMAU</p>
+                                            <p class="text-gray-500 text-xs">CEO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div
+                                class="testimonial-card flex-shrink-0 w-full xl:w-[480px] bg-gradient-to-br from-[#141416] to-[#000000] border border-[#2a2a2a] rounded-2xl p-6">
+                                <h3 class="text-lg xl:text-2xl font-semibold text-white mb-3 leading-snug">
+                                    Es como tener al equipo dentro de casa.
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                    Son súper proactivos, están siempre detrás ofreciendo soluciones. Son un complemento
+                                    perfecto y están totalmente integrados en el desarrollo de todos nuestros proyectos.
+                                    Muchas gracias!
+                                </p>
+                                <div class="flex items-center justify-between border-t border-[#2a2a2a] pt-4">
+                                    <div class="flex items-center gap-2">
+                                        <img src="/imgs/angela-logo-dark.png" alt="Logo de Mun Kombucha"
+                                            class="h-10 w-30 object-contain p-1 brightness-0 invert" />
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <img src="/imgs/angela-testi.png" alt="Logo de Angela Navarro"
+                                            class="h-10 w-10 rounded-full object-contain bg-white/10 p-1" />
+                                        <div class="text-right">
+                                            <p class="text-white font-semibold text-sm">BEA GUERRERO</p>
+                                            <p class="text-gray-500 text-xs">Directora</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- CTA Home -->
+    <section
+        class="w-full max-w-full relative flex flex-col items-center min-h-[60vh] sm:min-h-[70vh] xl:min-h-[50vh] pt-16 sm:pt-24 xl:pt-32 pb-16 sm:pb-24 xl:pb-32 overflow-hidden">
+        <iframe src="https://my.spline.design/glassmorphlandingpage-ZyQlmkgnMPSbE8yGqSQ0xNEY/" frameborder="0"
+            width="100%" height="100%" class="absolute inset-0 z-10 pointer-events-auto"></iframe>
+        <div class="reveal-group relative z-20 flex flex-col items-center pointer-events-none">
+            <h1 class="font-black text-white text-2xl sm:text-4xl xl:text-5xl text-center pointer-events-none">El
+                crecimiento real
+                empieza<br></h1>
+            <h1
+                class="font-black text-4xl sm:text-4xl xl:text-5xl text-white mb-0 xl:mb-10 text-center pointer-events-none">
+                con una buena conversación.</h1>
+
+            <h3
+                class="reveal-lines w-full px-5 py-10 max-w-3xl font-light text-[18px] sm:text-lg xl:text-xl text-white text-center pointer-events-none">
+                No necesitas más ruidos. Necesitas una estretegia que funcione, procesos que fluyan y un equipo que
+                piense como tú</h3>
+            <a href="contacto.html"
+                class="px-6 py-3 rounded-lg text-base sm:text-lg font-light ml-0 xl:ml-3 mt-4 sm:mt-5 bg-white text-blue-500 transition-colors duration-200 cursor-pointer hover:bg-black hover:text-white pointer-events-auto z-30">SOLICITA
+                UNA CONSULTORÍA</a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-black py-16 text-white">
+        <div class="max-w-full mx-auto px-6 lg:px-24">
+            <!-- Top Section - Mensaje + CTA -->
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-8 pb-8">
+                <div>
+                    <h2 class="font-light text-4xl text-white">
+                        Transformamos tu<br />
+                        incertidumbre en prosperidad
+                    </h2>
+                </div>
+                <div class="flex justify-start md:justify-end">
+                    <a href="contacto.html"
+                        class="bg-white text-[#0B0F14] px-8 py-4 rounded-lg hover:bg-[#E9EDF2] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20">
+                        HABLEMOS
+                    </a>
+                </div>
+            </div>
+
+            <!-- Main Footer Content -->
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
+                <!-- Social -->
+                <div class="space-y-6">
+                    <h3 class="text-blue-500">Síguenos y crea un gran impacto</h3>
+                    <div class="flex items-center gap-4 flex-wrap">
+
+                        <!-- WhatsApp -->
+                        <a href="https://wa.link/rb585t" target="_blank" rel="noopener noreferrer"
+                            class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
+                            aria-label="WhatsApp">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/immoral.group/" target="_blank" rel="noopener noreferrer"
+                            class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
+                            aria-label="Instagram">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.451 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <!-- Behance -->
+                        <a href="https://www.behance.net/immoralgroup" target="_blank" rel="noopener noreferrer"
+                            class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
+                            aria-label="Behance">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z" />
+                            </svg>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/company/immoral-group/" target="_blank"
+                            rel="noopener noreferrer"
+                            class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
+                            aria-label="LinkedIn">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h5v-8.306c0-4.613 5.48-4.515 5.48 0v8.306h5v-10.502c0-8.118-8.74-7.93-8.74-2.688 0-1.11.12-2.306-.76-2.81z" />
+                            </svg>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@immoral.group" target="_blank" rel="noopener noreferrer"
+                            class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
+                            aria-label="TikTok">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                            </svg>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/@immoralmarketing" target="_blank" rel="noopener noreferrer"
+                            class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA] hover:text-[#1E63FF] hover:border-[#1E63FF] transition-all duration-200 group"
+                            aria-label="YouTube">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ubicación -->
+                <div class="space-y-6 ml-0 lg:ml-44">
+                    <h3 class="text-blue-500">¿Dónde estamos?</h3>
+                    <div class="flex items-center gap-3">
+                        <div class="p-3 border border-[#2A2F36] rounded-full text-[#B9C0CA]">
+                            <!-- MapPin -->
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div class="text-[#B9C0CA] leading-relaxed">
+                            Paseo de Gràcia 12, 1º, 08007 Barcelona
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="mt-16 pt-8 border-t border-[#2A2F36]">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <a href="https://immoral.marketing/" target="_blank" rel="noopener noreferrer">
+                            <img src="/imgs/Menues/logo-menu-claro.png" alt="Logo Immoral"
+                                class="h-6 w-auto opacity-90" />
+                        </a>
+                    </div>
+                    <!-- Links -->
+                    <div class="flex items-center gap-8">
+                        <a href="aviso-legal.html"
+                            class="text-[#B9C0CA] hover:text-white transition-colors duration-200 text-sm">Aviso
+                            legal</a>
+                        <a href="privacidad.html"
+                            class="text-[#B9C0CA] hover:text-white transition-colors duration-200 text-sm">Privacidad</a>
+                        <a href="cookies.html"
+                            class="text-[#B9C0CA] hover:text-white transition-colors duration-200 text-sm">Cookies</a>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <p class="text-[#B9C0CA] text-sm">© 2026 Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

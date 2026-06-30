@@ -1,0 +1,52 @@
+{
+  "slug": "lamanso",
+  "cliente": "La Manso",
+  "logo": {
+    "src": "imgs/manso-logo.png",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "La",
+    "title_part2": "Manso",
+    "description": "La Manso es una distinguida marca de joyería de diseñador con base en Barcelona, aclamada por sus piezas\n              hechas a mano y de carácter icónico. No es simplemente una marca, sino una narrativa que captura la\n              dualidad entre lo cotidiano y lo extraordinario, encapsulando momentos significativos y anécdotas para\n              inmortalizarlas."
+  },
+  "reto": [
+    "La Manso tenía como desafío llegar a un público global que resuene con su ethos, incrementando no solo su\n            visibilidad, sino también sus ventas online. El objetivo era claro: potenciar la marca y maximizar las\n            conversiones de su tienda online."
+  ],
+  "image": {
+    "src": "imgs/port-manso.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "Nos enfocamos en una estrategia full funnel basada en nuestra metodología \"Brandformance\". Comenzamos\n                con campañas en Meta dirigidas a diferentes audiencias para amplificar la visibilidad de La Manso.",
+    "Mediante experimentación con variadas audiencias, creatividades y geografías, extrajimos insights\n                esenciales que sentaron las bases para escalar nuestro enfoque. En paralelo, desarrollamos campañas en\n                Google, asegurando que La Manso mantuviera una presencia dominante en los resultados de búsqueda y\n                shopping.",
+    "Con una etapa inicial de aprendizaje superada, optimizamos las campañas para no solo impulsar la\n                visibilidad, sino también garantizar la rentabilidad. A través de esta estrategia dual, pudimos fomentar\n                un crecimiento sustancial en las ventas, manteniendo al mismo tiempo la esencia y autenticidad de La\n                Manso."
+  ],
+  "kpis": [
+    {
+      "value": "-449%",
+      "label": "Mejora del CAC",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+523%",
+      "label": "Mejora del ROAS",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "+16%",
+      "label": "Mejora de la tasa de conversión",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": null,
+  "testimonios": [],
+  "testimonios_logo": null,
+  "testimonios_logo_alt": null,
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "influencer-marketing",
+  "title": "Influencer Marketing",
+  "mode": "template",
+  "accent_color": "#2f80ed",
+  "seo": {
+    "title": "Immoral Growth Group - Tu partner estratégico de crecimiento digital",
+    "meta_description": null,
+    "og_image": null
+  },
+  "hero": {
+    "eyebrow": "Influencer Marketing:",
+    "h1_html": "Estrategia Precisa,<br>Impacto Real",
+    "subtitle_html": "Colaborar con influencers no es solo visibilidad.<br>Es conectar con la audiencia correcta a través de creadores que representan de verdad a tu marca y generan impacto medible.",
+    "cta_text": "HABLEMOS",
+    "cta_href": "contacto.html"
+  },
+  "que_podemos_hacer": {
+    "title_html": "¿Qué podemos<br>hacer por tí?",
+    "intro": "En Immoral, diseñamos estrategias de Influencer Marketing basadas en datos. No elegimos creadores al azar ni gestionamos campañas sin sentido. Nos aseguramos de que cada colaboración tenga un propósito claro y un impacto medible.",
+    "boxes": [
+      { "image": "/imgs/influ-bg-1.webp", "label": "Selección", "title": "Identificación y selección de influencers", "description": "Encontramos los perfiles que realmente conectan con tu audiencia." },
+      { "image": "/imgs/influ-bg-2.webp", "label": "Estrategia", "title": "Estrategia integral de Influencer Marketing", "description": "Diseñamos planes personalizados para potenciar tu marca." },
+      { "image": "/imgs/influ-bg-3.webp", "label": "Análisis", "title": "Recopilación y análisis de datos", "description": "Evaluamos métricas clave para garantizar autenticidad y rendimiento." },
+      { "image": "/imgs/influ-bg-4.webp", "label": "Gestión", "title": "Gestión de influencers", "description": "Negociamos, coordinamos y supervisamos cada colaboración." },
+      { "image": "/imgs/influ-bg-5.webp", "label": "Contenido", "title": "Gestión de creadores de UGC", "description": "Seleccionamos y optimizamos contenido generado por usuarios para campañas efectivas." }
+    ]
+  },
+  "faq": {
+    "title": "¿Qué nos hace diferentes?",
+    "subtitle": "No pagamos por visibilidad vacía. No gestionamos campañas sin datos. Diseñamos estrategias precisas, escalables y basadas en ROI.",
+    "items": [
+      { "question": "Selección Estrátegica", "answer": "No cualquier influencer vale. Elegimos según datos, afinidad y potencial de conversión." },
+      { "question": "Datos en el centro", "answer": "Validamos métricas reales para evitar colaboraciones sin impacto." },
+      { "question": "Gestión integral", "answer": "Nos encargamos de todo el proceso para que no tengas que preocuparte por nada." },
+      { "question": "Escalabilidad", "answer": "Desde campañas puntuales hasta programas continuos de embajadores de marca." },
+      { "question": "UGC con propósito", "answer": "No es solo contenido, es contenido diseñado para vender." }
+    ]
+  },
+  "kpis": {
+    "title": "Resultados de automatizar con criterio",
+    "items": [
+      { "icon": "/imgs/kpi-1.gif", "value": "+300%", "label": "Incremento en engagement con estrategias optimizadas." },
+      { "icon": "/imgs/kpi-5.gif", "value": "+4X", "label": "Más conversión con influencers alineados con la audiencia de la marca." },
+      { "icon": "/imgs/kpi-4.gif", "value": "+120", "label": "Colaboraciones realizadas en 2025" }
+    ]
+  },
+  "final_cta": {
+    "title_html": "¿Listo para <span class=\"text-[#2f80ed]\">transformar</span> el Influencer Marketing en un motor <span class=\"text-[#2f80ed]\">de crecimiento real?</span>",
+    "cta_text": "SOLICITA UNA AUDITORÍA GRATUITA",
+    "cta_href": "contacto.html"
+  }
+}

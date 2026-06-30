@@ -1,0 +1,46 @@
+{
+  "slug": "iventions",
+  "cliente": "iVentions",
+  "logo": {
+    "src": "imgs/iventions-logo.svg",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "iVentions",
+    "title_part2": "",
+    "description": "Iventions es una empresa líder en el diseño y preparación de stands para ferias y congresos. Con una\n              cartera de clientes que incluye grandes nombres como Adidas, UEFA y LG, su trabajo destaca por su\n              impecable atención al detalle, potenciando la imagen de marca y ofreciendo diseños y servicios de la más\n              alta calidad. Su enfoque B2B en un sector específico hace que cada conversión sea de un valor\n              excepcionalmente alto."
+  },
+  "reto": [
+    "Iventions llegó a nosotros con un doble desafío: reducir los costes por conversión, mientras simultáneamente\n            aumentaban la calidad y el número de sus contactos. Entendiendo la naturaleza especializada de su negocio,\n            sabíamos que este reto requeriría una solución personalizada."
+  ],
+  "image": {
+    "src": "imgs/iventions.webp",
+    "alt": "Imagen representativa del caso Bobo Choses"
+  },
+  "solucion": [
+    "Primero, realizamos un profundo análisis de los objetivos de negocio de Iventions y definimos su\n                mercado objetivo en Internet. Posteriormente, llevamos a cabo una meticulosa auditoría de PPC de sus\n                campañas previas. Esta revisión nos permitió identificar las áreas donde se estaban perdiendo recursos y\n                ajustar las campañas para mejorar la eficiencia.",
+    "Con una base sólida establecida, lanzamos tests A/B y trazamos una estrategia de optimización. Esto nos\n                permitió ampliar las campañas a los principales mercados objetivo de Iventions, asegurando una captación\n                de clientes internacionales más efectiva y eficiente."
+  ],
+  "kpis": [
+    {
+      "value": "+80%",
+      "label": "Aumento de Leads",
+      "size_class": "text-5xl sm:text-6xl"
+    },
+    {
+      "value": "-345%",
+      "label": "Bajada de CPL",
+      "size_class": "text-5xl sm:text-6xl"
+    }
+  ],
+  "testimonios_titulo": null,
+  "testimonios": [],
+  "testimonios_logo": null,
+  "testimonios_logo_alt": null,
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

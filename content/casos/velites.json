@@ -1,0 +1,53 @@
+{
+  "slug": "velites",
+  "cliente": "VELITES",
+  "logo": {
+    "src": "imgs/velites_logo_letras_WHITE.avif",
+    "alt": "Logo de Amlul"
+  },
+  "hero": {
+    "eyebrow": "Caso de Éxito:",
+    "title_part1": "VELITES",
+    "title_part2": "",
+    "description": "Velites es una marca española de equipamiento deportivo premium enfocada en fitness funcional de alto\n              rendimiento.\n              Con una comunidad sólida en CrossFit y presencia en competiciones internacionales, la base estaba clara.\n              El reto era convertir esa tracción en crecimiento real dentro del canal ecommerce."
+  },
+  "reto": [
+    "Escalar ventas online de forma rentable. No solo crecer. Hacerlo manteniendo eficiencia en múltiples\n            mercados, con inversión creciente y sin perder control sobre CPA y ROAS. El objetivo era claro: más ventas,\n            más clientes nuevos y un sistema capaz de sostener el crecimiento en el tiempo."
+  ],
+  "image": {
+    "src": "imgs/handgrips.webp",
+    "alt": "Imagen representativa del caso Amlul"
+  },
+  "solucion": [
+    "Se construyó un sistema de Paid Media completo, estructurado por fases de funnel:\n                Visibilidad: captación de nueva audiencia\n                Consideración: activación de intención\n                Conversión: remarketing y cierre",
+    "Todo conectado bajo un mismo sistema de medición y optimización.\n                Pero la clave no fue la estructura. Fue el enfoque.",
+    "Pasar de una gestión reactiva a un modelo predictivo: anticipar estacionalidades, testear de forma\n                constante y tomar decisiones basadas en datos comparables en el tiempo.",
+    "Immoral no actuó como agencia. Actuó como partner."
+  ],
+  "kpis": [
+    {
+      "value": "+400%",
+      "label": "en facturación",
+      "size_class": "text-5xl sm:text-5xl"
+    },
+    {
+      "value": "+370%",
+      "label": "en volumen de compras",
+      "size_class": "text-5xl sm:text-5xl"
+    },
+    {
+      "value": "+380%",
+      "label": "en captación de nuevos clientes",
+      "size_class": "text-5xl sm:text-5xl"
+    }
+  ],
+  "testimonios_titulo": null,
+  "testimonios": [],
+  "testimonios_logo": null,
+  "testimonios_logo_alt": null,
+  "seo": {
+    "title": "Immoral - casos de exito",
+    "meta_description": null,
+    "og_image": null
+  }
+}

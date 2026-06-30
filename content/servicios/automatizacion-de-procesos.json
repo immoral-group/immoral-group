@@ -1,0 +1,66 @@
+{
+  "slug": "automatizacion-de-procesos",
+  "title": "Automatización de Procesos & IA",
+  "mode": "template",
+  "accent_color": "#2f80ed",
+  "seo": {
+    "title": "Immoral Growth Group - Tu partner estratégico de crecimiento digital",
+    "meta_description": null,
+    "og_image": null
+  },
+  "hero": {
+    "eyebrow": "Automatización de Procesos + IA:",
+    "h1_html": "Eficiencia Inteligente<br>Diseñada a Medida",
+    "subtitle": "Diseñamos automatizaciones e inteligencia artificial adaptadas a tus procesos para reducir fricción, ganar eficiencia y escalar con criterio."
+  },
+  "info": {
+    "paragraph": "En Immoral no implementamos herramientas sin contexto. Analizamos cómo funciona tu empresa, identificamos puntos de fricción y diseñamos soluciones de automatización e IA que encajan con tu forma real de trabajar.",
+    "h2": "No se trata de sustituir personas, sino de liberar tiempo, reducir errores y tomar mejores decisiones."
+  },
+  "que_podemos_hacer": {
+    "title_html": "¿Qué podemos<br>hacer por tí?",
+    "intro_paragraphs": [
+      "Nuestro equipo analiza tus procesos internos para identificar cuellos de botella, tareas repetitivas y puntos de mejora.",
+      "Luego, diseñamos soluciones a medida para optimizar tiempos, reducir costos y mejorar la precisión de cada operación."
+    ],
+    "cards": [
+      { "icon": "/imgs/auto-ico-1.svg", "icon_alt": "Icono Automatización", "title": "Automatizar procesos operativos", "description": "Aplicamos automatización para eliminar tareas manuales, repetitivas y de bajo valor dentro de la operativa diaria." },
+      { "icon": "/imgs/auto-ico-2.svg", "icon_alt": "Icono Optimización", "title": "Optimizar flujos de trabajo", "description": "Rediseñamos procesos para que tareas, datos y equipos trabajen de forma más eficiente y coordinada." },
+      { "icon": "/imgs/auto-ico-3.svg", "icon_alt": "Icono Chatbots", "title": "Desarrollo de chatbots y asistentes virtuales", "description": "Creamos chatbots y asistentes inteligentes personalizados para atención, soporte, ventas o gestión interna, integrados en tus sistemas." },
+      { "icon": "/imgs/auto-ico-4.svg", "icon_alt": "Icono Consultoría", "title": "Consultoría en transformación digital", "description": "Acompañamos a tu empresa en la adopción de automatización e IA, definiendo qué aplicar, cuándo y con qué impacto real." }
+    ]
+  },
+  "faq": {
+    "title": "¿Qué nos hace diferentes?",
+    "subtitle_html": "No vendemos software. No instalamos herramientas sin sentido. Nos convertimos en parte de tu equipo para diseñar soluciones personalizadas que realmente <span class=\"font-bold text-white\">transformen la eficiencia de tu empresa.</span>",
+    "items": [
+      { "question": "Análisis en profundidad", "answer": "No aplicamos automatizaciones sin entender primero tus necesidades reales." },
+      { "question": "Tecnología a medida", "answer": "Implementamos las herramientas adecuadas para tu empresa, sin soluciones genéricas." },
+      { "question": "IA aplicada con propósito", "answer": "No usamos inteligencia artificial por moda, sino para resolver problemas específicos." },
+      { "question": "Automatización sin perder el factor humano", "answer": "La eficiencia no debe ser fría ni impersonal, sino estratégica y efectiva." },
+      { "question": "Optimización continua", "answer": "No entregamos y desaparecemos, refinamos cada proceso según los datos y la evolución del negocio." }
+    ]
+  },
+  "como_lo_hacemos": {
+    "title": "Cómo lo hacemos",
+    "steps": [
+      { "icon": "/imgs/auto-flecha-1.svg", "icon_alt": "Paso 1", "h3_html": "Inmersión en la empresa<br />& análisis de procesos", "description": "Estudiamos en detalle cómo funciona tu negocio, detectamos puntos de fricción y diseñamos un mapa de optimización." },
+      { "icon": "/imgs/auto-flecha-2.svg", "icon_alt": "Paso 2", "h3_html": "Diseño de estrategia &<br />roadmap de automatización", "description": "Proponemos soluciones basadas en automatización, inteligencia artificial e integración de sistemas." },
+      { "icon": "/imgs/auto-flecha-3.svg", "icon_alt": "Paso 3", "h3_html": "Implementación de<br />herramientas &<br />optimización de workflows", "description": "Automatizamos tareas, conectamos plataformas y optimizamos los procesos con IA." },
+      { "icon": "/imgs/auto-flecha-4.svg", "icon_alt": "Paso 4", "h3_html": "Monitorización &<br />evolución constante", "description": "Cada solución se ajusta en tiempo real según datos, rendimiento y necesidades emergentes." }
+    ]
+  },
+  "kpis": {
+    "title": "Impacto real en la operativa del negocio",
+    "items": [
+      { "icon": "/imgs/kpi-1.gif", "value": "-60%", "value_prefix": "", "label": "Reducción del 60% en tiempos de ejecución de tareas administrativas." },
+      { "icon": "/imgs/kpi-2.gif", "value": "+40%", "value_prefix": "", "label": "Aumento de la productividad en un 40% gracias a la automatización de workflows." },
+      { "icon": "/imgs/kpi-3.gif", "value": "$€¥", "value_prefix": "↓", "label": "Ahorro significativo en costos operativos al eliminar tareas manuales innecesarias." }
+    ]
+  },
+  "final_cta": {
+    "title_html": "¿Listo para llevar tu empresa al siguiente nivel con <span class=\"text-[#2f80ed]\">automatización e inteligencia artificial?</span>",
+    "cta_text": "SOLICITA UNA AUDITORÍA GRATUITA",
+    "cta_href": "contacto.html"
+  }
+}
