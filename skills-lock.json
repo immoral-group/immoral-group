@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "xml-sitemap": {
+      "source": "kostja94/marketing-skills",
+      "sourceType": "github",
+      "skillPath": "skills/seo/technical/sitemap/SKILL.md",
+      "computedHash": "3d1a9b6d1a718ec84fe4ab95e71344854a711e4267498d8d68ff6a89820b97ee"
+    }
+  }
+}

@@ -28,6 +28,7 @@ export default defineConfig({
                 'caso-iventions': resolve(__dirname, 'caso-iventions.html'),
                 'caso-munkombucha': resolve(__dirname, 'caso-munkombucha.html'),
                 'caso-oxpertacapital': resolve(__dirname, 'caso-oxpertacapital.html'),
+                'caso-oxpertaexpress': resolve(__dirname, 'caso-oxpertaexpress.html'),
                 'caso-teamder': resolve(__dirname, 'caso-teamder.html'),
                 'caso-thecrewel': resolve(__dirname, 'caso-thecrewel.html'),
                 'caso-travelperk': resolve(__dirname, 'caso-travelperk.html'),

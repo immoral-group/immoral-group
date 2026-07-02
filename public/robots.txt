@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /img1
+Disallow: /img1.html
+
+Sitemap: https://www.immoral.es/sitemap.xml
