@@ -1,3 +1,15 @@
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+
 User-agent: *
 Allow: /
 
@@ -5,4 +17,4 @@ Disallow: /api/
 Disallow: /img1
 Disallow: /img1.html
 
-Sitemap: https://www.immoral.es/sitemap.xml
+Sitemap: https://immoral.es/sitemap.xml
