@@ -1,6 +1,6 @@
 # SPEC-04: Resolver duplicidad de dominio www/non-www (canonical)
 
-**Versión:** 1.0
+**Versión:** 1.2
 **Estado:** aprobada
 **Tipo de proyecto:** web-app
 **Última actualización:** 2026-07-13
@@ -10,7 +10,7 @@
 
 ## Descripción
 
-Hoy `https://immoral.es/` y `https://www.immoral.es/` devuelven ambos HTTP 200 con contenido idéntico, sin redirect 301 entre ellos y sin `<link rel="canonical">` en ninguna página. Esto expone al sitio a que Google trate ambas versiones como contenido duplicado, diluyendo el "link equity" entre las dos URLs en lugar de consolidarlo en una sola. Esta SPEC añade `<link rel="canonical">` en cada página apuntando al dominio oficial provisional (`https://immoral.es`, sin `www`), como mitigación de código. La resolución definitiva (redirect 301 a nivel de DNS/Vercel) queda fuera de alcance de un cambio de código de este repo — ver ambigüedad documentada abajo.
+Hoy `https://immoral.es/` y `https://www.immoral.es/` devuelven ambos HTTP 200 con contenido idéntico, sin redirect 301 entre ellos y sin `<link rel="canonical">` en ninguna página. Esto expone al sitio a que Google trate ambas versiones como contenido duplicado, diluyendo el "link equity" entre las dos URLs en lugar de consolidarlo en una sola. Esta SPEC añade `<link rel="canonical">` en cada página apuntando al dominio oficial (`https://immoral.es`, sin `www`, **confirmado por David el 2026-07-13**), como mitigación de código. La resolución definitiva (redirect 301 a nivel de DNS/Vercel) queda fuera de alcance de un cambio de código de este repo — ver Plan de implementación, tarea 4.
 
 ---
 
@@ -40,7 +40,7 @@ Hoy `https://immoral.es/` y `https://www.immoral.es/` devuelven ambos HTTP 200 c
 
 ## Flujos alternativos / Edge cases
 
-- **Ambigüedad de negocio (dominio oficial no confirmado formalmente):** hoy tanto `sitemap.xml` como `robots.txt` (antes de esta ronda) declaraban URLs con `www`, mientras que el `og:image` de la home ya usaba la versión sin `www` — inconsistencia interna preexistente. Esta SPEC fija `https://immoral.es` (sin `www`) como canónico **provisional** porque es el dominio que da Julián en el encargo de esta ronda de trabajo. **Queda pendiente de confirmación formal con David/Julián** cuál es el dominio oficial definitivo; si se decide `www`, hay que revertir el valor de `href` en todos los `<link rel="canonical">` (cambio mecánico, bajo riesgo) y el redirect 301 iría en la dirección contraria.
+- ✅ **Decisión de dominio oficial — CERRADA (confirmada por David, 2026-07-13):** `https://immoral.es` (sin `www`) es el dominio oficial definitivo. Antes de esta ronda, tanto `sitemap.xml` como `robots.txt` declaraban URLs con `www`, mientras que el `og:image` de la home ya usaba la versión sin `www` — inconsistencia interna preexistente, ya resuelta por esta SPEC (canonical) y por SPEC-03 (sitemap.xml/robots.txt). No queda ninguna reversión pendiente: el valor usado en el PR ya coincide con la decisión confirmada.
 - **Página con URL con trailing slash o extensión `.html`:** `vercel.json` ya declara `cleanUrls: true` y `trailingSlash: false`, por lo que la URL pública canónica de cada página es sin `.html` y sin `/` final (ej. `https://immoral.es/caso-bobo`, no `https://immoral.es/caso-bobo.html`). El valor de `href` de cada canonical debe seguir esa misma convención para no introducir una nueva inconsistencia.
 - **Home (`index.html`):** su canonical es `https://immoral.es/` (con `/` final, es la única excepción — la raíz del dominio).
 - **`img1.html`:** fuera de alcance (no indexable, ver SPEC-01).
@@ -49,14 +49,14 @@ Hoy `https://immoral.es/` y `https://www.immoral.es/` devuelven ambos HTTP 200 c
 
 ## Criterios de aceptación
 
-- [ ] CA-01: Las ~32 páginas indexables del sitio (todas menos `img1.html`) tienen exactamente un `<link rel="canonical">` en su `<head>`.
+- [ ] CA-01: Las 34 páginas indexables del sitio (todas menos `img1.html`) tienen exactamente un `<link rel="canonical">` en su `<head>`.
 - [ ] CA-02: El `href` de cada canonical usa el dominio `https://immoral.es` (sin `www`).
 - [ ] CA-03: El `href` de cada canonical usa la ruta limpia coherente con `cleanUrls: true` de `vercel.json` (sin `.html`, sin trailing slash salvo la home).
 - [ ] CA-04: El canonical de `index.html` es exactamente `https://immoral.es/`.
-- [ ] CA-05: El canonical de `caso-bobo.html` es exactamente `https://immoral.es/caso-bobo` (y análogamente para los otros 17 casos).
+- [ ] CA-05: El canonical de `caso-bobo.html` es exactamente `https://immoral.es/caso-bobo` (y análogamente para los otros 18 casos de éxito, 19 en total).
 - [ ] CA-06: `npm run build` termina sin errores y el HTML generado en `dist/` conserva el `<link rel="canonical">` de cada página fuente.
 - [ ] CA-07: `curl -s https://immoral.es/{ruta} | grep 'rel="canonical"'` devuelve el mismo dominio sin `www` para una muestra de páginas verificada post-deploy.
-- [ ] CA-08 (documental, no de código): esta SPEC deja registrada la ambigüedad de dominio oficial (www vs. non-www) como pendiente de decisión formal de David/Julián, y el redirect 301 correspondiente como acción manual en Vercel/DNS fuera del alcance de este repo (ver sección "Notas de seguridad" y "Plan de implementación").
+- [x] CA-08 (documental, no de código): ✅ decisión de dominio oficial cerrada (`https://immoral.es`, sin `www`, confirmada por David el 2026-07-13). Queda pendiente únicamente el redirect 301 correspondiente como acción manual en Vercel/DNS fuera del alcance de este repo (ver "Plan de implementación", tarea 4).
 
 ---
 
@@ -84,7 +84,7 @@ Ninguna.
 
 ### Páginas modificadas
 
-Las mismas ~32 páginas indexables de SPEC-01/SPEC-02.
+Las mismas 34 páginas indexables de SPEC-01/SPEC-02.
 
 ### Componentes reutilizables
 
@@ -147,10 +147,10 @@ Un `<link rel="canonical" href="https://immoral.es/{ruta-limpia}">` añadido al 
 
 ### Desglose de tareas
 
-1. Calcular la ruta limpia de cada una de las ~32 páginas indexables (nombre de archivo sin `.html`, `index.html` → `/`).
+1. Calcular la ruta limpia de cada una de las 34 páginas indexables (nombre de archivo sin `.html`, `index.html` → `/`).
 2. Insertar `<link rel="canonical" href="https://immoral.es/{ruta}">` en el `<head>` de cada página.
 3. `npm run build` y verificar en `dist/` que 2–3 páginas de muestra tienen el canonical esperado con la ruta correcta.
-4. **Tarea manual, fuera de este repo (David/Julián):** confirmar formalmente el dominio oficial definitivo (`immoral.es` vs `www.immoral.es`) y configurar el redirect 301 correspondiente en el panel de dominios de Vercel o en el proveedor DNS. Esta SPEC no puede completar esta tarea — no hay acceso a Vercel/DNS desde este repo.
+4. **Tarea manual, fuera de este repo:** ✅ dominio oficial ya confirmado (`immoral.es`, sin `www`) — solo queda configurar el redirect 301 correspondiente (de `www.immoral.es` hacia `immoral.es`) en el panel de dominios de Vercel o en el proveedor DNS. Esta SPEC no puede completar esta tarea — no hay acceso a Vercel/DNS desde este repo.
 
 ### Dependencias con otras specs
 
@@ -180,8 +180,7 @@ No aplica.
 ## Out of scope (explícito)
 
 - Configuración del redirect 301 a nivel de Vercel/DNS — acción manual de infraestructura, no de código de este repo (ver Plan de implementación, tarea 4).
-- Decisión final sobre cuál es el dominio oficial (`immoral.es` vs `www.immoral.es`) — se usa `immoral.es` como valor provisional según el encargo de Julián; la decisión formal queda pendiente y podría revertir este valor.
-- Actualización de `sitemap.xml` existente (`public/sitemap.xml`, que hoy usa `www`) — actualizarlo al dominio sin `www` es coherente con esta SPEC pero se deja explícitamente agrupado con la tarea de SPEC-03 (que ya toca `robots.txt`) para no fragmentar el cambio del mismo archivo entre dos specs; se ejecuta en la misma implementación de código de esta ronda.
+- Actualización de `sitemap.xml` existente (`public/sitemap.xml`, que hoy usa `www`) — **asignada explícitamente a SPEC-03** (que agrupa todos los cambios en archivos estáticos de `public/`: `llms.txt` nuevo, `robots.txt` y `sitemap.xml` modificados). SPEC-04 se limita a los `<link rel="canonical">` de los HTML.
 - Hreflang / versiones multi-idioma del canonical — el sitio es solo en español.
 
 ---
@@ -191,3 +190,5 @@ No aplica.
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 1.0 | 2026-07-13 | Versión inicial. Aprobada por David Navarrete, ejecución BrianSpec directa 2026-07-13. Ambigüedad de dominio oficial (www vs non-www) documentada como pendiente; se usa `https://immoral.es` como canónico provisional por indicación de Julián. | David Navarrete |
+| 1.1 | 2026-07-13 | Corregido conteo (34 páginas, 19 casos). Aclarado que la actualización de `public/sitemap.xml` para eliminar el `www` la ejecuta **SPEC-03** (no esta spec), resolviendo la ambigüedad que dejaba ese archivo en tierra de nadie entre ambas specs. | David Navarrete |
+| 1.2 | 2026-07-13 | **Decisión de dominio oficial cerrada:** David confirma `https://immoral.es` (sin `www`) como dominio oficial definitivo. Marcado CA-08 como cumplido, eliminada la mención a "provisional"/"podría revertirse" en Descripción, Edge cases, Plan de implementación y Out of scope. Único pendiente real: el redirect 301 en Vercel/DNS (acción manual fuera de este repo). | David Navarrete |

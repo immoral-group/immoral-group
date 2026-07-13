@@ -1,6 +1,6 @@
 # SPEC-07: Alta y verificación en Google Search Console
 
-**Versión:** 1.0
+**Versión:** 1.1
 **Estado:** draft — acción manual, fuera del alcance de este repo
 **Tipo de proyecto:** web-app
 **Última actualización:** 2026-07-13
@@ -10,7 +10,9 @@
 
 ## Descripción
 
-Dar de alta la propiedad `immoral.es` en Google Search Console (GSC), verificar su propiedad, añadir la Service Account usada por el MCP de GSC compartido como Propietario de la propiedad, y añadir el sitio a la whitelist `GSC_ALLOWED_SITES` del servidor MCP en el VPS. Esto es trabajo 100% manual/de infraestructura: no hay ningún cambio de código de este repo que lo resuelva. Se documenta como spec por trazabilidad (P7 de la Constitution global — toda decisión queda registrada, incluso las que no tocan código) y porque las SPEC-01 a SPEC-05 solo tienen impacto medible una vez el dominio esté verificado en GSC y se pueda consultar su rendimiento de indexación.
+Dar de alta la propiedad `immoral.es` en Google Search Console (GSC), verificar su propiedad, añadir la Service Account usada por el MCP de GSC compartido como Propietario de la propiedad, y añadir el sitio a la whitelist `GSC_ALLOWED_SITES` del servidor MCP en el VPS. Salvo por la subida de un archivo HTML de verificación a `public/` (si se elige ese método, ver Plan de implementación), el trabajo es manual/de infraestructura y no toca código de este repo. Se documenta como spec por trazabilidad (P7 de la Constitution global — toda decisión queda registrada, incluso las que no tocan código) y porque las SPEC-01 a SPEC-05 solo tienen impacto medible una vez el dominio esté verificado en GSC y se pueda consultar su rendimiento de indexación.
+
+**Contexto operativo importante** (documentado en el doc de imseo, página "03 — Infraestructura compartida" del doc ClickUp `knvz4-82755`): en Immoral, el método probado y recomendado para verificar propiedades en GSC es **archivo HTML en `public/`**. La verificación por DNS/TXT en el proveedor de dominios (IONOS) ha dado problemas en experiencias previas del equipo, así que se evita. Esto es distinto del criterio genérico de SPEC-14 del catálogo (que sí usó DNS TXT sobre un dominio en Vercel DNS) — aplicar el criterio de la empresa, no el genérico.
 
 ---
 
@@ -26,40 +28,44 @@ Dar de alta la propiedad `immoral.es` en Google Search Console (GSC), verificar 
 
 ### Flujo 1: Alta y verificación de la propiedad en GSC
 
-1. El administrador de GSC crea la propiedad `immoral.es` (modo Dominio, que cubre automáticamente tanto `immoral.es` como `www.immoral.es` y ambos protocolos — relevante dada la duplicidad de dominio documentada en SPEC-04).
-2. Google entrega un método de verificación (DNS TXT, archivo HTML, meta tag, o vía Google Tag Manager si ya está instalado — ver dependencia con SPEC-06).
-3. El administrador completa la verificación por el método elegido.
-4. Google confirma la propiedad como verificada.
+1. El administrador de GSC crea la propiedad. Dos opciones:
+   - **Recomendada (modo prefijo URL):** crear una propiedad por prefijo `https://immoral.es` para poder verificar con **archivo HTML en `public/`** (método probado en el equipo — ver Contexto operativo en Descripción). Si además se quiere cubrir `www.immoral.es`, crear una segunda propiedad por prefijo `https://www.immoral.es`, pero lo relevante es que el redirect 301 pendiente (SPEC-04) consolide todo en un solo host antes de acumular datos.
+   - Alternativa (modo Dominio): cubriría automáticamente todos los subdominios y protocolos con una sola propiedad, pero **exige verificación por DNS TXT** — que el equipo evita por la experiencia previa con IONOS (ver Descripción). Descartada salvo instrucción expresa.
+2. Google entrega el token de verificación en un archivo `googleXXXXXXXX.html`.
+3. El desarrollador coloca ese archivo en `public/` del repo `immoral-group`, hace commit/push, espera al deploy de Vercel.
+4. El administrador de GSC pulsa "Verificar" en el panel. Google confirma la propiedad como verificada.
 
 ### Flujo 2: Alta de la Service Account como Propietario
 
-1. El administrador de GSC añade el email de la Service Account usada por el MCP de GSC compartido como usuario "Propietario" de la propiedad `immoral.es` en GSC → Configuración → Usuarios y permisos.
-2. La Service Account queda con permisos para leer datos de rendimiento (queries, clics, impresiones, indexación) vía la API de GSC.
+1. El administrador de GSC añade el email exacto de la Service Account del MCP compartido — `gsc-mcp@informes-immoral.iam.gserviceaccount.com` (documentado en doc ClickUp `knvz4-82755`, página "03 — Infraestructura compartida") — como usuario **Propietario** de la propiedad `immoral.es` en GSC → Configuración → Usuarios y permisos.
+2. La Service Account queda con permisos para leer datos de rendimiento (queries, clics, impresiones, indexación) vía la API de GSC **y** para llamar a la Indexing API (submit URL). **Importante:** el rol debe ser "Propietario", no "Completo" — con "Completo" las lecturas funcionan pero la Indexing API devuelve 403 al solicitar indexaciones (lección aprendida documentada en la doc del equipo).
 
 ### Flujo 3: Whitelist en el MCP compartido del VPS
 
-1. El administrador del VPS edita la configuración/variable de entorno `GSC_ALLOWED_SITES` del servidor MCP compartido, añadiendo `immoral.es` (o `sc-domain:immoral.es` según el formato que use ese MCP concreto).
-2. Reinicia el servicio MCP si es necesario para que tome la nueva configuración.
-3. A partir de ese momento, las herramientas del MCP de GSC (`gsc_top_queries`, `gsc_indexed_count`, `gsc_submit_sitemap`, etc.) pueden operar sobre la propiedad `immoral.es`.
+1. El administrador del VPS entra por SSH al servidor `srv1596187` (Hostinger) y edita `/opt/gsc-mcp/.env`, añadiendo `https://immoral.es/` a la variable `GSC_ALLOWED_SITES` (formato: URLs completas separadas por coma, tal como ya existen `https://procesos.immoralia.es/` y `https://immoralia.es/`). Ver formato exacto en el doc ClickUp `knvz4-82755`, página "03 — Infraestructura compartida".
+2. Reinicia el contenedor: `cd /opt/gsc-mcp && docker compose up -d --build`.
+3. ⚠️ Tras el reinicio, el conector "Google Search Console - MCP" de Claude.ai puede quedar con la sesión colgada (las tools fallan con "Tool execution failed" aunque el servidor esté sano). Solución: Ajustes → Conectores → actualizar/reconectar el conector (lección aprendida documentada en la doc del equipo).
+4. A partir de ese momento, las herramientas del MCP de GSC (`gsc_top_queries`, `gsc_indexed_count`, `gsc_submit_sitemap`, etc.) pueden operar sobre la propiedad `immoral.es`.
 
 ---
 
 ## Flujos alternativos / Edge cases
 
 - **Propiedad ya existe pero verificada por otra persona/cuenta sin acceso actual:** habría que solicitar acceso de Propietario a quien la verificó originalmente, en vez de crear una propiedad duplicada.
-- **Verificación por dominio (DNS TXT) vs. por prefijo de URL:** dado que existe la duplicidad `www`/non-`www` (SPEC-04), se recomienda verificación en modo Dominio (cubre todos los subdominios y protocolos con un solo registro DNS TXT) en vez de verificación por prefijo de URL (que requeriría verificar `https://immoral.es` y `https://www.immoral.es` por separado).
+- **Verificación por prefijo de URL (archivo HTML, recomendada aquí) vs. modo Dominio (DNS TXT, evitada):** aunque el modo Dominio cubriría con una sola propiedad todos los subdominios y protocolos, exige DNS TXT — método que el equipo evita por experiencia previa en IONOS (ver Contexto operativo en Descripción). Se opta por verificación de prefijo con archivo HTML — la duplicidad `www`/non-`www` (SPEC-04) se resuelve idealmente antes con el redirect 301 pendiente, o se verifica una segunda propiedad para el prefijo con `www` si se decide mantener ambos accesibles.
 - **Sitemap con dominio `www` desactualizado (antes de SPEC-03/04):** una vez el sitemap y el robots.txt reflejen el dominio canónico sin `www` (SPEC-03/04), el envío del sitemap desde GSC debe apuntar a esa misma URL (`https://immoral.es/sitemap.xml`) para evitar confusión.
 
 ---
 
 ## Criterios de aceptación
 
-*(Todos verificables solo por quien tenga acceso a GSC y al VPS — no verificables desde este repo.)*
+*(Todos verificables solo por quien tenga acceso a GSC y al VPS — no verificables desde este repo, salvo CA-01a que sí es verificable localmente.)*
 
-- [ ] CA-01: La propiedad `immoral.es` aparece como **verificada** en Google Search Console.
-- [ ] CA-02: La Service Account del MCP de GSC compartido aparece con rol **Propietario** en GSC → Usuarios y permisos de la propiedad `immoral.es`.
-- [ ] CA-03: `immoral.es` (o `sc-domain:immoral.es`) aparece en el valor de `GSC_ALLOWED_SITES` del servidor MCP en el VPS.
-- [ ] CA-04: Una consulta de prueba con las herramientas del MCP de GSC (ej. `gsc_indexed_count` o `gsc_list_sitemaps` sobre `immoral.es`) devuelve datos sin error de "sitio no autorizado".
+- [ ] CA-01a: Existe un archivo `public/googleXXXXXXXXXXXXXXXX.html` (el token concreto lo entrega GSC) commiteado y desplegado. Verificable: `curl https://immoral.es/googleXXXXXXXXXXXXXXXX.html` devuelve 200 con el contenido esperado (`google-site-verification: googleXXXXXXXXXXXXXXXX.html`).
+- [ ] CA-01: La propiedad `https://immoral.es` (modo prefijo URL) aparece como **verificada** en Google Search Console.
+- [ ] CA-02: La Service Account `gsc-mcp@informes-immoral.iam.gserviceaccount.com` aparece con rol **Propietario** (no "Completo") en GSC → Usuarios y permisos de la propiedad `https://immoral.es`.
+- [ ] CA-03: `https://immoral.es/` aparece en el valor de `GSC_ALLOWED_SITES` del `.env` del contenedor `/opt/gsc-mcp/` en el VPS `srv1596187`.
+- [ ] CA-04: Una consulta de prueba con `gsc_list_sitemaps` sobre `https://immoral.es/` desde el MCP compartido devuelve datos sin error de "sitio no autorizado".
 - [ ] CA-05: El sitemap `https://immoral.es/sitemap.xml` aparece enviado y como **Success** en la sección Sitemaps del panel de GSC.
 
 ---
@@ -88,7 +94,7 @@ Ninguna.
 
 ### Páginas modificadas
 
-Ninguna — esta SPEC no toca código del repo `immoral-group` en ningún punto.
+Solo la adición de un archivo estático de verificación en `public/googleXXXXXXXXXXXXXXXX.html` (el nombre exacto lo entrega GSC). No hay cambios en ningún `.html`, `.js`, ni configuración del build.
 
 ### Componentes reutilizables
 
@@ -151,11 +157,14 @@ No aplica — no hay arquitectura de software que definir, es una secuencia de a
 ### Desglose de tareas
 
 1. **[MANUAL] Confirmar quién tiene acceso a la cuenta de Google que debe administrar Search Console para `immoral.es`** (David, Julián, u otro miembro del equipo) — primer bloqueo a resolver antes de poder avanzar.
-2. **[MANUAL] Crear la propiedad `immoral.es` en modo Dominio en GSC** y completar la verificación (DNS TXT recomendado, dado el contexto de SPEC-04).
-3. **[MANUAL] Añadir la Service Account del MCP de GSC compartido como Propietario** en GSC → Usuarios y permisos.
-4. **[MANUAL] Acceder al VPS que hospeda el MCP compartido** (requiere acceso SSH, no disponible desde este repo ni desde esta sesión de trabajo) y añadir `immoral.es` a `GSC_ALLOWED_SITES`.
-5. **[MANUAL] Enviar el sitemap** `https://immoral.es/sitemap.xml` desde el panel de GSC una vez verificada la propiedad.
-6. **[MANUAL] Verificar con una consulta de prueba** desde el MCP de GSC que el sitio responde correctamente.
+2. **[MANUAL] Crear la propiedad `https://immoral.es` en modo prefijo URL** en GSC. Descargar el archivo `googleXXXXXXXX.html` que entrega Google.
+3. **[CÓDIGO — mínimo]** Añadir `public/googleXXXXXXXX.html` al repo, commit y push. Vercel despliega automáticamente.
+4. **[MANUAL] Pulsar "Verificar" en el panel de GSC** una vez el archivo esté servido.
+5. **[MANUAL] Añadir `gsc-mcp@informes-immoral.iam.gserviceaccount.com` como Propietario** (no "Completo") en GSC → Configuración → Usuarios y permisos.
+6. **[MANUAL] Acceder por SSH al VPS `srv1596187` (Hostinger)**, editar `/opt/gsc-mcp/.env` añadiendo `https://immoral.es/` a `GSC_ALLOWED_SITES`, y ejecutar `docker compose up -d --build`.
+7. **[MANUAL] Reconectar el conector "Google Search Console - MCP" en Claude.ai** tras el reinicio (Ajustes → Conectores → actualizar).
+8. **[MANUAL] Enviar el sitemap** `https://immoral.es/sitemap.xml` desde el panel de GSC.
+9. **[MANUAL] Verificar con una consulta de prueba** (`gsc_list_sitemaps` sobre `https://immoral.es/`) desde el MCP que el sitio responde correctamente.
 
 ### Dependencias con otras specs
 
@@ -193,3 +202,4 @@ No aplica.
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 1.0 | 2026-07-13 | Versión inicial, creada en estado `draft — acción manual` por trazabilidad. No se implementa código en esta ronda; requiere acceso SSH al VPS y a la cuenta de Google Search Console que no están disponibles en esta sesión. | David Navarrete |
+| 1.1 | 2026-07-13 | Auditoría con Claude Opus. Corregida contradicción con doc del equipo: la SPEC recomendaba DNS TXT ("dado el contexto de SPEC-04"), pero la página "03 — Infraestructura compartida" del doc `knvz4-82755` dice explícitamente que DNS TXT en IONOS ha dado problemas y que el método probado en Immoral es archivo HTML en `public/`. Cambiado a verificación por prefijo URL + archivo HTML. Añadido el email exacto de la Service Account (`gsc-mcp@informes-immoral.iam.gserviceaccount.com`), la ruta exacta del `.env` del VPS (`/opt/gsc-mcp/.env`), el nombre del VPS (`srv1596187`), el formato exacto del valor de `GSC_ALLOWED_SITES` (URL completa con protocolo y barra final), la advertencia sobre "Propietario" vs "Completo", y el paso de reconectar el conector de Claude.ai tras reiniciar el contenedor. Añadido CA-01a verificable localmente (el archivo de verificación en `public/`). | David Navarrete |

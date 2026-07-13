@@ -1,6 +1,6 @@
 # SPEC-02: JSON-LD base (Organization + CreativeWork/Service por caso de éxito)
 
-**Versión:** 1.0
+**Versión:** 1.1
 **Estado:** aprobada
 **Tipo de proyecto:** web-app
 **Última actualización:** 2026-07-13
@@ -49,13 +49,13 @@ Añadir datos estructurados (`schema.org` vía `application/ld+json`) a todas la
 
 ## Criterios de aceptación
 
-- [ ] CA-01: Las ~32 páginas indexables del sitio (todas menos `img1.html`) contienen un bloque `<script type="application/ld+json">` con `"@type": "Organization"`.
+- [ ] CA-01: Las 34 páginas indexables del sitio (todas menos `img1.html`) contienen un bloque `<script type="application/ld+json">` con `"@type": "Organization"`.
 - [ ] CA-02: El bloque `Organization` incluye como mínimo `name`, `url`, `logo` y `sameAs` (array con las redes sociales reales: Instagram, LinkedIn, TikTok, YouTube, tal como aparecen ya enlazadas en `index.html`/`contacto.html`).
-- [ ] CA-03: Los 18 `caso-*.html` contienen, además del bloque `Organization`, un segundo bloque `<script type="application/ld+json">` con `"@type": "CreativeWork"`.
-- [ ] CA-04: Cada bloque `CreativeWork` tiene un `name` que identifica al cliente del caso y un `about`/`description` no genérico (distinto entre los 18 casos).
+- [ ] CA-03: Los 19 `caso-*.html` contienen, además del bloque `Organization`, un segundo bloque `<script type="application/ld+json">` con `"@type": "CreativeWork"`.
+- [ ] CA-04: Cada bloque `CreativeWork` tiene un `name` que identifica al cliente del caso y un `about`/`description` no genérico (distinto entre los 19 casos).
 - [ ] CA-05: Cada bloque `CreativeWork` referencia a Immoral Group como `creator` (objeto anidado o referencia por nombre/URL, consistente con el bloque `Organization` de la misma página).
-- [ ] CA-06: Los 18 bloques JSON-LD de `Organization` (uno por página de caso, más el resto de páginas) son sintácticamente idénticos entre sí en su bloque `Organization` (mismos valores de `name`, `url`, `logo`, `sameAs`) — verificable extrayendo y comparando el bloque con `node -e "JSON.parse(...)"` o `jq` sobre una muestra.
-- [ ] CA-07: Cada bloque JSON-LD parsea sin error (`JSON.parse` no lanza excepción) en las ~32 páginas — verificable con un script que extraiga cada `<script type="application/ld+json">` de `dist/*.html` y lo parsee.
+- [ ] CA-06: El bloque `Organization` es exactamente idéntico en las 34 páginas indexables (misma serialización JSON: mismos valores de `name`, `alternateName`, `url`, `logo`, `sameAs`). Verificable extrayendo el bloque `Organization` de cada página con `node`/`jq` y comparando: debe haber exactamente 1 forma distinta, no 34 formas ligeramente distintas.
+- [ ] CA-07: Cada bloque JSON-LD (Organization en las 34 páginas + CreativeWork en los 19 casos = **53 bloques totales**) parsea sin error (`JSON.parse` no lanza excepción) — verificable con un script que extraiga cada `<script type="application/ld+json">` de `dist/*.html` y lo parsee.
 - [ ] CA-08: El [Rich Results Test de Google](https://search.google.com/test/rich-results) no reporta errores críticos sobre una muestra de 3 páginas (home, una página de servicio, un caso de éxito) tras el deploy a producción.
 - [ ] CA-09: `npm run build` termina sin errores y el HTML generado en `dist/` conserva los bloques JSON-LD de cada página fuente.
 
@@ -85,7 +85,7 @@ Ninguna.
 
 ### Páginas modificadas
 
-Las mismas ~32 páginas indexables de SPEC-01 (se excluye `img1.html`).
+Las mismas 34 páginas indexables de SPEC-01 (se excluye `img1.html`).
 
 ### Componentes reutilizables
 
@@ -146,10 +146,10 @@ No aplica.
 
 Dos bloques de `<script type="application/ld+json">` insertados directamente en el `<head>` (o justo antes de `</body>`) de cada archivo `.html`:
 
-1. **Bloque `Organization`** — idéntico en las ~32 páginas. Se centraliza su contenido en esta spec para copiar-pegar de forma consistente (ver más abajo).
+1. **Bloque `Organization`** — idéntico en las 34 páginas. Se centraliza su contenido en esta spec para copiar-pegar de forma consistente (ver más abajo).
 2. **Bloque `CreativeWork`** — solo en los 18 `caso-*.html`, con contenido específico por cliente (nombre, resumen del reto/resultado extraído del cuerpo de cada página).
 
-**Contenido de referencia del bloque `Organization`** (mismos valores en las ~32 páginas):
+**Contenido de referencia del bloque `Organization`** (mismos valores en las 34 páginas):
 
 ```json
 {
@@ -170,7 +170,7 @@ Dos bloques de `<script type="application/ld+json">` insertados directamente en 
 
 ### Desglose de tareas
 
-1. Insertar el bloque `Organization` de referencia en el `<head>` de las ~32 páginas indexables.
+1. Insertar el bloque `Organization` de referencia en el `<head>` de las 34 páginas indexables.
 2. Para cada uno de los 18 `caso-*.html`, redactar un bloque `CreativeWork` con `name`, `about`/`description` (resumen real del reto + resultado principal, coherente con la description de SPEC-01) y `creator` referenciando a Immoral Group.
 3. Validar sintaxis JSON de los 2 bloques por página con un script `node` que recorra `dist/*.html`, extraiga cada `<script type="application/ld+json">` y ejecute `JSON.parse`.
 4. Ejecutar `npm run build` y verificar con el Rich Results Test de Google sobre 2–3 páginas de muestra tras el deploy.
@@ -190,7 +190,7 @@ No aplica (no hay lógica de programa, es contenido estático).
 
 ### Tests de integración
 
-Script de verificación post-build: recorrer `dist/*.html`, extraer cada `<script type="application/ld+json">` con una expresión regular o parser HTML simple, y ejecutar `JSON.parse` sobre cada uno — debe completar sin excepciones en las ~32 páginas.
+Script de verificación post-build: recorrer `dist/*.html`, extraer cada `<script type="application/ld+json">` con una expresión regular o parser HTML simple, y ejecutar `JSON.parse` sobre cada uno — debe completar sin excepciones en las 34 páginas.
 
 ### Tests E2E
 
@@ -205,7 +205,7 @@ No aplica.
 - Datos estructurados `BreadcrumbList`, `FAQPage`, `Service` detallado por página de servicio (`automatizacion-de-procesos.html`, etc.) — posible SPEC futura. Esta ronda cubre `Organization` (todas las páginas) + `CreativeWork` (casos de éxito) según lo definido en el encargo.
 - `AggregateRating` o `Review` estructurado a partir de los testimonios de clientes — requeriría verificar que el formato de testimonio cumple las guías de Google sobre reseñas (evitar riesgo de markup spam); se deja fuera de esta ronda por prudencia.
 - Consolidación de los bloques `Organization` + `CreativeWork` en un único `@graph` con `@id` enlazados — mejora de mantenibilidad válida para una SPEC futura, no crítica para el objetivo GEO/SEO de esta ronda.
-- Actualización automática del JSON-LD si cambian las redes sociales — al no haber CMS, cualquier cambio futuro de redes sociales requiere editar manualmente las ~32 páginas (limitación aceptada del stack, ver PROJECT-CONSTITUTION.md sección 9).
+- Actualización automática del JSON-LD si cambian las redes sociales — al no haber CMS, cualquier cambio futuro de redes sociales requiere editar manualmente las 34 páginas (limitación aceptada del stack, ver PROJECT-CONSTITUTION.md sección 9).
 
 ---
 
@@ -214,3 +214,4 @@ No aplica.
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 1.0 | 2026-07-13 | Versión inicial. Aprobada por David Navarrete, ejecución BrianSpec directa 2026-07-13. | David Navarrete |
+| 1.1 | 2026-07-13 | Corregido conteo tras auditoría con Claude Opus: son **19 casos** (no 18) y **34 páginas indexables** (no ~32). Reescrito CA-06, que decía "18 bloques Organization" y confundía si se refería solo a los casos o a todas las páginas — ahora afirma explícitamente que el bloque Organization es idéntico en las 34 páginas. Añadido a CA-07 el total explícito de 53 bloques (34 Organization + 19 CreativeWork) para dar un número verificable claro. | David Navarrete |

@@ -1,6 +1,6 @@
-# SPEC-03: GEO Foundation — llms.txt + robots.txt con bots de IA
+# SPEC-03: GEO Foundation — llms.txt + robots.txt + sitemap.xml con dominio canónico
 
-**Versión:** 1.0
+**Versión:** 1.1
 **Estado:** aprobada
 **Tipo de proyecto:** web-app
 **Última actualización:** 2026-07-13
@@ -10,7 +10,7 @@
 
 ## Descripción
 
-Dotar al sitio de la base mínima de GEO (Generative Engine Optimization): un archivo `llms.txt` que describa la agencia y sus páginas clave en un formato legible por modelos de lenguaje, y un `robots.txt` con permisos explícitos para los bots de rastreo de IA (GPTBot, ClaudeBot, PerplexityBot), manteniendo intactas las reglas que ya funcionan hoy (permiso genérico + `Disallow` de `/api/` e `/img1`). Hoy `/llms.txt` devuelve 404 y `robots.txt` solo tiene una sección `User-agent: *` genérica, sin reglas dedicadas a bots de IA.
+Dotar al sitio de la base mínima de GEO (Generative Engine Optimization): un archivo `llms.txt` que describa la agencia y sus páginas clave en un formato legible por modelos de lenguaje, un `robots.txt` con permisos explícitos para los bots de rastreo de IA (GPTBot, ClaudeBot, PerplexityBot), y una actualización del `sitemap.xml` existente para que todas sus URLs usen el dominio canónico sin `www` (coherente con SPEC-04). Hoy `/llms.txt` devuelve 404, `robots.txt` solo tiene una sección `User-agent: *` genérica sin reglas dedicadas a bots de IA, y `sitemap.xml` declara todas sus URLs con `https://www.immoral.es/` (inconsistente con el canonical que fija SPEC-04). Esta spec deja los tres archivos de `public/` (`llms.txt` nuevo + `robots.txt` y `sitemap.xml` modificados) coherentes entre sí en la misma implementación.
 
 ---
 
@@ -61,7 +61,8 @@ Dotar al sitio de la base mínima de GEO (Generative Engine Optimization): un ar
 - [ ] CA-05: El `robots.txt` incluye una sección `User-agent: PerplexityBot` con `Allow: /`.
 - [ ] CA-06: El `robots.txt` conserva la sección `User-agent: *` con las reglas ya existentes (`Allow: /`, `Disallow: /api/`, `Disallow: /img1`, `Disallow: /img1.html`) sin eliminarlas ni relajarlas.
 - [ ] CA-07: El `robots.txt` conserva una línea `Sitemap:` apuntando al sitemap del dominio canónico (`https://immoral.es/sitemap.xml`, coherente con SPEC-04).
-- [ ] CA-08: `npm run build` termina sin errores y `dist/llms.txt` y `dist/robots.txt` existen con el contenido esperado (ambos son archivos estáticos servidos desde `public/`, Vite los copia tal cual a `dist/`).
+- [ ] CA-08: El `public/sitemap.xml` existente tiene todas sus etiquetas `<loc>` con dominio `https://immoral.es/` (sin `www`), coherente con el canonical de SPEC-04 y con la línea `Sitemap:` de CA-07. Verificable con `grep -c "https://www.immoral.es" public/sitemap.xml` → `0` (o `grep "https://immoral.es/" public/sitemap.xml | wc -l` → 34, si se decide alinear el sitemap al conjunto exacto de páginas indexables — el sitemap actual tiene 30 URLs, se conserva ese contenido y solo se actualiza el host de cada `<loc>`).
+- [ ] CA-09: `npm run build` termina sin errores y `dist/llms.txt`, `dist/robots.txt` y `dist/sitemap.xml` existen con el contenido esperado (los tres son archivos estáticos servidos desde `public/`, Vite los copia tal cual a `dist/`).
 
 ---
 
@@ -90,6 +91,7 @@ No aplica.
 ### Páginas modificadas
 
 - **`/robots.txt`** — archivo estático existente en `public/robots.txt`, se le añaden secciones nuevas sin eliminar las actuales.
+- **`/sitemap.xml`** — archivo estático existente en `public/sitemap.xml`, se sustituye el host de cada `<loc>` de `https://www.immoral.es/` a `https://immoral.es/` (sin `www`), sin cambiar el conjunto de URLs ni sus atributos `lastmod`/`changefreq`/`priority`.
 
 ### Componentes reutilizables
 
@@ -159,10 +161,11 @@ Dos archivos estáticos en `public/`, servidos tal cual por Vercel/Vite sin tran
 
 ### Desglose de tareas
 
-1. Redactar `public/llms.txt` con la descripción de Immoral Group y enlaces a: home, casos de éxito, contacto, equipo, manifesto, nuestra historia, y las 5 páginas de servicio.
+1. Redactar `public/llms.txt` con la descripción de Immoral Group y enlaces a: home, casos de éxito, contacto, equipo, manifesto, nuestra historia, y las 6 páginas de servicio (automatizacion-de-procesos, diseno-de-marca, email-marketing, gestion-de-redes, influencer-marketing, publicidad-en-medios).
 2. Añadir a `public/robots.txt` las secciones `GPTBot`, `ClaudeBot`, `PerplexityBot` con `Allow: /` y `Disallow: /api/`, sin tocar la sección `User-agent: *` existente salvo actualizar la línea `Sitemap:` al dominio canónico sin `www` (coordinado con SPEC-04).
-3. `npm run build` y verificar que `dist/llms.txt` y `dist/robots.txt` existen con el contenido esperado.
-4. Post-deploy: `curl https://immoral.es/llms.txt` y `curl https://immoral.es/robots.txt` para confirmar CA-01 a CA-07.
+3. Editar `public/sitemap.xml`: sustitución textual global `https://www.immoral.es/` → `https://immoral.es/` en todas las etiquetas `<loc>`. No se altera el conjunto de URLs (30 hoy) ni los atributos `lastmod`/`changefreq`/`priority`. El ajuste del sitemap al conjunto exacto de 34 páginas indexables (SPEC-01) queda fuera de esta spec — es una mejora recomendada aparte, ver Out of scope.
+4. `npm run build` y verificar que `dist/llms.txt`, `dist/robots.txt` y `dist/sitemap.xml` existen con el contenido esperado.
+5. Post-deploy: `curl https://immoral.es/llms.txt`, `curl https://immoral.es/robots.txt` y `curl https://immoral.es/sitemap.xml` para confirmar CA-01 a CA-09.
 
 ### Dependencias con otras specs
 
@@ -194,6 +197,7 @@ No aplica.
 - Generación dinámica de `llms.txt` a partir de una fuente de datos — es un archivo estático de mantenimiento manual, coherente con el resto del stack (ver PROJECT-CONSTITUTION.md sección 9).
 - Verificación de que los motores de IA (ChatGPT, Perplexity, Claude) efectivamente citan o mejoran su respuesta sobre Immoral Group tras esta SPEC — eso requiere medición externa y no es un criterio de aceptación verificable en el repo.
 - Meta tags específicos de IA (ej. `<meta name="chatgpt-*">`) — no existe un estándar consolidado para esto a fecha de esta SPEC; se descarta hasta que exista consenso de la industria.
+- **Sincronización del conjunto exacto de URLs del `sitemap.xml` con las 34 páginas indexables de SPEC-01.** Hoy el sitemap tiene 30 URLs; el sitio tiene 34 páginas indexables. Alinear ambos conjuntos (añadir las 4-5 URLs faltantes o quitar las que sobren) es una mejora recomendada que se deja como spec futura para no ampliar el scope de esta ronda — el objetivo aquí es únicamente eliminar el `www` inconsistente, no auditar completitud del sitemap.
 
 ---
 
@@ -202,3 +206,4 @@ No aplica.
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 1.0 | 2026-07-13 | Versión inicial. Aprobada por David Navarrete, ejecución BrianSpec directa 2026-07-13. | David Navarrete |
+| 1.1 | 2026-07-13 | Tras auditoría con Claude Opus: la actualización del host en `public/sitemap.xml` (de `www.immoral.es` a `immoral.es`) estaba en tierra de nadie entre esta spec y SPEC-04. Se asigna explícitamente a **esta** spec (SPEC-03) — que es la que ya toca los archivos estáticos de `public/` — con nuevo CA-08, tarea 3 del desglose, y "sitemap.xml" añadido a "Páginas modificadas". SPEC-04 se limita a los `<link rel="canonical">` de los HTML. Añadido Out of scope adicional sobre no sincronizar el conjunto de URLs del sitemap con las 34 indexables en esta ronda. | David Navarrete |

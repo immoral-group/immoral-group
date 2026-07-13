@@ -1,6 +1,6 @@
 # SPEC-01: Metadata única por página (title + meta description)
 
-**Versión:** 1.0
+**Versión:** 1.1
 **Estado:** aprobada
 **Tipo de proyecto:** web-app
 **Última actualización:** 2026-07-13
@@ -10,7 +10,17 @@
 
 ## Descripción
 
-Cada página pública de `https://immoral.es` debe tener un `<title>` y un `<meta name="description">` propios, descriptivos y distintos del resto. Hoy la home tiene un title genérico, `/casos-de-exito` y `/contacto` comparten el mismo title que las páginas de servicio, y los 18 casos de éxito (`caso-*.html`) comparten literalmente el mismo title ("Immoral - Casos de exito" / "Immoral - casos de exito", con capitalización inconsistente). No existe ningún `<meta name="description">` en ninguna página verificada. Esto impide que Google y cualquier buscador muestren un snippet relevante y diferenciado por página, y perjudica el CTR en resultados de búsqueda.
+Cada página pública de `https://immoral.es` debe tener un `<title>` y un `<meta name="description">` propios, descriptivos y distintos del resto. Hoy la home tiene un title genérico, `/casos-de-exito` y `/contacto` comparten el mismo title que las páginas de servicio, y los 19 casos de éxito (`caso-*.html`) comparten literalmente el mismo title ("Immoral - Casos de exito" / "Immoral - casos de exito", con capitalización inconsistente). No existe ningún `<meta name="description">` en ninguna página verificada. Esto impide que Google y cualquier buscador muestren un snippet relevante y diferenciado por página, y perjudica el CTR en resultados de búsqueda.
+
+**Universo exacto de páginas afectadas por esta spec** (verificado con `ls *.html` en la raíz del repo el 2026-07-13): 35 archivos `.html` totales, de los cuales 34 son indexables (se excluye `img1.html`). El desglose es:
+
+- **1 home:** `index.html`.
+- **6 páginas de servicio:** `automatizacion-de-procesos.html`, `diseno-de-marca.html`, `email-marketing.html`, `gestion-de-redes.html`, `influencer-marketing.html`, `publicidad-en-medios.html`.
+- **5 páginas institucionales/navegación:** `casos-de-exito.html`, `contacto.html`, `equipo.html`, `manifesto.html`, `nuestra-historia.html`.
+- **3 páginas legales:** `aviso-legal.html`, `cookies.html`, `privacidad.html`.
+- **19 páginas de caso de éxito** (`caso-*.html`): amlul, angelanavarro, bobo, coolbottles, gabrielforsach, grupomimara, iventions, lamanso, marcawell, munkombucha, nutfruit, oxpertacapital, oxpertaexpress, teamder, thecrewel, travelperk, vasquiat, velites, wetribu.
+
+Total: 1 + 6 + 5 + 3 + 19 = **34 páginas indexables**. `img1.html` queda fuera (Disallow en robots.txt, sin contenido textual).
 
 ---
 
@@ -53,10 +63,10 @@ Cada página pública de `https://immoral.es` debe tener un `<title>` y un `<met
 
 - [ ] CA-01: `index.html` tiene un `<title>` distinto al genérico actual ("Immoral Growth Group") y un `<meta name="description">` no vacío.
 - [ ] CA-02: `casos-de-exito.html` y `contacto.html` tienen cada uno un `<title>` distinto entre sí y distinto del de `index.html`.
-- [ ] CA-03: Los 18 archivos `caso-*.html` tienen cada uno un `<title>` que incluye el nombre del cliente y es distinto de los otros 17 (verificable: `grep -h "<title>" caso-*.html | sort | uniq` devuelve 18 líneas únicas).
-- [ ] CA-04: Los 18 archivos `caso-*.html` tienen cada uno un `<meta name="description">` no vacío y distinto de los otros 17.
-- [ ] CA-05: Las 10 páginas institucionales/servicio restantes (`equipo`, `manifesto`, `nuestra-historia`, `automatizacion-de-procesos`, `diseno-de-marca`, `email-marketing`, `gestion-de-redes`, `influencer-marketing`, `publicidad-en-medios`, `aviso-legal`, `privacidad`, `cookies` — 12 en total, agrupadas como "institucionales/servicio") tienen cada una `<title>` y `<meta name="description">` propios y distintos entre sí.
-- [ ] CA-06: Ninguna de las ~32 páginas indexables del sitio (todas menos `img1.html`) comparte su `<title>` exacto con otra página distinta (verificable con `grep -h "<title>" *.html | grep -v img1 | sort | uniq -d` → sin salida).
+- [ ] CA-03: Los 19 archivos `caso-*.html` tienen cada uno un `<title>` que incluye el nombre del cliente y es distinto de los otros 18 (verificable: `grep -h "<title>" caso-*.html | sort -u | wc -l` devuelve `19`, y `grep -h "<title>" caso-*.html | sort | uniq -d` no devuelve ninguna línea).
+- [ ] CA-04: Los 19 archivos `caso-*.html` tienen cada uno un `<meta name="description">` no vacío y distinto de los otros 18.
+- [ ] CA-05: Las 12 páginas restantes (6 de servicio + 3 institucionales/navegación restantes tras excluir `casos-de-exito` y `contacto` del CA-02 + 3 legales — es decir: `equipo`, `manifesto`, `nuestra-historia`, `automatizacion-de-procesos`, `diseno-de-marca`, `email-marketing`, `gestion-de-redes`, `influencer-marketing`, `publicidad-en-medios`, `aviso-legal`, `privacidad`, `cookies`) tienen cada una `<title>` y `<meta name="description">` propios y distintos entre sí y distintos de los `<title>`/`description` de las páginas cubiertas por CA-01 a CA-04.
+- [ ] CA-06: Ninguna de las 34 páginas indexables del sitio (todas menos `img1.html`) comparte su `<title>` exacto con otra página distinta (verificable con `ls *.html | grep -v ^img1 | xargs grep -h "<title>" | sort | uniq -d` → sin salida).
 - [ ] CA-07: `npm run build` termina sin errores y el HTML generado en `dist/` conserva el `<title>` y `<meta name="description">` de cada página fuente.
 - [ ] CA-08: Ningún `<title>` supera los ~60 caracteres ni ninguna `<meta name="description">` supera los ~160 caracteres (guía, no bloqueante si algún caso puntual se pasa por poco).
 
@@ -86,7 +96,7 @@ Ninguna.
 
 ### Páginas modificadas
 
-Las ~32 páginas indexables del sitio: `index.html`, `casos-de-exito.html`, `contacto.html`, `equipo.html`, `manifesto.html`, `nuestra-historia.html`, `automatizacion-de-procesos.html`, `diseno-de-marca.html`, `email-marketing.html`, `gestion-de-redes.html`, `influencer-marketing.html`, `publicidad-en-medios.html`, `aviso-legal.html`, `privacidad.html`, `cookies.html`, y los 18 `caso-*.html`. Se excluye `img1.html` (no indexable, ver Edge cases).
+Las 34 páginas indexables del sitio (ver desglose exacto en Descripción). Se excluye `img1.html` (no indexable, ver Edge cases).
 
 ### Componentes reutilizables
 
@@ -149,8 +159,8 @@ Edición directa del `<head>` de cada archivo `.html`. No requiere cambios en `v
 ### Desglose de tareas
 
 1. Redactar `<title>` único para `index.html`, `casos-de-exito.html` y `contacto.html`, diferenciándolos del actual title compartido.
-2. Redactar `<title>` + `<meta name="description">` para las 12 páginas institucionales/servicio restantes, usando el contenido real de cada página (hero, propuesta de valor) como fuente.
-3. Redactar `<title>` (patrón `"{Cliente} — Caso de éxito | Immoral"`) + `<meta name="description">` (con el KPI/resultado principal del caso) para los 18 `caso-*.html`, usando los datos reales ya presentes en cada página (nombre de cliente, sector, métricas de resultados).
+2. Redactar `<title>` + `<meta name="description">` para las 12 páginas restantes (6 servicio + 3 institucionales/navegación restantes + 3 legales), usando el contenido real de cada página (hero, propuesta de valor) como fuente.
+3. Redactar `<title>` (patrón `"{Cliente} — Caso de éxito | Immoral"`) + `<meta name="description">` (con el KPI/resultado principal del caso) para los 19 `caso-*.html`, usando los datos reales ya presentes en cada página (nombre de cliente, sector, métricas de resultados).
 4. Ejecutar `npm run build` y verificar en `dist/` que 2–3 páginas de muestra (una institucional, un caso de éxito, la home) tienen el `<title>`/`<meta name="description">` esperado.
 5. Verificar unicidad global con `grep -h "<title>" *.html | sort | uniq -d` (sin salida esperada, excluyendo `img1.html`).
 
@@ -194,3 +204,4 @@ No aplica.
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 1.0 | 2026-07-13 | Versión inicial. Aprobada por David Navarrete, ejecución BrianSpec directa 2026-07-13. | David Navarrete |
+| 1.1 | 2026-07-13 | Corregido conteo de páginas tras auditoría con Claude Opus: son **19 casos** (no 18) y **34 páginas indexables** en total (no ~32). Reagrupada la lista de páginas en Descripción por familia (servicio / institucional / legal / caso). Corregido el comando de CA-03 (`sort -u \| wc -l` + `uniq -d`, el `sort \| uniq` original solo colapsa duplicados en lugar de detectarlos). Corregido CA-05 (decía "10 páginas... 12 en total", ahora 12 sin contradicción). | David Navarrete |

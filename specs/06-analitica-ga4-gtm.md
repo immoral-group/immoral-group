@@ -1,6 +1,6 @@
 # SPEC-06: Analítica — GA4/GTM
 
-**Versión:** 1.0
+**Versión:** 1.1
 **Estado:** draft — bloqueada, pendiente de ID de GTM/GA4 de Julián o David
 **Tipo de proyecto:** web-app
 **Última actualización:** 2026-07-13
@@ -68,12 +68,14 @@ Hasta que se resuelva esta ambigüedad, esta SPEC permanece en `draft` y no entr
 
 *(Todos los CA siguientes quedan en estado "no verificable" mientras la SPEC esté en `draft`. Se activan y verifican solo tras resolver el bloqueo y pasar a `aprobada`.)*
 
-- [ ] CA-01: El snippet de GTM está presente en el `<head>` de las ~32 páginas indexables del sitio, con el ID de contenedor real proporcionado por Julián/David (no un placeholder).
+- [ ] CA-01: El snippet de GTM está presente en el `<head>` de las 34 páginas indexables del sitio, con el ID de contenedor real proporcionado por Julián/David (no un placeholder).
 - [ ] CA-02: El snippet `noscript` de GTM (`<iframe>` de respaldo) está presente inmediatamente después de la apertura de `<body>` en cada página, según el estándar de instalación de Google.
 - [ ] CA-03: Al cargar cualquier página en un navegador con las DevTools abiertas, la pestaña Network muestra una petición a `googletagmanager.com/gtm.js?id={ID}` con respuesta 200.
 - [ ] CA-04: GA4 (verificado desde el panel de Google Analytics, vista en tiempo real) registra una sesión al navegar el sitio en un entorno de prueba.
-- [ ] CA-05: El mecanismo de consentimiento de cookies (si se decide implementar como parte de esta SPEC o de una SPEC hermana) bloquea la carga de etiquetas no esenciales hasta que el usuario decide.
-- [ ] CA-06: `npm run build` termina sin errores con el snippet instalado.
+- [ ] CA-05: `npm run build` termina sin errores con el snippet instalado.
+- [ ] CA-06 (defecto seguro): mientras esta SPEC esté en `draft`, `grep -l "googletagmanager\|GTM-\|gtag(" *.html` no debe devolver ningún archivo — es decir, ninguna otra spec ni cambio "por si acaso" instala un ID de placeholder en el HTML.
+
+*(La verificación de que el mecanismo de consentimiento de cookies bloquea etiquetas no esenciales — apartada del listado de CA para no bloquear la implementación técnica de GTM cuando eventualmente se desbloquee esta SPEC — queda documentada como riesgo legal en "Otros riesgos identificados" y como acción pendiente por decidir en el Desglose de tareas. No es un CA de esta SPEC porque su verificación depende de un mecanismo (banner de cookies + Consent Mode v2 + configuración en GTM) que hoy no existe en el repo y que, en caso de decidirse, requiere su propia SPEC.)*
 
 ---
 
@@ -101,7 +103,7 @@ Ninguna.
 
 ### Páginas modificadas
 
-Las ~32 páginas indexables del sitio (mismo alcance que SPEC-01/02/04), una vez resuelto el bloqueo.
+Las 34 páginas indexables del sitio (mismo alcance que SPEC-01/02/04), una vez resuelto el bloqueo.
 
 ### Componentes reutilizables
 
@@ -160,13 +162,13 @@ No aplica.
 
 ### Arquitectura propuesta
 
-Snippet estándar de GTM (head + noscript body) insertado en las ~32 páginas, una vez exista un ID de contenedor real y una decisión sobre consentimiento de cookies.
+Snippet estándar de GTM (head + noscript body) insertado en las 34 páginas, una vez exista un ID de contenedor real y una decisión sobre consentimiento de cookies.
 
 ### Desglose de tareas
 
 1. **[BLOQUEADO] Obtener el ID de contenedor GTM real** de Julián/David, o confirmación de que hay que crear una cuenta/contenedor nuevo.
 2. **[BLOQUEADO] Decidir si esta SPEC incluye un mecanismo de consentimiento de cookies** o si ya existe uno no detectado en esta auditoría de código, o si se implementa en una SPEC hermana antes de activar GTM en producción.
-3. Insertar el snippet de GTM (head + noscript) en las ~32 páginas.
+3. Insertar el snippet de GTM (head + noscript) en las 34 páginas.
 4. Configurar la etiqueta GA4 dentro del panel de GTM (fuera del repo, en la interfaz web de Tag Manager).
 5. Verificar en modo Preview de GTM y en tiempo real de GA4 que los datos llegan correctamente.
 
@@ -206,3 +208,4 @@ No aplica.
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 1.0 | 2026-07-13 | Versión inicial, creada en estado `draft — bloqueada` por falta de ID de GTM/GA4 real. No se implementa código en esta ronda. | David Navarrete |
+| 1.1 | 2026-07-13 | Auditoría con Claude Opus: el CA-05 original (consentimiento de cookies bloquea etiquetas no esenciales) mezclaba dos bloqueos distintos (ID + consentimiento) y hacía que ni siquiera desbloqueando el ID fuera verificable esta SPEC sin implementar antes un banner + Consent Mode. Movido el consentimiento fuera del listado de CA (queda como riesgo documentado + pendiente de decisión formal en SPEC propia). Añadido CA-06 de "defecto seguro": mientras la SPEC esté en draft, ningún archivo debe contener tracking con placeholder. | David Navarrete |

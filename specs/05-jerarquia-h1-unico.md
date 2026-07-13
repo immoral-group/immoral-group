@@ -1,6 +1,6 @@
 # SPEC-05: Un único H1 por página
 
-**Versión:** 1.0
+**Versión:** 1.1
 **Estado:** aprobada
 **Tipo de proyecto:** web-app
 **Última actualización:** 2026-07-13
@@ -148,6 +148,8 @@ Edición directa de tags en los 4 archivos `.html` afectados, sin tocar `vite.co
 
 ### Desglose de tareas
 
+> ⚠️ **Nota sobre números de línea:** los números que aparecen a continuación son **referenciales** al estado del repo del 2026-07-13 antes de aplicar las otras SPECs de esta ronda (01/02/03/04, que también editan el `<head>` de estos mismos archivos). Si esta spec se implementa después de esas, los números se habrán desplazado. **La regla operativa correcta es:** para cada archivo, ejecutar `grep -n "<h1" archivo.html` antes de editar y aplicar el criterio semántico documentado (el primer `<h1>` de cada agrupación se queda, el resto de la misma agrupación baja un nivel; los marcadores numéricos decorativos pasan a `<div>`).
+
 1. **`index.html`:** conservar como `<h1>` el titular del hero (línea ~379). Convertir a `<h2>` los títulos de sección en las líneas ~573, ~576, ~632, ~635, ~701, ~758, ~936, ~939. Convertir a `<div>` los 4 marcadores numéricos de pasos (líneas ~714, ~723, ~732, ~742).
 2. **`casos-de-exito.html`:** conservar como `<h1>` el titular del hero (línea ~334). Convertir a `<h2>` el título de la sección CTA final (línea ~969).
 3. **`email-marketing.html`:** conservar como `<h1>` la primera línea del titular (línea ~355). Convertir a `<h2>` la segunda línea del mismo titular (línea ~358).
@@ -191,3 +193,4 @@ No aplica — se sustituye por verificación visual manual en los 3 breakpoints 
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 1.0 | 2026-07-13 | Versión inicial. Aprobada por David Navarrete, ejecución BrianSpec directa 2026-07-13. | David Navarrete |
+| 1.1 | 2026-07-13 | Añadida advertencia explícita en el desglose de tareas sobre que los números de línea son referenciales al estado previo a las SPECs 01-04, que también editan el `<head>` de los mismos archivos. La regla operativa correcta es re-`grep -n "<h1"` justo antes de editar. | David Navarrete |
