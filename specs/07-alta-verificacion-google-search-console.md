@@ -1,9 +1,9 @@
 # SPEC-07: Alta y verificación en Google Search Console
 
-**Versión:** 1.1
-**Estado:** draft — acción manual, fuera del alcance de este repo
+**Versión:** 2.0
+**Estado:** aprobada — implementada
 **Tipo de proyecto:** web-app
-**Última actualización:** 2026-07-13
+**Última actualización:** 2026-07-14
 **Owner:** David Navarrete
 
 ---
@@ -61,12 +61,12 @@ Dar de alta la propiedad `immoral.es` en Google Search Console (GSC), verificar 
 
 *(Todos verificables solo por quien tenga acceso a GSC y al VPS — no verificables desde este repo, salvo CA-01a que sí es verificable localmente.)*
 
-- [ ] CA-01a: Existe un archivo `public/googleXXXXXXXXXXXXXXXX.html` (el token concreto lo entrega GSC) commiteado y desplegado. Verificable: `curl https://immoral.es/googleXXXXXXXXXXXXXXXX.html` devuelve 200 con el contenido esperado (`google-site-verification: googleXXXXXXXXXXXXXXXX.html`).
-- [ ] CA-01: La propiedad `https://immoral.es` (modo prefijo URL) aparece como **verificada** en Google Search Console.
-- [ ] CA-02: La Service Account `gsc-mcp@informes-immoral.iam.gserviceaccount.com` aparece con rol **Propietario** (no "Completo") en GSC → Usuarios y permisos de la propiedad `https://immoral.es`.
-- [ ] CA-03: `https://immoral.es/` aparece en el valor de `GSC_ALLOWED_SITES` del `.env` del contenedor `/opt/gsc-mcp/` en el VPS `srv1596187`.
-- [ ] CA-04: Una consulta de prueba con `gsc_list_sitemaps` sobre `https://immoral.es/` desde el MCP compartido devuelve datos sin error de "sitio no autorizado".
-- [ ] CA-05: El sitemap `https://immoral.es/sitemap.xml` aparece enviado y como **Success** en la sección Sitemaps del panel de GSC.
+- [x] CA-01a: **No fue necesario.** GSC verificó la propiedad automáticamente por el método "Google Analytics" (la cuenta ya tenía acceso de administrador a la propiedad GA4 "Immoral.Marketing", instalada el mismo día vía SPEC-06) — Google detecta el `gtag.js` con permisos del usuario y da por verificada la propiedad sin pedir archivo HTML. No se subió ningún archivo de verificación a este repo.
+- [x] CA-01: La propiedad `https://immoral.es` (modo prefijo URL) aparece como **verificada** en Google Search Console.
+- [x] CA-02: La Service Account `gsc-mcp@informes-immoral.iam.gserviceaccount.com` añadida con rol **Propietario** en GSC → Usuarios y permisos de la propiedad `https://immoral.es`.
+- [x] CA-03: `https://immoral.es/` añadido al valor de `GSC_ALLOWED_SITES` del `.env` del contenedor `/opt/gsc-mcp/` en el VPS `srv1596187` (vía panel de Hostinger — el editado manual del `.env` por SSH con clave no persistía, el agente de Hostinger sincroniza `authorized_keys` y lo revierte).
+- [x] CA-04: `gsc_list_sitemaps` sobre `https://immoral.es/` desde el MCP compartido devuelve datos: sitemap con 34 URLs enviadas, 0 errores.
+- [x] CA-05: El sitemap `https://immoral.es/sitemap.xml` aparece enviado y como **Correcto** en la sección Sitemaps del panel de GSC (34 páginas descubiertas).
 
 ---
 
@@ -203,3 +203,4 @@ No aplica.
 |---|---|---|---|
 | 1.0 | 2026-07-13 | Versión inicial, creada en estado `draft — acción manual` por trazabilidad. No se implementa código en esta ronda; requiere acceso SSH al VPS y a la cuenta de Google Search Console que no están disponibles en esta sesión. | David Navarrete |
 | 1.1 | 2026-07-13 | Auditoría con Claude Opus. Corregida contradicción con doc del equipo: la SPEC recomendaba DNS TXT ("dado el contexto de SPEC-04"), pero la página "03 — Infraestructura compartida" del doc `knvz4-82755` dice explícitamente que DNS TXT en IONOS ha dado problemas y que el método probado en Immoral es archivo HTML en `public/`. Cambiado a verificación por prefijo URL + archivo HTML. Añadido el email exacto de la Service Account (`gsc-mcp@informes-immoral.iam.gserviceaccount.com`), la ruta exacta del `.env` del VPS (`/opt/gsc-mcp/.env`), el nombre del VPS (`srv1596187`), el formato exacto del valor de `GSC_ALLOWED_SITES` (URL completa con protocolo y barra final), la advertencia sobre "Propietario" vs "Completo", y el paso de reconectar el conector de Claude.ai tras reiniciar el contenedor. Añadido CA-01a verificable localmente (el archivo de verificación en `public/`). | David Navarrete |
+| 2.0 | 2026-07-14 | **Implementada de punta a punta.** Propiedad `https://immoral.es` verificada automáticamente vía Google Analytics (sin archivo HTML, gracias a tener GA4 ya instalado desde SPEC-06). Service Account añadida como Propietario. Sitemap enviado, estado Correcto, 34 páginas. `GSC_ALLOWED_SITES` actualizado en el VPS — el edit manual del `.env` por SSH con clave temporal no funcionó porque el agente de Hostinger sincroniza `authorized_keys` desde su panel y revierte cambios manuales; se hizo directamente en la terminal del panel de Hostinger con `sed`. Verificado con `gsc_list_sitemaps` desde el MCP compartido. | David Navarrete + Claude |
