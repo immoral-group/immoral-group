@@ -1,0 +1,18 @@
+# Configuración de la skill immoral-seo-analisis-gsc para immoral.es
+# Proyecto: immoral-group (web corporativa, Vite estático)
+
+site: https://immoral.es/
+
+report_destinations:
+  - clickup_subpage
+
+clickup:
+  parent_page_id: knvz4-242015
+  workspace_id: "20639716"
+  page_title_prefix: "Informe SEO"
+
+thresholds:
+  position_drop_alert: 5       # Alertar si una query cae más de N posiciones
+  ctr_low_alert: 0.005         # CTR < 0.5% con impresiones altas = alerta/oportunidad
+  min_impressions_opportunity: 50   # Impresiones mínimas para aparecer en sección Oportunidades
+  min_impressions_alert: 100   # Impresiones mínimas para disparar alerta de 0 clics
