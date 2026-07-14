@@ -1,33 +1,20 @@
-# SPEC-06: Analítica — GA4/GTM
+# SPEC-06: Analítica — GA4 directo (gtag.js)
 
-**Versión:** 1.1
-**Estado:** draft — bloqueada, pendiente de ID de GTM/GA4 de Julián o David
+**Versión:** 2.0
+**Estado:** aprobada — implementada
 **Tipo de proyecto:** web-app
-**Última actualización:** 2026-07-13
+**Última actualización:** 2026-07-14
 **Owner:** David Navarrete
 
 ---
 
 ## Descripción
 
-Instalar el snippet de Google Tag Manager en el `<head>` de todas las páginas del sitio para poder medir tráfico, comportamiento y conversiones con GA4. Hoy `https://immoral.es` no tiene ninguna analítica instalada (verificado: sin GA4, sin GTM, sin ningún pixel, sin falsos positivos de clases CSS con nombres parecidos). Sin analítica, cualquier decisión sobre el impacto de las SPEC-01 a SPEC-05 (o de cualquier campaña futura) se basa en intuición, no en datos.
+Instalar el snippet directo de GA4 (`gtag.js`, sin Google Tag Manager de por medio) en el `<head>` de todas las páginas del sitio para poder medir tráfico, comportamiento y conversiones. Hoy `https://immoral.es` no tiene ninguna analítica instalada (verificado: sin GA4, sin GTM, sin ningún pixel). Sin analítica, cualquier decisión sobre el impacto de las SPEC-01 a SPEC-05 (o de cualquier campaña futura) se basa en intuición, no en datos.
 
----
+**Decisión de mecanismo (14/07/2026):** GA4 directo, no GTM. Motivo: el caso piloto del estándar (Catálogo de Procesos) ya validó GA4 directo (SPEC-18, decisión D1) — es el mismo patrón, sin añadir una pieza de infraestructura adicional (GTM) que hoy no aporta valor real (no hay otros píxeles que instalar a corto plazo). GTM queda disponible como migración futura si se decide gestionar tags sin developer.
 
-## ⚠️ Bloqueo — Ambigüedad crítica sin resolver
-
-**No existe un ID de contenedor GTM (`GTM-XXXXXXX`) ni un ID de propiedad GA4 (`G-XXXXXXXXXX`) real para este proyecto.** Se ha verificado que no está disponible en:
-- El código del repositorio (ningún snippet, ninguna variable de entorno referenciada).
-- `vercel.json` ni en ninguna configuración de build.
-- Ningún archivo `.env`/`.env.example` presente en el repo (no existen en este proyecto).
-
-**Esta SPEC NO se implementa con un ID inventado o de placeholder.** Instalar un contenedor GTM falso generaría un error 404 silencioso en cada carga de página (GTM intenta cargar `https://www.googletagmanager.com/gtm.js?id={ID}` y falla si el ID no existe), contaminaría cualquier futura instalación real, y podría inducir a error a quien revise el sitio pensando que la analítica ya está activa cuando no lo está.
-
-**Quién debe resolver el bloqueo:** Julián o David deben proporcionar:
-1. El ID de contenedor GTM (`GTM-XXXXXXX`) de la cuenta de Immoral Group, **o**
-2. Confirmación de que hay que crear uno nuevo (en cuyo caso, quién tiene acceso a la cuenta de Google Tag Manager/Analytics de la organización para crearlo).
-
-Hasta que se resuelva esta ambigüedad, esta SPEC permanece en `draft` y no entra en la ronda de implementación de código de SPEC-01 a SPEC-05.
+**ID de medición usado:** `G-WN4FX1GWKH` — propiedad GA4 **"Immoral.Marketing"** (ID `405600065`, cuenta "Immoral Online Assets"). Esta propiedad ya existía y históricamente recogió 138.740 páginas vistas del dominio `immoral.marketing` (el dominio anterior de la web, antes de renombrarse a `immoral.es`); llevaba sin datos ~90 días porque la etiqueta se perdió en la migración de dominio y nadie la volvió a instalar. Se reutiliza esta misma propiedad (mantiene el histórico) en vez de crear una nueva — GA4 no restringe por dominio, empieza a recibir hits en cuanto el snippet esté en producción.
 
 ---
 
@@ -35,61 +22,37 @@ Hasta que se resuelva esta ambigüedad, esta SPEC permanece en `draft` y no entr
 
 - **Administrador de analítica (David/Julián):** consulta los datos de GA4 para decisiones de negocio y marketing.
 - **Visitante del sitio:** su navegación se registra de forma anonimizada/agregada en GA4 (sujeto a política de cookies/consentimiento — ver Notas de seguridad).
-- **Google Tag Manager:** contenedor que carga y gestiona las etiquetas de medición (GA4 y futuras: Google Ads, Meta Pixel, etc.) sin requerir cambios de código adicionales por cada etiqueta nueva.
+- **Google Analytics (gtag.js):** script cargado directamente en cada página, sin intermediario.
 
 ---
 
 ## Flujos principales
 
-### Flujo 1: Carga del snippet GTM en cada página (una vez resuelto el bloqueo)
+### Flujo 1: Carga del snippet gtag.js en cada página
 
 1. El visitante carga cualquier página del sitio.
-2. El `<head>` incluye el snippet estándar de GTM, que carga `gtm.js` de forma asíncrona con el ID de contenedor real.
-3. GTM ejecuta las etiquetas configuradas en su panel (GA4 como mínimo) sin necesidad de tocar más código en este repo para futuras etiquetas.
-
-### Flujo 2: Consentimiento de cookies antes de la carga de analítica
-
-1. El visitante ve el banner/aviso de cookies (si existe — verificar contra `cookies.html` y la implementación real de consentimiento, hoy no confirmada en el código).
-2. Si el sitio tiene un gestor de consentimiento, GTM debe respetar esa decisión antes de disparar etiquetas de medición no esenciales.
-3. Si el visitante rechaza cookies no esenciales, GA4 no debe registrar su navegación (o debe hacerlo en modo consentido limitado, según Consent Mode v2 de Google).
-
-*(Este Flujo 2 depende de una decisión de producto/legal que tampoco está resuelta hoy — ver Edge cases.)*
+2. El `<head>` incluye, justo después de `<meta name="viewport">`, el script asíncrono `https://www.googletagmanager.com/gtag/js?id=G-WN4FX1GWKH` (esta URL es la del propio `gtag.js` de Google Analytics; GA4 directo sigue usando el dominio `googletagmanager.com` para servir el script, aunque no haya contenedor GTM de por medio).
+3. Se ejecuta `gtag('config', 'G-WN4FX1GWKH')`, registrando una sesión en la propiedad GA4 "Immoral.Marketing".
 
 ---
 
 ## Flujos alternativos / Edge cases
 
-- **No hay gestor de consentimiento de cookies implementado en el código hoy** (verificar contra `cookies.html`, que es solo una página de política, no un banner interactivo). Instalar GTM/GA4 sin un mecanismo de consentimiento activo puede incumplir RGPD/LSSI si se registran datos de usuarios en la UE antes de su consentimiento explícito. **Esta es una segunda ambigüedad relacionada, distinta del ID de GTM**, y debe resolverse junto con la anterior antes de implementar código.
-- **ID de GTM proporcionado pero cuenta sin permisos para David/Julián:** si se proporciona el ID pero nadie del equipo tiene acceso de administrador al contenedor para configurar las etiquetas después de instalarlo, la SPEC se completaría a medias (snippet instalado, pero sin etiquetas configuradas del lado de GTM). Se documenta como riesgo, no bloquea la instalación del snippet en sí.
+- **No hay gestor de consentimiento de cookies implementado en el código hoy** (`cookies.html` es solo una página de política, no un banner interactivo). Instalar GA4 sin un mecanismo de consentimiento activo tiene el mismo riesgo legal (RGPD/LSSI) que tenía con GTM. **Riesgo documentado, no bloquea esta SPEC** (decisión explícita de David: priorizar tener datos ya, resolver el banner de consentimiento como tarea aparte) — ver Notas de seguridad.
+- **La propiedad GA4 reutilizada tiene histórico del dominio antiguo (`immoral.marketing`):** no supone ningún problema — GA4 permite filtrar/segmentar por `hostName` en los informes si se quiere separar el histórico antiguo de los datos nuevos de `immoral.es`.
 
 ---
 
 ## Criterios de aceptación
 
-*(Todos los CA siguientes quedan en estado "no verificable" mientras la SPEC esté en `draft`. Se activan y verifican solo tras resolver el bloqueo y pasar a `aprobada`.)*
-
-- [ ] CA-01: El snippet de GTM está presente en el `<head>` de las 34 páginas indexables del sitio, con el ID de contenedor real proporcionado por Julián/David (no un placeholder).
-- [ ] CA-02: El snippet `noscript` de GTM (`<iframe>` de respaldo) está presente inmediatamente después de la apertura de `<body>` en cada página, según el estándar de instalación de Google.
-- [ ] CA-03: Al cargar cualquier página en un navegador con las DevTools abiertas, la pestaña Network muestra una petición a `googletagmanager.com/gtm.js?id={ID}` con respuesta 200.
-- [ ] CA-04: GA4 (verificado desde el panel de Google Analytics, vista en tiempo real) registra una sesión al navegar el sitio en un entorno de prueba.
-- [ ] CA-05: `npm run build` termina sin errores con el snippet instalado.
-- [ ] CA-06 (defecto seguro): mientras esta SPEC esté en `draft`, `grep -l "googletagmanager\|GTM-\|gtag(" *.html` no debe devolver ningún archivo — es decir, ninguna otra spec ni cambio "por si acaso" instala un ID de placeholder en el HTML.
-
-*(La verificación de que el mecanismo de consentimiento de cookies bloquea etiquetas no esenciales — apartada del listado de CA para no bloquear la implementación técnica de GTM cuando eventualmente se desbloquee esta SPEC — queda documentada como riesgo legal en "Otros riesgos identificados" y como acción pendiente por decidir en el Desglose de tareas. No es un CA de esta SPEC porque su verificación depende de un mecanismo (banner de cookies + Consent Mode v2 + configuración en GTM) que hoy no existe en el repo y que, en caso de decidirse, requiere su propia SPEC.)*
+- [x] CA-01: El snippet de `gtag.js` está presente en el `<head>` de las 34 páginas indexables del sitio, con el ID de medición real `G-WN4FX1GWKH`.
+- [x] CA-02: `npm run build` termina sin errores con el snippet instalado, y `dist/*.html` conserva el snippet en cada página.
+- [ ] CA-03 (post-deploy): al cargar `https://immoral.es/` en un navegador con las DevTools abiertas, la pestaña Network muestra una petición a `googletagmanager.com/gtag/js?id=G-WN4FX1GWKH` con respuesta 200.
+- [ ] CA-04 (post-deploy): GA4 (panel de Google Analytics, vista en tiempo real de la propiedad "Immoral.Marketing") registra una sesión al navegar el sitio en producción.
 
 ---
 
 ## Modelo de datos
-
-### Entidades nuevas o modificadas
-
-No aplica.
-
-### Relaciones
-
-No aplica.
-
-### Migraciones necesarias
 
 No aplica.
 
@@ -97,41 +60,19 @@ No aplica.
 
 ## UI / Páginas afectadas
 
-### Páginas nuevas
-
-Ninguna.
-
 ### Páginas modificadas
 
-Las 34 páginas indexables del sitio (mismo alcance que SPEC-01/02/04), una vez resuelto el bloqueo.
-
-### Componentes reutilizables
-
-No aplica.
-
-### Breakpoints obligatorios
-
-No aplica.
+Las 34 páginas indexables del sitio (mismo alcance que SPEC-01/02/04/05). Se excluye `img1.html`.
 
 ### Estándar de calidad visual
 
-No aplica — el snippet GTM no es visible (salvo el `<noscript>` de respaldo, que tampoco tiene impacto visual en navegadores con JS habilitado).
+No aplica — el snippet no es visible, no altera el layout.
 
 ---
 
 ## API / Endpoints
 
-### Endpoints nuevos
-
-No aplica.
-
-### Endpoints modificados
-
-No aplica.
-
-### Contratos de request/response
-
-No aplica.
+No aplica — script de cliente, sin backend propio.
 
 ---
 
@@ -141,20 +82,11 @@ No aplica.
 
 Datos de navegación de visitantes (IP, user agent, comportamiento en el sitio) — datos personales según RGPD si no se anonimizan. GA4 por defecto no almacena IP completa, pero sí genera identificadores de cliente.
 
-### Validaciones server-side requeridas
-
-No aplica — GTM/GA4 son scripts de cliente.
-
-### Autenticación y autorización
-
-No aplica.
-
 ### Otros riesgos identificados
 
-- 🔴 **CRÍTICO — instalar tracking sin mecanismo de consentimiento verificado es un riesgo legal (RGPD/LSSI), no solo técnico.** Esto bloquea la aprobación de esta SPEC igual que la falta del ID de GTM. SECURITY-AGENT debe marcar esta SPEC como no apta para implementación hasta que ambas ambigüedades (ID + consentimiento) estén resueltas.
-- 🟠 **ALTO — un ID de GTM inventado o de otra cuenta contaminaría los datos de esa otra cuenta o generaría errores silenciosos.** Motivo por el que esta SPEC se mantiene en `draft` en vez de forzar una implementación parcial.
+- 🟠 **Sin gestor de consentimiento de cookies:** riesgo legal RGPD/LSSI ya existente antes de esta SPEC (cualquier sitio sin banner que instale analítica tiene este riesgo). No se resuelve aquí — queda como tarea pendiente separada, decisión explícita de priorizar tener datos ya. Si se implementa un banner de consentimiento en el futuro, debe envolver la llamada a `gtag('config', ...)` para respetar la decisión del usuario (Consent Mode v2).
 
-*(SECURITY-AGENT aplicará el checklist de `.brianspec/security-checklists.md` sección "Tipo: web-app", en particular la subsección "Datos personales (si aplica)".)*
+*(SECURITY-AGENT aplicará el checklist de `.brianspec/security-checklists.md` sección "Tipo: web-app", subsección "Datos personales".)*
 
 ---
 
@@ -162,44 +94,35 @@ No aplica.
 
 ### Arquitectura propuesta
 
-Snippet estándar de GTM (head + noscript body) insertado en las 34 páginas, una vez exista un ID de contenedor real y una decisión sobre consentimiento de cookies.
+Snippet estándar de `gtag.js` (2 `<script>`, sin `<noscript>` — eso es específico de GTM, no aplica a GA4 directo) insertado justo después de `<meta name="viewport">` en las 34 páginas, mediante script (`insert-ga4.js`, no versionado — transformación mecánica de una sola vez).
 
 ### Desglose de tareas
 
-1. **[BLOQUEADO] Obtener el ID de contenedor GTM real** de Julián/David, o confirmación de que hay que crear una cuenta/contenedor nuevo.
-2. **[BLOQUEADO] Decidir si esta SPEC incluye un mecanismo de consentimiento de cookies** o si ya existe uno no detectado en esta auditoría de código, o si se implementa en una SPEC hermana antes de activar GTM en producción.
-3. Insertar el snippet de GTM (head + noscript) en las 34 páginas.
-4. Configurar la etiqueta GA4 dentro del panel de GTM (fuera del repo, en la interfaz web de Tag Manager).
-5. Verificar en modo Preview de GTM y en tiempo real de GA4 que los datos llegan correctamente.
+1. ✅ Insertar el snippet de `gtag.js` con `G-WN4FX1GWKH` en las 34 páginas indexables.
+2. ✅ `npm run build` y verificar en `dist/` que el snippet se conserva.
+3. Commit con autor verificado (`team@immoral.es`) + push a `master`.
+4. Post-deploy: verificar CA-03 y CA-04.
 
 ### Dependencias con otras specs
 
-- **Bloqueada por:** decisión externa de Julián/David sobre el ID de GTM (no es una SPEC previa, es una decisión de negocio/acceso a cuentas).
-- **Podría bloquear a:** cualquier SPEC futura de medición de impacto de las SPEC-01 a SPEC-05 (sin analítica, no se puede medir si la metadata nueva mejora el CTR real).
+Ninguna bloqueante.
 
 ---
 
 ## Tests requeridos
 
-### Tests unitarios
-
-No aplica.
-
 ### Tests de integración
 
-CA-03 y CA-04 (petición de red a `gtm.js` + sesión en tiempo real de GA4) una vez desbloqueada e implementada.
-
-### Tests E2E
-
-No aplica.
+CA-03 y CA-04, post-deploy contra producción.
 
 ---
 
 ## Out of scope (explícito)
 
-- Configuración de eventos de conversión específicos (envío de formulario de contacto, clics en WhatsApp, etc.) dentro de GTM — eso es trabajo de configuración en el panel de GTM, posterior a la instalación del snippet, y normalmente no requiere cambios de código adicionales.
-- Cualquier otro píxel de tracking (Meta Pixel, LinkedIn Insight Tag, etc.) — esta SPEC es específicamente sobre GA4/GTM según el encargo. Píxeles adicionales serían SPECs futuras, gestionables igualmente vía GTM una vez instalado.
-- Implementación de un banner de consentimiento de cookies completo — se señala como ambigüedad relacionada pero no se resuelve aquí; podría ser una SPEC propia si se decide abordar formalmente.
+- Configuración de eventos de conversión específicos (envío de formulario, clics en WhatsApp) — trabajo de configuración en GA4 (Eventos personalizados / Enhanced measurement), posterior a esta SPEC.
+- Cualquier otro píxel de tracking (Meta Pixel, LinkedIn Insight Tag, etc.) — fuera de alcance del encargo actual. Si en el futuro se necesitan varios píxeles gestionados sin developer, evaluar migrar a GTM entonces (no es necesario hoy).
+- Banner de consentimiento de cookies — ver "Otros riesgos identificados".
+- Migración de datos históricos de `immoral.marketing` a una vista separada — no aplica, ambos dominios convivirán en la misma propiedad.
 
 ---
 
@@ -208,4 +131,5 @@ No aplica.
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 1.0 | 2026-07-13 | Versión inicial, creada en estado `draft — bloqueada` por falta de ID de GTM/GA4 real. No se implementa código en esta ronda. | David Navarrete |
-| 1.1 | 2026-07-13 | Auditoría con Claude Opus: el CA-05 original (consentimiento de cookies bloquea etiquetas no esenciales) mezclaba dos bloqueos distintos (ID + consentimiento) y hacía que ni siquiera desbloqueando el ID fuera verificable esta SPEC sin implementar antes un banner + Consent Mode. Movido el consentimiento fuera del listado de CA (queda como riesgo documentado + pendiente de decisión formal en SPEC propia). Añadido CA-06 de "defecto seguro": mientras la SPEC esté en draft, ningún archivo debe contener tracking con placeholder. | David Navarrete |
+| 1.1 | 2026-07-13 | Auditoría con Claude Opus: separado el bloqueo de consentimiento de cookies del de ID de GTM. Añadido CA-06 de defecto seguro. | David Navarrete |
+| 2.0 | 2026-07-14 | **Desbloqueada y reescrita.** David confirma: (a) mecanismo GA4 directo en vez de GTM (más simple, mismo patrón que el Catálogo), (b) ID de medición `G-WN4FX1GWKH`, de la propiedad GA4 "Immoral.Marketing" ya existente (histórico del dominio `immoral.marketing`, reutilizada tras confirmar por API que lleva ~90 días sin datos). Implementado el snippet en las 34 páginas, build verificado localmente. Pendiente solo verificación post-deploy (CA-03/CA-04). | David Navarrete + Claude |
