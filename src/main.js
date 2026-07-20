@@ -2,6 +2,9 @@ import './style.css'
 import { initLoader } from './loader.js';
 import { initHeroAnimation } from './hero-animation.js';
 import { initFAQAccordion } from './faq-accordion.js';
+import { initCookieBanner } from './cookie-banner.js';
+import { initFooter } from './footer.js';
+import { initHablemosHover } from './hablemos-hover.js';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -1655,6 +1658,10 @@ function initAll() {
     initEmailHero();
     initServicesCarousel();
     initDesignAccordion();
+
+    try { initCookieBanner(); } catch (e) { console.error("Error in initCookieBanner:", e); }
+    try { initFooter(); } catch (e) { console.error("Error in initFooter:", e); }
+    try { initHablemosHover('#hablemos-cta-btn', '#hablemos-video'); } catch (e) { console.error("Error in initHablemosHover:", e); }
 }
 
 // --- 16. GSAP ANIMATIONS ---

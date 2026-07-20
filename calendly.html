@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendly - Immoral Group</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: transparent;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .widget-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            opacity: 0;
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1;
+        }
+        iframe.loaded {
+            opacity: 1;
+        }
+        /* Loader styles */
+        .loader-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            transition: opacity 0.4s ease, visibility 0.4s;
+            background-color: transparent;
+        }
+        .loader-wrapper.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        /* Spinner */
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 3px solid rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            animation: rotation 1s linear infinite;
+        }
+        .spinner::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-left-color: #3b82f6; /* Immoral Blue */
+            border-top-color: #3b82f6;
+        }
+        /* Theme specific adjustments */
+        .loading-text {
+            margin-top: 16px;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        .theme-light .loading-text {
+            color: rgba(0, 0, 0, 0.6);
+        }
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="widget-container">
+        <div class="loader-wrapper" id="loader">
+            <div class="spinner"></div>
+            <div class="loading-text">Cargando calendario...</div>
+        </div>
+        <iframe id="calendly-iframe" src="" loading="lazy"></iframe>
+    </div>
+
+    <script>
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // 1. Get Calendly subpath (defaults to "calendario-439741")
+            const path = urlParams.get('path') || 'calendario-439741';
+            const calendlyUrl = `https://discover.immoral.es/${path}`;
+            
+            // 2. Set Background Color
+            const bg = urlParams.get('bg');
+            if (bg) {
+                document.body.style.backgroundColor = bg;
+                document.getElementById('loader').style.backgroundColor = bg;
+            }
+            
+            // 3. Set Loader Theme (dark or light)
+            const theme = urlParams.get('theme') || 'dark';
+            if (theme === 'light') {
+                document.getElementById('loader').classList.add('theme-light');
+            }
+            
+            // 4. Initialize iframe src
+            const iframe = document.getElementById('calendly-iframe');
+            iframe.src = calendlyUrl;
+            
+            // 5. Fade in iframe once loaded
+            iframe.addEventListener('load', function() {
+                setTimeout(() => {
+                    document.getElementById('loader').classList.add('hidden');
+                    iframe.classList.add('loaded');
+                }, 300);
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -40,6 +40,8 @@ export default defineConfig({
                 'cookies': resolve(__dirname, 'cookies.html'),
                 'privacidad': resolve(__dirname, 'privacidad.html'),
                 'img1': resolve(__dirname, 'img1.html'),
+                'calendly': resolve(__dirname, 'calendly.html'),
+                '404': resolve(__dirname, '404.html'),
             },
         },
     },
